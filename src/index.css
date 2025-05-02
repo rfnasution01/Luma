@@ -1,0 +1,209 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200;0,6..12,900;1,6..12,600;1,6..12,1000&family=Roboto+Slab:wght@600;700&display=swap');
+@import url('https://v1.fontapi.ir/css/SFProDisplay:600');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap'); /* Adding Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap'); /* Adding Inter font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap'); /* Adding Montserrat font */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap');
+
+/* Tailwind CSS directives */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom CSS layer for base styles */
+@layer base {
+  :root {
+    /* Defining color scheme variables for light mode */
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --ring: 215 20.2% 65.1%;
+    --radius: 0.5rem; /* Border radius for elements */
+  }
+
+  /* Dark mode overrides */
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 85.7% 97.3%;
+    --ring: 217.2 32.6% 17.5%;
+  }
+}
+
+/* Additional global styles */
+@layer base {
+  * {
+    @apply m-0 box-border p-0; /* Remove margin, padding, and box model */
+  }
+
+  html {
+    /* Setting base font size to 62.5% for easier rem unit calculation (10px / 16px = 62.5%) */
+    @apply text-[37.5%] desktop:text-[37.5%];
+  }
+
+  body {
+    /* Basic body styling: background, font family, size, etc. */
+    @apply bg-background font-sf-pro text-16 font-normal leading text-black antialiased;
+  }
+
+  /* Apply background to body when 'halaman' exists */
+  body:has(#halaman) {
+    @apply bg-background;
+  }
+
+  /* Main padding styling for body content */
+  body > main {
+    @apply p-32;
+  }
+}
+
+/* Custom scrollbar styles */
+@layer components {
+  /* Default invisible scrollbar */
+  .scrollbar::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 6px;
+  }
+
+  /* Visible scrollbar with custom colors */
+  .scrollbar-new::-webkit-scrollbar {
+    width: 9px;
+  }
+
+  .scrollbar-new::-webkit-scrollbar-thumb {
+    background: #282a38;
+  }
+
+  .scrollbar-new::-webkit-scrollbar-track {
+    background: #7d95a1;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    background-clip: padding-box;
+  }
+
+  /* Primary heading style */
+  .heading__primary {
+    @apply font-nunito text-[5.1rem] font-extrabold tracking-6;
+  }
+}
+
+/* Styling for specific page layout */
+#RootLayout > section:not(#RootLayout) {
+  @apply py-32; /* Padding for sections */
+}
+
+#RootLayout section:not(#RootLayout) > section {
+  /* Flex layout for inner sections */
+  @apply flex -translate-y-2 flex-col gap-48 rounded-2xl border-[1.5px] border-border border-t-transparent bg-background p-32;
+}
+
+/* Article content styling */
+.article-content {
+  font-family: 'SF Pro', sans-serif;
+  font-size: 2.4rem;
+  line-height: 1.3;
+  color: #2c3e50;
+}
+
+/* Paragraph styling in articles */
+.article-content p {
+  margin-bottom: 10px;
+  text-align: justify;
+  color: #34495e;
+}
+
+/* Ordered list (ol) styling in articles */
+.article-content ol {
+  margin-bottom: 10px;
+  padding-left: 30px;
+  color: #2c3e50;
+}
+
+/* List items (li) styling */
+.article-content li {
+  margin-bottom: 10px;
+  line-height: 1.3;
+  font-size: 2.2rem;
+}
+
+/* Styling for strong text (bold) */
+.article-content strong {
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+/* Header styling for article titles */
+.article-content h1,
+.article-content h2,
+.article-content h3 {
+  color: #2980b9;
+}
+
+/* Blockquote styling */
+.article-content blockquote {
+  font-style: italic;
+  color: #7f8c8d;
+  padding-left: 20px;
+  border-left: 4px solid #3498db;
+  margin: 20px 0;
+}
+
+/* Unordered list (ul) styling */
+.article-content ul {
+  margin-bottom: 10px;
+  padding-left: 30px;
+  list-style-type: disc;
+}
+
+/* Link styling */
+.article-content a {
+  color: #3498db;
+  text-decoration: none;
+  border-bottom: 1px dashed #3498db;
+}
+
+/* Hover effect for links */
+.article-content a:hover {
+  color: #2980b9;
+  border-bottom: 1px solid #2980b9;
+}

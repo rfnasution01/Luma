@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    // Enable composite projects (useful for TypeScript project references)
+    "composite": true,
+
+    // Skip type checking of declaration files (*.d.ts) for better performance
+    "skipLibCheck": true,
+
+    // Set the module system to ESNext, which uses the latest JavaScript module features (e.g., dynamic imports, ES modules)
+    "module": "ESNext",
+
+    // Set the module resolution strategy to "bundler", which resolves modules in a way that is compatible with bundlers like Vite
+    "moduleResolution": "bundler",
+
+    // Allow synthetic default imports (enables using `import x from 'module'` even if the module does not have a default export)
+    "allowSyntheticDefaultImports": true,
+
+    // Enable strict type checking options (e.g., no `any` type, strict null checks, etc.)
+    "strict": true
+  },
+
+  // Specify the files or directories to include in the compilation
+  "include": ["vite.config.ts"]
+}

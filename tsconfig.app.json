@@ -1,0 +1,59 @@
+{
+  "compilerOptions": {
+    // Specifies the location where TypeScript will store build information for incremental compilation
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+
+    // Set the JavaScript language version to ES2020
+    "target": "ES2020",
+
+    // Use `define` for class fields to match the class fields proposal in ECMAScript
+    "useDefineForClassFields": true,
+
+    // Specifies the libraries to include in the project, such as ES2020, DOM, and DOM.Iterable
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+
+    // Set the module system to ESNext, enabling the latest ECMAScript module features
+    "module": "ESNext",
+
+    // Skip type checking of declaration files (*.d.ts) to improve compilation speed
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    // Use module resolution strategy suitable for bundlers like Vite
+    "moduleResolution": "Bundler",
+
+    // Allow importing TypeScript files with the `.ts` extension from other TypeScript files
+    "allowImportingTsExtensions": true,
+
+    // Enable isolated modules to allow independent transpilation of each file
+    "isolatedModules": true,
+
+    // Force module detection to ensure proper module detection behavior
+    "moduleDetection": "force",
+
+    // Prevent emitting JavaScript files, useful when only type checking is required
+    "noEmit": true,
+
+    // Configure JSX to use the new `react-jsx` runtime introduced in React 17+
+    "jsx": "react-jsx",
+
+    /* Linting */
+    // Enable strict type checking options, which enforce better type safety
+    "strict": true,
+
+    // Report unused local variables as errors
+    "noUnusedLocals": true,
+
+    // Report unused function parameters as errors
+    "noUnusedParameters": true,
+
+    // Prevent fall-through in `switch` statements, ensuring each case is handled or terminated properly
+    "noFallthroughCasesInSwitch": true,
+
+    // Prevent unchecked side effect imports (e.g., imports that only invoke side effects without any other use)
+    "noUncheckedSideEffectImports": true
+  },
+
+  // Specify the directories or files to include in the TypeScript compilation
+  "include": ["src"]
+}

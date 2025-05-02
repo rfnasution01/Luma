@@ -1,0 +1,74 @@
+{
+  "compilerOptions": {
+    // Set the JavaScript language version to ES2020
+    "target": "ES2020",
+
+    // Use `define` for class fields to match the class fields proposal in ECMAScript
+    "useDefineForClassFields": true,
+
+    // Specify the libraries to include in the project, such as ES2020, DOM, and DOM.Iterable
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+
+    // Set the module system to ESNext, enabling the latest ECMAScript module features
+    "module": "ESNext",
+
+    // Skip type checking of declaration files (*.d.ts) to improve compilation speed
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    // Set module resolution strategy to 'bundler' for compatibility with bundlers like Vite
+    "moduleResolution": "bundler",
+
+    // Allow importing TypeScript files with the `.ts` extension, even when importing from other TypeScript files
+    "allowImportingTsExtensions": true,
+
+    // Allow importing `.json` files as modules
+    "resolveJsonModule": true,
+
+    // Enable support for isolated modules (useful for transpiling files independently)
+    "isolatedModules": true,
+
+    // Disable emitting output (useful when only type checking is required, e.g., with bundlers like Vite)
+    "noEmit": true,
+
+    // Configure JSX to use the new `react-jsx` runtime introduced in React 17+
+    "jsx": "react-jsx",
+
+    /* Linting */
+    // Disable strict mode for a more flexible, less restrictive type system
+    "strict": false,
+
+    // Allow the implicit use of `any` type
+    "noImplicitAny": false,
+
+    // Report unused local variables as errors
+    "noUnusedLocals": true,
+
+    // Report unused parameters as errors
+    "noUnusedParameters": true,
+
+    // Prevent fall-through in `switch` statements, ensuring all cases are handled
+    "noFallthroughCasesInSwitch": true,
+
+    // Set the base directory for module resolution to the current directory
+    "baseUrl": ".",
+
+    // Map the `@/*` path to the `./src/*` directory for cleaner imports
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+
+  // Specify the files or directories to include in the TypeScript compilation
+  "include": [
+    "src",
+    "src/pages/siakad/pengaturanAkademik/dataKelasAkademik/hooks/usePostDaftarKurikulum/.ts"
+  ],
+
+  // Reference the `tsconfig.node.json` for node-specific configurations
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}
