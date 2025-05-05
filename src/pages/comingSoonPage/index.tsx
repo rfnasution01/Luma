@@ -8,7 +8,7 @@ export default function ComingSoonPage() {
       image={ImgPage}
       judul="Halaman sedang dikembangkan"
       kode="404"
-      nama="Sentra Web Media"
+      nama="Luma"
     />
   )
 }

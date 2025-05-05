@@ -8,7 +8,7 @@ export default function MaintenancePage() {
       deskripsi="Halaman ini sedang dalam proses pemeliharaan untuk peningkatan layanan. Kami akan segera kembali. Terima kasih atas kesabaran Anda."
       image={ImgPage}
       kode="503"
-      nama="Sentra Web Media"
+      nama="Luma"
     />
   )
 }

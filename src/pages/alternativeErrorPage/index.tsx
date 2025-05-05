@@ -5,7 +5,7 @@ export default function AlternatifErrorPage({
   image = ImgNotFound,
   judul = 'Halaman Tidak Ditemukan',
   kode = '404',
-  nama = 'Sentra Web Media',
+  nama = 'Luma',
 }: {
   image?: string
   nama?: string
@@ -16,7 +16,7 @@ export default function AlternatifErrorPage({
   return (
     <div className="scrollbar flex w-full justify-center overflow-auto py-[16rem] phones:py-32">
       <div className="flex w-2/5 items-center justify-center gap-64 phones:w-11/12 phones:flex-col-reverse phones:gap-32">
-        <div className="text-placeholder flex flex-1 flex-col gap-16">
+        <div className="flex flex-1 flex-col gap-16 text-placeholder">
           <p className="font-montserrat text-[4.2rem] font-bold">{nama}</p>
           <p>
             <span className="font-bold">{kode}</span> - {judul}

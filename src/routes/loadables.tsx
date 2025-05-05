@@ -12,7 +12,35 @@ export const HomePage = loadable(
   () => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(import('@/pages/homePage'))
+        resolve(import('@/pages/homepage'))
+      }, 1000) // Delay 1 seconds before resolving the import
+    })
+  },
+  {
+    fallback: <LoadingFallbackPage />, // Show the fallback loading page during the delay
+  },
+)
+
+export const SuratPage = loadable(() => import('@/pages/surat'))
+
+export const SuratHomePage = loadable(
+  () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(import('@/pages/surat/suratHomePage'))
+      }, 1000) // Delay 1 seconds before resolving the import
+    })
+  },
+  {
+    fallback: <LoadingFallbackPage />, // Show the fallback loading page during the delay
+  },
+)
+
+export const SuratIzinSakitPage = loadable(
+  () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(import('@/pages/surat/suratIzinSakit'))
       }, 1000) // Delay 1 seconds before resolving the import
     })
   },

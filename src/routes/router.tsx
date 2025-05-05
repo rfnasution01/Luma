@@ -1,7 +1,14 @@
 // Import the necessary modules from 'react-router-dom' for setting up routes
 import { createBrowserRouter } from 'react-router-dom'
 // Import dynamically loaded components (HomePage, MainLayout, NotFoundPage) using loadable
-import { HomePage, MainLayout, NotFoundPage } from './loadables'
+import {
+  HomePage,
+  MainLayout,
+  NotFoundPage,
+  SuratHomePage,
+  SuratIzinSakitPage,
+  SuratPage,
+} from './loadables'
 
 // Create a router configuration using 'createBrowserRouter' to define application routes
 export const router = createBrowserRouter([
@@ -18,6 +25,26 @@ export const router = createBrowserRouter([
         // It loads the HomePage component when the root path is accessed
         path: '',
         element: <HomePage />,
+      },
+      {
+        path: 'surat',
+        element: <SuratPage />,
+        children: [
+          {
+            path: '',
+            element: <SuratHomePage />,
+          },
+          {
+            path: 'surat-izin-sakit',
+            element: <SuratIzinSakitPage />,
+          },
+          {
+            // Define a wildcard '*' route that will match any path that doesn't exist
+            // This route is used to display the NotFoundPage for undefined routes
+            path: '*',
+            element: <NotFoundPage />,
+          },
+        ],
       },
       {
         // Define a wildcard '*' route that will match any path that doesn't exist

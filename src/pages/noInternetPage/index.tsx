@@ -8,7 +8,7 @@ export default function NoInternetPage() {
       deskripsi="Sepertinya Anda sedang offline. Periksa sambungan internet Anda dan coba kembali beberapa saat lagi."
       image={ImgPage}
       kode="503"
-      nama="Sentra Web Media"
+      nama="Luma"
     />
   )
 }
