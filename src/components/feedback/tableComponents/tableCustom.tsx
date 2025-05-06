@@ -1,6 +1,6 @@
 import React, { Fragment, ReactNode, useState } from 'react'
 import clsx from 'clsx'
-import Loading from '@/components/ui/loading'
+import LoadingFallbackPage from '@/pages/loadingPage'
 
 export type Column<T> = {
   header: string
@@ -174,7 +174,7 @@ export function TableCustom<T, P>({
                   colSpan={20}
                   className="p-12 text-center align-middle leading-medium"
                 >
-                  <Loading />
+                  <LoadingFallbackPage />
                 </td>
               </tr>
             ) : data?.length === 0 ? (

@@ -1,11 +1,17 @@
 import { useEffect, useState } from 'react'
 import pdfMake from 'pdfmake/build/pdfmake'
 import * as pdfFonts from 'pdfmake/build/vfs_fonts'
-import DocumentActions from './components/documentAction'
+import DocumentActions from '@/components/common/documentAction'
+import generatePdfDefinition from './generatePDFDefenition'
+import FormInput from '@/components/ui/formInput'
+import FormTextArea from '@/components/ui/formTextArea'
+import PDFPreview from '@/components/common/pdfPreview'
+import { useMobile } from '@/hooks/useMobile'
 
 pdfMake.vfs = pdfFonts.vfs
 
 export default function SuratIzinSakitPage() {
+  const { isMobile } = useMobile()
   const [pdfUrl, setPdfUrl] = useState(null)
   const [debounceTimer, setDebounceTimer] = useState(null)
 
@@ -34,229 +40,151 @@ export default function SuratIzinSakitPage() {
     })
   }
 
-  const getDocDefinition = (data) => ({
-    content: [
-      {
-        text: data.title,
-        fontSize: 18,
-        bold: true,
-        alignment: 'center',
-        margin: [0, 0, 0, 20],
-      },
-      {
-        text: `${data?.kepada_1}\n${data?.kepada_2}\n${data?.kepada_3}`,
-        margin: [0, 0, 0, 20],
-      },
-      {
-        text: `${data?.dengan_hormat_1}\n\n${data?.dengan_hormat_2}`,
-        margin: [0, 0, 0, 10],
-      },
-      {
-        ul: [data?.ul_1, data?.ul_2, data?.ul_3],
-        margin: [0, 0, 0, 10],
-      },
-      {
-        text: `${data?.memberitahukan_1}\n\n${data?.memberitahukan_2}`,
-        margin: [0, 0, 0, 20],
-      },
-      {
-        text: data?.demikian,
-        margin: [0, 0, 0, 30],
-      },
-      {
-        columns: [
-          {},
-          {
-            width: 'auto',
-            alignment: 'right',
-            text: `${data?.hormat_saya_1}\n\n\n\n\n${data?.hormat_saya_2}`,
-          },
-        ],
-      },
-    ],
-  })
-
-  // Generate PDF and create Blob URL for display
   useEffect(() => {
-    // Clear timeout sebelumnya jika ada
-    if (debounceTimer) {
-      clearTimeout(debounceTimer)
-    }
-
-    // Set timeout baru untuk delay 5 detik
+    if (debounceTimer) clearTimeout(debounceTimer)
     const newTimer = setTimeout(() => {
-      const pdfDoc = pdfMake.createPdf(getDocDefinition(formData))
+      const pdfDoc = pdfMake.createPdf(generatePdfDefinition(formData))
       pdfDoc.getBlob((blob) => {
         const url = URL.createObjectURL(blob)
-        setPdfUrl((prevUrl) => {
-          if (prevUrl) URL.revokeObjectURL(prevUrl)
+        setPdfUrl((prev) => {
+          if (prev) URL.revokeObjectURL(prev)
           return url
         })
       })
     }, 1000)
-
-    // Simpan timeout id
     setDebounceTimer(newTimer)
-
-    // Cleanup saat komponen unmount atau formData berubah
-    return () => {
-      clearTimeout(newTimer)
-    }
+    return () => clearTimeout(newTimer)
   }, [formData])
 
   const handleDownload = () => {
     pdfMake
-      .createPdf(getDocDefinition(formData))
+      .createPdf(generatePdfDefinition(formData))
       .download('surat-izin-sakit.pdf')
   }
 
   const handlePrint = () => {
-    pdfMake.createPdf(getDocDefinition(formData)).print()
+    pdfMake.createPdf(generatePdfDefinition(formData)).print()
   }
 
   const handleOpen = () => {
-    pdfMake.createPdf(getDocDefinition(formData)).open()
+    pdfMake.createPdf(generatePdfDefinition(formData)).open()
   }
 
   return (
-    <div className="scrollbar flex h-full w-full gap-32 overflow-auto phones:flex-col">
+    <div className="scrollbar flex h-full w-full gap-32 overflow-auto phones:h-auto phones:flex-col phones:overflow-visible">
       {/* --- Form Untuk Mengubah Data --- */}
-      <div className="scrollbar flex h-full w-1/2 flex-col gap-32 overflow-auto phones:w-full">
-        <p className="text-[2.8rem] font-medium">Surat Izin Sakit</p>
-        <div className="scrollbar flex h-full flex-col gap-24 overflow-auto rounded-2xl border p-[2.4rem]">
+      <div className="scrollbar flex h-full w-1/2 flex-col gap-32 overflow-auto phones:h-auto phones:w-full phones:overflow-visible">
+        <p className="text-[2.8rem] font-bold">Surat Izin Sakit</p>
+        <div className="scrollbar flex h-full flex-col gap-24 overflow-auto rounded-2x border bg-[#fefefe] p-[2.4rem] shadow-md phones:h-auto phones:overflow-visible">
           <div className="scrollbar-new flex min-h-[120rem] w-full flex-col gap-16 overflow-auto">
             <div className="mt-[4rem] flex items-center justify-center">
-              <input
-                type="text"
+              <FormInput
                 name="title"
-                placeholder="Judul Surat"
                 value={formData.title}
                 onChange={handleChange}
-                className="border-0 border-b border-gray-400 bg-transparent py-4 text-center text-[2.4rem] font-bold focus:border-blue-500 focus:outline-none"
+                placeholder="Judul Surat"
+                className="text-center text-[2.4rem] font-bold"
               />
             </div>
             <div className="mt-[4rem] flex flex-col gap-4">
-              <input
-                type="text"
+              <FormInput
                 name="kepada_1"
-                placeholder="Kepada Yth."
                 value={formData.kepada_1}
                 onChange={handleChange}
-                className="border-b border-gray-300 py-2 focus:border-blue-500 focus:outline-none"
+                placeholder="Kepada Yth."
               />
-              <input
-                type="text"
+              <FormInput
                 name="kepada_2"
-                placeholder="Bapak/Ibu Guru Wali Kelas"
                 value={formData.kepada_2}
                 onChange={handleChange}
-                className="border-b border-gray-300 py-2 focus:border-blue-500 focus:outline-none"
+                placeholder="Bapak/Ibu Guru Wali Kelas"
               />
-              <input
-                type="text"
+              <FormInput
                 name="kepada_3"
-                placeholder="Di Tempat"
                 value={formData.kepada_3}
                 onChange={handleChange}
-                className="border-b border-gray-300 py-2 focus:border-blue-500 focus:outline-none"
+                placeholder="Di Tempat"
               />
             </div>
 
             <div className="mt-[4rem] flex flex-col gap-24">
-              <input
-                type="text"
+              <FormInput
                 name="dengan_hormat_1"
-                placeholder="Dengan hormat,"
                 value={formData.dengan_hormat_1}
                 onChange={handleChange}
-                className="border-b border-gray-300 py-2 focus:border-blue-500 focus:outline-none"
+                placeholder="Dengan hormat,"
               />
-              <textarea
+              <FormTextArea
                 name="dengan_hormat_2"
-                placeholder="Saya yang bertanda tangan di bawah ini:"
                 value={formData.dengan_hormat_2}
                 onChange={handleChange}
-                className="border-b border-gray-300 py-2 focus:border-blue-500 focus:outline-none"
-                rows={2}
+                placeholder="Saya yang bertanda tangan di bawah ini:"
               />
             </div>
 
             <ul className="w-full list-disc pl-32">
               <li>
-                <input
-                  type="text"
+                <FormInput
                   name="ul_1"
-                  placeholder="Nama: [Nama Siswa]"
                   value={formData.ul_1}
                   onChange={handleChange}
-                  className="w-full border-b border-gray-300 py-2 focus:border-blue-500 focus:outline-none"
+                  placeholder="Nama"
                 />
               </li>
               <li>
-                <input
-                  type="text"
+                <FormInput
                   name="ul_2"
-                  placeholder="Kelas: [Kelas Siswa]"
                   value={formData.ul_2}
                   onChange={handleChange}
-                  className="w-full border-b border-gray-300 py-2 focus:border-blue-500 focus:outline-none"
+                  placeholder="Kelas"
                 />
               </li>
               <li>
-                <input
-                  type="text"
+                <FormInput
                   name="ul_3"
-                  placeholder="Sekolah: [Sekolah Siswa"
                   value={formData.ul_3}
                   onChange={handleChange}
-                  className="w-full border-b border-gray-300 py-2 focus:border-blue-500 focus:outline-none"
+                  placeholder="Sekolah"
                 />
               </li>
             </ul>
             <div className="mt-[4rem] flex flex-col gap-24">
-              <textarea
+              <FormTextArea
                 name="memberitahukan_1"
-                placeholder="Dengan ini memberitahukan bahwa saya tidak dapat mengikuti kegiatan belajar mengajar seperti biasa pada hari ini, [Hari, Tanggal], dikarenakan kondisi kesehatan yang kurang baik (sakit)."
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
-                className="border-b border-gray-300 py-2 focus:border-blue-500 focus:outline-none"
-                rows={3}
+                rows={isMobile ? 5 : 3}
+                placeholder="Dengan ini memberitahukan bahwa saya tidak dapat mengikuti kegiatan belajar mengajar seperti biasa pada hari ini, [Hari, Tanggal], dikarenakan kondisi kesehatan yang kurang baik (sakit)."
               />
-              <textarea
+              <FormTextArea
                 name="memberitahukan_2"
-                placeholder="Oleh karena itu, saya memohon izin kepada Bapak/Ibu Guru untuk dapat memakluminya."
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
-                className="border-b border-gray-300 py-2 focus:border-blue-500 focus:outline-none"
-                rows={2}
+                rows={isMobile ? 3 : 2}
+                placeholder="Oleh karena itu, saya memohon izin kepada Bapak/Ibu Guru untuk dapat memakluminya."
               />
             </div>
 
-            <textarea
-              name="demikian"
+            <FormTextArea
               placeholder="Demikian surat ini saya sampaikan. Atas perhatian dan izin yang diberikan, saya ucapkan terima kasih."
+              name="demikian"
               value={formData.demikian}
               onChange={handleChange}
-              className="border-b border-gray-300 py-2 focus:border-blue-500 focus:outline-none"
-              rows={2}
+              rows={isMobile ? 3 : 2}
             />
 
             <div className="flexcol flex flex-col items-end justify-center gap-80">
-              <input
-                type="text"
+              <FormInput
                 name="hormat_saya_1"
-                placeholder="Hormat saya,"
-                value={formData.dengan_hormat_1}
+                value={formData.hormat_saya_1}
                 onChange={handleChange}
-                className="border-b border-gray-300 py-2 text-center focus:border-blue-500 focus:outline-none"
+                placeholder="Hormat saya,"
               />
-              <input
-                type="text"
+              <FormInput
                 name="hormat_saya_2"
-                placeholder="[Nama Siswa]"
                 value={formData.hormat_saya_2}
                 onChange={handleChange}
-                className="border-b border-gray-300 py-2 text-center focus:border-blue-500 focus:outline-none"
+                placeholder="[Nama Siswa]"
               />
             </div>
           </div>
@@ -264,8 +192,8 @@ export default function SuratIzinSakitPage() {
       </div>
 
       {/* --- Preview PDF --- */}
-      <div className="scrollbar flex h-full w-1/2 flex-col gap-16 overflow-auto phones:w-full">
-        <div className="flex items-center justify-between gap-32">
+      <div className="scrollbar flex h-full w-1/2 flex-col gap-16 overflow-auto phones:h-auto phones:w-full phones:overflow-visible">
+        <div className="flex items-center justify-between gap-32 phones:flex-col phones:items-start phones:justify-start">
           <p className="text-[2.8rem] font-medium">Preview Dokumen</p>
           <DocumentActions
             onOpen={handleOpen}
@@ -274,20 +202,7 @@ export default function SuratIzinSakitPage() {
           />
         </div>
 
-        <div className="scrollbar h-full w-full flex-1 overflow-auto rounded-2xl border border-slate-300">
-          {pdfUrl ? (
-            <iframe
-              src={pdfUrl}
-              title="PDF Preview"
-              className="h-full w-full"
-              style={{ border: 'none' }}
-            />
-          ) : (
-            <div className="flex h-full items-center justify-center">
-              <p className="text-[2rem] text-slate-500">Loading PDF...</p>
-            </div>
-          )}
-        </div>
+        <PDFPreview pdfUrl={pdfUrl} />
       </div>
     </div>
   )
