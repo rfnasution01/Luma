@@ -7,6 +7,7 @@ import {
   NotFoundPage,
   SuratHomePage,
   SuratIzinSakitPage,
+  SuratKeteranganRTRWPage,
   SuratPage,
 } from './loadables'
 
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
           {
             path: 'surat-izin-sakit',
             element: <SuratIzinSakitPage />,
+          },
+          {
+            path: 'surat-pengantar-rtrw',
+            element: <SuratKeteranganRTRWPage />,
           },
           {
             // Define a wildcard '*' route that will match any path that doesn't exist
