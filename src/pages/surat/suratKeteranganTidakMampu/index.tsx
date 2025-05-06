@@ -17,7 +17,6 @@ export default function SuratKeteranganRTRWPage() {
 
   const [formData, setFormData] = useState({
     title: 'SURAT PENGANTAR RT/RW',
-    no_surat: 'Nomor: RT/RW/No/XX/YYYY',
     kepada_1: 'Kepada Yth.',
     kepada_2: 'Bapak/Ibu Lurah Kelurahan Sukamaju',
     kepada_3: 'di Tempat',
@@ -25,17 +24,11 @@ export default function SuratKeteranganRTRWPage() {
     dengan_hormat_1:
       'Dengan hormat, yang bertanda tangan di bawah ini, Ketua RT 03 RW 05 Kelurahan Sukamaju, Kecamatan Sukasari, Kota Bandung, menerangkan bahwa:',
     dengan_hormat_2:
-      'Nama yang tersebut di bawah ini adalah benar warga kami yang berdomisili tetap di lingkungan RT 03 RW 05.',
+      'Nama yang tersebut di bawah ini adalah benar warga kami dan bermaksud untuk mengurus surat keterangan domisili.',
 
     ul_1: 'Andi Saputra',
-    ul_2: '01234567890123456',
-    ul_3: 'Medan, 01 Januari 2000',
-    ul_4: 'Laki-laki',
-    ul_5: 'Islam',
-    ul_6: 'Petani',
-    ul_7: 'Menikah',
-    ul_8: 'Jl. Melati No. 45, RT 03 RW 05, Sukamaju',
-    ul_9: 'Pengurusan Surat Keterangan Domisili',
+    ul_2: 'Jl. Melati No. 45, RT 03 RW 05, Sukamaju',
+    ul_3: 'Pengurusan Surat Keterangan Domisili',
 
     memberitahukan_1:
       'Bersangkutan adalah warga yang berdomisili secara tetap di wilayah kami dan tidak pernah terlibat masalah hukum atau sosial di lingkungan ini.',
@@ -92,20 +85,13 @@ export default function SuratKeteranganRTRWPage() {
         <p className="text-[2.8rem] font-bold">Surat Pengantar RT/RW</p>
         <div className="scrollbar flex h-full flex-col gap-24 overflow-auto rounded-2x border bg-[#fefefe] p-[2.4rem] shadow-md phones:h-auto phones:overflow-visible">
           <div className="scrollbar-new flex min-h-[120rem] w-full flex-col gap-16 overflow-auto">
-            <div className="mt-[4rem] flex flex-col items-center justify-center">
+            <div className="mt-[4rem] flex items-center justify-center">
               <FormInput
                 name="title"
                 value={formData.title}
                 onChange={handleChange}
                 placeholder="SURAT PENGANTAR RT/RW"
                 className="w-full text-center text-[2.4rem] font-bold"
-              />
-              <FormInput
-                name="no_surat"
-                value={formData.no_surat}
-                onChange={handleChange}
-                placeholder="No Surat: RT/RW/No/XX/YYYY"
-                className="w-full text-center"
               />
             </div>
             <div className="mt-[4rem] flex flex-col gap-4">
@@ -160,93 +146,15 @@ export default function SuratKeteranganRTRWPage() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">NIK</td>
+                  <td className="w-[20%] pr-4 align-top">Alamat</td>
                   <td>
                     :{' '}
                     <FormInput
                       name="ul_2"
                       value={formData.ul_2}
                       onChange={handleChange}
-                      placeholder="01234567890123456"
                       className="w-[98%] phones:w-[97%]"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="w-[20%] pr-4 align-top">Tempat, Tgl Lahir</td>
-                  <td>
-                    :{' '}
-                    <FormInput
-                      name="ul_3"
-                      value={formData.ul_3}
-                      onChange={handleChange}
-                      placeholder="Medan, 01 Januari 2000"
-                      className="w-[98%] phones:w-[97%]"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="w-[20%] pr-4 align-top">Jenis Kelamin</td>
-                  <td>
-                    :{' '}
-                    <FormInput
-                      name="ul_4"
-                      value={formData.ul_4}
-                      onChange={handleChange}
-                      placeholder="Laki-laki"
-                      className="w-[98%] phones:w-[97%]"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="w-[20%] pr-4 align-top">Agama</td>
-                  <td>
-                    :{' '}
-                    <FormInput
-                      name="ul_5"
-                      value={formData.ul_5}
-                      onChange={handleChange}
-                      placeholder="Islam"
-                      className="w-[98%] phones:w-[97%]"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="w-[20%] pr-4 align-top">Pekerjaan</td>
-                  <td>
-                    :{' '}
-                    <FormInput
-                      name="ul_6"
-                      value={formData.ul_6}
-                      onChange={handleChange}
-                      placeholder="Petani"
-                      className="w-[98%] phones:w-[97%]"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="w-[20%] pr-4 align-top">Status Perkawinan</td>
-                  <td>
-                    :{' '}
-                    <FormInput
-                      name="ul_7"
-                      value={formData.ul_7}
-                      onChange={handleChange}
-                      placeholder="Menikah"
-                      className="w-[98%] phones:w-[97%]"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="w-[20%] pr-4 align-top">Alamat</td>
-                  <td>
-                    :{' '}
-                    <FormInput
-                      name="ul_8"
-                      value={formData.ul_8}
-                      onChange={handleChange}
                       placeholder="Jl. Melati No. 45, RT 03 RW 05, Sukamaju"
-                      className="w-[98%] phones:w-[97%]"
                     />
                   </td>
                 </tr>
@@ -255,17 +163,16 @@ export default function SuratKeteranganRTRWPage() {
                   <td>
                     :{' '}
                     <FormInput
-                      name="ul_9"
-                      value={formData.ul_9}
+                      name="ul_3"
+                      className="w-[98%] phones:w-[97%]"
+                      value={formData.ul_3}
                       onChange={handleChange}
                       placeholder="Pengurusan Surat Keterangan Domisili"
-                      className="w-[98%] phones:w-[97%]"
                     />
                   </td>
                 </tr>
               </tbody>
             </table>
-
             <div className="mt-[4rem] flex flex-col gap-24">
               <FormTextArea
                 name="memberitahukan_1"

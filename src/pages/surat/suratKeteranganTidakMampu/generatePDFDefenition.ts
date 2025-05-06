@@ -6,11 +6,6 @@ export function generatePdfDefinition(data) {
         fontSize: 18,
         bold: true,
         alignment: 'center',
-        margin: [0, 0, 0, 5], // Mengurangi margin bawah agar tidak terlalu jauh
-      },
-      {
-        text: `${data.no_surat}`, // Tambahkan label "No:" agar lebih jelas
-        alignment: 'center',
         margin: [0, 0, 0, 20],
       },
       {
@@ -26,20 +21,13 @@ export function generatePdfDefinition(data) {
           widths: ['auto', '*'],
           body: [
             ['Nama', `: ${data.ul_1.replace(/^.*?:/, '').trim()}`],
-            ['NIK', `: ${data.ul_2.replace(/^.*?:/, '').trim()}`],
-            ['Tempat, Tgl Lahir', `: ${data.ul_3.replace(/^.*?:/, '').trim()}`],
-            ['Jenis Kelamin', `: ${data.ul_4.replace(/^.*?:/, '').trim()}`],
-            ['Agama', `: ${data.ul_5.replace(/^.*?:/, '').trim()}`],
-            ['Pekerjaan', `: ${data.ul_6.replace(/^.*?:/, '').trim()}`],
-            ['Status Perkawinan', `: ${data.ul_7.replace(/^.*?:/, '').trim()}`],
-            ['Alamat', `: ${data.ul_8.replace(/^.*?:/, '').trim()}`],
-            ['Keperluan', `: ${data.ul_9.replace(/^.*?:/, '').trim()}`],
+            ['Alamat', `: ${data.ul_2.replace(/^.*?:/, '').trim()}`],
+            ['Keperluan', `: ${data.ul_3.replace(/^.*?:/, '').trim()}`],
           ],
         },
         layout: 'noBorders',
         margin: [0, 0, 0, 10],
       },
-
       {
         text: `${data.memberitahukan_1}\n\n${data.memberitahukan_2}`,
         margin: [0, 0, 0, 20],
