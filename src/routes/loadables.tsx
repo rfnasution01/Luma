@@ -62,6 +62,19 @@ export const SuratKeteranganRTRWPage = loadable(
   },
 )
 
+export const SuratKeteranganDomisili = loadable(
+  () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(import('@/pages/surat/suratKeteranganDomisili'))
+      }, 1000) // Delay 1 seconds before resolving the import
+    })
+  },
+  {
+    fallback: <LoadingFallbackPage />, // Show the fallback loading page during the delay
+  },
+)
+
 // Dynamically import the NotFoundPage component from the 'notFound' page
 // This page will be used for displaying a 404 error when no matching route is found
 export const NotFoundPage = loadable(() => import('@/pages/notFoundPage'))

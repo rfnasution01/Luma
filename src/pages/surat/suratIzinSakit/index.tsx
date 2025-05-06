@@ -22,9 +22,9 @@ export default function SuratIzinSakitPage() {
     kepada_3: 'Di Tempat',
     dengan_hormat_1: 'Dengan hormat,',
     dengan_hormat_2: 'Saya yang bertanda tangan di bawah ini:',
-    ul_1: `Nama: [Nama Siswa]`,
-    ul_2: 'Kelas: [Kelas Siswa]',
-    ul_3: 'Sekolah: [Sekolah Siswa]',
+    ul_1: `[Nama Siswa]`,
+    ul_2: '[Kelas Siswa]',
+    ul_3: '[Sekolah Siswa]',
     memberitahukan_1: `Dengan ini memberitahukan bahwa saya tidak dapat mengikuti kegiatan belajar mengajar seperti biasa pada hari ini, [Hari, Tanggal], dikarenakan kondisi kesehatan yang kurang baik (sakit).`,
     memberitahukan_2: `Oleh karena itu, saya memohon izin kepada Bapak/Ibu Guru untuk dapat memakluminya.`,
     demikian:
@@ -122,32 +122,49 @@ export default function SuratIzinSakitPage() {
               />
             </div>
 
-            <ul className="w-full list-disc pl-32">
-              <li>
-                <FormInput
-                  name="ul_1"
-                  value={formData.ul_1}
-                  onChange={handleChange}
-                  placeholder="Nama"
-                />
-              </li>
-              <li>
-                <FormInput
-                  name="ul_2"
-                  value={formData.ul_2}
-                  onChange={handleChange}
-                  placeholder="Kelas"
-                />
-              </li>
-              <li>
-                <FormInput
-                  name="ul_3"
-                  value={formData.ul_3}
-                  onChange={handleChange}
-                  placeholder="Sekolah"
-                />
-              </li>
-            </ul>
+            <table className="w-full table-auto">
+              <tbody>
+                <tr>
+                  <td className="w-[20%] pr-4 align-top">Nama</td>
+                  <td>
+                    :{' '}
+                    <FormInput
+                      name="ul_1"
+                      value={formData.ul_1}
+                      onChange={handleChange}
+                      placeholder="[Nama Siswa]"
+                      className="w-[98%] phones:w-[97%]"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="w-[20%] pr-4 align-top">Kelas</td>
+                  <td>
+                    :{' '}
+                    <FormInput
+                      name="ul_2"
+                      value={formData.ul_2}
+                      onChange={handleChange}
+                      className="w-[98%] phones:w-[97%]"
+                      placeholder="[Kelas Siswa]"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="w-[20%] pr-4 align-top">Sekolah</td>
+                  <td>
+                    :{' '}
+                    <FormInput
+                      name="ul_3"
+                      className="w-[98%] phones:w-[97%]"
+                      value={formData.ul_3}
+                      onChange={handleChange}
+                      placeholder="[Sekolah Siswa]"
+                    />
+                  </td>
+                </tr>
+              </tbody>
+            </table>
             <div className="mt-[4rem] flex flex-col gap-24">
               <FormTextArea
                 name="memberitahukan_1"
