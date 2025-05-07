@@ -4,7 +4,7 @@ import { useMobile } from '@/hooks/useMobile'
 import { usePathname } from '@/hooks/usePathname'
 import { convertToSlug } from '@/utils/formatText'
 import clsx from 'clsx'
-import { FileArchive, Filter } from 'lucide-react'
+import { Filter } from 'lucide-react'
 import { useState } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 
@@ -23,21 +23,21 @@ export default function SuratPage() {
             return (
               <div
                 onClick={() => {
-                  navigate(`/surat/${convertToSlug(item)}`)
+                  navigate(`/surat/${convertToSlug(item?.nama)}`)
                 }}
                 className={clsx(
-                  'flex items-center gap-12 rounded-xl bg-[#f3f4f6] p-16 text-[#374151] hover:cursor-pointer',
+                  'flex items-center gap-8 rounded-xl bg-[#f3f4f6] p-16 text-[#374151] hover:cursor-pointer',
                   {
                     'bg-gray-500 text-gray-100':
-                      secondPathname === convertToSlug(item),
+                      secondPathname === convertToSlug(item?.nama),
                     'transition-all duration-300 hover:bg-gray-500 hover:text-gray-100':
-                      secondPathname !== convertToSlug(item),
+                      secondPathname !== convertToSlug(item?.nama),
                   },
                 )}
                 key={idx}
               >
-                <FileArchive size={16} />
-                <p className="text-nowrap">{item}</p>
+                <p>{item?.icon}</p>
+                <p className="text-nowrap">{item?.nama}</p>
               </div>
             )
           })}
