@@ -10,36 +10,37 @@ import { generatePdfDefinition } from './generatePDFDefenition'
 
 pdfMake.vfs = pdfFonts.vfs
 
-export default function SuratKeteranganDomisili() {
+export default function SuratLamaranKerja() {
   const { isMobile } = useMobile()
   const [pdfUrl, setPdfUrl] = useState(null)
   const [debounceTimer, setDebounceTimer] = useState(null)
 
   const [formData, setFormData] = useState({
-    title: 'SURAT KETERANGAN DOMISILI',
+    title: 'SURAT LAMARAN KERJA',
 
-    kepada_1: 'Yang Terhormat,',
-    kepada_2: 'Lurah Kelurahan Sukamaju',
+    kepada_1: 'Yth. HRD PT Maju Sejahtera',
+    kepada_2: 'Jl. Merdeka No. 99',
     kepada_3: 'di Tempat',
 
     dengan_hormat_1:
-      'Dengan ini kami menyatakan bahwa nama yang tersebut di bawah ini adalah benar-benar berdomisili di wilayah kami:',
+      'Dengan hormat,\nBersama ini saya mengajukan lamaran pekerjaan di perusahaan yang Bapak/Ibu pimpin.',
 
     ul_1: 'Andi Saputra',
-    ul_2: 'Jl. Melati No. 45, RT 03 RW 05, Kel. Sukamaju, Kec. Sukasari, Kota Bandung',
+    ul_2: 'Jl. Melati No. 45, Bandung',
     ul_3: 'Bandung, 12 Januari 1995',
+    ul_4: 'S1 Teknik Informatika',
+    ul_5: '0812-3456-7890',
 
     memberitahukan_1:
-      'Berdasarkan data administrasi dan pengamatan kami, yang bersangkutan memang benar bertempat tinggal di alamat tersebut sejak tahun 2020 hingga saat surat ini dibuat.',
-
+      'Saya memiliki pengalaman bekerja sebagai web developer selama 3 tahun dan memiliki kemampuan dalam React.js dan Node.js.',
     memberitahukan_2:
-      'Surat keterangan ini dibuat untuk keperluan: Pengurusan administrasi kependudukan.',
+      'Saya siap mengikuti proses seleksi dan bekerja dengan dedikasi tinggi.',
 
     demikian:
-      'Demikian surat keterangan ini dibuat dengan sebenar-benarnya agar dapat dipergunakan sebagaimana mestinya.',
+      'Demikian surat lamaran ini saya sampaikan. Atas perhatian Bapak/Ibu, saya ucapkan terima kasih.',
 
-    hormat_saya_1: 'Ketua RT 03 / RW 05',
-    hormat_saya_2: 'Budi Santoso',
+    hormat_saya_1: 'Hormat saya,',
+    hormat_saya_2: 'Andi Saputra',
   })
 
   const handleChange = (e) => {
@@ -68,7 +69,7 @@ export default function SuratKeteranganDomisili() {
   const handleDownload = () => {
     pdfMake
       .createPdf(generatePdfDefinition(formData))
-      .download('surat-keterangan-domisili.pdf')
+      .download('surat-lamaran-kerja.pdf')
   }
 
   const handlePrint = () => {
@@ -83,7 +84,7 @@ export default function SuratKeteranganDomisili() {
     <div className="scrollbar flex h-full w-full gap-32 overflow-auto phones:h-auto phones:flex-col phones:overflow-visible">
       {/* --- Form Untuk Mengubah Data --- */}
       <div className="scrollbar flex h-full w-1/2 flex-col gap-32 overflow-auto phones:h-auto phones:w-full phones:overflow-visible">
-        <p className="text-[2.8rem] font-bold">Surat Keterangan Domisili</p>
+        <p className="text-[2.8rem] font-bold">Surat Lamaran Kerja</p>
         <div className="scrollbar flex h-full flex-col gap-24 overflow-auto rounded-2x border bg-[#fefefe] p-[2.4rem] shadow-md phones:h-auto phones:overflow-visible">
           <div className="scrollbar-new flex min-h-[120rem] w-full flex-col gap-16 overflow-auto">
             <div className="mt-[4rem] flex items-center justify-center">
@@ -136,6 +137,34 @@ export default function SuratKeteranganDomisili() {
                       value={formData.ul_1}
                       onChange={handleChange}
                       placeholder="Andi Saputra"
+                      className="w-[98%] phones:w-[97%]"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="w-[20%] pr-4 align-top">
+                    Pendidikan Terakhir
+                  </td>
+                  <td>
+                    :{' '}
+                    <FormInput
+                      name="ul_4"
+                      value={formData.ul_4}
+                      onChange={handleChange}
+                      placeholder="S1 Teknik Informatika"
+                      className="w-[98%] phones:w-[97%]"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="w-[20%] pr-4 align-top">Nomor Telepon</td>
+                  <td>
+                    :{' '}
+                    <FormInput
+                      name="ul_5"
+                      value={formData.ul_5}
+                      onChange={handleChange}
+                      placeholder="0812-3456-7890"
                       className="w-[98%] phones:w-[97%]"
                     />
                   </td>
@@ -207,7 +236,7 @@ bertempat tinggal di alamat tersebut sejak tahun 2020 hingga saat surat ini dibu
                 name="hormat_saya_2"
                 value={formData.hormat_saya_2}
                 onChange={handleChange}
-                placeholder="Budi Santoso"
+                placeholder="[Nama Siswa]"
                 className="text-center"
               />
             </div>

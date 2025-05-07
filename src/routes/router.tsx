@@ -10,6 +10,7 @@ import {
   SuratKeteranganDomisili,
   SuratKeteranganRTRWPage,
   SuratKeteranganTidakMampu,
+  SuratLamaranKerja,
   SuratPage,
 } from './loadables'
 
@@ -52,6 +53,10 @@ export const router = createBrowserRouter([
           {
             path: 'surat-keterangan-tidak-mampu-sktm',
             element: <SuratKeteranganTidakMampu />,
+          },
+          {
+            path: 'surat-lamaran-kerja',
+            element: <SuratLamaranKerja />,
           },
           {
             // Define a wildcard '*' route that will match any path that doesn't exist
