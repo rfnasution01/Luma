@@ -2,32 +2,24 @@ export function generatePdfDefinition(data) {
   return {
     content: [
       {
-        columns: data.logo
-          ? [
+        columns: [
+          {
+            width: '*',
+            alignment: 'center',
+            stack: [
+              { text: (data.header1 || '').toUpperCase(), style: 'header' },
               {
-                image: data.logo,
-                width: 60,
-                height: 60,
+                text: (data.header2 || '').toUpperCase(),
+                style: 'subheader',
               },
-              [
-                { text: data.provinsi || '', style: 'header' },
-                { text: data.kabupaten || '', style: 'subheader' },
-                { text: data.desa || '', style: 'subheader' },
-                { text: data.alamat_instansi || '', style: 'small' },
-              ],
-            ]
-          : [
               {
-                width: '*',
-                alignment: 'center',
-                stack: [
-                  { text: data.provinsi || '', style: 'header' },
-                  { text: data.kabupaten || '', style: 'subheader' },
-                  { text: data.desa || '', style: 'subheader' },
-                  { text: data.alamat_instansi || '', style: 'small' },
-                ],
+                text: (data.header3 || '').toUpperCase(),
+                style: 'subheader',
               },
+              { text: (data.header4 || '').toUpperCase(), style: 'small' },
             ],
+          },
+        ],
         columnGap: 10,
         margin: [0, 0, 0, 5],
       },
@@ -39,7 +31,7 @@ export function generatePdfDefinition(data) {
             y1: 0,
             x2: 515,
             y2: 0,
-            lineWidth: 0.1,
+            lineWidth: 1.5,
           },
         ],
         margin: [0, 0, 0, 20],
@@ -58,55 +50,78 @@ export function generatePdfDefinition(data) {
         margin: [0, 0, 0, 20],
       },
       {
-        text: `${data.kepada_1}\n${data.kepada_2}\n${data.kepada_3}`,
+        text: `${data.pengantar}`,
         margin: [0, 0, 0, 20],
       },
-      {
-        text: `${data.dengan_hormat_1}`,
-        margin: [0, 0, 0, 10],
-      },
+
       {
         table: {
           widths: ['auto', '*'],
           body: [
-            ['Nama', `: ${data.ul_1.replace(/^.*?:/, '').trim()}`],
-            ['Alamat', `: ${data.ul_2.replace(/^.*?:/, '').trim()}`],
-            ['Tempat/Tgl Lahir', `: ${data.ul_3.replace(/^.*?:/, '').trim()}`],
+            ['Nama Lengkap', `: ${data.ul_1.replace(/^.*?:/, '').trim()}`],
+            ['Jenis Kelamin', `: ${data.ul_3.replace(/^.*?:/, '').trim()}`],
+            ['Tempat, Tgl Lahir', `: ${data.ul_2.replace(/^.*?:/, '').trim()}`],
+            ['No. KK / KTP', `: ${data.ul_4.replace(/^.*?:/, '').trim()}`],
+            ['Pekerjaan', `: ${data.ul_5.replace(/^.*?:/, '').trim()}`],
+            ['Agama', `: ${data.ul_6.replace(/^.*?:/, '').trim()}`],
+            ['Kewarganegaraan', `: ${data.ul_7.replace(/^.*?:/, '').trim()}`],
+            ['Alamat', `: ${data.ul_7.replace(/^.*?:/, '').trim()}`],
           ],
         },
         layout: 'noBorders',
-        margin: [0, 0, 0, 10],
+        margin: [0, 0, 0, 20],
       },
 
       {
         text: `${data.memberitahukan_1}\n\n${data.memberitahukan_2}`,
         margin: [0, 0, 0, 20],
       },
-      { text: data.demikian, margin: [0, 0, 0, 30] },
       {
         columns: [
-          {},
+          {
+            width: '*',
+            alignment: 'center',
+            text: `${data.alamat_tanggal}\n${data?.jabatan_penandatangan}\n\n\n\n\n${data.nama_penandatangan}`,
+          },
+          {
+            width: '*',
+            alignment: 'center',
+            text: `\n${data?.jabatan_rt}\n\n\n\n\n${data.nama_rt}`,
+          },
+        ],
+        margin: [0, 0, 0, 20],
+      },
+      {
+        columns: [
+          {
+            width: '*', // kolom kosong di kiri sebagai penyeimbang
+            text: '',
+          },
           {
             width: 'auto',
             alignment: 'center',
-            text: `${data.hormat_saya_1}\n\n\n\n\n${data.hormat_saya_2}`,
+            text: `${data?.mengetahui}\n${data?.jabatan_rw}\n\n\n\n\n${data.nama_rw}`,
+          },
+          {
+            width: '*', // kolom kosong di kanan sebagai penyeimbang
+            text: '',
           },
         ],
       },
     ],
     styles: {
       header: {
-        fontSize: 14,
+        fontSize: 16,
         bold: true,
         alignment: 'center',
       },
       subheader: {
-        fontSize: 12,
+        fontSize: 18,
+        bold: true,
         alignment: 'center',
       },
       small: {
-        fontSize: 10,
-        italics: true,
+        fontSize: 12,
         alignment: 'center',
       },
     },

@@ -28,7 +28,7 @@ export default function SuratKeteranganDomisiliPerorangan() {
     no_surat: 'Nomor: RT/RW/No/XX/YYYY',
 
     pengantar:
-      'Yang bertanda tangan di bawah ini ketua RT. 001 RW. 009 Desa Suka Maju Kecamatan Sayur Bayam Kabupaten Kota Administrasi Jakarta Timur dengan ini menerangkan bahwa',
+      'Yang bertanda tangan di bawah ini ketua RT. 001 RW. 009 Desa Suka Maju Kecamatan Sayur Bayam Kabupaten Kota Administrasi Jakarta Timur dengan ini menerangkan bahwa:',
 
     ul_1: 'Syamil Wahyudi',
     ul_2: 'Bekasi, 1 Januari 2000',

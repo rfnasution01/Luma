@@ -5,12 +5,7 @@ export const ListSurat = [
     nama: 'Surat Izin Sakit',
     deskripsi: 'Digunakan untuk memberitahukan ketidakhadiran karena sakit.',
   },
-  {
-    icon: '📮',
-    nama: 'Surat Pengantar RT/RW',
-    deskripsi:
-      'Surat pengantar dari RT/RW untuk keperluan administrasi lainnya.',
-  },
+
   {
     icon: '🏡',
     nama: 'Surat Keterangan Domisili Perorangan',

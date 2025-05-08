@@ -73,8 +73,10 @@ export default function SuratPage() {
               <div className="flex flex-col gap-4">
                 {[
                   'Surat Izin Sakit',
-                  'Surat Pengantar RT/RW',
-                  'Surat Keterangan Domisili',
+                  'Surat Keterangan Domisili Perorangan',
+                  'Surat Keterangan Domisili Perusahaan',
+                  'Surat Keterangan Domisili Usaha',
+                  'Surat Keterangan Domisili Pengantar RT',
                   'Surat Keterangan Tidak Mampu (SKTM)',
                   'Surat Keterangan Kehilangan',
                   'Surat Pernyataan Belum Menikah',

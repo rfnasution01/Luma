@@ -49,19 +49,6 @@ export const SuratIzinSakitPage = loadable(
   },
 )
 
-export const SuratKeteranganRTRWPage = loadable(
-  () => {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(import('@/pages/surat/suratKeteranganRTRW'))
-      }, 1000) // Delay 1 seconds before resolving the import
-    })
-  },
-  {
-    fallback: <LoadingFallbackPage />, // Show the fallback loading page during the delay
-  },
-)
-
 export const SuratKeteranganDomisiliPerorangan = loadable(
   () => {
     return new Promise((resolve) => {

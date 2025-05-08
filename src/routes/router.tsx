@@ -11,7 +11,6 @@ import {
   SuratKeteranganDomisiliPerorangan,
   SuratKeteranganDomisiliPerusahaan,
   SuratKeteranganDomisiliUsaha,
-  SuratKeteranganRTRWPage,
   SuratKeteranganTidakMampu,
   SuratLamaranKerja,
   SuratPage,
@@ -46,10 +45,7 @@ export const router = createBrowserRouter([
             path: 'surat-izin-sakit',
             element: <SuratIzinSakitPage />,
           },
-          {
-            path: 'surat-pengantar-rtrw',
-            element: <SuratKeteranganRTRWPage />,
-          },
+
           {
             path: 'surat-keterangan-domisili-perorangan',
             element: <SuratKeteranganDomisiliPerorangan />,

@@ -76,6 +76,9 @@ export function generatePdfDefinition(data) {
 
       {
         text: (data.nama_usaha || '').toUpperCase(),
+        fontSize: 16,
+        bold: true,
+        alignment: 'center',
         margin: [0, 0, 0, 20],
       },
 

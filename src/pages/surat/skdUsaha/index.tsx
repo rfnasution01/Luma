@@ -28,7 +28,7 @@ export default function SuratKeteranganDomisiliUsaha() {
     no_surat: 'Nomor: RT/RW/No/XX/YYYY',
 
     pengantar:
-      'Yang bertanda tangan di bawah ini Lurah Suka Maju Kecamatan Sayur Bayam Kota Medan, menerangkan dengan sebenarnya bahwa',
+      'Yang bertanda tangan di bawah ini Lurah Suka Maju Kecamatan Sayur Bayam Kota Medan, menerangkan dengan sebenarnya bahwa:',
     nama_usaha: 'CV. ANGIN RIBUT',
 
     ul_1: 'Syamil Wahyudi',
@@ -214,7 +214,17 @@ export default function SuratKeteranganDomisiliUsaha() {
               />
             </div>
 
-            <table className="w-full table-auto">
+            <div className="mt-[4rem] flex flex-col items-center justify-center">
+              <FormInput
+                name="nama_usaha"
+                value={formData.nama_usaha}
+                onChange={handleChange}
+                placeholder="CV. ANGIN RIBUT"
+                className="text-center text-[2.2rem] font-bold"
+              />
+            </div>
+
+            <table className="mt-[4rem] w-full table-auto">
               <tbody>
                 <tr>
                   <td className="w-[20%] pr-4 align-top phones:w-[40%]">
