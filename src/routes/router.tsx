@@ -20,6 +20,7 @@ import {
   SuratPage,
   SuratPengunduranDiri,
 } from './loadables'
+import SuratKeteranganBelumMenikah from '@/pages/surat/suratKeteranganBelumMenikah'
 
 // Create a router configuration using 'createBrowserRouter' to define application routes
 export const router = createBrowserRouter([
@@ -84,6 +85,10 @@ export const router = createBrowserRouter([
           {
             path: 'surat-keterangan-tidak-mampu-sktm',
             element: <SuratKeteranganTidakMampu />,
+          },
+          {
+            path: 'surat-pernyataan-belum-menikah',
+            element: <SuratKeteranganBelumMenikah />,
           },
           {
             path: 'surat-lamaran-kerja',

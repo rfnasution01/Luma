@@ -50,7 +50,7 @@ export function generatePdfDefinition(data) {
         margin: [0, 0, 0, 20],
       },
       {
-        text: `${data.pengantar}`,
+        text: `${data.pengantar2}`,
         margin: [0, 0, 0, 5],
       },
 
@@ -59,12 +59,7 @@ export function generatePdfDefinition(data) {
           widths: ['auto', '*'],
           body: [
             ['Nama Lengkap', `: ${data.ul_1.replace(/^.*?:/, '').trim()}`],
-            ['Pekerjaan', `: ${data.ul_3.replace(/^.*?:/, '').trim()}`],
-            ['Tempat, Tgl Lahir', `: ${data.ul_2.replace(/^.*?:/, '').trim()}`],
-            ['Jenis Kelamin', `: ${data.ul_4.replace(/^.*?:/, '').trim()}`],
-            ['No. NIK', `: ${data.ul_5.replace(/^.*?:/, '').trim()}`],
-            ['Telepon', `: ${data.ul_6.replace(/^.*?:/, '').trim()}`],
-            ['Alamat', `: ${data.ul_7.replace(/^.*?:/, '').trim()}`],
+            ['Jabatan', `: ${data.ul_2.replace(/^.*?:/, '').trim()}`],
           ],
         },
         layout: 'noBorders',
@@ -72,24 +67,65 @@ export function generatePdfDefinition(data) {
       },
 
       {
-        text: `${data.memberitahukan_1}\n\n${data.memberitahukan_2}`,
+        text: `${data.pengantar2}`,
+        margin: [0, 0, 0, 5],
+      },
+
+      {
+        table: {
+          widths: ['auto', '*'],
+          body: [
+            ['Nama Lengkap', `: ${data.ul_3.replace(/^.*?:/, '').trim()}`],
+            ['Jenis Kelamin', `: ${data.ul_4.replace(/^.*?:/, '').trim()}`],
+            ['Tempat, Tgl Lahir', `: ${data.ul_5.replace(/^.*?:/, '').trim()}`],
+            ['Agama', `: ${data.ul_6.replace(/^.*?:/, '').trim()}`],
+            ['Pekerjaan', `: ${data.ul_7.replace(/^.*?:/, '').trim()}`],
+            ['No. NIK', `: ${data.ul_8.replace(/^.*?:/, '').trim()}`],
+            ['Alamat', `: ${data.ul_9.replace(/^.*?:/, '').trim()}`],
+          ],
+        },
+        layout: 'noBorders',
+        margin: [0, 0, 0, 20],
+      },
+
+      {
+        text: `${data.pengantar3}`,
+        margin: [0, 0, 0, 5],
+      },
+
+      {
+        table: {
+          widths: ['auto', '*'],
+          body: [
+            ['Nama Lengkap', `: ${data.ul_10.replace(/^.*?:/, '').trim()}`],
+            ['Jenis Kelamin', `: ${data.ul_11.replace(/^.*?:/, '').trim()}`],
+            [
+              'Tempat, Tgl Lahir',
+              `: ${data.ul_12.replace(/^.*?:/, '').trim()}`,
+            ],
+            [
+              'Hubungan Keluarga',
+              `: ${data.ul_13.replace(/^.*?:/, '').trim()}`,
+            ],
+          ],
+        },
+        layout: 'noBorders',
+        margin: [0, 0, 0, 20],
+      },
+
+      {
+        text: `${data.memberitahukan_1}\n\n${data.memberitahukan_2}\n\n${data.memberitahukan_3}`,
         margin: [0, 0, 0, 20],
       },
       {
         columns: [
+          {},
           {
-            width: '*',
+            width: 'auto',
             alignment: 'center',
-            text: `\n\n${data.pemohon}\n\n\n\n\n\n`,
-          },
-          {
-            width: '*',
-            alignment: 'left',
-            text: `${data?.mengetahui}\n${data?.alamat_tanggal}\n${data?.jabatan_kades}`,
+            text: `${data.alamat_tanggal}\n${data?.jabatan_penandatangan}\n\n\n\n\n${data.nama_penandatangan}`,
           },
         ],
-        columnGap: 100, // opsional: jarak antar kolom
-        margin: [0, 0, 0, 20],
       },
     ],
     styles: {

@@ -345,6 +345,8 @@ export default function SuratKeteranganTidakMampu() {
             <div className="mt-[4rem] flex items-start justify-between gap-32">
               <div className="flex flex-col justify-center gap-80">
                 <div className="flex flex-col gap-12">
+                  <p className="text-white">hidden</p>
+                  <p className="text-white">hidden</p>
                   <FormInput
                     name="pemohon"
                     value={formData.pemohon}

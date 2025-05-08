@@ -166,6 +166,19 @@ export const SuratKeteranganTidakMampu = loadable(
   },
 )
 
+export const SuratBelumMenikah = loadable(
+  () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(import('@/pages/surat/suratKeteranganBelumMenikah'))
+      }, 1000) // Delay 1 seconds before resolving the import
+    })
+  },
+  {
+    fallback: <LoadingFallbackPage />, // Show the fallback loading page during the delay
+  },
+)
+
 export const SuratLamaranKerja = loadable(
   () => {
     return new Promise((resolve) => {
