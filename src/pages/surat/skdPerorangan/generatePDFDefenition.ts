@@ -51,7 +51,7 @@ export function generatePdfDefinition(data) {
             y1: 0,
             x2: 515,
             y2: 0,
-            lineWidth: 0.1,
+            lineWidth: 1.5,
           },
         ],
         margin: [0, 0, 0, 20],
@@ -88,7 +88,7 @@ export function generatePdfDefinition(data) {
           ],
         },
         layout: 'noBorders',
-        margin: [0, 0, 0, 10],
+        margin: [0, 0, 0, 20],
       },
 
       {

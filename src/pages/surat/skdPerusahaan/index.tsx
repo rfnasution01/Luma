@@ -7,6 +7,8 @@ import FormTextArea from '@/components/ui/formTextArea'
 import PDFPreview from '@/components/common/pdfPreview'
 import { useMobile } from '@/hooks/useMobile'
 import { generatePdfDefinition } from './generatePDFDefenition'
+import dayjs from 'dayjs'
+import 'dayjs/locale/id'
 
 pdfMake.vfs = pdfFonts.vfs
 
@@ -17,36 +19,47 @@ export default function SuratKeteranganDomisiliPerorangan() {
 
   const [formData, setFormData] = useState({
     logo: '',
-    provinsi: 'Pemerintah Provinsi Jawa Barat',
-    kabupaten: 'Kabupaten Bandung Utara',
-    desa: 'Kelurahan Sukamaju',
-    alamat_instansi: 'Jl. Sukamaju Raya No. 1, Bandung',
+    header1: 'Pemerintah Kabupaten Bandung',
+    header2: 'Kecamatan Sayur Bayam',
+    header3: 'Kepala Desa Suka Maju',
+    header4: 'Jl. Sukamaju Raya No. 1, Bandung Kode Pos 12345',
 
-    title: 'SURAT KETERANGAN DOMISILI',
+    title: 'SURAT KETERANGAN DOMISILI PERUSAHAAN',
     no_surat: 'Nomor: RT/RW/No/XX/YYYY',
 
-    kepada_1: 'Yang Terhormat,',
-    kepada_2: 'Lurah Kelurahan Sukamaju',
-    kepada_3: 'di Tempat',
+    pengantar_1:
+      'Kepala Desa Suka Maju Kecamatan Sayur Bayam Kabupaten Bandung menerangkan bahwa:',
 
-    dengan_hormat_1:
-      'Dengan ini kami menyatakan bahwa nama yang tersebut di bawah ini adalah benar-benar berdomisili di wilayah kami:',
+    ul_1: 'Syamil Wahyudi',
+    ul_2: 'Bandung, 12 Januari 1995',
+    ul_3: 'Laki-laki',
+    ul_4: 'Islam / Japan',
+    ul_5: '2C11',
+    ul_6: 'Jl. Melati No. 45, RT 03 RW 05, Kel. Sukamaju, Kec. Sukasari, Kota Bandung',
 
-    ul_1: 'Andi Saputra',
-    ul_2: 'Jl. Melati No. 45, RT 03 RW 05, Kel. Sukamaju, Kec. Sukasari, Kota Bandung',
-    ul_3: 'Bandung, 12 Januari 1995',
+    pengantar_2:
+      'Benar pada saat ini membuka / mempunyai usaha sebagai mana tersebut dibawah ini:',
 
-    memberitahukan_1:
-      'Berdasarkan data administrasi dan pengamatan kami, yang bersangkutan memang benar bertempat tinggal di alamat tersebut sejak tahun 2020 hingga saat surat ini dibuat.',
+    ul_7: 'PT Angin Ribut',
+    ul_8: 'Coffe Shop',
+    ul_9: 'Jl Mawar Hitam, No 2A, Jakarta Timur',
+    ul_10: 'Milik Sendiri',
+    ul_11: 'Industri',
+    ul_12: `${dayjs().locale('id').format('DD MMMM YYYY')}`,
+    ul_13: 'Abdilllah SH. M.Kn',
+    ul_14: '01. Tanggal 2 Maret 2030',
+    ul_15: '117 Orang',
+    ul_16: 'Syamil',
 
-    memberitahukan_2:
-      'Surat keterangan ini dibuat untuk keperluan: Pengurusan administrasi kependudukan.',
+    penutup:
+      'Demikian Surat Keterangan Domisili Perusahaan ini dibuat untuk dipergunakan sebagaimana mestinya dan berlaku sampai tanggal "29 Februari 2045"',
 
-    demikian:
-      'Demikian surat keterangan ini dibuat dengan sebenar-benarnya agar dapat dipergunakan sebagaimana mestinya.',
+    ttd_ybs: 'Tanda tangan Ybs',
 
-    hormat_saya_1: 'Ketua RT 03 / RW 05',
-    hormat_saya_2: 'Budi Santoso',
+    alamat_tanggal: `Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
+
+    jabatan_penandatangan: 'Ketua RT. 0001 RW. 009',
+    nama_penandatangan: 'Budi Santoso',
   })
 
   const handleChange = (e) => {
@@ -104,9 +117,11 @@ export default function SuratKeteranganDomisiliPerorangan() {
     <div className="scrollbar flex h-full w-full gap-32 overflow-auto phones:h-auto phones:flex-col phones:overflow-visible">
       {/* --- Form Untuk Mengubah Data --- */}
       <div className="scrollbar flex h-full w-1/2 flex-col gap-32 overflow-auto phones:h-auto phones:w-full phones:overflow-visible">
-        <p className="text-[2.8rem] font-bold">Surat Keterangan Domisili</p>
+        <p className="text-[2.8rem] font-bold">
+          Surat Keterangan Domisili Perusahaan
+        </p>
         <div className="scrollbar flex h-full flex-col gap-24 overflow-auto rounded-2x border bg-[#fefefe] p-[2.4rem] shadow-md phones:h-auto phones:overflow-visible">
-          <div className="scrollbar-new flex min-h-[120rem] w-full flex-col gap-16 overflow-auto">
+          <div className="scrollbar flex min-h-[120rem] w-full flex-col gap-16 overflow-auto">
             <div className="flex w-full gap-32 border-b border-black pb-12">
               <div className="relative flex w-[20rem] flex-col items-start gap-12">
                 <label className="text-sm mb-2 block font-medium text-gray-700">
@@ -154,31 +169,31 @@ export default function SuratKeteranganDomisiliPerorangan() {
               </div>
               <div className="flex flex-1 flex-col gap-4">
                 <FormInput
-                  name="provinsi"
-                  value={formData.provinsi}
+                  name="header1"
+                  value={formData.header1}
                   onChange={handleChange}
-                  placeholder="Pemerintah Provinsi Jawa Barat"
+                  placeholder="Pemerintah Kabupaten Bandung"
                   className="text-center text-[2.8rem] font-bold"
                 />
                 <FormInput
-                  name="kabupaten"
-                  value={formData.kabupaten}
+                  name="header2"
+                  value={formData.header2}
                   onChange={handleChange}
-                  placeholder="Kabupaten Bandung Utara"
+                  placeholder="Kecamatan Sayur Bayam"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
-                  name="desa"
-                  value={formData.desa}
+                  name="header3"
+                  value={formData.header3}
                   onChange={handleChange}
-                  placeholder="Kelurahan Sukamaju"
+                  placeholder="Kepala Desa Suka Maju"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
-                  name="alamat_instansi"
-                  value={formData.alamat_instansi}
+                  name="header4"
+                  value={formData.header4}
                   onChange={handleChange}
-                  placeholder="Jl. Sukamaju Raya No. 1, Bandung"
+                  placeholder="Jl. Sukamaju Raya No. 1, Bandung Kode Pos 12345"
                   className="text-center"
                 />
               </div>
@@ -189,7 +204,7 @@ export default function SuratKeteranganDomisiliPerorangan() {
                 name="title"
                 value={formData.title}
                 onChange={handleChange}
-                placeholder="SURAT KETERANGAN DOMISILI"
+                placeholder="SURAT KETERANGAN DOMISILI PERUSAHAAN"
                 className="w-full text-center text-[2.4rem] font-bold"
               />
               <FormInput
@@ -200,121 +215,298 @@ export default function SuratKeteranganDomisiliPerorangan() {
                 className="w-full text-center"
               />
             </div>
-            <div className="mt-[4rem] flex flex-col gap-4">
-              <FormInput
-                name="kepada_1"
-                value={formData.kepada_1}
+
+            <div className="mt-[4rem] flex flex-col gap-24">
+              <FormTextArea
+                name="pengantar_1"
+                value={formData.pengantar_1}
                 onChange={handleChange}
-                placeholder="Kepada Yth."
+                rows={isMobile ? 2 : 1}
+                placeholder="Kepala Desa Suka Maju Kecamatan Sayur Bayam Kabupaten Bandung menerangkan bahwa:"
               />
-              <FormInput
-                name="kepada_2"
-                value={formData.kepada_2}
-                onChange={handleChange}
-                placeholder="Lurah Kelurahan Sukamaju"
-              />
-              <FormInput
-                name="kepada_3"
-                value={formData.kepada_3}
-                onChange={handleChange}
-                placeholder="di Tempat"
-              />
+              <table className="w-full table-auto">
+                <tbody>
+                  <tr>
+                    <td className="w-[40%] pr-4 align-top">Nama</td>
+                    <td>
+                      :{' '}
+                      <FormInput
+                        name="ul_1"
+                        value={formData.ul_1}
+                        onChange={handleChange}
+                        placeholder="Syamil Wahyudi"
+                        className="w-[60%]"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="pr-4 align-top">Tempat, Tanggal Lahir</td>
+                    <td>
+                      :{' '}
+                      <FormInput
+                        name="ul_2"
+                        value={formData.ul_2}
+                        onChange={handleChange}
+                        placeholder="Bandung, 12 Januari 1995"
+                        className="w-[60%]"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="pr-4 align-top">Jenis Kelamin</td>
+                    <td>
+                      :{' '}
+                      <FormInput
+                        name="ul_3"
+                        value={formData.ul_3}
+                        onChange={handleChange}
+                        placeholder="Laki-laki"
+                        className="w-[60%]"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="pr-4 align-top">Agama / Bangsa</td>
+                    <td>
+                      :{' '}
+                      <FormInput
+                        name="ul_4"
+                        value={formData.ul_4}
+                        onChange={handleChange}
+                        placeholder="Islam / Japan"
+                        className="w-[60%]"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="pr-4 align-top">Agama</td>
+                    <td>
+                      :{' '}
+                      <FormInput
+                        name="ul_5"
+                        value={formData.ul_5}
+                        onChange={handleChange}
+                        placeholder="2C11"
+                        className="w-[60%]"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="pr-4 align-top">Alamat</td>
+                    <td>
+                      :{' '}
+                      <FormInput
+                        name="ul_6"
+                        value={formData.ul_6}
+                        onChange={handleChange}
+                        placeholder="Jl. Melati No. 45, RT 03 RW 05, Kel. Sukamaju, Kec. Sukasari, Kota Bandung"
+                        className="w-[60%]"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
             <div className="mt-[4rem] flex flex-col gap-24">
               <FormTextArea
-                name="dengan_hormat_1"
-                value={formData.dengan_hormat_1}
+                name="pengantar_2"
+                value={formData.pengantar_2}
                 onChange={handleChange}
-                placeholder="Dengan ini kami menyatakan bahwa nama yang tersebut di bawah ini adalah benar-benar berdomisili di wilayah kami:"
+                rows={isMobile ? 2 : 1}
+                placeholder="Benar pada saat ini membuka / mempunyai usaha sebagai mana tersebut dibawah ini:"
               />
+              <table className="w-full table-auto">
+                <tbody>
+                  <tr>
+                    <td className="w-[40%] pr-4 align-top">Nama Perusahaan</td>
+                    <td>
+                      :{' '}
+                      <FormInput
+                        name="ul_7"
+                        value={formData.ul_7}
+                        onChange={handleChange}
+                        placeholder="PT Angin Ribut"
+                        className="w-[60%]"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="pr-4 align-top">
+                      Jenis Usaha / Klasifikasi
+                    </td>
+                    <td>
+                      :{' '}
+                      <FormInput
+                        name="ul_8"
+                        value={formData.ul_8}
+                        onChange={handleChange}
+                        placeholder="Coffe Shop"
+                        className="w-[60%]"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="pr-4 align-top">Alamat Perusahaan</td>
+                    <td>
+                      :{' '}
+                      <FormInput
+                        name="ul_9"
+                        value={formData.ul_9}
+                        onChange={handleChange}
+                        placeholder="Jl Mawar Hitam, No 2A, Jakarta Timur"
+                        className="w-[60%]"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="pr-4 align-top">Status Bangunan</td>
+                    <td>
+                      :{' '}
+                      <FormInput
+                        name="ul_10"
+                        value={formData.ul_10}
+                        onChange={handleChange}
+                        placeholder="Milik Sendiri"
+                        className="w-[60%]"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="pr-4 align-top">Peruntukan Bangunan</td>
+                    <td>
+                      :{' '}
+                      <FormInput
+                        name="ul_11"
+                        value={formData.ul_11}
+                        onChange={handleChange}
+                        placeholder="Industri"
+                        className="w-[60%]"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="pr-4 align-top">No & Tgl. IPB</td>
+                    <td>
+                      :{' '}
+                      <FormInput
+                        name="ul_12"
+                        value={formData.ul_12}
+                        onChange={handleChange}
+                        placeholder="Contoh: 123/IPB/2025 - 08 Mei 2025"
+                        className="w-[60%]"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="pr-4 align-top">
+                      Notaris Akta Pendirian Bangunan
+                    </td>
+                    <td>
+                      :{' '}
+                      <FormInput
+                        name="ul_13"
+                        value={formData.ul_13}
+                        onChange={handleChange}
+                        placeholder="Abdilllah SH. M.Kn"
+                        className="w-[60%]"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="pr-4 align-top">
+                      Nomor Akta Pendirian Bangunan
+                    </td>
+                    <td>
+                      :{' '}
+                      <FormInput
+                        name="ul_14"
+                        value={formData.ul_14}
+                        onChange={handleChange}
+                        placeholder="01. Tanggal 2 Maret 2030"
+                        className="w-[60%]"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="pr-4 align-top">Jumlah Karyawan</td>
+                    <td>
+                      :{' '}
+                      <FormInput
+                        name="ul_15"
+                        value={formData.ul_15}
+                        onChange={handleChange}
+                        placeholder="117 Orang"
+                        className="w-[60%]"
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="pr-4 align-top">
+                      Penanggung Jawab / Pimpinan Perusahaan
+                    </td>
+                    <td>
+                      :{' '}
+                      <FormInput
+                        name="ul_16"
+                        value={formData.ul_16}
+                        onChange={handleChange}
+                        placeholder="Syamil"
+                        className="w-[60%]"
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
 
-            <table className="w-full table-auto">
-              <tbody>
-                <tr>
-                  <td className="w-[20%] pr-4 align-top">Nama</td>
-                  <td>
-                    :{' '}
-                    <FormInput
-                      name="ul_1"
-                      value={formData.ul_1}
-                      onChange={handleChange}
-                      placeholder="Andi Saputra"
-                      className="w-[98%] phones:w-[97%]"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="w-[20%] pr-4 align-top">Alamat</td>
-                  <td>
-                    :{' '}
-                    <FormInput
-                      name="ul_2"
-                      value={formData.ul_2}
-                      onChange={handleChange}
-                      className="w-[98%] phones:w-[97%]"
-                      placeholder="Jl. Melati No. 45, RT 03 RW 05, Kel. Sukamaju, Kec. Sukasari, Kota Bandung"
-                    />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="w-[20%] pr-4 align-top">Tempat/Tgl Lahir</td>
-                  <td>
-                    :{' '}
-                    <FormInput
-                      name="ul_3"
-                      className="w-[98%] phones:w-[97%]"
-                      value={formData.ul_3}
-                      onChange={handleChange}
-                      placeholder="Bandung, 12 Januari 1995"
-                    />
-                  </td>
-                </tr>
-              </tbody>
-            </table>
             <div className="mt-[4rem] flex flex-col gap-24">
               <FormTextArea
-                name="memberitahukan_1"
-                value={formData.memberitahukan_1}
-                onChange={handleChange}
-                rows={isMobile ? 5 : 3}
-                placeholder="Berdasarkan data administrasi dan pengamatan kami, yang bersangkutan memang benar
-bertempat tinggal di alamat tersebut sejak tahun 2020 hingga saat surat ini dibuat.
-"
-              />
-              <FormTextArea
-                name="memberitahukan_2"
-                value={formData.memberitahukan_2}
+                name="penutup"
+                value={formData.penutup}
                 onChange={handleChange}
                 rows={isMobile ? 3 : 2}
-                placeholder="Surat keterangan ini dibuat untuk keperluan: Pengurusan administrasi kependudukan."
+                placeholder='Demikian Surat Keterangan Domisili Perusahaan ini dibuat untuk dipergunakan sebagaimana mestinya dan berlaku sampai tanggal "29 Februari 2045'
               />
             </div>
 
-            <FormTextArea
-              placeholder="Demikian surat keterangan ini dibuat dengan sebenar-benarnya agar dapat dipergunakan sebagaimana mestinya."
-              name="demikian"
-              value={formData.demikian}
-              onChange={handleChange}
-              rows={isMobile ? 3 : 2}
-            />
-
-            <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
-              <FormInput
-                name="hormat_saya_1"
-                value={formData.hormat_saya_1}
-                onChange={handleChange}
-                placeholder="Ketua RT 03 / RW 05"
-                className="text-center"
-              />
-              <FormInput
-                name="hormat_saya_2"
-                value={formData.hormat_saya_2}
-                onChange={handleChange}
-                placeholder="Budi Santoso"
-                className="text-center"
-              />
+            <div className="mt-[4rem] flex flex-row items-start justify-between gap-32">
+              <div className="flex flex-col justify-center gap-80">
+                <div className="flex flex-col gap-12">
+                  <FormInput
+                    name="ttd_ybs"
+                    value={formData.ttd_ybs}
+                    onChange={handleChange}
+                    placeholder="Tanda tangan Ybs"
+                    className="text-center"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col justify-center gap-80">
+                <div className="flex flex-col gap-12">
+                  <FormInput
+                    name="alamat_tanggal"
+                    value={formData.alamat_tanggal}
+                    onChange={handleChange}
+                    placeholder={`Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`}
+                    className="text-center"
+                  />
+                  <FormInput
+                    name="jabatan_penandatangan"
+                    value={formData.jabatan_penandatangan}
+                    onChange={handleChange}
+                    placeholder="Ketua RT. 001 RW. 009"
+                    className="text-center"
+                  />
+                </div>
+                <FormInput
+                  name="nama_penandatangan"
+                  value={formData.nama_penandatangan}
+                  onChange={handleChange}
+                  placeholder="Budi Santoso"
+                  className="text-center"
+                />
+              </div>
             </div>
           </div>
         </div>

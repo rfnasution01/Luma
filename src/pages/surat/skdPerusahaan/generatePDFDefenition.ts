@@ -6,14 +6,20 @@ export function generatePdfDefinition(data) {
           ? [
               {
                 image: data.logo,
-                width: 60,
-                height: 60,
+                width: 80,
+                height: 80,
               },
               [
-                { text: data.provinsi || '', style: 'header' },
-                { text: data.kabupaten || '', style: 'subheader' },
-                { text: data.desa || '', style: 'subheader' },
-                { text: data.alamat_instansi || '', style: 'small' },
+                { text: (data.header1 || '').toUpperCase(), style: 'header' },
+                {
+                  text: (data.header2 || '').toUpperCase(),
+                  style: 'subheader',
+                },
+                {
+                  text: (data.header3 || '').toUpperCase(),
+                  style: 'subheader',
+                },
+                { text: (data.header4 || '').toUpperCase(), style: 'small' },
               ],
             ]
           : [
@@ -21,10 +27,16 @@ export function generatePdfDefinition(data) {
                 width: '*',
                 alignment: 'center',
                 stack: [
-                  { text: data.provinsi || '', style: 'header' },
-                  { text: data.kabupaten || '', style: 'subheader' },
-                  { text: data.desa || '', style: 'subheader' },
-                  { text: data.alamat_instansi || '', style: 'small' },
+                  { text: (data.header1 || '').toUpperCase(), style: 'header' },
+                  {
+                    text: (data.header2 || '').toUpperCase(),
+                    style: 'subheader',
+                  },
+                  {
+                    text: (data.header3 || '').toUpperCase(),
+                    style: 'subheader',
+                  },
+                  { text: (data.header4 || '').toUpperCase(), style: 'small' },
                 ],
               },
             ],
@@ -39,7 +51,7 @@ export function generatePdfDefinition(data) {
             y1: 0,
             x2: 515,
             y2: 0,
-            lineWidth: 0.1,
+            lineWidth: 1.5,
           },
         ],
         margin: [0, 0, 0, 20],
@@ -58,55 +70,98 @@ export function generatePdfDefinition(data) {
         margin: [0, 0, 0, 20],
       },
       {
-        text: `${data.kepada_1}\n${data.kepada_2}\n${data.kepada_3}`,
-        margin: [0, 0, 0, 20],
+        text: `${data.pengantar_1}`,
+        margin: [0, 0, 0, 5],
       },
-      {
-        text: `${data.dengan_hormat_1}`,
-        margin: [0, 0, 0, 10],
-      },
+
       {
         table: {
           widths: ['auto', '*'],
           body: [
-            ['Nama', `: ${data.ul_1.replace(/^.*?:/, '').trim()}`],
-            ['Alamat', `: ${data.ul_2.replace(/^.*?:/, '').trim()}`],
-            ['Tempat/Tgl Lahir', `: ${data.ul_3.replace(/^.*?:/, '').trim()}`],
+            ['Nama Lengkap', `: ${data.ul_1.replace(/^.*?:/, '').trim()}`],
+            ['Tempat, Tgl Lahir', `: ${data.ul_2.replace(/^.*?:/, '').trim()}`],
+            ['Jenis Kelamin', `: ${data.ul_3.replace(/^.*?:/, '').trim()}`],
+            ['Agama / Bangsa', `: ${data.ul_4.replace(/^.*?:/, '').trim()}`],
+            ['KTP', `: ${data.ul_5.replace(/^.*?:/, '').trim()}`],
+            ['Alamat', `: ${data.ul_6.replace(/^.*?:/, '').trim()}`],
           ],
         },
         layout: 'noBorders',
-        margin: [0, 0, 0, 10],
+        margin: [0, 0, 0, 20],
       },
 
       {
-        text: `${data.memberitahukan_1}\n\n${data.memberitahukan_2}`,
+        text: `${data.pengantar_2}`,
+        margin: [0, 0, 0, 5],
+      },
+
+      {
+        table: {
+          widths: ['auto', '*'],
+          body: [
+            ['Nama Perusahaan', `: ${data.ul_7.replace(/^.*?:/, '').trim()}`],
+            [
+              'Jenis Usaha / Klasifikasi',
+              `: ${data.ul_8.replace(/^.*?:/, '').trim()}`,
+            ],
+            ['Alamat Perusahaan', `: ${data.ul_9.replace(/^.*?:/, '').trim()}`],
+            ['Status Bangunan', `: ${data.ul_10.replace(/^.*?:/, '').trim()}`],
+            [
+              'Peruntukan Bangunan',
+              `: ${data.ul_11.replace(/^.*?:/, '').trim()}`,
+            ],
+            ['No & Tgl. IPB', `: ${data.ul_12.replace(/^.*?:/, '').trim()}`],
+            [
+              'Notaris Akta Pendirian Bangunan',
+              `: ${data.ul_13.replace(/^.*?:/, '').trim()}`,
+            ],
+            [
+              'Nomor Akta Pendirian Bangunan',
+              `: ${data.ul_14.replace(/^.*?:/, '').trim()}`,
+            ],
+            ['Jumlah Karyawan', `: ${data.ul_15.replace(/^.*?:/, '').trim()}`],
+            [
+              'Penanggung Jawab / Pimpinan Perusahaan',
+              `: ${data.ul_16.replace(/^.*?:/, '').trim()}`,
+            ],
+          ],
+        },
+        layout: 'noBorders',
         margin: [0, 0, 0, 20],
       },
-      { text: data.demikian, margin: [0, 0, 0, 30] },
+
+      {
+        text: `${data.penutup}`,
+        margin: [0, 0, 0, 20],
+      },
       {
         columns: [
-          {},
           {
-            width: 'auto',
+            width: '*',
             alignment: 'center',
-            text: `${data.hormat_saya_1}\n\n\n\n\n${data.hormat_saya_2}`,
+            text: `${data.ttd_ybs}\n\n\n\n\n\n`,
+          },
+          {
+            width: '*',
+            alignment: 'center',
+            text: `${data.alamat_tanggal}\n${data?.jabatan_penandatangan}\n\n\n\n\n${data.nama_penandatangan}`,
           },
         ],
       },
     ],
     styles: {
       header: {
-        fontSize: 14,
+        fontSize: 16,
         bold: true,
         alignment: 'center',
       },
       subheader: {
-        fontSize: 12,
+        fontSize: 18,
+        bold: true,
         alignment: 'center',
       },
       small: {
-        fontSize: 10,
-        italics: true,
+        fontSize: 12,
         alignment: 'center',
       },
     },

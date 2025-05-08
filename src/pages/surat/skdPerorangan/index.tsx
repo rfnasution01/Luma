@@ -156,28 +156,28 @@ export default function SuratKeteranganDomisiliPerorangan() {
               </div>
               <div className="flex flex-1 flex-col gap-4">
                 <FormInput
-                  name="header_1"
+                  name="header1"
                   value={formData.header1}
                   onChange={handleChange}
                   placeholder="Pemerintah Provinsi Jawa Barat"
                   className="text-center text-[2.8rem] font-bold"
                 />
                 <FormInput
-                  name="header_2"
+                  name="header2"
                   value={formData.header2}
                   onChange={handleChange}
-                  placeholder="Kabupaten Bandung Utara"
+                  placeholder="KKetua RT. 001 RW. 009 Desa Suka Maju"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
-                  name="header_3"
+                  name="header3"
                   value={formData.header3}
                   onChange={handleChange}
-                  placeholder="Kelurahan Sukamaju"
+                  placeholder="Kecamatan Sayur Bayam - Jakarta Timur"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
-                  name="header_4"
+                  name="header4"
                   value={formData.header4}
                   onChange={handleChange}
                   placeholder="Jl. Sukamaju Raya No. 1, Bandung Kode Pos: 12345"
@@ -204,10 +204,11 @@ export default function SuratKeteranganDomisiliPerorangan() {
             </div>
 
             <div className="mt-[4rem] flex flex-col gap-4">
-              <FormInput
+              <FormTextArea
                 name="pengantar"
                 value={formData.pengantar}
                 onChange={handleChange}
+                rows={isMobile ? 3 : 2}
                 placeholder="Yang bertanda tangan di bawah ini ketua RT. 001 RW. 009 Desa Suka Maju Kecamatan Sayur Bayam Kabupaten Kota Administrasi Jakarta Timur dengan ini menerangkan bahwa"
               />
             </div>
@@ -215,7 +216,9 @@ export default function SuratKeteranganDomisiliPerorangan() {
             <table className="w-full table-auto">
               <tbody>
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Nama Lengkap</td>
+                  <td className="w-[20%] pr-4 align-top phones:w-[40%]">
+                    Nama Lengkap
+                  </td>
                   <td>
                     :{' '}
                     <FormInput
@@ -223,18 +226,20 @@ export default function SuratKeteranganDomisiliPerorangan() {
                       value={formData.ul_1}
                       onChange={handleChange}
                       placeholder="Andi Saputra"
-                      className="w-[98%] phones:w-[97%]"
+                      className="w-[80%] phones:w-[60%]"
                     />
                   </td>
                 </tr>
 
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Tempat/Tgl Lahir</td>
+                  <td className="w-[20%] pr-4 align-top phones:w-[40%]">
+                    Tempat/Tgl Lahir
+                  </td>
                   <td>
                     :{' '}
                     <FormInput
                       name="ul_2"
-                      className="w-[98%] phones:w-[97%]"
+                      className="w-[80%] phones:w-[60%]"
                       value={formData.ul_2}
                       onChange={handleChange}
                       placeholder="Bandung, 12 Januari 1995"
@@ -242,7 +247,9 @@ export default function SuratKeteranganDomisiliPerorangan() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Jenis Kelamin</td>
+                  <td className="w-[20%] pr-4 align-top phones:w-[40%]">
+                    Jenis Kelamin
+                  </td>
                   <td>
                     :{' '}
                     <FormInput
@@ -250,12 +257,14 @@ export default function SuratKeteranganDomisiliPerorangan() {
                       value={formData.ul_3}
                       onChange={handleChange}
                       placeholder="Laki-laki / Perempuan"
-                      className="w-[98%] phones:w-[97%]"
+                      className="w-[80%] phones:w-[60%]"
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Pekerjaan</td>
+                  <td className="w-[20%] pr-4 align-top phones:w-[40%]">
+                    Pekerjaan
+                  </td>
                   <td>
                     :{' '}
                     <FormInput
@@ -263,12 +272,14 @@ export default function SuratKeteranganDomisiliPerorangan() {
                       value={formData.ul_4}
                       onChange={handleChange}
                       placeholder="Karyawan / Wiraswasta / Pelajar"
-                      className="w-[98%] phones:w-[97%]"
+                      className="w-[80%] phones:w-[60%]"
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Agama</td>
+                  <td className="w-[20%] pr-4 align-top phones:w-[40%]">
+                    Agama
+                  </td>
                   <td>
                     :{' '}
                     <FormInput
@@ -276,12 +287,14 @@ export default function SuratKeteranganDomisiliPerorangan() {
                       value={formData.ul_5}
                       onChange={handleChange}
                       placeholder="Islam / Kristen / Hindu / Buddha / dll"
-                      className="w-[98%] phones:w-[97%]"
+                      className="w-[80%] phones:w-[60%]"
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Status Perkawinan</td>
+                  <td className="w-[20%] pr-4 align-top phones:w-[40%]">
+                    Status Perkawinan
+                  </td>
                   <td>
                     :{' '}
                     <FormInput
@@ -289,12 +302,14 @@ export default function SuratKeteranganDomisiliPerorangan() {
                       value={formData.ul_6}
                       onChange={handleChange}
                       placeholder="Belum Menikah / Menikah / Cerai"
-                      className="w-[98%] phones:w-[97%]"
+                      className="w-[80%] phones:w-[60%]"
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Kewarganegaraan</td>
+                  <td className="w-[20%] pr-4 align-top phones:w-[40%]">
+                    Kewarganegaraan
+                  </td>
                   <td>
                     :{' '}
                     <FormInput
@@ -302,7 +317,7 @@ export default function SuratKeteranganDomisiliPerorangan() {
                       value={formData.ul_7 || ''}
                       onChange={handleChange}
                       placeholder="Indonesia"
-                      className="w-[98%] phones:w-[97%]"
+                      className="w-[80%] phones:w-[60%]"
                     />
                   </td>
                 </tr>
@@ -322,7 +337,7 @@ export default function SuratKeteranganDomisiliPerorangan() {
                 name="memberitahukan_2"
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
-                rows={isMobile ? 3 : 2}
+                rows={isMobile ? 2 : 1}
                 placeholder="Demikian surat keterangan ini kami buat, untuk dapat dipergunakan sebagaimana mestinya"
               />
             </div>
