@@ -2,8 +2,18 @@ export const ListSurat = [
   // 🏠 Surat Pribadi & Keterangan Umum
   {
     icon: '🤒',
-    nama: 'Surat Izin Sakit',
-    deskripsi: 'Digunakan untuk memberitahukan ketidakhadiran karena sakit.',
+    nama: 'Surat Izin Sakit Sekolah',
+    deskripsi: 'Digunakan siswa untuk izin tidak masuk karena sakit.',
+  },
+  {
+    icon: '🤕',
+    nama: 'Surat Izin Sakit Kuliah',
+    deskripsi: 'Digunakan mahasiswa untuk izin tidak kuliah karena sakit.',
+  },
+  {
+    icon: '🏥',
+    nama: 'Surat Izin Sakit Kerja',
+    deskripsi: 'Digunakan karyawan untuk izin tidak bekerja karena sakit.',
   },
 
   {

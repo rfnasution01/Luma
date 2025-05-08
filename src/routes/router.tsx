@@ -6,7 +6,9 @@ import {
   MainLayout,
   NotFoundPage,
   SuratHomePage,
-  SuratIzinSakitPage,
+  SuratIzinSakiSekolahtPage,
+  SuratIzinSakitKerjaPage,
+  SuratIzinSakitKuliahPage,
   SuratKeteranganDomisiliPengantarRT,
   SuratKeteranganDomisiliPerorangan,
   SuratKeteranganDomisiliPerusahaan,
@@ -42,10 +44,17 @@ export const router = createBrowserRouter([
             element: <SuratHomePage />,
           },
           {
-            path: 'surat-izin-sakit',
-            element: <SuratIzinSakitPage />,
+            path: 'surat-izin-sakit-sekolah',
+            element: <SuratIzinSakiSekolahtPage />,
           },
-
+          {
+            path: 'surat-izin-sakit-kuliah',
+            element: <SuratIzinSakitKuliahPage />,
+          },
+          {
+            path: 'surat-izin-sakit-kerja',
+            element: <SuratIzinSakitKerjaPage />,
+          },
           {
             path: 'surat-keterangan-domisili-perorangan',
             element: <SuratKeteranganDomisiliPerorangan />,

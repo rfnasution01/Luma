@@ -76,7 +76,7 @@ export default function SuratKeteranganDomisiliPerorangan() {
   const handleDownload = () => {
     pdfMake
       .createPdf(generatePdfDefinition(formData))
-      .download('surat-keterangan-domisili.pdf')
+      .download('skd-perorangan.pdf')
   }
 
   const handlePrint = () => {

@@ -2,43 +2,35 @@ import { useEffect, useState } from 'react'
 import pdfMake from 'pdfmake/build/pdfmake'
 import * as pdfFonts from 'pdfmake/build/vfs_fonts'
 import DocumentActions from '@/components/common/documentAction'
+import generatePdfDefinition from './generatePDFDefenition'
 import FormInput from '@/components/ui/formInput'
 import FormTextArea from '@/components/ui/formTextArea'
 import PDFPreview from '@/components/common/pdfPreview'
 import { useMobile } from '@/hooks/useMobile'
-import { generatePdfDefinition } from './generatePDFDefenition'
+import 'dayjs/locale/id'
+import dayjs from 'dayjs'
 
 pdfMake.vfs = pdfFonts.vfs
 
-export default function SuratKeteranganRTRWPage() {
+export default function SuratIzinSakitSekolahPage() {
   const { isMobile } = useMobile()
   const [pdfUrl, setPdfUrl] = useState(null)
   const [debounceTimer, setDebounceTimer] = useState(null)
 
   const [formData, setFormData] = useState({
-    title: 'SURAT PENGANTAR RT/RW',
+    tempat_tanggal: `Magelang, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
     kepada_1: 'Kepada Yth.',
-    kepada_2: 'Bapak/Ibu Lurah Kelurahan Sukamaju',
-    kepada_3: 'di Tempat',
-
-    dengan_hormat_1:
-      'Dengan hormat, yang bertanda tangan di bawah ini, Ketua RT 03 RW 05 Kelurahan Sukamaju, Kecamatan Sukasari, Kota Bandung, menerangkan bahwa:',
-    dengan_hormat_2:
-      'Nama yang tersebut di bawah ini adalah benar warga kami dan bermaksud untuk mengurus surat keterangan domisili.',
-
-    ul_1: 'Andi Saputra',
-    ul_2: 'Jl. Melati No. 45, RT 03 RW 05, Sukamaju',
-    ul_3: 'Pengurusan Surat Keterangan Domisili',
-
-    memberitahukan_1:
-      'Bersangkutan adalah warga yang berdomisili secara tetap di wilayah kami dan tidak pernah terlibat masalah hukum atau sosial di lingkungan ini.',
-    memberitahukan_2:
-      'Surat ini dibuat untuk dapat dipergunakan sebagaimana mestinya.',
-
-    demikian: 'Demikian surat pengantar ini kami buat dengan sebenar-benarnya.',
-
-    hormat_saya_1: 'Ketua RT 03 / RW 05',
-    hormat_saya_2: 'Budi Santoso',
+    kepada_2: 'Bapak/Ibu Guru Wali Kelas',
+    kepada_3: 'Di Tempat',
+    dengan_hormat_1: 'Dengan hormat,',
+    dengan_hormat_2: 'Dengan ini saya selaku orang tua/wali murid dari:',
+    ul_1: `Siti Khotimah`,
+    ul_2: 'Kelas XI IPS 1',
+    ul_3: ' SMA N 2 Purwokerto',
+    memberitahukan_1: `Memberitahukan bahwa saat ini anak saya tidak dapat mengikuti kegiatan belajar mengajar seperti biasa pada hari, Rabu 30 September 2019 dikarenakan sakit. Oleh karena itu, kami memohon kepada Bapak/Ibu Guru Wali Kelas XI IPS 1 agar memberikan izin.`,
+    memberitahukan_2: `Demikian yang dapat kami sampaikan. Atas perhatian Bapak/Ibu kami ucapkan terimakasih.`,
+    hormat_saya_1: `Hormat saya,`,
+    hormat_saya_2: `Orang tua/wali murid`,
   })
 
   const handleChange = (e) => {
@@ -67,7 +59,7 @@ export default function SuratKeteranganRTRWPage() {
   const handleDownload = () => {
     pdfMake
       .createPdf(generatePdfDefinition(formData))
-      .download('sk-tidak-mampu.pdf')
+      .download('surat-izin-sakit-sekolah.pdf')
   }
 
   const handlePrint = () => {
@@ -82,16 +74,16 @@ export default function SuratKeteranganRTRWPage() {
     <div className="scrollbar flex h-full w-full gap-32 overflow-auto phones:h-auto phones:flex-col phones:overflow-visible">
       {/* --- Form Untuk Mengubah Data --- */}
       <div className="scrollbar flex h-full w-1/2 flex-col gap-32 overflow-auto phones:h-auto phones:w-full phones:overflow-visible">
-        <p className="text-[2.8rem] font-bold">Surat Pengantar RT/RW</p>
+        <p className="text-[2.8rem] font-bold">Surat Izin Sakit Sekolah</p>
         <div className="scrollbar flex h-full flex-col gap-24 overflow-auto rounded-2x border bg-[#fefefe] p-[2.4rem] shadow-md phones:h-auto phones:overflow-visible">
           <div className="scrollbar-new flex min-h-[120rem] w-full flex-col gap-16 overflow-auto">
-            <div className="mt-[4rem] flex items-center justify-center">
+            <div className="mt-[4rem] flex items-center justify-end">
               <FormInput
-                name="title"
-                value={formData.title}
+                name="tempat_tanggal"
+                value={formData.tempat_tanggal}
                 onChange={handleChange}
-                placeholder="SURAT PENGANTAR RT/RW"
-                className="w-full text-center text-[2.4rem] font-bold"
+                placeholder={dayjs().locale('id').format('DD MMMM YYYY')}
+                className="w-1/2 text-end text-[2rem]"
               />
             </div>
             <div className="mt-[4rem] flex flex-col gap-4">
@@ -105,13 +97,13 @@ export default function SuratKeteranganRTRWPage() {
                 name="kepada_2"
                 value={formData.kepada_2}
                 onChange={handleChange}
-                placeholder="Bapak/Ibu Lurah Kelurahan Sukamaju"
+                placeholder="Bapak/Ibu Guru Wali Kelas"
               />
               <FormInput
                 name="kepada_3"
                 value={formData.kepada_3}
                 onChange={handleChange}
-                placeholder="di Tempat"
+                placeholder="Di Tempat"
               />
             </div>
 
@@ -120,13 +112,13 @@ export default function SuratKeteranganRTRWPage() {
                 name="dengan_hormat_1"
                 value={formData.dengan_hormat_1}
                 onChange={handleChange}
-                placeholder="Dengan hormat, yang bertanda tangan di bawah ini, Ketua RT 03 RW 05 Kelurahan Sukamaju, Kecamatan Sukasari, Kota Bandung, menerangkan bahwa:"
+                placeholder="Dengan hormat,"
               />
               <FormTextArea
                 name="dengan_hormat_2"
                 value={formData.dengan_hormat_2}
                 onChange={handleChange}
-                placeholder="Nama yang tersebut di bawah ini adalah benar warga kami dan bermaksud untuk mengurus surat keterangan domisili."
+                placeholder="Dengan ini saya selaku orang tua/wali murid dari:"
               />
             </div>
 
@@ -140,13 +132,13 @@ export default function SuratKeteranganRTRWPage() {
                       name="ul_1"
                       value={formData.ul_1}
                       onChange={handleChange}
-                      placeholder="Andi Saputra"
+                      placeholder="Siti Khotimah"
                       className="w-[98%] phones:w-[97%]"
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Alamat</td>
+                  <td className="w-[20%] pr-4 align-top">Kelas</td>
                   <td>
                     :{' '}
                     <FormInput
@@ -154,12 +146,12 @@ export default function SuratKeteranganRTRWPage() {
                       value={formData.ul_2}
                       onChange={handleChange}
                       className="w-[98%] phones:w-[97%]"
-                      placeholder="Jl. Melati No. 45, RT 03 RW 05, Sukamaju"
+                      placeholder="Kelas XI IPS 1"
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Keperluan</td>
+                  <td className="w-[20%] pr-4 align-top">Sekolah</td>
                   <td>
                     :{' '}
                     <FormInput
@@ -167,7 +159,7 @@ export default function SuratKeteranganRTRWPage() {
                       className="w-[98%] phones:w-[97%]"
                       value={formData.ul_3}
                       onChange={handleChange}
-                      placeholder="Pengurusan Surat Keterangan Domisili"
+                      placeholder=" SMA N 2 Purwokerto"
                     />
                   </td>
                 </tr>
@@ -179,24 +171,16 @@ export default function SuratKeteranganRTRWPage() {
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
                 rows={isMobile ? 5 : 3}
-                placeholder="Bersangkutan adalah warga yang berdomisili secara tetap di wilayah kami dan tidak pernah terlibat masalah hukum atau sosial di lingkungan ini."
+                placeholder="Memberitahukan bahwa saat ini anak saya tidak dapat mengikuti kegiatan belajar mengajar seperti biasa pada hari, Rabu 30 September 2019 dikarenakan sakit. Oleh karena itu, kami memohon kepada Bapak/Ibu Guru Wali Kelas XI IPS 1 agar memberikan izin."
               />
               <FormTextArea
                 name="memberitahukan_2"
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
                 rows={isMobile ? 3 : 2}
-                placeholder="Surat ini dibuat untuk dapat dipergunakan sebagaimana mestinya."
+                placeholder="Demikian yang dapat kami sampaikan. Atas perhatian Bapak/Ibu kami ucapkan terimakasih."
               />
             </div>
-
-            <FormTextArea
-              placeholder="Demikian surat pengantar ini kami buat dengan sebenar-benarnya."
-              name="demikian"
-              value={formData.demikian}
-              onChange={handleChange}
-              rows={isMobile ? 3 : 2}
-            />
 
             <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
               <FormInput

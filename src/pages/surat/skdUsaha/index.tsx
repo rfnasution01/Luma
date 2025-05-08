@@ -73,9 +73,7 @@ export default function SuratKeteranganDomisiliUsaha() {
   }, [formData])
 
   const handleDownload = () => {
-    pdfMake
-      .createPdf(generatePdfDefinition(formData))
-      .download('surat-keterangan-domisili.pdf')
+    pdfMake.createPdf(generatePdfDefinition(formData)).download('skd-usaha.pdf')
   }
 
   const handlePrint = () => {

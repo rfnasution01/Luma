@@ -81,7 +81,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
   const handleDownload = () => {
     pdfMake
       .createPdf(generatePdfDefinition(formData))
-      .download('surat-keterangan-domisili.pdf')
+      .download('skd-pengantar-rt.pdf')
   }
 
   const handlePrint = () => {

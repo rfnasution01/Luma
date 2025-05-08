@@ -66,24 +66,25 @@ export default function SuratPage() {
         width="60%"
         textContent={
           <div className="grid w-full grid-cols-3 gap-32 font-sans text-[2rem] phones:grid-cols-1">
+            {/* Kategori 1: Surat Pribadi & Domisili */}
             <div className="col-span-1 flex flex-col gap-24">
               <p className="text-[2.2rem] font-medium">
-                Surat Pribadi & Keterangan Umum
+                Surat Pribadi & Domisili
               </p>
               <div className="flex flex-col gap-4">
                 {[
-                  'Surat Izin Sakit',
-                  'Surat Keterangan Domisili Perorangan',
-                  'Surat Keterangan Domisili Perusahaan',
-                  'Surat Keterangan Domisili Usaha',
-                  'Surat Keterangan Domisili Pengantar RT',
+                  'Surat Izin Sakit Sekolah',
+                  'Surat Izin Sakit Kuliah',
+                  'Surat Izin Sakit Kerja',
+                  'Surat Izin Tidak Masuk Sekolah',
+                  'Surat Izin Tidak Masuk Kerja',
                   'Surat Keterangan Tidak Mampu (SKTM)',
-                  'Surat Keterangan Kehilangan',
                   'Surat Pernyataan Belum Menikah',
                   'Surat Pernyataan Kesanggupan',
                   'Surat Kuasa',
-                  'Surat Izin Tidak Masuk Sekolah',
-                  'Surat Izin Tidak Masuk Kerja',
+                  'Surat Keterangan Kehilangan',
+                  'Surat Keterangan Domisili Perorangan',
+                  'Surat Keterangan Domisili Pengantar RT',
                 ]?.map((item, idx) => (
                   <div
                     onClick={() => {
@@ -98,6 +99,8 @@ export default function SuratPage() {
                 ))}
               </div>
             </div>
+
+            {/* Kategori 2: Surat Terkait Pekerjaan */}
             <div className="col-span-1 flex flex-col gap-24">
               <p className="text-[2.2rem] font-medium">
                 Surat Terkait Pekerjaan
@@ -111,6 +114,8 @@ export default function SuratPage() {
                   'Surat Panggilan Kerja',
                   'Surat Peringatan (SP)',
                   'Surat Keterangan Kerja',
+                  'Surat Keterangan Domisili Perusahaan',
+                  'Surat Keterangan Domisili Usaha',
                 ]?.map((item, idx) => (
                   <div
                     onClick={() => {
@@ -125,15 +130,37 @@ export default function SuratPage() {
                 ))}
               </div>
             </div>
+
+            {/* Kategori 3: Surat Pendidikan */}
+            <div className="col-span-1 flex flex-col gap-24">
+              <p className="text-[2.2rem] font-medium">Surat Pendidikan</p>
+              <div className="flex flex-col gap-4">
+                {[
+                  'Surat Keterangan Aktif Sekolah',
+                  'Surat Keterangan Aktif Kuliah',
+                ]?.map((item, idx) => (
+                  <div
+                    onClick={() => {
+                      setIsShow(false)
+                      navigate(`/surat/${convertToSlug(item)}`)
+                    }}
+                    className="cursor-pointer p-12 transition-colors duration-300 hover:bg-slate-50"
+                    key={idx}
+                  >
+                    <p>{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Kategori 4: Surat Legal & Perjanjian */}
             <div className="col-span-1 flex flex-col gap-24">
               <p className="text-[2.2rem] font-medium">
-                Surat Administrasi & Legal
+                Surat Legal & Perjanjian
               </p>
               <div className="flex flex-col gap-4">
                 {[
                   'Surat Keterangan Usaha (SKU)',
-                  'Surat Keterangan Aktif Sekolah',
-                  'Surat Keterangan Aktif Kuliah',
                   'Surat Perjanjian Sewa Menyewa',
                   'Surat Perjanjian Jual Beli',
                   'Surat Pernyataan Kepemilikan',
@@ -152,8 +179,12 @@ export default function SuratPage() {
                 ))}
               </div>
             </div>
+
+            {/* Kategori 5: Surat Umum & Komunikasi Resmi */}
             <div className="col-span-1 flex flex-col gap-24">
-              <p className="text-[2.2rem] font-medium">Lain-lain</p>
+              <p className="text-[2.2rem] font-medium">
+                Surat Umum & Komunikasi Resmi
+              </p>
               <div className="flex flex-col gap-4">
                 {[
                   'Surat Undangan Resmi',

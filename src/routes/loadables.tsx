@@ -36,11 +36,37 @@ export const SuratHomePage = loadable(
   },
 )
 
-export const SuratIzinSakitPage = loadable(
+export const SuratIzinSakiSekolahtPage = loadable(
   () => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(import('@/pages/surat/suratIzinSakit'))
+        resolve(import('@/pages/surat/suratIzinSakitSekolah'))
+      }, 1000) // Delay 1 seconds before resolving the import
+    })
+  },
+  {
+    fallback: <LoadingFallbackPage />, // Show the fallback loading page during the delay
+  },
+)
+
+export const SuratIzinSakitKuliahPage = loadable(
+  () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(import('@/pages/surat/suratIzinSakitKuliah'))
+      }, 1000) // Delay 1 seconds before resolving the import
+    })
+  },
+  {
+    fallback: <LoadingFallbackPage />, // Show the fallback loading page during the delay
+  },
+)
+
+export const SuratIzinSakitKerjaPage = loadable(
+  () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(import('@/pages/surat/suratIzinSakitKerja'))
       }, 1000) // Delay 1 seconds before resolving the import
     })
   },

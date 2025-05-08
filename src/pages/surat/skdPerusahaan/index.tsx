@@ -88,7 +88,7 @@ export default function SuratKeteranganDomisiliPerusahaan() {
   const handleDownload = () => {
     pdfMake
       .createPdf(generatePdfDefinition(formData))
-      .download('surat-keterangan-domisili.pdf')
+      .download('skd-perusahaan.pdf')
   }
 
   const handlePrint = () => {

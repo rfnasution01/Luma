@@ -7,30 +7,31 @@ import FormInput from '@/components/ui/formInput'
 import FormTextArea from '@/components/ui/formTextArea'
 import PDFPreview from '@/components/common/pdfPreview'
 import { useMobile } from '@/hooks/useMobile'
+import 'dayjs/locale/id'
+import dayjs from 'dayjs'
 
 pdfMake.vfs = pdfFonts.vfs
 
-export default function SuratIzinSakitPage() {
+export default function SuratIzinSakitKuliahPage() {
   const { isMobile } = useMobile()
   const [pdfUrl, setPdfUrl] = useState(null)
   const [debounceTimer, setDebounceTimer] = useState(null)
 
   const [formData, setFormData] = useState({
-    title: 'SURAT IZIN SAKIT',
+    tempat_tanggal: `Purwokerto, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
     kepada_1: 'Kepada Yth.',
-    kepada_2: 'Bapak/Ibu Guru Wali Kelas',
-    kepada_3: 'Di Tempat',
+    kepada_2: 'Ibu Ida Permata Setiasih, M.Pd.',
+    kepada_3: 'di Universitas Negeri Purwokerto',
     dengan_hormat_1: 'Dengan hormat,',
-    dengan_hormat_2: 'Saya yang bertanda tangan di bawah ini:',
-    ul_1: `[Nama Siswa]`,
-    ul_2: '[Kelas Siswa]',
-    ul_3: '[Sekolah Siswa]',
-    memberitahukan_1: `Dengan ini memberitahukan bahwa saya tidak dapat mengikuti kegiatan belajar mengajar seperti biasa pada hari ini, [Hari, Tanggal], dikarenakan kondisi kesehatan yang kurang baik (sakit).`,
-    memberitahukan_2: `Oleh karena itu, saya memohon izin kepada Bapak/Ibu Guru untuk dapat memakluminya.`,
-    demikian:
-      'Demikian surat ini saya sampaikan. Atas perhatian dan izin yang diberikan, saya ucapkan terima kasih.',
+    dengan_hormat_2: 'Saya yang bertanda tangan di bawah ini :',
+    ul_1: `Putri Adinda Zulaifana`,
+    ul_2: '201904568711',
+    ul_3: 'Ilmu Hukum',
+    ul_4: 'Hukum',
+    memberitahukan_1: `Dengan surat ini, saya memohon izin tidak dapat mengikuti kegiatan perkuliahan pada mata kuliah Teknologi Informasi yang Ibu ampu pada Rabu, 3 September 2020 dikarenakan sakit. Sebagai bukti saya sertakan surat keterangan dokter dalam lembar terlampir.`,
+    memberitahukan_2: `Demikian permohonan izin ini saya buat dengan sebenar – benarnya. Atas kebijaksanaan dan izin yang diberikan saya ucapkan terima kasih.`,
     hormat_saya_1: `Hormat saya,`,
-    hormat_saya_2: `[Nama Siswa]`,
+    hormat_saya_2: `Putri Adinda Zulaifana`,
   })
 
   const handleChange = (e) => {
@@ -59,7 +60,7 @@ export default function SuratIzinSakitPage() {
   const handleDownload = () => {
     pdfMake
       .createPdf(generatePdfDefinition(formData))
-      .download('surat-izin-sakit.pdf')
+      .download('surat-izin-sakit-kuliah.pdf')
   }
 
   const handlePrint = () => {
@@ -74,16 +75,16 @@ export default function SuratIzinSakitPage() {
     <div className="scrollbar flex h-full w-full gap-32 overflow-auto phones:h-auto phones:flex-col phones:overflow-visible">
       {/* --- Form Untuk Mengubah Data --- */}
       <div className="scrollbar flex h-full w-1/2 flex-col gap-32 overflow-auto phones:h-auto phones:w-full phones:overflow-visible">
-        <p className="text-[2.8rem] font-bold">Surat Izin Sakit</p>
+        <p className="text-[2.8rem] font-bold">Surat Izin Sakit Sekolah</p>
         <div className="scrollbar flex h-full flex-col gap-24 overflow-auto rounded-2x border bg-[#fefefe] p-[2.4rem] shadow-md phones:h-auto phones:overflow-visible">
           <div className="scrollbar-new flex min-h-[120rem] w-full flex-col gap-16 overflow-auto">
-            <div className="mt-[4rem] flex items-center justify-center">
+            <div className="mt-[4rem] flex items-center justify-end">
               <FormInput
-                name="title"
-                value={formData.title}
+                name="tempat_tanggal"
+                value={formData.tempat_tanggal}
                 onChange={handleChange}
-                placeholder="Judul Surat"
-                className="text-center text-[2.4rem] font-bold"
+                placeholder={dayjs().locale('id').format('DD MMMM YYYY')}
+                className="w-1/2 text-end text-[2rem]"
               />
             </div>
             <div className="mt-[4rem] flex flex-col gap-4">
@@ -97,13 +98,13 @@ export default function SuratIzinSakitPage() {
                 name="kepada_2"
                 value={formData.kepada_2}
                 onChange={handleChange}
-                placeholder="Bapak/Ibu Guru Wali Kelas"
+                placeholder="Ibu Ida Permata Setiasih, M.Pd."
               />
               <FormInput
                 name="kepada_3"
                 value={formData.kepada_3}
                 onChange={handleChange}
-                placeholder="Di Tempat"
+                placeholder="di Universitas Negeri Purwokerto"
               />
             </div>
 
@@ -118,7 +119,7 @@ export default function SuratIzinSakitPage() {
                 name="dengan_hormat_2"
                 value={formData.dengan_hormat_2}
                 onChange={handleChange}
-                placeholder="Saya yang bertanda tangan di bawah ini:"
+                placeholder="Saya yang bertanda tangan di bawah ini :"
               />
             </div>
 
@@ -132,13 +133,13 @@ export default function SuratIzinSakitPage() {
                       name="ul_1"
                       value={formData.ul_1}
                       onChange={handleChange}
-                      placeholder="[Nama Siswa]"
+                      placeholder="Putri Adinda Zulaifana"
                       className="w-[98%] phones:w-[97%]"
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Kelas</td>
+                  <td className="w-[20%] pr-4 align-top">NIM</td>
                   <td>
                     :{' '}
                     <FormInput
@@ -146,12 +147,12 @@ export default function SuratIzinSakitPage() {
                       value={formData.ul_2}
                       onChange={handleChange}
                       className="w-[98%] phones:w-[97%]"
-                      placeholder="[Kelas Siswa]"
+                      placeholder="201904568711"
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Sekolah</td>
+                  <td className="w-[20%] pr-4 align-top">Program Studi</td>
                   <td>
                     :{' '}
                     <FormInput
@@ -159,7 +160,20 @@ export default function SuratIzinSakitPage() {
                       className="w-[98%] phones:w-[97%]"
                       value={formData.ul_3}
                       onChange={handleChange}
-                      placeholder="[Sekolah Siswa]"
+                      placeholder="Ilmu Hukum"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="w-[20%] pr-4 align-top">Fakultas</td>
+                  <td>
+                    :{' '}
+                    <FormInput
+                      name="ul_4"
+                      className="w-[98%] phones:w-[97%]"
+                      value={formData.ul_4}
+                      onChange={handleChange}
+                      placeholder="Hukum"
                     />
                   </td>
                 </tr>
@@ -171,24 +185,16 @@ export default function SuratIzinSakitPage() {
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
                 rows={isMobile ? 5 : 3}
-                placeholder="Dengan ini memberitahukan bahwa saya tidak dapat mengikuti kegiatan belajar mengajar seperti biasa pada hari ini, [Hari, Tanggal], dikarenakan kondisi kesehatan yang kurang baik (sakit)."
+                placeholder="Dengan surat ini, saya memohon izin tidak dapat mengikuti kegiatan perkuliahan pada mata kuliah Teknologi Informasi yang Ibu ampu pada Rabu, 3 September 2020 dikarenakan sakit. Sebagai bukti saya sertakan surat keterangan dokter dalam lembar terlampir."
               />
               <FormTextArea
                 name="memberitahukan_2"
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
                 rows={isMobile ? 3 : 2}
-                placeholder="Oleh karena itu, saya memohon izin kepada Bapak/Ibu Guru untuk dapat memakluminya."
+                placeholder="Demikian permohonan izin ini saya buat dengan sebenar – benarnya. Atas kebijaksanaan dan izin yang diberikan saya ucapkan terima kasih."
               />
             </div>
-
-            <FormTextArea
-              placeholder="Demikian surat ini saya sampaikan. Atas perhatian dan izin yang diberikan, saya ucapkan terima kasih."
-              name="demikian"
-              value={formData.demikian}
-              onChange={handleChange}
-              rows={isMobile ? 3 : 2}
-            />
 
             <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
               <FormInput
@@ -196,12 +202,14 @@ export default function SuratIzinSakitPage() {
                 value={formData.hormat_saya_1}
                 onChange={handleChange}
                 placeholder="Hormat saya,"
+                className="text-center"
               />
               <FormInput
                 name="hormat_saya_2"
                 value={formData.hormat_saya_2}
                 onChange={handleChange}
-                placeholder="[Nama Siswa]"
+                placeholder="Putri Adinda Zulaifana"
+                className="text-center"
               />
             </div>
           </div>
