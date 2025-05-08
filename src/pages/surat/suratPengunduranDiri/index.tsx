@@ -10,36 +10,34 @@ import { generatePdfDefinition } from './generatePDFDefenition'
 
 pdfMake.vfs = pdfFonts.vfs
 
-export default function SuratKeteranganDomisili() {
+export default function SuratLamaranKerja() {
   const { isMobile } = useMobile()
   const [pdfUrl, setPdfUrl] = useState(null)
   const [debounceTimer, setDebounceTimer] = useState(null)
 
   const [formData, setFormData] = useState({
-    title: 'SURAT KETERANGAN DOMISILI',
+    title: 'SURAT PENGUNDURAN DIRI',
 
-    kepada_1: 'Yang Terhormat,',
-    kepada_2: 'Lurah Kelurahan Sukamaju',
+    kepada_1: 'Yth. HRD PT Maju Sejahtera',
+    kepada_2: 'Jl. Merdeka No. 99',
     kepada_3: 'di Tempat',
 
     dengan_hormat_1:
-      'Dengan ini kami menyatakan bahwa nama yang tersebut di bawah ini adalah benar-benar berdomisili di wilayah kami:',
+      'Dengan hormat,\nBersama surat ini saya bermaksud untuk mengajukan pengunduran diri dari jabatan saya di perusahaan yang Bapak/Ibu pimpin.',
 
-    ul_1: 'Andi Saputra',
-    ul_2: 'Jl. Melati No. 45, RT 03 RW 05, Kel. Sukamaju, Kec. Sukasari, Kota Bandung',
-    ul_3: 'Bandung, 12 Januari 1995',
+    nama: 'Andi Saputra',
+    jabatan: 'Staff IT',
+    departemen: 'Divisi Teknologi Informasi',
+    alamat: 'Jl. Melati No. 45, Bandung',
 
-    memberitahukan_1:
-      'Berdasarkan data administrasi dan pengamatan kami, yang bersangkutan memang benar bertempat tinggal di alamat tersebut sejak tahun 2020 hingga saat surat ini dibuat.',
+    isi_pengunduran:
+      'Adapun alasan pengunduran diri ini adalah karena saya ingin melanjutkan studi dan mengembangkan diri lebih lanjut. Saya berharap perusahaan dapat memahami keputusan ini.',
 
-    memberitahukan_2:
-      'Surat keterangan ini dibuat untuk keperluan: Pengurusan administrasi kependudukan.',
+    penutup:
+      'Saya mengucapkan terima kasih atas kesempatan, pengalaman, dan kerja sama yang telah diberikan selama ini. Semoga perusahaan semakin maju dan sukses di masa yang akan datang.',
 
-    demikian:
-      'Demikian surat keterangan ini dibuat dengan sebenar-benarnya agar dapat dipergunakan sebagaimana mestinya.',
-
-    hormat_saya_1: 'Ketua RT 03 / RW 05',
-    hormat_saya_2: 'Budi Santoso',
+    hormat_saya_1: 'Hormat saya,',
+    hormat_saya_2: 'Andi Saputra',
   })
 
   const handleChange = (e) => {
@@ -68,7 +66,7 @@ export default function SuratKeteranganDomisili() {
   const handleDownload = () => {
     pdfMake
       .createPdf(generatePdfDefinition(formData))
-      .download('surat-keterangan-domisili.pdf')
+      .download('surat-pengunduran-diri.pdf')
   }
 
   const handlePrint = () => {
@@ -83,7 +81,7 @@ export default function SuratKeteranganDomisili() {
     <div className="scrollbar flex h-full w-full gap-32 overflow-auto phones:h-auto phones:flex-col phones:overflow-visible">
       {/* --- Form Untuk Mengubah Data --- */}
       <div className="scrollbar flex h-full w-1/2 flex-col gap-32 overflow-auto phones:h-auto phones:w-full phones:overflow-visible">
-        <p className="text-[2.8rem] font-bold">Surat Keterangan Domisili</p>
+        <p className="text-[2.8rem] font-bold">Surat Pengunduran Diri</p>
         <div className="scrollbar flex h-full flex-col gap-24 overflow-auto rounded-2x border bg-[#fefefe] p-[2.4rem] shadow-md phones:h-auto phones:overflow-visible">
           <div className="scrollbar-new flex min-h-[120rem] w-full flex-col gap-16 overflow-auto">
             <div className="mt-[4rem] flex items-center justify-center">
@@ -91,7 +89,7 @@ export default function SuratKeteranganDomisili() {
                 name="title"
                 value={formData.title}
                 onChange={handleChange}
-                placeholder="SURAT KETERANGAN DOMISILI"
+                placeholder="SURAT PENGUNDURAN DIRI"
                 className="w-full text-center text-[2.4rem] font-bold"
               />
             </div>
@@ -100,13 +98,13 @@ export default function SuratKeteranganDomisili() {
                 name="kepada_1"
                 value={formData.kepada_1}
                 onChange={handleChange}
-                placeholder="Kepada Yth."
+                placeholder="Yth. HRD PT Maju Sejahtera"
               />
               <FormInput
                 name="kepada_2"
                 value={formData.kepada_2}
                 onChange={handleChange}
-                placeholder="Lurah Kelurahan Sukamaju"
+                placeholder="Jl. Merdeka No. 99"
               />
               <FormInput
                 name="kepada_3"
@@ -121,7 +119,9 @@ export default function SuratKeteranganDomisili() {
                 name="dengan_hormat_1"
                 value={formData.dengan_hormat_1}
                 onChange={handleChange}
-                placeholder="Dengan ini kami menyatakan bahwa nama yang tersebut di bawah ini adalah benar-benar berdomisili di wilayah kami:"
+                rows={isMobile ? 5 : 3}
+                placeholder="Dengan hormat,
+Bersama surat ini saya bermaksud untuk mengajukan pengunduran diri dari jabatan saya di perusahaan yang Bapak/Ibu pimpin."
               />
             </div>
 
@@ -132,8 +132,8 @@ export default function SuratKeteranganDomisili() {
                   <td>
                     :{' '}
                     <FormInput
-                      name="ul_1"
-                      value={formData.ul_1}
+                      name="nama"
+                      value={formData.nama}
                       onChange={handleChange}
                       placeholder="Andi Saputra"
                       className="w-[98%] phones:w-[97%]"
@@ -141,28 +141,42 @@ export default function SuratKeteranganDomisili() {
                   </td>
                 </tr>
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Alamat</td>
+                  <td className="w-[20%] pr-4 align-top">Jabatan</td>
                   <td>
                     :{' '}
                     <FormInput
-                      name="ul_2"
-                      value={formData.ul_2}
+                      name="jabatan"
+                      value={formData.jabatan}
                       onChange={handleChange}
+                      placeholder="Staff IT"
                       className="w-[98%] phones:w-[97%]"
-                      placeholder="Jl. Melati No. 45, RT 03 RW 05, Kel. Sukamaju, Kec. Sukasari, Kota Bandung"
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Tempat/Tgl Lahir</td>
+                  <td className="w-[20%] pr-4 align-top">Departemen</td>
                   <td>
                     :{' '}
                     <FormInput
-                      name="ul_3"
-                      className="w-[98%] phones:w-[97%]"
-                      value={formData.ul_3}
+                      name="departemen"
+                      value={formData.departemen}
                       onChange={handleChange}
-                      placeholder="Bandung, 12 Januari 1995"
+                      placeholder="Divisi Teknologi Informasi"
+                      className="w-[98%] phones:w-[97%]"
+                    />
+                  </td>
+                </tr>
+
+                <tr>
+                  <td className="w-[20%] pr-4 align-top">Alamat</td>
+                  <td>
+                    :{' '}
+                    <FormInput
+                      name="alamat"
+                      value={formData.alamat}
+                      onChange={handleChange}
+                      className="w-[98%] phones:w-[97%]"
+                      placeholder="Jl. Melati No. 45, Bandung"
                     />
                   </td>
                 </tr>
@@ -170,44 +184,34 @@ export default function SuratKeteranganDomisili() {
             </table>
             <div className="mt-[4rem] flex flex-col gap-24">
               <FormTextArea
-                name="memberitahukan_1"
-                value={formData.memberitahukan_1}
+                name="isi_pengunduran"
+                value={formData.isi_pengunduran}
                 onChange={handleChange}
-                rows={isMobile ? 5 : 3}
-                placeholder="Berdasarkan data administrasi dan pengamatan kami, yang bersangkutan memang benar
-bertempat tinggal di alamat tersebut sejak tahun 2020 hingga saat surat ini dibuat.
-"
+                rows={isMobile ? 4 : 2}
+                placeholder="Adapun alasan pengunduran diri ini adalah karena saya ingin melanjutkan studi dan mengembangkan diri lebih lanjut. Saya berharap perusahaan dapat memahami keputusan ini."
               />
               <FormTextArea
-                name="memberitahukan_2"
-                value={formData.memberitahukan_2}
+                name="penutup"
+                value={formData.penutup}
                 onChange={handleChange}
-                rows={isMobile ? 3 : 2}
-                placeholder="Surat keterangan ini dibuat untuk keperluan: Pengurusan administrasi kependudukan."
+                rows={isMobile ? 4 : 2}
+                placeholder="Saya mengucapkan terima kasih atas kesempatan, pengalaman, dan kerja sama yang telah diberikan selama ini. Semoga perusahaan semakin maju dan sukses di masa yang akan datang."
               />
             </div>
 
-            <FormTextArea
-              placeholder="Demikian surat keterangan ini dibuat dengan sebenar-benarnya agar dapat dipergunakan sebagaimana mestinya."
-              name="demikian"
-              value={formData.demikian}
-              onChange={handleChange}
-              rows={isMobile ? 3 : 2}
-            />
-
-            <div className="flexcol flex flex-col items-end justify-center gap-80">
+            <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
               <FormInput
                 name="hormat_saya_1"
                 value={formData.hormat_saya_1}
                 onChange={handleChange}
-                placeholder="Ketua RT 03 / RW 05"
+                placeholder="Hormat saya,"
                 className="text-center"
               />
               <FormInput
                 name="hormat_saya_2"
                 value={formData.hormat_saya_2}
                 onChange={handleChange}
-                placeholder="Budi Santoso"
+                placeholder="Andi Saputra"
                 className="text-center"
               />
             </div>

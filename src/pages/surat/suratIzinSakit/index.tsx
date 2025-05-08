@@ -190,7 +190,7 @@ export default function SuratIzinSakitPage() {
               rows={isMobile ? 3 : 2}
             />
 
-            <div className="flexcol flex flex-col items-end justify-center gap-80">
+            <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
               <FormInput
                 name="hormat_saya_1"
                 value={formData.hormat_saya_1}

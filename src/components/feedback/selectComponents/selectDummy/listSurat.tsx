@@ -13,8 +13,23 @@ export const ListSurat = [
   },
   {
     icon: '🏡',
-    nama: 'Surat Keterangan Domisili',
-    deskripsi: 'Menyatakan tempat tinggal seseorang secara resmi.',
+    nama: 'Surat Keterangan Domisili Perorangan',
+    deskripsi: 'Menyatakan tempat tinggal individu secara resmi.',
+  },
+  {
+    icon: '🏢',
+    nama: 'Surat Keterangan Domisili Perusahaan',
+    deskripsi: 'Menyatakan alamat domisili resmi suatu perusahaan.',
+  },
+  {
+    icon: '🏪',
+    nama: 'Surat Keterangan Domisili Usaha',
+    deskripsi: 'Digunakan untuk menyatakan lokasi operasional sebuah usaha.',
+  },
+  {
+    icon: '🏘️',
+    nama: 'Surat Keterangan Domisili Pengantar RT',
+    deskripsi: 'Surat keterangan domisili atas pengantar dari RT.',
   },
   {
     icon: '💸',

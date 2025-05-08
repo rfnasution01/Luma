@@ -7,11 +7,15 @@ import {
   NotFoundPage,
   SuratHomePage,
   SuratIzinSakitPage,
-  SuratKeteranganDomisili,
+  SuratKeteranganDomisiliPengantarRT,
+  SuratKeteranganDomisiliPerorangan,
+  SuratKeteranganDomisiliPerusahaan,
+  SuratKeteranganDomisiliUsaha,
   SuratKeteranganRTRWPage,
   SuratKeteranganTidakMampu,
   SuratLamaranKerja,
   SuratPage,
+  SuratPengunduranDiri,
 } from './loadables'
 
 // Create a router configuration using 'createBrowserRouter' to define application routes
@@ -47,8 +51,20 @@ export const router = createBrowserRouter([
             element: <SuratKeteranganRTRWPage />,
           },
           {
-            path: 'surat-keterangan-domisili',
-            element: <SuratKeteranganDomisili />,
+            path: 'surat-keterangan-domisili-perorangan',
+            element: <SuratKeteranganDomisiliPerorangan />,
+          },
+          {
+            path: 'surat-keterangan-domisili-perusahaan',
+            element: <SuratKeteranganDomisiliPerusahaan />,
+          },
+          {
+            path: 'surat-keterangan-domisili-usaha',
+            element: <SuratKeteranganDomisiliUsaha />,
+          },
+          {
+            path: 'surat-keterangan-domisili-pengantar-rt',
+            element: <SuratKeteranganDomisiliPengantarRT />,
           },
           {
             path: 'surat-keterangan-tidak-mampu-sktm',
@@ -57,6 +73,10 @@ export const router = createBrowserRouter([
           {
             path: 'surat-lamaran-kerja',
             element: <SuratLamaranKerja />,
+          },
+          {
+            path: 'surat-pengunduran-diri-resign',
+            element: <SuratPengunduranDiri />,
           },
           {
             // Define a wildcard '*' route that will match any path that doesn't exist

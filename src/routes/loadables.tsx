@@ -62,11 +62,50 @@ export const SuratKeteranganRTRWPage = loadable(
   },
 )
 
-export const SuratKeteranganDomisili = loadable(
+export const SuratKeteranganDomisiliPerorangan = loadable(
   () => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(import('@/pages/surat/suratKeteranganDomisili'))
+        resolve(import('@/pages/surat/skdPerorangan'))
+      }, 1000) // Delay 1 seconds before resolving the import
+    })
+  },
+  {
+    fallback: <LoadingFallbackPage />, // Show the fallback loading page during the delay
+  },
+)
+
+export const SuratKeteranganDomisiliPerusahaan = loadable(
+  () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(import('@/pages/surat/skdPerusahaan'))
+      }, 1000) // Delay 1 seconds before resolving the import
+    })
+  },
+  {
+    fallback: <LoadingFallbackPage />, // Show the fallback loading page during the delay
+  },
+)
+
+export const SuratKeteranganDomisiliUsaha = loadable(
+  () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(import('@/pages/surat/skdUsaha'))
+      }, 1000) // Delay 1 seconds before resolving the import
+    })
+  },
+  {
+    fallback: <LoadingFallbackPage />, // Show the fallback loading page during the delay
+  },
+)
+
+export const SuratKeteranganDomisiliPengantarRT = loadable(
+  () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(import('@/pages/surat/skdPengantarRT'))
       }, 1000) // Delay 1 seconds before resolving the import
     })
   },
@@ -93,6 +132,19 @@ export const SuratLamaranKerja = loadable(
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(import('@/pages/surat/suratLamaranKerja'))
+      }, 1000) // Delay 1 seconds before resolving the import
+    })
+  },
+  {
+    fallback: <LoadingFallbackPage />, // Show the fallback loading page during the delay
+  },
+)
+
+export const SuratPengunduranDiri = loadable(
+  () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(import('@/pages/surat/suratPengunduranDiri'))
       }, 1000) // Delay 1 seconds before resolving the import
     })
   },

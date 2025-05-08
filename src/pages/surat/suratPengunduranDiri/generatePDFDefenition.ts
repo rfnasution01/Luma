@@ -5,6 +5,7 @@ export function generatePdfDefinition(data) {
         text: data.title,
         fontSize: 18,
         bold: true,
+        decoration: 'underline',
         alignment: 'center',
         margin: [0, 0, 0, 20],
       },
@@ -13,27 +14,34 @@ export function generatePdfDefinition(data) {
         margin: [0, 0, 0, 20],
       },
       {
-        text: `${data.dengan_hormat_1}`,
+        text: data.dengan_hormat_1,
+        margin: [0, 0, 0, 10],
+      },
+      {
+        text: 'Yang bertanda tangan di bawah ini:',
         margin: [0, 0, 0, 10],
       },
       {
         table: {
           widths: ['auto', '*'],
           body: [
-            ['Nama', `: ${data.ul_1.replace(/^.*?:/, '').trim()}`],
-            ['Alamat', `: ${data.ul_2.replace(/^.*?:/, '').trim()}`],
-            ['Tempat/Tgl Lahir', `: ${data.ul_3.replace(/^.*?:/, '').trim()}`],
+            ['Nama', `: ${data.nama}`],
+            ['Jabatan', `: ${data.jabatan}`],
+            ['Departemen', `: ${data.departemen}`],
+            ['Alamat', `: ${data.alamat}`],
           ],
         },
         layout: 'noBorders',
         margin: [0, 0, 0, 10],
       },
-
       {
-        text: `${data.memberitahukan_1}\n\n${data.memberitahukan_2}`,
+        text: `${data.isi_pengunduran}`,
         margin: [0, 0, 0, 20],
       },
-      { text: data.demikian, margin: [0, 0, 0, 30] },
+      {
+        text: data.penutup,
+        margin: [0, 0, 0, 30],
+      },
       {
         columns: [
           {},

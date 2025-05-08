@@ -92,7 +92,7 @@ export default function SuratLamaranKerja() {
                 name="title"
                 value={formData.title}
                 onChange={handleChange}
-                placeholder="SURAT KETERANGAN DOMISILI"
+                placeholder="SURAT LAMARAN KERJA"
                 className="w-full text-center text-[2.4rem] font-bold"
               />
             </div>
@@ -101,13 +101,13 @@ export default function SuratLamaranKerja() {
                 name="kepada_1"
                 value={formData.kepada_1}
                 onChange={handleChange}
-                placeholder="Kepada Yth."
+                placeholder="Yth. HRD PT Maju Sejahtera"
               />
               <FormInput
                 name="kepada_2"
                 value={formData.kepada_2}
                 onChange={handleChange}
-                placeholder="Lurah Kelurahan Sukamaju"
+                placeholder="Jl. Merdeka No. 99"
               />
               <FormInput
                 name="kepada_3"
@@ -122,7 +122,9 @@ export default function SuratLamaranKerja() {
                 name="dengan_hormat_1"
                 value={formData.dengan_hormat_1}
                 onChange={handleChange}
-                placeholder="Dengan ini kami menyatakan bahwa nama yang tersebut di bawah ini adalah benar-benar berdomisili di wilayah kami:"
+                rows={isMobile ? 4 : 2}
+                placeholder="Dengan hormat,
+Bersama ini saya mengajukan lamaran pekerjaan di perusahaan yang Bapak/Ibu pimpin."
               />
             </div>
 
@@ -178,7 +180,7 @@ export default function SuratLamaranKerja() {
                       value={formData.ul_2}
                       onChange={handleChange}
                       className="w-[98%] phones:w-[97%]"
-                      placeholder="Jl. Melati No. 45, RT 03 RW 05, Kel. Sukamaju, Kec. Sukasari, Kota Bandung"
+                      placeholder="Jl. Melati No. 45, Bandung"
                     />
                   </td>
                 </tr>
@@ -203,28 +205,26 @@ export default function SuratLamaranKerja() {
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
                 rows={isMobile ? 5 : 3}
-                placeholder="Berdasarkan data administrasi dan pengamatan kami, yang bersangkutan memang benar
-bertempat tinggal di alamat tersebut sejak tahun 2020 hingga saat surat ini dibuat.
-"
+                placeholder="Saya memiliki pengalaman bekerja sebagai web developer selama 3 tahun dan memiliki kemampuan dalam React.js dan Node.js."
               />
               <FormTextArea
                 name="memberitahukan_2"
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
                 rows={isMobile ? 3 : 2}
-                placeholder="Surat keterangan ini dibuat untuk keperluan: Pengurusan administrasi kependudukan."
+                placeholder="Saya siap mengikuti proses seleksi dan bekerja dengan dedikasi tinggi."
               />
             </div>
 
             <FormTextArea
-              placeholder="Demikian surat keterangan ini dibuat dengan sebenar-benarnya agar dapat dipergunakan sebagaimana mestinya."
+              placeholder="Demikian surat lamaran ini saya sampaikan. Atas perhatian Bapak/Ibu, saya ucapkan terima kasih."
               name="demikian"
               value={formData.demikian}
               onChange={handleChange}
               rows={isMobile ? 3 : 2}
             />
 
-            <div className="flexcol flex flex-col items-end justify-center gap-80">
+            <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
               <FormInput
                 name="hormat_saya_1"
                 value={formData.hormat_saya_1}

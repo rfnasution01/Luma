@@ -5,6 +5,7 @@ export function generatePdfDefinition(data) {
         text: data.title,
         fontSize: 18,
         bold: true,
+        decoration: 'underline',
         alignment: 'center',
         margin: [0, 0, 0, 5], // Mengurangi margin bawah agar tidak terlalu jauh
       },
