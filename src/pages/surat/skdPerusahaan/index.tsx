@@ -12,7 +12,7 @@ import 'dayjs/locale/id'
 
 pdfMake.vfs = pdfFonts.vfs
 
-export default function SuratKeteranganDomisiliPerorangan() {
+export default function SuratKeteranganDomisiliPerusahaan() {
   const { isMobile } = useMobile()
   const [pdfUrl, setPdfUrl] = useState(null)
   const [debounceTimer, setDebounceTimer] = useState(null)

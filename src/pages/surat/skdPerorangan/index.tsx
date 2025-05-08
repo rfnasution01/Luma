@@ -42,7 +42,7 @@ export default function SuratKeteranganDomisiliPerorangan() {
       'Orang tersebut diatas, adalah benar-benar warga kami dan berdomisili di RT. 001 RW. 009 Desa Suka Maju Kecamatan Sayur Bayam Kabupaten Kota Administrasi Jakarta Timur. Surat keterangan ini dibuat sebagai kelengkapan pengurusan Surat Tanda Registrasi Bidan',
 
     memberitahukan_2:
-      'Demikian surat keterangan ini kami buat, untuk dapat dipergunakan sebagaimana mestinya',
+      'Demikian Surat Keterangan ini kami buat, untuk dapat dipergunakan sebagaimana mestinya',
 
     alamat_tanggal: `Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
 
@@ -105,7 +105,9 @@ export default function SuratKeteranganDomisiliPerorangan() {
     <div className="scrollbar flex h-full w-full gap-32 overflow-auto phones:h-auto phones:flex-col phones:overflow-visible">
       {/* --- Form Untuk Mengubah Data --- */}
       <div className="scrollbar flex h-full w-1/2 flex-col gap-32 overflow-auto phones:h-auto phones:w-full phones:overflow-visible">
-        <p className="text-[2.8rem] font-bold">Surat Keterangan Domisili</p>
+        <p className="text-[2.8rem] font-bold">
+          Surat Keterangan Domisili Perorangan
+        </p>
         <div className="scrollbar flex h-full flex-col gap-24 overflow-auto rounded-2x border bg-[#fefefe] p-[2.4rem] shadow-md phones:h-auto phones:overflow-visible">
           <div className="scrollbar-new flex min-h-[120rem] w-full flex-col gap-16 overflow-auto">
             {/* --- Kop Surat --- */}
@@ -166,7 +168,7 @@ export default function SuratKeteranganDomisiliPerorangan() {
                   name="header2"
                   value={formData.header2}
                   onChange={handleChange}
-                  placeholder="KKetua RT. 001 RW. 009 Desa Suka Maju"
+                  placeholder="Ketua RT. 001 RW. 009 Desa Suka Maju"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
@@ -338,7 +340,7 @@ export default function SuratKeteranganDomisiliPerorangan() {
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
                 rows={isMobile ? 2 : 1}
-                placeholder="Demikian surat keterangan ini kami buat, untuk dapat dipergunakan sebagaimana mestinya"
+                placeholder="Demikian Surat Keterangan ini kami buat, untuk dapat dipergunakan sebagaimana mestinya"
               />
             </div>
 

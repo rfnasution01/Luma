@@ -6,14 +6,20 @@ export function generatePdfDefinition(data) {
           ? [
               {
                 image: data.logo,
-                width: 60,
-                height: 60,
+                width: 80,
+                height: 80,
               },
               [
-                { text: data.provinsi || '', style: 'header' },
-                { text: data.kabupaten || '', style: 'subheader' },
-                { text: data.desa || '', style: 'subheader' },
-                { text: data.alamat_instansi || '', style: 'small' },
+                { text: (data.header1 || '').toUpperCase(), style: 'header' },
+                {
+                  text: (data.header2 || '').toUpperCase(),
+                  style: 'subheader',
+                },
+                {
+                  text: (data.header3 || '').toUpperCase(),
+                  style: 'subheader',
+                },
+                { text: (data.header4 || '').toUpperCase(), style: 'small' },
               ],
             ]
           : [
@@ -21,10 +27,16 @@ export function generatePdfDefinition(data) {
                 width: '*',
                 alignment: 'center',
                 stack: [
-                  { text: data.provinsi || '', style: 'header' },
-                  { text: data.kabupaten || '', style: 'subheader' },
-                  { text: data.desa || '', style: 'subheader' },
-                  { text: data.alamat_instansi || '', style: 'small' },
+                  { text: (data.header1 || '').toUpperCase(), style: 'header' },
+                  {
+                    text: (data.header2 || '').toUpperCase(),
+                    style: 'subheader',
+                  },
+                  {
+                    text: (data.header3 || '').toUpperCase(),
+                    style: 'subheader',
+                  },
+                  { text: (data.header4 || '').toUpperCase(), style: 'small' },
                 ],
               },
             ],
@@ -39,7 +51,7 @@ export function generatePdfDefinition(data) {
             y1: 0,
             x2: 515,
             y2: 0,
-            lineWidth: 0.1,
+            lineWidth: 1.5,
           },
         ],
         margin: [0, 0, 0, 20],
@@ -58,55 +70,60 @@ export function generatePdfDefinition(data) {
         margin: [0, 0, 0, 20],
       },
       {
-        text: `${data.kepada_1}\n${data.kepada_2}\n${data.kepada_3}`,
+        text: `${data.pengantar}`,
         margin: [0, 0, 0, 20],
       },
+
       {
-        text: `${data.dengan_hormat_1}`,
-        margin: [0, 0, 0, 10],
+        text: (data.nama_usaha || '').toUpperCase(),
+        margin: [0, 0, 0, 20],
       },
+
       {
         table: {
           widths: ['auto', '*'],
           body: [
-            ['Nama', `: ${data.ul_1.replace(/^.*?:/, '').trim()}`],
+            ['Nama Pimpinan', `: ${data.ul_1.replace(/^.*?:/, '').trim()}`],
             ['Alamat', `: ${data.ul_2.replace(/^.*?:/, '').trim()}`],
-            ['Tempat/Tgl Lahir', `: ${data.ul_3.replace(/^.*?:/, '').trim()}`],
+            [
+              'Bergerak di Bidang',
+              `: ${data.ul_3.replace(/^.*?:/, '').trim()}`,
+            ],
+            ['Alamat Usaha', `: ${data.ul_4.replace(/^.*?:/, '').trim()}`],
           ],
         },
         layout: 'noBorders',
-        margin: [0, 0, 0, 10],
+        margin: [0, 0, 0, 20],
       },
 
       {
         text: `${data.memberitahukan_1}\n\n${data.memberitahukan_2}`,
         margin: [0, 0, 0, 20],
       },
-      { text: data.demikian, margin: [0, 0, 0, 30] },
       {
         columns: [
           {},
           {
             width: 'auto',
             alignment: 'center',
-            text: `${data.hormat_saya_1}\n\n\n\n\n${data.hormat_saya_2}`,
+            text: `${data.alamat_tanggal}\n${data?.jabatan_penandatangan}\n\n\n\n\n${data.nama_penandatangan}\n${data.nip}`,
           },
         ],
       },
     ],
     styles: {
       header: {
-        fontSize: 14,
+        fontSize: 16,
         bold: true,
         alignment: 'center',
       },
       subheader: {
-        fontSize: 12,
+        fontSize: 18,
+        bold: true,
         alignment: 'center',
       },
       small: {
-        fontSize: 10,
-        italics: true,
+        fontSize: 12,
         alignment: 'center',
       },
     },

@@ -7,46 +7,46 @@ import FormTextArea from '@/components/ui/formTextArea'
 import PDFPreview from '@/components/common/pdfPreview'
 import { useMobile } from '@/hooks/useMobile'
 import { generatePdfDefinition } from './generatePDFDefenition'
+import dayjs from 'dayjs'
+import 'dayjs/locale/id'
 
 pdfMake.vfs = pdfFonts.vfs
 
-export default function SuratKeteranganDomisiliPerorangan() {
+export default function SuratKeteranganDomisiliUsaha() {
   const { isMobile } = useMobile()
   const [pdfUrl, setPdfUrl] = useState(null)
   const [debounceTimer, setDebounceTimer] = useState(null)
 
   const [formData, setFormData] = useState({
     logo: '',
-    provinsi: 'Pemerintah Provinsi Jawa Barat',
-    kabupaten: 'Kabupaten Bandung Utara',
-    desa: 'Kelurahan Sukamaju',
-    alamat_instansi: 'Jl. Sukamaju Raya No. 1, Bandung',
+    header1: 'Pemerintah Kota Medan',
+    header2: 'Kecamatan Sayur Bayam',
+    header3: 'Kelurahan Suka Maju',
+    header4: 'Jl. Sukamaju Raya No. 1, Bandung Kode Pos: 12345',
 
-    title: 'SURAT KETERANGAN DOMISILI',
+    title: 'SURAT KETERANGAN DOMISILI USAHA',
     no_surat: 'Nomor: RT/RW/No/XX/YYYY',
 
-    kepada_1: 'Yang Terhormat,',
-    kepada_2: 'Lurah Kelurahan Sukamaju',
-    kepada_3: 'di Tempat',
+    pengantar:
+      'Yang bertanda tangan di bawah ini Lurah Suka Maju Kecamatan Sayur Bayam Kota Medan, menerangkan dengan sebenarnya bahwa',
+    nama_usaha: 'CV. ANGIN RIBUT',
 
-    dengan_hormat_1:
-      'Dengan ini kami menyatakan bahwa nama yang tersebut di bawah ini adalah benar-benar berdomisili di wilayah kami:',
-
-    ul_1: 'Andi Saputra',
-    ul_2: 'Jl. Melati No. 45, RT 03 RW 05, Kel. Sukamaju, Kec. Sukasari, Kota Bandung',
-    ul_3: 'Bandung, 12 Januari 1995',
+    ul_1: 'Syamil Wahyudi',
+    ul_2: 'Jl. Tumis Kangkung, No. 9 Jakarta Utara',
+    ul_3: 'Financial Technology',
+    ul_4: 'Suka Maju, Medan',
 
     memberitahukan_1:
-      'Berdasarkan data administrasi dan pengamatan kami, yang bersangkutan memang benar bertempat tinggal di alamat tersebut sejak tahun 2020 hingga saat surat ini dibuat.',
+      'Adalah benar berdomisili di Suka Maju Medan dan berada di Wilayah Kerja Kelurahan Suka Maju Kecamatan Sayur Bayam Kota Medan. Surat Keterangan ini berlaku 6 ( Enam ) Bulan sejak Surat Keterangan Domisili ini dikeluarkan',
 
     memberitahukan_2:
-      'Surat keterangan ini dibuat untuk keperluan: Pengurusan administrasi kependudukan.',
+      'Demikian Surat Keterangan ini kami buat, untuk dipergunakan sebagaimana mestinya',
 
-    demikian:
-      'Demikian surat keterangan ini dibuat dengan sebenar-benarnya agar dapat dipergunakan sebagaimana mestinya.',
+    alamat_tanggal: `Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
 
-    hormat_saya_1: 'Ketua RT 03 / RW 05',
-    hormat_saya_2: 'Budi Santoso',
+    jabatan_penandatangan: 'Lurah',
+    nama_penandatangan: 'Budi Santoso',
+    nip: '1234567890',
   })
 
   const handleChange = (e) => {
@@ -104,9 +104,12 @@ export default function SuratKeteranganDomisiliPerorangan() {
     <div className="scrollbar flex h-full w-full gap-32 overflow-auto phones:h-auto phones:flex-col phones:overflow-visible">
       {/* --- Form Untuk Mengubah Data --- */}
       <div className="scrollbar flex h-full w-1/2 flex-col gap-32 overflow-auto phones:h-auto phones:w-full phones:overflow-visible">
-        <p className="text-[2.8rem] font-bold">Surat Keterangan Domisili</p>
+        <p className="text-[2.8rem] font-bold">
+          Surat Keterangan Domisili Usaha
+        </p>
         <div className="scrollbar flex h-full flex-col gap-24 overflow-auto rounded-2x border bg-[#fefefe] p-[2.4rem] shadow-md phones:h-auto phones:overflow-visible">
           <div className="scrollbar-new flex min-h-[120rem] w-full flex-col gap-16 overflow-auto">
+            {/* --- Kop Surat --- */}
             <div className="flex w-full gap-32 border-b border-black pb-12">
               <div className="relative flex w-[20rem] flex-col items-start gap-12">
                 <label className="text-sm mb-2 block font-medium text-gray-700">
@@ -154,31 +157,31 @@ export default function SuratKeteranganDomisiliPerorangan() {
               </div>
               <div className="flex flex-1 flex-col gap-4">
                 <FormInput
-                  name="provinsi"
-                  value={formData.provinsi}
+                  name="header1"
+                  value={formData.header1}
                   onChange={handleChange}
-                  placeholder="Pemerintah Provinsi Jawa Barat"
+                  placeholder="Pemerintah Kota Medan"
                   className="text-center text-[2.8rem] font-bold"
                 />
                 <FormInput
-                  name="kabupaten"
-                  value={formData.kabupaten}
+                  name="header2"
+                  value={formData.header2}
                   onChange={handleChange}
-                  placeholder="Kabupaten Bandung Utara"
+                  placeholder="Kecamatan Sayur Bayam"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
-                  name="desa"
-                  value={formData.desa}
+                  name="header3"
+                  value={formData.header3}
                   onChange={handleChange}
-                  placeholder="Kelurahan Sukamaju"
+                  placeholder="Kelurahan Suka Maju"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
-                  name="alamat_instansi"
-                  value={formData.alamat_instansi}
+                  name="header4"
+                  value={formData.header4}
                   onChange={handleChange}
-                  placeholder="Jl. Sukamaju Raya No. 1, Bandung"
+                  placeholder="Jl. Sukamaju Raya No. 1, Bandung Kode Pos: 12345"
                   className="text-center"
                 />
               </div>
@@ -189,7 +192,7 @@ export default function SuratKeteranganDomisiliPerorangan() {
                 name="title"
                 value={formData.title}
                 onChange={handleChange}
-                placeholder="SURAT KETERANGAN DOMISILI"
+                placeholder="SURAT KETERANGAN DOMISILI USAHA"
                 className="w-full text-center text-[2.4rem] font-bold"
               />
               <FormInput
@@ -200,121 +203,133 @@ export default function SuratKeteranganDomisiliPerorangan() {
                 className="w-full text-center"
               />
             </div>
-            <div className="mt-[4rem] flex flex-col gap-4">
-              <FormInput
-                name="kepada_1"
-                value={formData.kepada_1}
-                onChange={handleChange}
-                placeholder="Kepada Yth."
-              />
-              <FormInput
-                name="kepada_2"
-                value={formData.kepada_2}
-                onChange={handleChange}
-                placeholder="Lurah Kelurahan Sukamaju"
-              />
-              <FormInput
-                name="kepada_3"
-                value={formData.kepada_3}
-                onChange={handleChange}
-                placeholder="di Tempat"
-              />
-            </div>
 
-            <div className="mt-[4rem] flex flex-col gap-24">
+            <div className="mt-[4rem] flex flex-col gap-4">
               <FormTextArea
-                name="dengan_hormat_1"
-                value={formData.dengan_hormat_1}
+                name="pengantar"
+                value={formData.pengantar}
                 onChange={handleChange}
-                placeholder="Dengan ini kami menyatakan bahwa nama yang tersebut di bawah ini adalah benar-benar berdomisili di wilayah kami:"
+                rows={isMobile ? 3 : 2}
+                placeholder="Yang bertanda tangan di bawah ini Lurah Suka Maju Kecamatan Sayur Bayam Kota Medan, menerangkan dengan sebenarnya bahwa"
               />
             </div>
 
             <table className="w-full table-auto">
               <tbody>
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Nama</td>
+                  <td className="w-[20%] pr-4 align-top phones:w-[40%]">
+                    Nama Pimpinan
+                  </td>
                   <td>
                     :{' '}
                     <FormInput
                       name="ul_1"
                       value={formData.ul_1}
                       onChange={handleChange}
-                      placeholder="Andi Saputra"
-                      className="w-[98%] phones:w-[97%]"
+                      placeholder="Syamil Wahyudi"
+                      className="w-[80%] phones:w-[60%]"
                     />
                   </td>
                 </tr>
+
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Alamat</td>
+                  <td className="w-[20%] pr-4 align-top phones:w-[40%]">
+                    Alamat
+                  </td>
                   <td>
                     :{' '}
                     <FormInput
                       name="ul_2"
+                      className="w-[80%] phones:w-[60%]"
                       value={formData.ul_2}
                       onChange={handleChange}
-                      className="w-[98%] phones:w-[97%]"
-                      placeholder="Jl. Melati No. 45, RT 03 RW 05, Kel. Sukamaju, Kec. Sukasari, Kota Bandung"
+                      placeholder="Jl. Tumis Kangkung, No. 9 Jakarta Utara"
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Tempat/Tgl Lahir</td>
+                  <td className="w-[20%] pr-4 align-top phones:w-[40%]">
+                    Bergerak di Bidang
+                  </td>
                   <td>
                     :{' '}
                     <FormInput
                       name="ul_3"
-                      className="w-[98%] phones:w-[97%]"
                       value={formData.ul_3}
                       onChange={handleChange}
-                      placeholder="Bandung, 12 Januari 1995"
+                      placeholder="Financial Technology"
+                      className="w-[80%] phones:w-[60%]"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="w-[20%] pr-4 align-top phones:w-[40%]">
+                    Alamat Usaha
+                  </td>
+                  <td>
+                    :{' '}
+                    <FormInput
+                      name="ul_4"
+                      value={formData.ul_4}
+                      onChange={handleChange}
+                      placeholder="Suka Maju, Medan"
+                      className="w-[80%] phones:w-[60%]"
                     />
                   </td>
                 </tr>
               </tbody>
             </table>
+
             <div className="mt-[4rem] flex flex-col gap-24">
               <FormTextArea
                 name="memberitahukan_1"
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
                 rows={isMobile ? 5 : 3}
-                placeholder="Berdasarkan data administrasi dan pengamatan kami, yang bersangkutan memang benar
-bertempat tinggal di alamat tersebut sejak tahun 2020 hingga saat surat ini dibuat.
-"
+                placeholder="Adalah benar berdomisili di Suka Maju Medan dan berada di Wilayah Kerja Kelurahan Suka Maju Kecamatan Sayur Bayam Kota Medan. Surat Keterangan ini berlaku 6 ( Enam ) Bulan sejak Surat Keterangan Domisili ini dikeluarkan."
               />
               <FormTextArea
                 name="memberitahukan_2"
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
-                rows={isMobile ? 3 : 2}
-                placeholder="Surat keterangan ini dibuat untuk keperluan: Pengurusan administrasi kependudukan."
+                rows={isMobile ? 2 : 1}
+                placeholder="Demikian Surat Keterangan ini kami buat, untuk dipergunakan sebagaimana mestinya"
               />
             </div>
 
-            <FormTextArea
-              placeholder="Demikian surat keterangan ini dibuat dengan sebenar-benarnya agar dapat dipergunakan sebagaimana mestinya."
-              name="demikian"
-              value={formData.demikian}
-              onChange={handleChange}
-              rows={isMobile ? 3 : 2}
-            />
-
             <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
-              <FormInput
-                name="hormat_saya_1"
-                value={formData.hormat_saya_1}
-                onChange={handleChange}
-                placeholder="Ketua RT 03 / RW 05"
-                className="text-center"
-              />
-              <FormInput
-                name="hormat_saya_2"
-                value={formData.hormat_saya_2}
-                onChange={handleChange}
-                placeholder="Budi Santoso"
-                className="text-center"
-              />
+              <div className="flex flex-col gap-12">
+                <FormInput
+                  name="alamat_tanggal"
+                  value={formData.alamat_tanggal}
+                  onChange={handleChange}
+                  placeholder={`Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`}
+                  className="text-center"
+                />
+                <FormInput
+                  name="jabatan_penandatangan"
+                  value={formData.jabatan_penandatangan}
+                  onChange={handleChange}
+                  placeholder="Lurah"
+                  className="text-center"
+                />
+              </div>
+              <div className="flex flex-col gap-12">
+                <FormInput
+                  name="nama_penandatangan"
+                  value={formData.nama_penandatangan}
+                  onChange={handleChange}
+                  placeholder="Budi Santoso"
+                  className="text-center"
+                />
+                <FormInput
+                  name="nip"
+                  value={formData.nip}
+                  onChange={handleChange}
+                  placeholder="1234567890"
+                  className="text-center"
+                />
+              </div>
             </div>
           </div>
         </div>
