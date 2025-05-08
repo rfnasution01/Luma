@@ -12,26 +12,25 @@ import dayjs from 'dayjs'
 
 pdfMake.vfs = pdfFonts.vfs
 
-export default function SuratIzinTidakMasukSekolahPage() {
+export default function SuratIzinTidakMasukKerjaPage() {
   const { isMobile } = useMobile()
   const [pdfUrl, setPdfUrl] = useState(null)
   const [debounceTimer, setDebounceTimer] = useState(null)
 
   const [formData, setFormData] = useState({
-    tempat_tanggal: `Magelang, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
-    kepada_1: 'Kepada Yth.',
-    kepada_2: 'Bapak/Ibu Guru Wali Kelas',
-    kepada_3: 'Di Tempat',
+    tempat_tanggal: `Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
+    kepada_1: 'Yth. Ibu Gea Saskia',
+    kepada_2: 'Manajer SDM PT Angin Ribut',
+    kepada_3: 'Jakarta Timur 12345',
     dengan_hormat_1: 'Dengan hormat,',
-    dengan_hormat_2: 'Dengan ini saya selaku orang tua/wali murid dari:',
-    ul_1: `Siti Khotimah`,
-    ul_2: 'Kelas XI IPS 1',
-    ul_3: ' SMA N 2 Purwokerto',
-    memberitahukan_1: `Memberitahukan bahwa saat ini anak saya tidak dapat mengikuti kegiatan belajar mengajar seperti biasa pada hari, Rabu 30 September 2019 dikarenakan suatu keperluan yang tidak dapat ditinggalkan. Oleh karena itu, kami memohon kepada Bapak/Ibu Guru Wali Kelas XI IPS 1 agar memberikan izin.`,
-
-    memberitahukan_2: `Demikian yang dapat kami sampaikan. Atas perhatian Bapak/Ibu kami ucapkan terimakasih.`,
+    dengan_hormat_2: 'Saya yang bertanda tangan di bawah ini :',
+    ul_1: `Syamil Wahyudi`,
+    ul_2: 'Jl. Gajah Mundur, Desa Suka Maju, Bekasi',
+    ul_3: 'Manajer IT',
+    memberitahukan_1: `Melalui surat ini, saya bermaksud mengajukan izin tidak masuk kerja selama 4 (empat) hari, terhitung mulai hari Senin, 5 Mei 2025 sampai dengan Kamis, 8 Mei 2025, karena keperluan pribadi yang tidak dapat saya tinggalkan.`,
+    memberitahukan_2: `Demikian surat izin ini saya sampaikan. Atas perhatian dan izin Ibu. saya mengucapkan terima kasih`,
     hormat_saya_1: `Hormat saya,`,
-    hormat_saya_2: `Orang tua/wali murid`,
+    hormat_saya_2: `Syamil Wahyudi`,
   })
 
   const handleChange = (e) => {
@@ -60,7 +59,7 @@ export default function SuratIzinTidakMasukSekolahPage() {
   const handleDownload = () => {
     pdfMake
       .createPdf(generatePdfDefinition(formData))
-      .download('surat-izin-tidak-masuk-sekolah.pdf')
+      .download('surat-izin-tidak-masuk-kerja.pdf')
   }
 
   const handlePrint = () => {
@@ -75,9 +74,7 @@ export default function SuratIzinTidakMasukSekolahPage() {
     <div className="scrollbar flex h-full w-full gap-32 overflow-auto phones:h-auto phones:flex-col phones:overflow-visible">
       {/* --- Form Untuk Mengubah Data --- */}
       <div className="scrollbar flex h-full w-1/2 flex-col gap-32 overflow-auto phones:h-auto phones:w-full phones:overflow-visible">
-        <p className="text-[2.8rem] font-bold">
-          Surat Izin Tidak Masuk Sekolah
-        </p>
+        <p className="text-[2.8rem] font-bold">Surat Izin Tidak Masuk Kerja</p>
         <div className="scrollbar flex h-full flex-col gap-24 overflow-auto rounded-2x border bg-[#fefefe] p-[2.4rem] shadow-md phones:h-auto phones:overflow-visible">
           <div className="scrollbar-new flex min-h-[120rem] w-full flex-col gap-16 overflow-auto">
             <div className="mt-[4rem] flex items-center justify-end">
@@ -94,19 +91,19 @@ export default function SuratIzinTidakMasukSekolahPage() {
                 name="kepada_1"
                 value={formData.kepada_1}
                 onChange={handleChange}
-                placeholder="Kepada Yth."
+                placeholder="Yth. Ibu Gea Saskia"
               />
               <FormInput
                 name="kepada_2"
                 value={formData.kepada_2}
                 onChange={handleChange}
-                placeholder="Bapak/Ibu Guru Wali Kelas"
+                placeholder="Manajer SDM PT Angin Ribut"
               />
               <FormInput
                 name="kepada_3"
                 value={formData.kepada_3}
                 onChange={handleChange}
-                placeholder="Di Tempat"
+                placeholder="Jakarta Timur 12345"
               />
             </div>
 
@@ -121,7 +118,7 @@ export default function SuratIzinTidakMasukSekolahPage() {
                 name="dengan_hormat_2"
                 value={formData.dengan_hormat_2}
                 onChange={handleChange}
-                placeholder="Dengan ini saya selaku orang tua/wali murid dari:"
+                placeholder="Saya yang bertanda tangan di bawah ini :"
               />
             </div>
 
@@ -135,13 +132,13 @@ export default function SuratIzinTidakMasukSekolahPage() {
                       name="ul_1"
                       value={formData.ul_1}
                       onChange={handleChange}
-                      placeholder="Siti Khotimah"
+                      placeholder="Syamil Wahyudi"
                       className="w-[98%] phones:w-[97%]"
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Kelas</td>
+                  <td className="w-[20%] pr-4 align-top">Alamat</td>
                   <td>
                     :{' '}
                     <FormInput
@@ -149,12 +146,12 @@ export default function SuratIzinTidakMasukSekolahPage() {
                       value={formData.ul_2}
                       onChange={handleChange}
                       className="w-[98%] phones:w-[97%]"
-                      placeholder="Kelas XI IPS 1"
+                      placeholder="Jl. Gajah Mundur, Desa Suka Maju, Bekasi"
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Sekolah</td>
+                  <td className="w-[20%] pr-4 align-top">Jabatan</td>
                   <td>
                     :{' '}
                     <FormInput
@@ -162,7 +159,7 @@ export default function SuratIzinTidakMasukSekolahPage() {
                       className="w-[98%] phones:w-[97%]"
                       value={formData.ul_3}
                       onChange={handleChange}
-                      placeholder=" SMA N 2 Purwokerto"
+                      placeholder="Manajer IT"
                     />
                   </td>
                 </tr>
@@ -174,18 +171,18 @@ export default function SuratIzinTidakMasukSekolahPage() {
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
                 rows={isMobile ? 5 : 3}
-                placeholder="Memberitahukan bahwa saat ini anak saya tidak dapat mengikuti kegiatan belajar mengajar seperti biasa pada hari, Rabu 30 September 2019 dikarenakan suatu keperluan yang tidak dapat ditinggalkan. Oleh karena itu, kami memohon kepada Bapak/Ibu Guru Wali Kelas XI IPS 1 agar memberikan izin."
+                placeholder="Melalui surat ini, saya bermaksud mengajukan izin tidak masuk kerja selama 4 (empat) hari, terhitung mulai hari Senin, 5 Mei 2025 sampai dengan Kamis, 8 Mei 2025, karena keperluan pribadi yang tidak dapat saya tinggalkan."
               />
               <FormTextArea
                 name="memberitahukan_2"
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
                 rows={isMobile ? 3 : 2}
-                placeholder="Demikian yang dapat kami sampaikan. Atas perhatian Bapak/Ibu kami ucapkan terimakasih."
+                placeholder="Demikian surat izin ini saya sampaikan. Atas perhatian dan izin Ibu. saya mengucapkan terima kasih"
               />
             </div>
 
-            <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
+            <div className="mt-[4rem] flex flex-col items-end justify-center gap-12">
               <FormInput
                 name="hormat_saya_1"
                 value={formData.hormat_saya_1}
@@ -197,7 +194,7 @@ export default function SuratIzinTidakMasukSekolahPage() {
                 name="hormat_saya_2"
                 value={formData.hormat_saya_2}
                 onChange={handleChange}
-                placeholder="[Nama Siswa]"
+                placeholder="Syamil Wahyudi"
                 className="text-center"
               />
             </div>

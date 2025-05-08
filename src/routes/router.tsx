@@ -9,6 +9,7 @@ import {
   SuratIzinSakiSekolahtPage,
   SuratIzinSakitKerjaPage,
   SuratIzinSakitKuliahPage,
+  SuratIzinTidakMasukKerjaPage,
   SuratIzinTidakMasukSekolahtPage,
   SuratKeteranganDomisiliPengantarRT,
   SuratKeteranganDomisiliPerorangan,
@@ -59,6 +60,10 @@ export const router = createBrowserRouter([
           {
             path: 'surat-izin-sakit-kerja',
             element: <SuratIzinSakitKerjaPage />,
+          },
+          {
+            path: 'surat-izin-tidak-masuk-kerja',
+            element: <SuratIzinTidakMasukKerjaPage />,
           },
           {
             path: 'surat-keterangan-domisili-perorangan',
