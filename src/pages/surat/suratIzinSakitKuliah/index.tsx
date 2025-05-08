@@ -196,7 +196,7 @@ export default function SuratIzinSakitKuliahPage() {
               />
             </div>
 
-            <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
+            <div className="mt-[4rem] flex flex-col items-end justify-center gap-12">
               <FormInput
                 name="hormat_saya_1"
                 value={formData.hormat_saya_1}

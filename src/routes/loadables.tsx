@@ -49,6 +49,19 @@ export const SuratIzinSakiSekolahtPage = loadable(
   },
 )
 
+export const SuratIzinTidakMasukSekolahtPage = loadable(
+  () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(import('@/pages/surat/suratIzinTidakMasukSekolah'))
+      }, 1000) // Delay 1 seconds before resolving the import
+    })
+  },
+  {
+    fallback: <LoadingFallbackPage />, // Show the fallback loading page during the delay
+  },
+)
+
 export const SuratIzinSakitKuliahPage = loadable(
   () => {
     return new Promise((resolve) => {

@@ -12,7 +12,7 @@ import dayjs from 'dayjs'
 
 pdfMake.vfs = pdfFonts.vfs
 
-export default function SuratIzinSakitSekolahPage() {
+export default function SuratIzinTidakMasukSekolahPage() {
   const { isMobile } = useMobile()
   const [pdfUrl, setPdfUrl] = useState(null)
   const [debounceTimer, setDebounceTimer] = useState(null)
@@ -27,7 +27,8 @@ export default function SuratIzinSakitSekolahPage() {
     ul_1: `Siti Khotimah`,
     ul_2: 'Kelas XI IPS 1',
     ul_3: ' SMA N 2 Purwokerto',
-    memberitahukan_1: `Memberitahukan bahwa saat ini anak saya tidak dapat mengikuti kegiatan belajar mengajar seperti biasa pada hari, Rabu 30 September 2019 dikarenakan sakit. Oleh karena itu, kami memohon kepada Bapak/Ibu Guru Wali Kelas XI IPS 1 agar memberikan izin.`,
+    memberitahukan_1: `Memberitahukan bahwa saat ini anak saya tidak dapat mengikuti kegiatan belajar mengajar seperti biasa pada hari, Rabu 30 September 2019 dikarenakan suatu keperluan yang tidak dapat ditinggalkan. Oleh karena itu, kami memohon kepada Bapak/Ibu Guru Wali Kelas XI IPS 1 agar memberikan izin.`,
+
     memberitahukan_2: `Demikian yang dapat kami sampaikan. Atas perhatian Bapak/Ibu kami ucapkan terimakasih.`,
     hormat_saya_1: `Hormat saya,`,
     hormat_saya_2: `Orang tua/wali murid`,
@@ -74,7 +75,9 @@ export default function SuratIzinSakitSekolahPage() {
     <div className="scrollbar flex h-full w-full gap-32 overflow-auto phones:h-auto phones:flex-col phones:overflow-visible">
       {/* --- Form Untuk Mengubah Data --- */}
       <div className="scrollbar flex h-full w-1/2 flex-col gap-32 overflow-auto phones:h-auto phones:w-full phones:overflow-visible">
-        <p className="text-[2.8rem] font-bold">Surat Izin Sakit Sekolah</p>
+        <p className="text-[2.8rem] font-bold">
+          Surat Izin Tidak Masuk Sekolah
+        </p>
         <div className="scrollbar flex h-full flex-col gap-24 overflow-auto rounded-2x border bg-[#fefefe] p-[2.4rem] shadow-md phones:h-auto phones:overflow-visible">
           <div className="scrollbar-new flex min-h-[120rem] w-full flex-col gap-16 overflow-auto">
             <div className="mt-[4rem] flex items-center justify-end">
@@ -171,7 +174,7 @@ export default function SuratIzinSakitSekolahPage() {
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
                 rows={isMobile ? 5 : 3}
-                placeholder="Memberitahukan bahwa saat ini anak saya tidak dapat mengikuti kegiatan belajar mengajar seperti biasa pada hari, Rabu 30 September 2019 dikarenakan sakit. Oleh karena itu, kami memohon kepada Bapak/Ibu Guru Wali Kelas XI IPS 1 agar memberikan izin."
+                placeholder="Memberitahukan bahwa saat ini anak saya tidak dapat mengikuti kegiatan belajar mengajar seperti biasa pada hari, Rabu 30 September 2019 dikarenakan suatu keperluan yang tidak dapat ditinggalkan. Oleh karena itu, kami memohon kepada Bapak/Ibu Guru Wali Kelas XI IPS 1 agar memberikan izin."
               />
               <FormTextArea
                 name="memberitahukan_2"
@@ -182,7 +185,7 @@ export default function SuratIzinSakitSekolahPage() {
               />
             </div>
 
-            <div className="mt-[4rem] flex flex-col items-end justify-center gap-12">
+            <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
               <FormInput
                 name="hormat_saya_1"
                 value={formData.hormat_saya_1}

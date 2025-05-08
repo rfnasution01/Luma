@@ -41,7 +41,7 @@ export default function generatePdfDefinition(data) {
           {},
           {
             width: 'auto',
-            alignment: 'right',
+            alignment: 'center',
             text: `${data.hormat_saya_1}\n${data.hormat_saya_2}`,
           },
         ],
