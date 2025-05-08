@@ -7,38 +7,49 @@ import FormTextArea from '@/components/ui/formTextArea'
 import PDFPreview from '@/components/common/pdfPreview'
 import { useMobile } from '@/hooks/useMobile'
 import { generatePdfDefinition } from './generatePDFDefenition'
+import dayjs from 'dayjs'
+import 'dayjs/locale/id'
 
 pdfMake.vfs = pdfFonts.vfs
 
-export default function SuratKeteranganRTRWPage() {
+export default function SuratKeteranganTidakMampu() {
   const { isMobile } = useMobile()
   const [pdfUrl, setPdfUrl] = useState(null)
   const [debounceTimer, setDebounceTimer] = useState(null)
 
   const [formData, setFormData] = useState({
-    title: 'SURAT PENGANTAR RT/RW',
-    kepada_1: 'Kepada Yth.',
-    kepada_2: 'Bapak/Ibu Lurah Kelurahan Sukamaju',
-    kepada_3: 'di Tempat',
+    logo: '',
 
-    dengan_hormat_1:
-      'Dengan hormat, yang bertanda tangan di bawah ini, Ketua RT 03 RW 05 Kelurahan Sukamaju, Kecamatan Sukasari, Kota Bandung, menerangkan bahwa:',
-    dengan_hormat_2:
-      'Nama yang tersebut di bawah ini adalah benar warga kami dan bermaksud untuk mengurus surat keterangan domisili.',
+    header1: 'Pemerintah Kabupaten Sidoarjo',
+    header2: 'Kecamatan Setempat',
+    header3: 'Desa Setempat',
+    header4: 'Jl. Sukamaju Raya No. 1, Bandung Kode Pos: 12345',
 
-    ul_1: 'Andi Saputra',
-    ul_2: 'Jl. Melati No. 45, RT 03 RW 05, Sukamaju',
-    ul_3: 'Pengurusan Surat Keterangan Domisili',
+    title: 'SURAT KETERANGAN TIDAK MAMPU',
+    no_surat: 'Nomor: RT/RW/No/XX/YYYY',
+
+    pengantar:
+      'Yang bertanda tangan di bawah ini Kepala Desa Setempat Kecamatan Setempat Kabupaten Sidoarjo. Menerangkan dengan sebenar-benarnya bahwa orang tersebut di bawah ini:',
+
+    ul_1: 'Syamil Wahyudi',
+    ul_2: 'Pengusaha Mebel',
+    ul_3: 'Bekasi, 1 Januari 2000',
+    ul_4: 'Laki-laki',
+    ul_5: '010101010101',
+    ul_6: '081234567',
+    ul_7: 'Jl Gajah Mundur, No. 8, Suka Maju',
 
     memberitahukan_1:
-      'Bersangkutan adalah warga yang berdomisili secara tetap di wilayah kami dan tidak pernah terlibat masalah hukum atau sosial di lingkungan ini.',
+      'Orang tersebut benar-benar penduduk kelurahan/desa setempat kecamatan setempat dan tinggal di alamat seperti tersebut diatas. Menurut pengamatan kami orang tersebut benar-benar dari keluarga tidak mampu. Adapun surat keterangan tidak mampu ini diberikan kepada yang bersangkutan sebagai lampiran untuk mendapatkan keringanan biaya pengobatan di PUSKESMAS/RUMAH SAKIT KABUPATEN SIDOARJO.',
+
     memberitahukan_2:
-      'Surat ini dibuat untuk dapat dipergunakan sebagaimana mestinya.',
+      'Demikian surat keterangan tidak mampu ini dibuat dengan sebenar benarnya dan untuk dipergunakan sebagaimana mestinya',
 
-    demikian: 'Demikian surat pengantar ini kami buat dengan sebenar-benarnya.',
+    pemohon: 'Pemohon',
+    mengetahui: 'Mengetahui',
+    alamat_tanggal: `Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
 
-    hormat_saya_1: 'Ketua RT 03 / RW 05',
-    hormat_saya_2: 'Budi Santoso',
+    jabatan_kades: 'Kepala Desa Setempat',
   })
 
   const handleChange = (e) => {
@@ -65,9 +76,7 @@ export default function SuratKeteranganRTRWPage() {
   }, [formData])
 
   const handleDownload = () => {
-    pdfMake
-      .createPdf(generatePdfDefinition(formData))
-      .download('sk-tidak-mampu.pdf')
+    pdfMake.createPdf(generatePdfDefinition(formData)).download('sktm.pdf')
   }
 
   const handlePrint = () => {
@@ -78,141 +87,297 @@ export default function SuratKeteranganRTRWPage() {
     pdfMake.createPdf(generatePdfDefinition(formData)).open()
   }
 
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) return
+
+    const reader = new FileReader()
+    reader.onloadend = () => {
+      setFormData((prev) => ({
+        ...prev,
+        logo: reader.result as string,
+      }))
+    }
+    reader.readAsDataURL(file)
+  }
+
   return (
     <div className="scrollbar flex h-full w-full gap-32 overflow-auto phones:h-auto phones:flex-col phones:overflow-visible">
       {/* --- Form Untuk Mengubah Data --- */}
       <div className="scrollbar flex h-full w-1/2 flex-col gap-32 overflow-auto phones:h-auto phones:w-full phones:overflow-visible">
-        <p className="text-[2.8rem] font-bold">Surat Pengantar RT/RW</p>
+        <p className="text-[2.8rem] font-bold">Surat Keterangan Tidak Mampu</p>
         <div className="scrollbar flex h-full flex-col gap-24 overflow-auto rounded-2x border bg-[#fefefe] p-[2.4rem] shadow-md phones:h-auto phones:overflow-visible">
-          <div className="scrollbar-new flex min-h-[120rem] w-full flex-col gap-16 overflow-auto">
-            <div className="mt-[4rem] flex items-center justify-center">
+          <div className="scrollbar flex min-h-[120rem] w-full flex-col gap-16 overflow-auto">
+            {/* --- Kop Surat --- */}
+            <div className="flex w-full gap-32 border-b border-black pb-12">
+              <div className="relative flex w-[20rem] flex-col items-start gap-12">
+                <label className="text-sm mb-2 block font-medium text-gray-700">
+                  Unggah Logo
+                </label>
+
+                {!formData.logo ? (
+                  // Input Upload jika belum ada logo
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageUpload}
+                    className="mt-2"
+                  />
+                ) : (
+                  // Preview Gambar jika sudah ada logo
+                  <div className="relative">
+                    <img
+                      src={formData.logo}
+                      alt="Logo Preview"
+                      className="rounded h-[12rem] object-contain"
+                    />
+
+                    {/* Tombol Ganti */}
+                    <button
+                      type="button"
+                      onClick={() =>
+                        document.getElementById('logo-upload').click()
+                      }
+                      className="rounded absolute right-0 top-0 border bg-white px-2 py-1 shadow"
+                    >
+                      Ganti
+                    </button>
+
+                    {/* Hidden file input for "Ganti" button */}
+                    <input
+                      id="logo-upload"
+                      type="file"
+                      accept="image/*"
+                      className="hidden"
+                      onChange={handleImageUpload}
+                    />
+                  </div>
+                )}
+              </div>
+              <div className="flex flex-1 flex-col gap-4">
+                <FormInput
+                  name="header1"
+                  value={formData.header1}
+                  onChange={handleChange}
+                  placeholder="Pemerintah Kabupaten Sidoarjo"
+                  className="text-center text-[2.8rem] font-bold"
+                />
+                <FormInput
+                  name="header2"
+                  value={formData.header2}
+                  onChange={handleChange}
+                  placeholder="Kecamatan Setempat"
+                  className="text-center text-[2.4rem]"
+                />
+                <FormInput
+                  name="header3"
+                  value={formData.header3}
+                  onChange={handleChange}
+                  placeholder="Desa Setempat"
+                  className="text-center text-[2.4rem]"
+                />
+                <FormInput
+                  name="header4"
+                  value={formData.header4}
+                  onChange={handleChange}
+                  placeholder="Jl. Sukamaju Raya No. 1, Bandung Kode Pos: 12345"
+                  className="text-center"
+                />
+              </div>
+            </div>
+
+            <div className="mt-[4rem] flex flex-col items-center justify-center">
               <FormInput
                 name="title"
                 value={formData.title}
                 onChange={handleChange}
-                placeholder="SURAT PENGANTAR RT/RW"
+                placeholder="SURAT KETERANGAN TIDAK MAMPU"
                 className="w-full text-center text-[2.4rem] font-bold"
               />
-            </div>
-            <div className="mt-[4rem] flex flex-col gap-4">
               <FormInput
-                name="kepada_1"
-                value={formData.kepada_1}
+                name="no_surat"
+                value={formData.no_surat}
                 onChange={handleChange}
-                placeholder="Kepada Yth."
-              />
-              <FormInput
-                name="kepada_2"
-                value={formData.kepada_2}
-                onChange={handleChange}
-                placeholder="Bapak/Ibu Lurah Kelurahan Sukamaju"
-              />
-              <FormInput
-                name="kepada_3"
-                value={formData.kepada_3}
-                onChange={handleChange}
-                placeholder="di Tempat"
+                placeholder="No Surat: RT/RW/No/XX/YYYY"
+                className="w-full text-center"
               />
             </div>
 
-            <div className="mt-[4rem] flex flex-col gap-24">
-              <FormInput
-                name="dengan_hormat_1"
-                value={formData.dengan_hormat_1}
-                onChange={handleChange}
-                placeholder="Dengan hormat, yang bertanda tangan di bawah ini, Ketua RT 03 RW 05 Kelurahan Sukamaju, Kecamatan Sukasari, Kota Bandung, menerangkan bahwa:"
-              />
+            <div className="mt-[4rem] flex flex-col gap-4">
               <FormTextArea
-                name="dengan_hormat_2"
-                value={formData.dengan_hormat_2}
+                name="pengantar"
+                value={formData.pengantar}
                 onChange={handleChange}
-                placeholder="Nama yang tersebut di bawah ini adalah benar warga kami dan bermaksud untuk mengurus surat keterangan domisili."
+                rows={isMobile ? 3 : 2}
+                placeholder="Yang bertanda tangan di bawah ini Kepala Desa Setempat Kecamatan Setempat Kabupaten Sidoarjo. Menerangkan dengan sebenar-benarnya bahwa orang tersebut di bawah ini:"
               />
             </div>
 
             <table className="w-full table-auto">
               <tbody>
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Nama</td>
+                  <td className="w-[20%] pr-4 align-top phones:w-[40%]">
+                    Nama Lengkap
+                  </td>
                   <td>
                     :{' '}
                     <FormInput
                       name="ul_1"
                       value={formData.ul_1}
                       onChange={handleChange}
-                      placeholder="Andi Saputra"
-                      className="w-[98%] phones:w-[97%]"
+                      placeholder="Syamil Wahyudi"
+                      className="w-[80%] phones:w-[60%]"
                     />
                   </td>
                 </tr>
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Alamat</td>
+                  <td className="w-[20%] pr-4 align-top phones:w-[40%]">
+                    Pekerjaan
+                  </td>
                   <td>
                     :{' '}
                     <FormInput
                       name="ul_2"
                       value={formData.ul_2}
                       onChange={handleChange}
-                      className="w-[98%] phones:w-[97%]"
-                      placeholder="Jl. Melati No. 45, RT 03 RW 05, Sukamaju"
+                      placeholder="Laki-laki"
+                      className="w-[80%] phones:w-[60%]"
                     />
                   </td>
                 </tr>
+
                 <tr>
-                  <td className="w-[20%] pr-4 align-top">Keperluan</td>
+                  <td className="w-[20%] pr-4 align-top phones:w-[40%]">
+                    Tempat/Tgl Lahir
+                  </td>
                   <td>
                     :{' '}
                     <FormInput
                       name="ul_3"
-                      className="w-[98%] phones:w-[97%]"
+                      className="w-[80%] phones:w-[60%]"
                       value={formData.ul_3}
                       onChange={handleChange}
-                      placeholder="Pengurusan Surat Keterangan Domisili"
+                      placeholder="Bekasi, 1 Januari 2000"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="w-[20%] pr-4 align-top phones:w-[40%]">
+                    Jenis Kelamin
+                  </td>
+                  <td>
+                    :{' '}
+                    <FormInput
+                      name="ul_4"
+                      value={formData.ul_4}
+                      onChange={handleChange}
+                      placeholder="010101010101"
+                      className="w-[80%] phones:w-[60%]"
+                    />
+                  </td>
+                </tr>
+
+                <tr>
+                  <td className="w-[20%] pr-4 align-top phones:w-[40%]">
+                    No. NIK
+                  </td>
+                  <td>
+                    :{' '}
+                    <FormInput
+                      name="ul_5"
+                      value={formData.ul_5}
+                      onChange={handleChange}
+                      placeholder="Pengusaha Mebel"
+                      className="w-[80%] phones:w-[60%]"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="w-[20%] pr-4 align-top phones:w-[40%]">
+                    Telepon
+                  </td>
+                  <td>
+                    :{' '}
+                    <FormInput
+                      name="ul_6"
+                      value={formData.ul_6}
+                      onChange={handleChange}
+                      placeholder="Islam"
+                      className="w-[80%] phones:w-[60%]"
+                    />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="w-[20%] pr-4 align-top phones:w-[40%]">
+                    Alamat
+                  </td>
+                  <td>
+                    :{' '}
+                    <FormInput
+                      name="ul_7"
+                      value={formData.ul_7 || ''}
+                      onChange={handleChange}
+                      placeholder="Jl Gajah Mundur, No. 8, Suka Maju"
+                      className="w-[80%] phones:w-[60%]"
                     />
                   </td>
                 </tr>
               </tbody>
             </table>
+
             <div className="mt-[4rem] flex flex-col gap-24">
               <FormTextArea
                 name="memberitahukan_1"
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
-                rows={isMobile ? 5 : 3}
-                placeholder="Bersangkutan adalah warga yang berdomisili secara tetap di wilayah kami dan tidak pernah terlibat masalah hukum atau sosial di lingkungan ini."
+                rows={isMobile ? 8 : 4}
+                placeholder="Orang tersebut benar-benar penduduk kelurahan/desa setempat kecamatan setempat dan tinggal di alamat seperti tersebut diatas. Menurut pengamatan kami orang tersebut benar-benar dari keluarga tidak mampu. Adapun surat keterangan tidak mampu ini diberikan kepada yang bersangkutan sebagai lampiran untuk mendapatkan keringanan biaya pengobatan di PUSKESMAS/RUMAH SAKIT KABUPATEN SIDOARJO."
               />
               <FormTextArea
                 name="memberitahukan_2"
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
                 rows={isMobile ? 3 : 2}
-                placeholder="Surat ini dibuat untuk dapat dipergunakan sebagaimana mestinya."
+                placeholder="Demikian surat keterangan tidak mampu ini dibuat dengan sebenar benarnya dan untuk dipergunakan sebagaimana mestinya"
               />
             </div>
 
-            <FormTextArea
-              placeholder="Demikian surat pengantar ini kami buat dengan sebenar-benarnya."
-              name="demikian"
-              value={formData.demikian}
-              onChange={handleChange}
-              rows={isMobile ? 3 : 2}
-            />
-
-            <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
-              <FormInput
-                name="hormat_saya_1"
-                value={formData.hormat_saya_1}
-                onChange={handleChange}
-                placeholder="Hormat saya,"
-                className="text-center"
-              />
-              <FormInput
-                name="hormat_saya_2"
-                value={formData.hormat_saya_2}
-                onChange={handleChange}
-                placeholder="[Nama Siswa]"
-                className="text-center"
-              />
+            <div className="mt-[4rem] flex items-start justify-between gap-32">
+              <div className="flex flex-col justify-center gap-80">
+                <div className="flex flex-col gap-12">
+                  <FormInput
+                    name="pemohon"
+                    value={formData.pemohon}
+                    onChange={handleChange}
+                    placeholder="Pemohon"
+                    className="text-center"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col justify-center gap-80">
+                <div className="flex flex-col justify-center gap-80">
+                  <div className="flex flex-col gap-12">
+                    <FormInput
+                      name="mengetahui"
+                      value={formData.mengetahui}
+                      onChange={handleChange}
+                      placeholder="Mengetahui"
+                    />
+                    <FormInput
+                      name="alamat_tanggal"
+                      value={formData.alamat_tanggal}
+                      onChange={handleChange}
+                      placeholder="Jakarta, 08 Mei 2025"
+                    />
+                    <FormInput
+                      name="jabatan_kades"
+                      value={formData.jabatan_kades}
+                      onChange={handleChange}
+                      placeholder="Kepala Desa Setempat"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
