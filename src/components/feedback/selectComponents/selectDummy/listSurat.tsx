@@ -15,7 +15,68 @@ export const ListSurat = [
     nama: 'Surat Izin Sakit Kerja',
     deskripsi: 'Digunakan karyawan untuk izin tidak bekerja karena sakit.',
   },
-
+  {
+    icon: '🎒',
+    nama: 'Surat Izin Tidak Masuk Sekolah',
+    deskripsi: 'Diajukan siswa untuk meminta izin tidak hadir ke sekolah.',
+  },
+  {
+    icon: '🕴️',
+    nama: 'Surat Izin Tidak Masuk Kerja',
+    deskripsi: 'Diajukan karyawan untuk izin tidak masuk kerja.',
+  },
+  {
+    icon: '💍',
+    nama: 'Surat Pernyataan Belum Menikah',
+    deskripsi: 'Menyatakan bahwa seseorang belum pernah menikah.',
+  },
+  {
+    icon: '✍️',
+    nama: 'Surat Pernyataan Kesanggupan',
+    deskripsi: 'Menyatakan kesiapan untuk melakukan suatu hal.',
+  },
+  {
+    icon: '✍️',
+    nama: 'Surat Pernyataan Kesanggupan Membayar Utang',
+    deskripsi: 'Menyatakan komitmen membayar utang.',
+  },
+  {
+    icon: '✍️',
+    nama: 'Surat Pernyataan Sanggup Membayar Utang dengan Jaminan',
+    deskripsi: 'Menyatakan kesanggupan membayar utang dengan jaminan tertentu.',
+  },
+  {
+    icon: '✍️',
+    nama: 'Surat Pernyataan Sanggup Membayar Angsuran',
+    deskripsi: 'Dokumen kesanggupan membayar angsuran secara berkala.',
+  },
+  {
+    icon: '✍️',
+    nama: 'Surat Pernyataan Kesanggupan Bayar Ganti Rugi',
+    deskripsi:
+      'Pernyataan akan membayar ganti rugi atas kerugian yang ditimbulkan.',
+  },
+  {
+    icon: '✍️',
+    nama: 'Surat Pernyataan Sanggup Membayar Pajak',
+    deskripsi: 'Dokumen yang menyatakan kesiapan membayar pajak.',
+  },
+  {
+    icon: '📝',
+    nama: 'Surat Kuasa',
+    deskripsi:
+      'Memberikan kuasa kepada pihak lain untuk melakukan tindakan tertentu.',
+  },
+  {
+    icon: '💸',
+    nama: 'Surat Keterangan Tidak Mampu (SKTM)',
+    deskripsi: 'Digunakan untuk menyatakan kondisi ekonomi tidak mampu.',
+  },
+  {
+    icon: '🔍',
+    nama: 'Surat Keterangan Kehilangan',
+    deskripsi: 'Untuk melaporkan kehilangan barang atau dokumen.',
+  },
   {
     icon: '🏡',
     nama: 'Surat Keterangan Domisili Perorangan',
@@ -35,42 +96,6 @@ export const ListSurat = [
     icon: '🏘️',
     nama: 'Surat Keterangan Domisili Pengantar RT',
     deskripsi: 'Surat keterangan domisili atas pengantar dari RT.',
-  },
-  {
-    icon: '💸',
-    nama: 'Surat Keterangan Tidak Mampu (SKTM)',
-    deskripsi: 'Digunakan untuk menyatakan kondisi ekonomi tidak mampu.',
-  },
-  {
-    icon: '🔍',
-    nama: 'Surat Keterangan Kehilangan',
-    deskripsi: 'Untuk melaporkan kehilangan barang atau dokumen.',
-  },
-  {
-    icon: '💍',
-    nama: 'Surat Pernyataan Belum Menikah',
-    deskripsi: 'Menyatakan bahwa seseorang belum pernah menikah.',
-  },
-  {
-    icon: '✍️',
-    nama: 'Surat Pernyataan Kesanggupan',
-    deskripsi: 'Menyatakan kesiapan untuk melakukan suatu hal.',
-  },
-  {
-    icon: '📝',
-    nama: 'Surat Kuasa',
-    deskripsi:
-      'Memberikan kuasa kepada pihak lain untuk melakukan tindakan tertentu.',
-  },
-  {
-    icon: '🎒',
-    nama: 'Surat Izin Tidak Masuk Sekolah',
-    deskripsi: 'Diajukan siswa untuk meminta izin tidak hadir ke sekolah.',
-  },
-  {
-    icon: '🕴️',
-    nama: 'Surat Izin Tidak Masuk Kerja',
-    deskripsi: 'Diajukan karyawan untuk izin tidak masuk kerja.',
   },
 
   // 💼 Surat Terkait Pekerjaan

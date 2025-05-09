@@ -157,7 +157,7 @@ export const SuratKeteranganTidakMampu = loadable(
   () => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(import('@/pages/surat/suratKeteranganTidakMampu'))
+        resolve(import('@/pages/surat/skTidakMampu'))
       }, 1000) // Delay 1 seconds before resolving the import
     })
   },
@@ -170,7 +170,7 @@ export const SuratBelumMenikah = loadable(
   () => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(import('@/pages/surat/suratKeteranganBelumMenikah'))
+        resolve(import('@/pages/surat/skBelumMenikah'))
       }, 1000) // Delay 1 seconds before resolving the import
     })
   },
@@ -197,6 +197,84 @@ export const SuratPengunduranDiri = loadable(
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(import('@/pages/surat/suratPengunduranDiri'))
+      }, 1000) // Delay 1 seconds before resolving the import
+    })
+  },
+  {
+    fallback: <LoadingFallbackPage />, // Show the fallback loading page during the delay
+  },
+)
+
+export const SPSanggupMembayarUtang = loadable(
+  () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(import('@/pages/surat/spSanggupMembayarUtang'))
+      }, 1000) // Delay 1 seconds before resolving the import
+    })
+  },
+  {
+    fallback: <LoadingFallbackPage />, // Show the fallback loading page during the delay
+  },
+)
+
+export const SPSanggupMembayarUtangDenganJaminan = loadable(
+  () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(import('@/pages/surat/spSanggupMembayarUtangDenganJaminan'))
+      }, 1000) // Delay 1 seconds before resolving the import
+    })
+  },
+  {
+    fallback: <LoadingFallbackPage />, // Show the fallback loading page during the delay
+  },
+)
+
+export const SPSanggupMembayarAngsuran = loadable(
+  () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(import('@/pages/surat/spSanggupMembayarAngsuran'))
+      }, 1000) // Delay 1 seconds before resolving the import
+    })
+  },
+  {
+    fallback: <LoadingFallbackPage />, // Show the fallback loading page during the delay
+  },
+)
+
+export const SpSanggupMembayarGantiRugi = loadable(
+  () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(import('@/pages/surat/spSanggupMembayarGantiRugi'))
+      }, 1000) // Delay 1 seconds before resolving the import
+    })
+  },
+  {
+    fallback: <LoadingFallbackPage />, // Show the fallback loading page during the delay
+  },
+)
+
+export const SpSanggupMembayarPajak = loadable(
+  () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(import('@/pages/surat/spSanggupMembayarPajak'))
+      }, 1000) // Delay 1 seconds before resolving the import
+    })
+  },
+  {
+    fallback: <LoadingFallbackPage />, // Show the fallback loading page during the delay
+  },
+)
+
+export const SpKesanggupan = loadable(
+  () => {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(import('@/pages/surat/spKesanggupan'))
       }, 1000) // Delay 1 seconds before resolving the import
     })
   },

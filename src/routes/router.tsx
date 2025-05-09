@@ -5,6 +5,12 @@ import {
   HomePage,
   MainLayout,
   NotFoundPage,
+  SpKesanggupan,
+  SPSanggupMembayarAngsuran,
+  SpSanggupMembayarGantiRugi,
+  SpSanggupMembayarPajak,
+  SPSanggupMembayarUtang,
+  SPSanggupMembayarUtangDenganJaminan,
   SuratHomePage,
   SuratIzinSakiSekolahtPage,
   SuratIzinSakitKerjaPage,
@@ -20,7 +26,7 @@ import {
   SuratPage,
   SuratPengunduranDiri,
 } from './loadables'
-import SuratKeteranganBelumMenikah from '@/pages/surat/suratKeteranganBelumMenikah'
+import SuratKeteranganBelumMenikah from '@/pages/surat/skBelumMenikah'
 
 // Create a router configuration using 'createBrowserRouter' to define application routes
 export const router = createBrowserRouter([
@@ -89,6 +95,31 @@ export const router = createBrowserRouter([
           {
             path: 'surat-pernyataan-belum-menikah',
             element: <SuratKeteranganBelumMenikah />,
+          },
+          {
+            path: 'surat-pernyataan-kesanggupan-membayar-utang',
+            element: <SPSanggupMembayarUtang />,
+          },
+
+          {
+            path: 'surat-pernyataan-sanggup-membayar-utang-dengan-jaminan',
+            element: <SPSanggupMembayarUtangDenganJaminan />,
+          },
+          {
+            path: 'surat-pernyataan-kesanggupan-bayar-ganti-rugi',
+            element: <SpSanggupMembayarGantiRugi />,
+          },
+          {
+            path: 'surat-pernyataan-sanggup-membayar-pajak',
+            element: <SpSanggupMembayarPajak />,
+          },
+          {
+            path: 'surat-pernyataan-kesanggupan',
+            element: <SpKesanggupan />,
+          },
+          {
+            path: 'surat-pernyataan-sanggup-membayar-angsuran',
+            element: <SPSanggupMembayarAngsuran />,
           },
           {
             path: 'surat-lamaran-kerja',

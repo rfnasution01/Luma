@@ -66,12 +66,12 @@ export default function SuratPage() {
         width="60%"
         textContent={
           <div className="grid w-full grid-cols-3 gap-32 font-sans text-[2rem] phones:grid-cols-1">
-            {/* Kategori 1: Surat Pribadi & Domisili */}
+            {/* Kategori 1: Surat Pribadi & Sekolah */}
             <div className="col-span-1 flex flex-col gap-24">
               <p className="text-[2.2rem] font-medium">
-                Surat Pribadi & Domisili
+                Surat Pribadi & Sekolah
               </p>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-4 leading-[1.3]">
                 {[
                   'Surat Izin Sakit Sekolah',
                   'Surat Izin Sakit Kuliah',
@@ -79,63 +79,7 @@ export default function SuratPage() {
                   'Surat Izin Tidak Masuk Sekolah',
                   'Surat Izin Tidak Masuk Kerja',
                   'Surat Keterangan Tidak Mampu (SKTM)',
-                  'Surat Pernyataan Belum Menikah',
-                  'Surat Pernyataan Kesanggupan',
-                  'Surat Kuasa',
                   'Surat Keterangan Kehilangan',
-                  'Surat Keterangan Domisili Perorangan',
-                  'Surat Keterangan Domisili Pengantar RT',
-                ]?.map((item, idx) => (
-                  <div
-                    onClick={() => {
-                      setIsShow(false)
-                      navigate(`/surat/${convertToSlug(item)}`)
-                    }}
-                    className="cursor-pointer p-12 transition-colors duration-300 hover:bg-slate-50"
-                    key={idx}
-                  >
-                    <p>{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Kategori 2: Surat Terkait Pekerjaan */}
-            <div className="col-span-1 flex flex-col gap-24">
-              <p className="text-[2.2rem] font-medium">
-                Surat Terkait Pekerjaan
-              </p>
-              <div className="flex flex-col gap-4">
-                {[
-                  'Surat Lamaran Kerja',
-                  'Surat Pengunduran Diri (Resign)',
-                  'Surat Tugas',
-                  'Surat Rekomendasi Kerja',
-                  'Surat Panggilan Kerja',
-                  'Surat Peringatan (SP)',
-                  'Surat Keterangan Kerja',
-                  'Surat Keterangan Domisili Perusahaan',
-                  'Surat Keterangan Domisili Usaha',
-                ]?.map((item, idx) => (
-                  <div
-                    onClick={() => {
-                      setIsShow(false)
-                      navigate(`/surat/${convertToSlug(item)}`)
-                    }}
-                    className="cursor-pointer p-12 transition-colors duration-300 hover:bg-slate-50"
-                    key={idx}
-                  >
-                    <p>{item}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Kategori 3: Surat Pendidikan */}
-            <div className="col-span-1 flex flex-col gap-24">
-              <p className="text-[2.2rem] font-medium">Surat Pendidikan</p>
-              <div className="flex flex-col gap-4">
-                {[
                   'Surat Keterangan Aktif Sekolah',
                   'Surat Keterangan Aktif Kuliah',
                 ]?.map((item, idx) => (
@@ -153,16 +97,20 @@ export default function SuratPage() {
               </div>
             </div>
 
-            {/* Kategori 4: Surat Legal & Perjanjian */}
+            {/* Kategori 2: Surat Pernyataan & Kesanggupan */}
             <div className="col-span-1 flex flex-col gap-24">
               <p className="text-[2.2rem] font-medium">
-                Surat Legal & Perjanjian
+                Surat Pernyataan & Kesanggupan
               </p>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-4 leading-[1.3]">
                 {[
-                  'Surat Keterangan Usaha (SKU)',
-                  'Surat Perjanjian Sewa Menyewa',
-                  'Surat Perjanjian Jual Beli',
+                  'Surat Pernyataan Belum Menikah',
+                  'Surat Pernyataan Kesanggupan',
+                  'Surat Pernyataan Kesanggupan Membayar Utang',
+                  'Surat Pernyataan Sanggup Membayar Utang dengan Jaminan',
+                  'Surat Pernyataan Sanggup Membayar Angsuran',
+                  'Surat Pernyataan Kesanggupan Bayar Ganti Rugi',
+                  'Surat Pernyataan Sanggup Membayar Pajak',
                   'Surat Pernyataan Kepemilikan',
                   'Surat Pernyataan Tidak Menerima Bantuan',
                 ]?.map((item, idx) => (
@@ -180,12 +128,119 @@ export default function SuratPage() {
               </div>
             </div>
 
-            {/* Kategori 5: Surat Umum & Komunikasi Resmi */}
+            {/* Kategori 3: Surat Keterangan Domisili */}
             <div className="col-span-1 flex flex-col gap-24">
               <p className="text-[2.2rem] font-medium">
-                Surat Umum & Komunikasi Resmi
+                Surat Keterangan Domisili
               </p>
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-4 leading-[1.3]">
+                {[
+                  'Surat Keterangan Domisili Perorangan',
+                  'Surat Keterangan Domisili Pengantar RT',
+                  'Surat Keterangan Domisili Perusahaan',
+                  'Surat Keterangan Domisili Usaha',
+                ]?.map((item, idx) => (
+                  <div
+                    onClick={() => {
+                      setIsShow(false)
+                      navigate(`/surat/${convertToSlug(item)}`)
+                    }}
+                    className="cursor-pointer p-12 transition-colors duration-300 hover:bg-slate-50"
+                    key={idx}
+                  >
+                    <p>{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Kategori 4: Surat Keuangan & Pembayaran */}
+            <div className="col-span-1 flex flex-col gap-24">
+              <p className="text-[2.2rem] font-medium">
+                Surat Keuangan & Pembayaran
+              </p>
+              <div className="flex flex-col gap-4 leading-[1.3]">
+                {[
+                  'Surat Pernyataan Kesanggupan Membayar Utang',
+                  'Surat Pernyataan Sanggup Membayar Angsuran',
+                  'Surat Pernyataan Sanggup Membayar Pajak',
+                  'Surat Pernyataan Kesanggupan Bayar Ganti Rugi',
+                ]?.map((item, idx) => (
+                  <div
+                    onClick={() => {
+                      setIsShow(false)
+                      navigate(`/surat/${convertToSlug(item)}`)
+                    }}
+                    className="cursor-pointer p-12 transition-colors duration-300 hover:bg-slate-50"
+                    key={idx}
+                  >
+                    <p>{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Kategori 5: Surat Legal & Perjanjian */}
+            <div className="col-span-1 flex flex-col gap-24">
+              <p className="text-[2.2rem] font-medium">
+                Surat Legal & Perjanjian
+              </p>
+              <div className="flex flex-col gap-4 leading-[1.3]">
+                {[
+                  'Surat Keterangan Usaha (SKU)',
+                  'Surat Perjanjian Sewa Menyewa',
+                  'Surat Perjanjian Jual Beli',
+                  'Surat Kuasa',
+                ]?.map((item, idx) => (
+                  <div
+                    onClick={() => {
+                      setIsShow(false)
+                      navigate(`/surat/${convertToSlug(item)}`)
+                    }}
+                    className="cursor-pointer p-12 transition-colors duration-300 hover:bg-slate-50"
+                    key={idx}
+                  >
+                    <p>{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Kategori 6: Surat Terkait Pekerjaan */}
+            <div className="col-span-1 flex flex-col gap-24">
+              <p className="text-[2.2rem] font-medium">
+                Surat Terkait Pekerjaan
+              </p>
+              <div className="flex flex-col gap-4 leading-[1.3]">
+                {[
+                  'Surat Lamaran Kerja',
+                  'Surat Pengunduran Diri (Resign)',
+                  'Surat Tugas',
+                  'Surat Rekomendasi Kerja',
+                  'Surat Panggilan Kerja',
+                  'Surat Peringatan (SP)',
+                  'Surat Keterangan Kerja',
+                ]?.map((item, idx) => (
+                  <div
+                    onClick={() => {
+                      setIsShow(false)
+                      navigate(`/surat/${convertToSlug(item)}`)
+                    }}
+                    className="cursor-pointer p-12 transition-colors duration-300 hover:bg-slate-50"
+                    key={idx}
+                  >
+                    <p>{item}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Kategori 7: Surat Bisnis & Komunikasi Resmi */}
+            <div className="col-span-1 flex flex-col gap-24">
+              <p className="text-[2.2rem] font-medium">
+                Surat Bisnis & Komunikasi Resmi
+              </p>
+              <div className="flex flex-col gap-4 leading-[1.3]">
                 {[
                   'Surat Undangan Resmi',
                   'Surat Edaran',
