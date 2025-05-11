@@ -153,6 +153,18 @@ export const ListSurat = [
     deskripsi: 'Menyatakan bahwa mahasiswa masih aktif di perguruan tinggi.',
   },
   {
+    icon: '🛑',
+    nama: 'Surat Keterangan Tidak Sedang Menerima Beasiswa dalam Waktu Bersamaan',
+    deskripsi:
+      'Menyatakan bahwa penerima tidak sedang menerima beasiswa lain pada waktu yang bersamaan.',
+  },
+  {
+    icon: '✅',
+    nama: 'Surat Keterangan Berkelakuan Baik dan Tidak Pernah Melanggar Tata Tertib Kampus',
+    deskripsi:
+      'Menyatakan bahwa mahasiswa berkelakuan baik dan tidak memiliki catatan pelanggaran selama di kampus.',
+  },
+  {
     icon: '📑',
     nama: 'Surat Perjanjian Sewa Menyewa',
     deskripsi: 'Dokumen perjanjian untuk menyewa atau menyewakan sesuatu.',

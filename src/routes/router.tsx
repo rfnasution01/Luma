@@ -7,6 +7,7 @@ import {
   NotFoundPage,
   SKAktifKuliah,
   SKAktifSekolah,
+  SkBerkelakuanBaikKampus,
   SKKehilangan,
   SkTidakBeasiswaGanda,
   SpKesanggupan,
@@ -148,6 +149,10 @@ export const router = createBrowserRouter([
           {
             path: 'surat-keterangan-tidak-sedang-menerima-beasiswa-dalam-waktu-bersamaan',
             element: <SkTidakBeasiswaGanda />,
+          },
+          {
+            path: 'surat-keterangan-berkelakuan-baik-dan-tidak-pernah-melanggar-tata-tertib-kampus',
+            element: <SkBerkelakuanBaikKampus />,
           },
           {
             // Define a wildcard '*' route that will match any path that doesn't exist

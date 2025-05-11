@@ -12,45 +12,46 @@ import 'dayjs/locale/id'
 
 pdfMake.vfs = pdfFonts.vfs
 
-export default function SuratKeteranganAktifKuliah() {
+export default function SuratKeteranganBerkelakuanBaikKampus() {
   const { isMobile } = useMobile()
   const [pdfUrl, setPdfUrl] = useState(null)
   const [debounceTimer, setDebounceTimer] = useState(null)
 
   const [formData, setFormData] = useState({
     logo: '',
-    header1: 'Kementerian Pendidikan dan Kebudayaan',
-    header2: 'Universitas Contoh Nusantara',
-    header3: 'Fakultas Ilmu dan Teknologi',
+    header1: 'Departemen Pendidikan Nasional',
+    header2: 'Universitas Riau Pekanbaru',
+    header3: 'Fakultas Keguruan dan Ilmu Pendidikan',
     header4:
-      'Alamat: Jl. Pendidikan No. 123, Kota Contoh, Telp. (0123) 456789, Fax. (0123) 987654',
+      'Alamat: Kampus Bina Widya Simpang Baru - Pekanbaru Telp. (0761) 63267 Fax. (0761) 65804',
 
-    title: 'SURAT KETERANGAN AKTIF KULIAH',
-    no_surat: 'Nomor: 001/UN-CONTOH/FIT/2025',
+    title:
+      'SURAT KETERANGAN BERKELAKUAN BAIK DAN TIDAK PERNAH MELANGGAR TATA TERTIB KAMPUS',
+    no_surat: 'Nomor: RT/RW/No/XX/YYYY',
 
     pengantar_1:
-      'Dekan Fakultas Ilmu dan Teknologi Universitas Contoh Nusantara dengan ini menerangkan bahwa:',
+      'Dekan Fakultas Keguruan dan Ilmu Pendidikan Universitas Riau Pekanbaru dengan ini menerangkan bahwa:',
 
-    ul_1: 'Budi Santosa',
-    ul_2: 'Contohkota, 1 Januari 2000',
-    ul_3: '2025123456',
-    ul_4: 'Teknologi Informasi',
-    ul_5: 'Sistem Informasi',
-    ul_6: 'Sarjana (S1)',
-    ul_7: 'Jl. Mawar No. 45, Contohkota',
+    ul_1: 'Syamil Wahyudi',
+    ul_2: 'Bandung, 12 Januari 1995',
+    ul_3: '0123456789',
+    ul_4: 'Nama Jurusan',
+    ul_5: 'Nama Program Studi',
+    ul_6: 'Nama Program',
+    ul_7: 'Alamat',
 
     penutup_1:
-      'Nama tersebut di atas adalah mahasiswa aktif Fakultas Ilmu dan Teknologi Universitas Contoh Nusantara, terdaftar pada Tahun Akademik 2024/2025 semester ganjil dan aktif dalam kegiatan perkuliahan. Surat ini diterbitkan sebagai syarat pengajuan beasiswa.',
+      'Adalah sepengetahuan kami belum pernah melanggar tata tertib kampus dan bekelakuan baik. Surat keterangan ini diberikan untuk keperluan Persyaratan Beasiswa PPA',
     penutup_2:
-      'Demikian surat keterangan ini dibuat untuk digunakan sebagaimana mestinya.',
+      'Demikianlah Surat Keterangan ini kami buat dengan sesungguhnya untuk dapat dipergunakan sebagaimana mestinya.',
 
-    dikeluarkan: 'Dikeluarkan di: Contohkota',
+    dikeluarkan: 'Dikeluarkan di: Pekanbaru',
     tanggal: `Pada Tanggal: ${dayjs().locale('id').format('DD MMMM YYYY')}`,
     dekan: 'An. Dekan',
-    jabatan: 'Wakil Dekan III',
+    jabatan: 'Pembantu Dekan III',
 
-    nama: 'Dr. Rina Setiawati, M.T.',
-    nip: '198012312005012001',
+    nama: 'Abdillah',
+    nip: '0123456789',
   })
 
   const handleChange = (e) => {
@@ -79,7 +80,7 @@ export default function SuratKeteranganAktifKuliah() {
   const handleDownload = () => {
     pdfMake
       .createPdf(generatePdfDefinition(formData))
-      .download('sk-aktif-kuliah.pdf')
+      .download('sk-berkelakuan-baik-kampus.pdf')
   }
 
   const handlePrint = () => {
@@ -108,7 +109,10 @@ export default function SuratKeteranganAktifKuliah() {
     <div className="scrollbar flex h-full w-full gap-32 overflow-auto phones:h-auto phones:flex-col phones:overflow-visible">
       {/* --- Form Untuk Mengubah Data --- */}
       <div className="scrollbar flex h-full w-1/2 flex-col gap-32 overflow-auto phones:h-auto phones:w-full phones:overflow-visible">
-        <p className="text-[2.8rem] font-bold">Surat Keterangan Aktif Kuliah</p>
+        <p className="text-[2.8rem] font-bold">
+          SURAT KETERANGAN BERKELAKUAN BAIK DAN TIDAK PERNAH MELANGGAR TATA
+          TERTIB KAMPUS
+        </p>
         <div className="scrollbar flex h-full flex-col gap-24 overflow-auto rounded-2x border bg-[#fefefe] p-[2.4rem] shadow-md phones:h-auto phones:overflow-visible">
           <div className="scrollbar flex min-h-[120rem] w-full flex-col gap-16 overflow-auto">
             <div className="flex w-full gap-32 border-b border-black pb-12">
@@ -161,7 +165,7 @@ export default function SuratKeteranganAktifKuliah() {
                   name="header1"
                   value={formData.header1}
                   onChange={handleChange}
-                  placeholder="Departemen Pendidikan Nasional"
+                  placeholder="SURAT KETERANGAN BERKELAKUAN BAIK DAN TIDAK PERNAH MELANGGAR TATA TERTIB KAMPUS"
                   className="text-center text-[2.8rem] font-bold"
                 />
                 <FormInput
@@ -189,11 +193,11 @@ export default function SuratKeteranganAktifKuliah() {
             </div>
 
             <div className="mt-[4rem] flex flex-col items-center justify-center">
-              <FormInput
+              <FormTextArea
                 name="title"
                 value={formData.title}
                 onChange={handleChange}
-                placeholder="SURAT KETERANGAN AKTIF KULIAH"
+                placeholder="SURAT KETERANGAN BERKELAKUAN BAIK DAN TIDAK PERNAH MELANGGAR TATA TERTIB KAMPUS"
                 className="w-full text-center text-[2.4rem] font-bold"
               />
               <FormInput
@@ -315,15 +319,15 @@ export default function SuratKeteranganAktifKuliah() {
                 name="penutup_1"
                 value={formData.penutup_1}
                 onChange={handleChange}
-                rows={isMobile ? 5 : 3}
-                placeholder="Nama tersebut diatas adalah Mahasiswa Fakultas Keguruan dan Ilmu Pendidikan Universitas Riau Pekanbaru terdaftar pada tahun Akademik 2024/2025 semester ganjil dan aktif dalam perkuliahan, Surat Keterangan ini keperluan Persyaratan Beasiswa PPA."
+                rows={isMobile ? 4 : 2}
+                placeholder="Adalah sepengetahuan kami belum pernah melanggar tata tertib kampus dan bekelakuan baik. Surat keterangan ini diberikan untuk keperluan Persyaratan Beasiswa PPA"
               />
               <FormTextArea
                 name="penutup_2"
                 value={formData.penutup_2}
                 onChange={handleChange}
-                rows={isMobile ? 2 : 1}
-                placeholder="Demikianlah Surat Keterangan ini diberikan untuk dapat dipergunakan sebagaimana mestinya."
+                rows={isMobile ? 4 : 2}
+                placeholder="Demikianlah Surat Keterangan ini kami buat dengan sesungguhnya untuk dapat dipergunakan sebagaimana mestinya."
               />
             </div>
 
