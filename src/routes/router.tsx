@@ -5,6 +5,7 @@ import {
   HomePage,
   MainLayout,
   NotFoundPage,
+  SKKehilangan,
   SpKesanggupan,
   SPSanggupMembayarAngsuran,
   SpSanggupMembayarGantiRugi,
@@ -128,6 +129,10 @@ export const router = createBrowserRouter([
           {
             path: 'surat-pengunduran-diri-resign',
             element: <SuratPengunduranDiri />,
+          },
+          {
+            path: 'surat-keterangan-kehilangan',
+            element: <SKKehilangan />,
           },
           {
             // Define a wildcard '*' route that will match any path that doesn't exist

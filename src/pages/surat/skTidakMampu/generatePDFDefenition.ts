@@ -59,8 +59,8 @@ export function generatePdfDefinition(data) {
           widths: ['auto', '*'],
           body: [
             ['Nama Lengkap', `: ${data.ul_1.replace(/^.*?:/, '').trim()}`],
-            ['Pekerjaan', `: ${data.ul_3.replace(/^.*?:/, '').trim()}`],
-            ['Tempat, Tgl Lahir', `: ${data.ul_2.replace(/^.*?:/, '').trim()}`],
+            ['Pekerjaan', `: ${data.ul_2.replace(/^.*?:/, '').trim()}`],
+            ['Tempat, Tgl Lahir', `: ${data.ul_3.replace(/^.*?:/, '').trim()}`],
             ['Jenis Kelamin', `: ${data.ul_4.replace(/^.*?:/, '').trim()}`],
             ['No. NIK', `: ${data.ul_5.replace(/^.*?:/, '').trim()}`],
             ['Telepon', `: ${data.ul_6.replace(/^.*?:/, '').trim()}`],

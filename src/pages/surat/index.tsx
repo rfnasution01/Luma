@@ -9,6 +9,7 @@ import { useState } from 'react'
 import { Outlet, useNavigate } from 'react-router-dom'
 
 export default function SuratPage() {
+  const { lastPathname } = usePathname()
   const { isMobile } = useMobile()
   const navigate = useNavigate()
   const { secondPathname } = usePathname()
@@ -88,7 +89,15 @@ export default function SuratPage() {
                       setIsShow(false)
                       navigate(`/surat/${convertToSlug(item)}`)
                     }}
-                    className="cursor-pointer p-12 transition-colors duration-300 hover:bg-slate-50"
+                    className={clsx(
+                      'cursor-pointer p-12 transition-colors duration-300',
+                      {
+                        'rounded-lg bg-slate-700 text-slate-100':
+                          lastPathname === convertToSlug(item),
+                        'hover:bg-slate-50':
+                          lastPathname !== convertToSlug(item),
+                      },
+                    )}
                     key={idx}
                   >
                     <p>{item}</p>
