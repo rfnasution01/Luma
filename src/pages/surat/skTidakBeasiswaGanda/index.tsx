@@ -12,7 +12,7 @@ import 'dayjs/locale/id'
 
 pdfMake.vfs = pdfFonts.vfs
 
-export default function SuratKeteranganAktifKuliah() {
+export default function SuratKeteranganTidakBeasiswaGanda() {
   const { isMobile } = useMobile()
   const [pdfUrl, setPdfUrl] = useState(null)
   const [debounceTimer, setDebounceTimer] = useState(null)
@@ -25,11 +25,11 @@ export default function SuratKeteranganAktifKuliah() {
     header4:
       'Alamat: Kampus Bina Widya Simpang Baru - Pekanbaru Telp. (0761) 63267 Fax. (0761) 65804',
 
-    title: 'SURAT KETERANGAN AKTIF KULIAH',
+    title:
+      'SURAT KETERANGAN TIDAK SEDANG MENERIMA BEASISWA DALAM WAKTU BERSAMAAN (BEASISWA GANDA)',
     no_surat: 'Nomor: RT/RW/No/XX/YYYY',
 
-    pengantar_1:
-      'Dekan Fakultas Keguruan dan Ilmu Pendidikan Universitas Riau Pekanbaru dengan ini menerangkan bahwa:',
+    pengantar_1: 'Saya yang bertanda tangan di bawah ini:',
 
     ul_1: 'Syamil Wahyudi',
     ul_2: 'Bandung, 12 Januari 1995',
@@ -40,17 +40,18 @@ export default function SuratKeteranganAktifKuliah() {
     ul_7: 'Alamat',
 
     penutup_1:
-      'Nama tersebut diatas adalah Mahasiswa Fakultas Keguruan dan Ilmu Pendidikan Universitas Riau Pekanbaru terdaftar pada tahun Akademik 2024/2025 semester ganjil dan aktif dalam perkuliahan, Surat Keterangan ini keperluan Persyaratan Beasiswa PPA.',
+      'Dengan ini saya menyatakan, bahwa saya sebagai Calon penerima Beasiswa tidak sedang menerima Beasiswa lain, dalam waktu bersamaan (Beasiswa Ganda). Jika ternyata dikemudian hari kedepatan saya menerima 2 (Dua) Beasiswa seperti apa yang dinyatakaan tersebut diatas, maka saya bersedia dikarenakan sanksi (Hukuman) Akademis dari Pimpinan Fakultas Keguruan dan Ilmu Pendidikan Universitas Riau.',
     penutup_2:
-      'Demikianlah Surat Keterangan ini diberikan untuk dapat dipergunakan sebagaimana mestinya.',
+      'Demikianlah Surat Pernyataan ini dibuat dengan sesungguhnya untuk dapat dipergunakan sebagaimana mestinya.',
 
-    dikeluarkan: 'Dikeluarkan di: Pekanbaru',
-    tanggal: `Pada Tanggal: ${dayjs().locale('id').format('DD MMMM YYYY')}`,
-    dekan: 'An. Dekan',
-    jabatan: 'Pembantu Dekan III',
-
-    nama: 'Abdillah',
-    nip: '0123456789',
+    mengetahui_1: 'Mengetahui:',
+    jabatan_1: 'Pembantu Dekan III',
+    nama_1: 'Abdillah',
+    nip_1: 'NIP. 0123456789',
+    mengetahui_2: `Pekanbaru, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
+    jabatan_2: 'Saya yang Menyatakan,',
+    nama_2: 'Syamil',
+    nip_2: 'NIM. 091823123',
   })
 
   const handleChange = (e) => {
@@ -79,7 +80,7 @@ export default function SuratKeteranganAktifKuliah() {
   const handleDownload = () => {
     pdfMake
       .createPdf(generatePdfDefinition(formData))
-      .download('sk-aktif-kuliah.pdf')
+      .download('sk-tidak-beasiswa-ganda.pdf')
   }
 
   const handlePrint = () => {
@@ -108,7 +109,10 @@ export default function SuratKeteranganAktifKuliah() {
     <div className="scrollbar flex h-full w-full gap-32 overflow-auto phones:h-auto phones:flex-col phones:overflow-visible">
       {/* --- Form Untuk Mengubah Data --- */}
       <div className="scrollbar flex h-full w-1/2 flex-col gap-32 overflow-auto phones:h-auto phones:w-full phones:overflow-visible">
-        <p className="text-[2.8rem] font-bold">Surat Keterangan Aktif Kuliah</p>
+        <p className="text-[2.8rem] font-bold">
+          SURAT KETERANGAN TIDAK SEDANG MENERIMA BEASISWA DALAM WAKTU BERSAMAAN
+          (BEASISWA GANDA)
+        </p>
         <div className="scrollbar flex h-full flex-col gap-24 overflow-auto rounded-2x border bg-[#fefefe] p-[2.4rem] shadow-md phones:h-auto phones:overflow-visible">
           <div className="scrollbar flex min-h-[120rem] w-full flex-col gap-16 overflow-auto">
             <div className="flex w-full gap-32 border-b border-black pb-12">
@@ -189,11 +193,12 @@ export default function SuratKeteranganAktifKuliah() {
             </div>
 
             <div className="mt-[4rem] flex flex-col items-center justify-center">
-              <FormInput
+              <FormTextArea
                 name="title"
                 value={formData.title}
                 onChange={handleChange}
-                placeholder="SURAT KETERANGAN AKTIF KULIAH"
+                placeholder="SURAT KETERANGAN TIDAK SEDANG MENERIMA BEASISWA
+DALAM WAKTU BERSAMAAN (BEASISWA GANDA)"
                 className="w-full text-center text-[2.4rem] font-bold"
               />
               <FormInput
@@ -211,12 +216,12 @@ export default function SuratKeteranganAktifKuliah() {
                 value={formData.pengantar_1}
                 onChange={handleChange}
                 rows={isMobile ? 2 : 1}
-                placeholder="Dekan Fakultas Keguruan dan Ilmu Pendidikan Universitas Riau Pekanbaru dengan ini menerangkan bahwa:"
+                placeholder="Saya yang bertanda tangan di bawah ini:"
               />
               <table className="w-full table-auto">
                 <tbody>
                   <tr>
-                    <td className="w-[40%] pr-4 align-top">Nama</td>
+                    <td className="w-[20%] pr-4 align-top">Nama</td>
                     <td>
                       :{' '}
                       <FormInput
@@ -224,7 +229,7 @@ export default function SuratKeteranganAktifKuliah() {
                         value={formData.ul_1}
                         onChange={handleChange}
                         placeholder="Syamil Wahyudi"
-                        className="w-[60%]"
+                        className="w-[80%]"
                       />
                     </td>
                   </tr>
@@ -237,7 +242,7 @@ export default function SuratKeteranganAktifKuliah() {
                         value={formData.ul_2}
                         onChange={handleChange}
                         placeholder="Bandung, 12 Januari 1995"
-                        className="w-[60%]"
+                        className="w-[80%]"
                       />
                     </td>
                   </tr>
@@ -250,7 +255,7 @@ export default function SuratKeteranganAktifKuliah() {
                         value={formData.ul_3}
                         onChange={handleChange}
                         placeholder="0123456789"
-                        className="w-[60%]"
+                        className="w-[80%]"
                       />
                     </td>
                   </tr>
@@ -263,7 +268,7 @@ export default function SuratKeteranganAktifKuliah() {
                         value={formData.ul_4}
                         onChange={handleChange}
                         placeholder="Nama Jurusan"
-                        className="w-[60%]"
+                        className="w-[80%]"
                       />
                     </td>
                   </tr>
@@ -276,7 +281,7 @@ export default function SuratKeteranganAktifKuliah() {
                         value={formData.ul_5}
                         onChange={handleChange}
                         placeholder="Nama Program Studi"
-                        className="w-[60%]"
+                        className="w-[80%]"
                       />
                     </td>
                   </tr>
@@ -289,7 +294,7 @@ export default function SuratKeteranganAktifKuliah() {
                         value={formData.ul_6}
                         onChange={handleChange}
                         placeholder="Nama Program"
-                        className="w-[60%]"
+                        className="w-[80%]"
                       />
                     </td>
                   </tr>
@@ -302,7 +307,7 @@ export default function SuratKeteranganAktifKuliah() {
                         value={formData.ul_7}
                         onChange={handleChange}
                         placeholder="Alamat"
-                        className="w-[60%]"
+                        className="w-[80%]"
                       />
                     </td>
                   </tr>
@@ -315,60 +320,76 @@ export default function SuratKeteranganAktifKuliah() {
                 name="penutup_1"
                 value={formData.penutup_1}
                 onChange={handleChange}
-                rows={isMobile ? 5 : 3}
-                placeholder="Nama tersebut diatas adalah Mahasiswa Fakultas Keguruan dan Ilmu Pendidikan Universitas Riau Pekanbaru terdaftar pada tahun Akademik 2024/2025 semester ganjil dan aktif dalam perkuliahan, Surat Keterangan ini keperluan Persyaratan Beasiswa PPA."
+                rows={isMobile ? 8 : 4}
+                placeholder="Dengan ini saya menyatakan, bahwa saya sebagai Calon penerima Beasiswa tidak sedang menerima Beasiswa lain, dalam waktu bersamaan (Beasiswa Ganda). Jika ternyata dikemudian hari kedepatan saya menerima 2 (Dua) Beasiswa seperti apa yang dinyatakaan tersebut diatas, maka saya bersedia dikarenakan sanksi (Hukuman) Akademis dari Pimpinan Fakultas Keguruan dan Ilmu Pendidikan Universitas Riau."
               />
               <FormTextArea
                 name="penutup_2"
                 value={formData.penutup_2}
                 onChange={handleChange}
                 rows={isMobile ? 2 : 1}
-                placeholder="Demikianlah Surat Keterangan ini diberikan untuk dapat dipergunakan sebagaimana mestinya."
+                placeholder="Demikianlah Surat Pernyataan ini dibuat dengan sesungguhnya untuk dapat dipergunakan sebagaimana mestinya."
               />
             </div>
 
-            <div className="mt-[4rem] flex flex-row items-start justify-end gap-32">
+            <div className="mt-[4rem] flex flex-row items-start justify-between gap-32">
               <div className="flex flex-col justify-center gap-80">
                 <div className="flex flex-col gap-12">
                   <FormInput
-                    name="dikeluarkan"
-                    value={formData.dikeluarkan}
+                    name="mengetahui_1"
+                    value={formData.mengetahui_1}
                     onChange={handleChange}
-                    placeholder={`Dikeluarkan di: Pekanbaru`}
+                    placeholder={`Mengetahui:`}
                   />
                   <FormInput
-                    name="tanggal"
-                    value={formData.tanggal}
+                    name="jabatan_1"
+                    value={formData.jabatan_1}
                     onChange={handleChange}
-                    placeholder={`Pada tanggal: ${dayjs().locale('id').format('DD MMMM YYYY')}`}
-                  />
-                  <FormInput
-                    name="dekan"
-                    value={formData.dekan}
-                    onChange={handleChange}
-                    placeholder="An. Dekan"
-                  />
-                  <FormInput
-                    name="jabatan"
-                    value={formData.jabatan}
-                    onChange={handleChange}
-                    placeholder="Pembantu Dekan III"
+                    placeholder={`Pembantu Dekan III`}
                   />
                 </div>
                 <div className="flex flex-col gap-12">
                   <FormInput
-                    name="nama"
-                    value={formData.nama}
+                    name="nama_1"
+                    value={formData.nama_1}
                     onChange={handleChange}
                     placeholder="Abdillah"
-                    className="text-center"
                   />
                   <FormInput
-                    name="nip"
-                    value={formData.nip}
+                    name="nip_1"
+                    value={formData.nip_1}
                     onChange={handleChange}
-                    placeholder="0123456789"
-                    className="text-center"
+                    placeholder="NIP. 0123456789"
+                  />
+                </div>
+              </div>
+              <div className="flex flex-col justify-center gap-80">
+                <div className="flex flex-col gap-12">
+                  <FormInput
+                    name="mengetahui_2"
+                    value={formData.mengetahui_2}
+                    onChange={handleChange}
+                    placeholder={`Pekanbaru, ${dayjs().locale('id').format('DD MMMM YYYY')}`}
+                  />
+                  <FormInput
+                    name="jabatan_2"
+                    value={formData.jabatan_2}
+                    onChange={handleChange}
+                    placeholder="Saya yang Menyatakan,"
+                  />
+                </div>
+                <div className="flex flex-col gap-12">
+                  <FormInput
+                    name="nama_2"
+                    value={formData.nama_2}
+                    onChange={handleChange}
+                    placeholder="Syamil"
+                  />
+                  <FormInput
+                    name="nip_2"
+                    value={formData.nip_2}
+                    onChange={handleChange}
+                    placeholder="NIM. 091823123"
                   />
                 </div>
               </div>

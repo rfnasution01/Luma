@@ -83,6 +83,8 @@ export default function SuratPage() {
                   'Surat Keterangan Kehilangan',
                   'Surat Keterangan Aktif Sekolah',
                   'Surat Keterangan Aktif Kuliah',
+                  'Surat Keterangan Tidak Sedang Menerima Beasiswa Dalam Waktu Bersamaan',
+                  'Surat Keterangan Berkelakuan Baik dan Tidak Pernah Melanggar Tata Tertib Kampus',
                 ]?.map((item, idx) => (
                   <div
                     onClick={() => {
