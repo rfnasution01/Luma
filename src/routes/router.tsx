@@ -5,6 +5,7 @@ import {
   HomePage,
   MainLayout,
   NotFoundPage,
+  SKAktifKuliah,
   SKAktifSekolah,
   SKKehilangan,
   SpKesanggupan,
@@ -138,6 +139,10 @@ export const router = createBrowserRouter([
           {
             path: 'surat-keterangan-aktif-sekolah',
             element: <SKAktifSekolah />,
+          },
+          {
+            path: 'surat-keterangan-aktif-kuliah',
+            element: <SKAktifKuliah />,
           },
           {
             // Define a wildcard '*' route that will match any path that doesn't exist
