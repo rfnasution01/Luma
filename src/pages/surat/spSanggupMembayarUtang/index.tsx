@@ -19,20 +19,28 @@ export default function SuratKeteranganSanggupMembayarUtang() {
 
   const [formData, setFormData] = useState({
     tempat_tanggal: `Purwokerto, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
-    dengan_hormat_1: 'Melalui surat ini, saya yang bertanda tangan,',
-    dengan_hormat_2: 'Menyatakan kepada,',
-    ul_1: `Erika Finn`,
+    dengan_hormat_1: 'Dengan ini saya yang bertanda tangan di bawah ini:',
+    dengan_hormat_2: 'Menyampaikan pernyataan kepada pihak berikut:',
+
+    // Data Pihak Pertama (yang membuat pernyataan)
+    ul_1: 'Erika Finn',
     ul_2: '1234567890',
-    ul_3: ' Jl. Ahmad Yani, Bekasi',
+    ul_3: 'Jl. Ahmad Yani No. 10, Bekasi',
+
+    // Data Pihak Kedua (yang menerima pernyataan)
     ul_4: 'Dodi Firman',
     ul_5: '2345678901',
-    ul_6: 'Jl. Tata Surya, Bogor',
-    memberitahukan_1: `Bahwasannya saya bersedia membayar utang saya secara lunas kepada Bapak Dodi. Adapun jumlah utang yang harus saya lunasi sebesar Rp10 juta, dan saya siap melunasi utang tersebut paling lambat pada 30 Juni 2022.`,
-    memberitahukan_2: `Apabila sampai tanggal itu saya tidak bisa melunasinya, maka saya bersedia menerima risikonya yaitu dilaporkan kepada pihak berwajib serta dituntut di hadapan pengadilan.`,
+    ul_6: 'Jl. Tata Surya No. 7, Bogor',
+
+    memberitahukan_1:
+      'Saya menyatakan kesanggupan untuk melunasi pinjaman sebesar Rp10.000.000,- (sepuluh juta rupiah) kepada Saudara Dodi Firman selambat-lambatnya pada tanggal 30 Juni 2022.',
+    memberitahukan_2:
+      'Jika hingga batas waktu tersebut saya belum dapat memenuhi kewajiban pembayaran, saya siap menanggung segala konsekuensi hukum sesuai dengan ketentuan yang berlaku.',
     memberitahukan_3:
-      'Demikian surat pernyataan kesanggupan ini saya buat dengan sebenar-benarnya serta dalam keadaan sadar tanpa paksaan dari pihak mana pun.',
+      'Surat pernyataan ini saya buat dengan penuh kesadaran dan tanpa paksaan dari pihak mana pun, untuk digunakan sebagaimana mestinya.',
+
     hormat_saya_1: `Bekasi, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
-    hormat_saya_2: `Saya yang menyatakan,`,
+    hormat_saya_2: 'Yang membuat pernyataan,',
     hormat_saya_3: 'Erika Finn',
   })
 
@@ -87,7 +95,7 @@ export default function SuratKeteranganSanggupMembayarUtang() {
                 name="tempat_tanggal"
                 value={formData.tempat_tanggal}
                 onChange={handleChange}
-                placeholder={dayjs().locale('id').format('DD MMMM YYYY')}
+                placeholder="Purwokerto, 15 Mei 2025"
                 className="w-1/2 text-end text-[2rem]"
               />
             </div>
@@ -97,7 +105,7 @@ export default function SuratKeteranganSanggupMembayarUtang() {
                 name="dengan_hormat_1"
                 value={formData.dengan_hormat_1}
                 onChange={handleChange}
-                placeholder="Melalui surat ini, saya yang bertanda tangan,"
+                placeholder="Dengan ini saya yang bertanda tangan di bawah ini:"
               />
               <table className="w-full table-auto">
                 <tbody>
@@ -136,7 +144,7 @@ export default function SuratKeteranganSanggupMembayarUtang() {
                         className="w-[98%] phones:w-[97%]"
                         value={formData.ul_3}
                         onChange={handleChange}
-                        placeholder=" Jl. Ahmad Yani, Bekasi"
+                        placeholder="Jl. Ahmad Yani No. 10, Bekasi"
                       />
                     </td>
                   </tr>
@@ -149,7 +157,7 @@ export default function SuratKeteranganSanggupMembayarUtang() {
                 name="dengan_hormat_2"
                 value={formData.dengan_hormat_2}
                 onChange={handleChange}
-                placeholder="Saya yang bertanda tangan di bawah ini :"
+                placeholder="Menyampaikan pernyataan kepada pihak berikut:"
                 rows={1}
               />
               <table className="w-full table-auto">
@@ -189,7 +197,7 @@ export default function SuratKeteranganSanggupMembayarUtang() {
                         className="w-[98%] phones:w-[97%]"
                         value={formData.ul_6}
                         onChange={handleChange}
-                        placeholder=" Jl. Ahmad Yani, BekasiJl. Tata Surya, Bogor"
+                        placeholder="Jl. Tata Surya No. 7, Bogor"
                       />
                     </td>
                   </tr>
@@ -202,49 +210,51 @@ export default function SuratKeteranganSanggupMembayarUtang() {
                 name="memberitahukan_1"
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
-                rows={isMobile ? 5 : 3}
-                placeholder="Bahwasannya saya bersedia membayar utang saya secara lunas kepada Bapak Dodi. Adapun jumlah utang yang harus saya lunasi sebesar Rp10 juta, dan saya siap melunasi utang tersebut paling lambat pada 30 Juni 2022."
+                rows={isMobile ? 4 : 2}
+                placeholder="Saya menyatakan kesanggupan untuk melunasi pinjaman sebesar Rp10.000.000,- (sepuluh juta rupiah) kepada Saudara Dodi Firman selambat-lambatnya pada tanggal 30 Juni 2022."
               />
               <FormTextArea
                 name="memberitahukan_2"
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
                 rows={isMobile ? 3 : 2}
-                placeholder="Apabila sampai tanggal itu saya tidak bisa melunasinya, maka saya bersedia menerima risikonya yaitu dilaporkan kepada pihak berwajib serta dituntut di hadapan pengadilan."
+                placeholder="Jika hingga batas waktu tersebut saya belum dapat memenuhi kewajiban pembayaran, saya siap menanggung segala konsekuensi hukum sesuai dengan ketentuan yang berlaku."
               />
               <FormTextArea
                 name="memberitahukan_3"
                 value={formData.memberitahukan_3}
                 onChange={handleChange}
                 rows={isMobile ? 3 : 2}
-                placeholder="Demikian surat pernyataan kesanggupan ini saya buat dengan sebenar-benarnya serta dalam keadaan sadar tanpa paksaan dari pihak mana pun."
+                placeholder="Surat pernyataan ini saya buat dengan penuh kesadaran dan tanpa paksaan dari pihak mana pun, untuk digunakan sebagaimana mestinya."
               />
             </div>
 
             <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
-              <div className="flex flex-col gap-12">
+              <div className="flex w-1/3 flex-col gap-80 phones:w-2/5">
+                <div className="flex flex-col gap-12">
+                  <FormInput
+                    name="hormat_saya_1"
+                    value={formData.hormat_saya_1}
+                    onChange={handleChange}
+                    placeholder="Bekasi, 15 Mei 2025"
+                    className="text-center"
+                  />
+                  <FormInput
+                    name="hormat_saya_2"
+                    value={formData.hormat_saya_2}
+                    onChange={handleChange}
+                    placeholder="Yang membuat pernyataan,"
+                    className="text-center"
+                  />
+                </div>
                 <FormInput
-                  name="hormat_saya_1"
-                  value={formData.hormat_saya_1}
+                  name="hormat_saya_3"
+                  value={formData.hormat_saya_3}
                   onChange={handleChange}
-                  placeholder="Bekasi, 09 Mei 2025"
-                  className="text-center"
-                />
-                <FormInput
-                  name="hormat_saya_2"
-                  value={formData.hormat_saya_2}
-                  onChange={handleChange}
-                  placeholder="Saya yang menyatakan,"
+                  placeholder="Erika Finn"
                   className="text-center"
                 />
               </div>
-              <FormInput
-                name="hormat_saya_3"
-                value={formData.hormat_saya_3}
-                onChange={handleChange}
-                placeholder="Erika Finn"
-                className="text-center"
-              />
             </div>
           </div>
         </div>

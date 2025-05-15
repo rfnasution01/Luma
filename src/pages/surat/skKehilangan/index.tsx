@@ -20,23 +20,23 @@ export default function SuratKeteranganKehilangan() {
   const [formData, setFormData] = useState({
     title: 'SURAT PERNYATAAN KEHILANGAN',
 
-    pengantar: 'Saya yang bertanda tangan dibawah ini:',
+    pengantar: 'Saya yang bertanda tangan di bawah ini:',
 
-    ul_1: 'Syamil Wahyudi',
-    ul_2: 'Jl Gajah Mundur, No. 8, Suka Maju',
+    ul_1: 'Rama Adinata',
+    ul_2: 'Jl. Melati Indah No. 12, Kelurahan Damai Sentosa',
     ul_3: 'Laki-laki',
-    ul_4: 'Indonesia (WNI)',
-    ul_5: '010101010101',
+    ul_4: 'Warga Negara Indonesia',
+    ul_5: '1234567890123456',
 
     memberitahukan_1:
-      'Bersama dengan surat ini menyatakan bahwa pada hari Mingu, 11 Mei 2025 telah kehilangan dompet berwarna hitam. Dompet tersebut hilang dalam perjalanan dari dari kantor ke rumah.',
+      'Dengan ini menyatakan bahwa pada hari Minggu, 11 Mei 2025 telah kehilangan sebuah dompet berwarna hitam. Dompet tersebut hilang dalam perjalanan dari kantor menuju tempat tinggal.',
 
     memberitahukan_2:
-      'Demikian surat pernyataan kehilangan ini saya buat dengan sebenar-benarnya agar surat ini dapat digunakan sebagaimana mestinya.',
+      'Demikian surat pernyataan kehilangan ini saya buat dengan sebenar-benarnya agar dapat dipergunakan sebagaimana mestinya.',
 
     menyatakan: 'Yang menyatakan',
-    alamat_tanggal: `Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
-    nama: 'Syamil Wahyudi',
+    alamat_tanggal: `Kota Sejahtera, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
+    nama: 'Rama Adinata',
   })
 
   const handleChange = (e) => {
@@ -117,7 +117,7 @@ export default function SuratKeteranganKehilangan() {
                       name="ul_1"
                       value={formData.ul_1}
                       onChange={handleChange}
-                      placeholder="Syamil Wahyudi"
+                      placeholder="Rama Adinata"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -132,7 +132,7 @@ export default function SuratKeteranganKehilangan() {
                       name="ul_2"
                       value={formData.ul_2}
                       onChange={handleChange}
-                      placeholder="Jl Gajah Mundur, No. 8, Suka Maju"
+                      placeholder="Jl. Melati Indah No. 12, Kelurahan Damai Sentosa"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -163,7 +163,7 @@ export default function SuratKeteranganKehilangan() {
                       name="ul_4"
                       value={formData.ul_4}
                       onChange={handleChange}
-                      placeholder="Indonesia (WNI)"
+                      placeholder="Warga Negara Indonesia"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -179,7 +179,7 @@ export default function SuratKeteranganKehilangan() {
                       name="ul_5"
                       value={formData.ul_5}
                       onChange={handleChange}
-                      placeholder="010101010101"
+                      placeholder="1234567890123456"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -193,14 +193,14 @@ export default function SuratKeteranganKehilangan() {
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
                 rows={isMobile ? 4 : 2}
-                placeholder="Bersama dengan surat ini menyatakan bahwa pada hari Mingu, 11 Mei 2025 telah kehilangan dompet berwarna hitam. Dompet tersebut hilang dalam perjalanan dari dari kantor ke rumah."
+                placeholder="Dengan ini menyatakan bahwa pada hari Minggu, 11 Mei 2025 telah kehilangan sebuah dompet berwarna hitam. Dompet tersebut hilang dalam perjalanan dari kantor menuju tempat tinggal."
               />
               <FormTextArea
                 name="memberitahukan_2"
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
                 rows={isMobile ? 3 : 2}
-                placeholder="Demikian surat pernyataan kehilangan ini saya buat dengan sebenar-benarnya agar surat ini dapat digunakan sebagaimana mestinya."
+                placeholder="Demikian surat pernyataan kehilangan ini saya buat dengan sebenar-benarnya agar dapat dipergunakan sebagaimana mestinya."
               />
             </div>
 
@@ -212,7 +212,7 @@ export default function SuratKeteranganKehilangan() {
                       name="alamat_tanggal"
                       value={formData.alamat_tanggal}
                       onChange={handleChange}
-                      placeholder="Jakarta, 11 Mei 2025"
+                      placeholder="Kota Sejahtera, 11 Mei 2025"
                       className="text-center"
                     />
                     <FormInput
@@ -228,7 +228,7 @@ export default function SuratKeteranganKehilangan() {
                     className="text-center"
                     value={formData.nama}
                     onChange={handleChange}
-                    placeholder="Syamil Wahyudi"
+                    placeholder="Rama Adinata"
                   />
                 </div>
               </div>

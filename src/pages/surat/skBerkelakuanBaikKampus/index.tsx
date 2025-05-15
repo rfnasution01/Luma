@@ -19,39 +19,39 @@ export default function SuratKeteranganBerkelakuanBaikKampus() {
 
   const [formData, setFormData] = useState({
     logo: '',
-    header1: 'Departemen Pendidikan Nasional',
-    header2: 'Universitas Riau Pekanbaru',
-    header3: 'Fakultas Keguruan dan Ilmu Pendidikan',
+    header1: 'DEPARTEMEN PENDIDIKAN DAN KEBUDAYAAN',
+    header2: 'UNIVERSITAS NUSANTARA RAYA',
+    header3: 'FAKULTAS ILMU PENDIDIKAN DAN HUMANIORA',
     header4:
-      'Alamat: Kampus Bina Widya Simpang Baru - Pekanbaru Telp. (0761) 63267 Fax. (0761) 65804',
+      'Alamat: Jl. Wijaya Kusuma No. 88, Kota Cendekia, Telp. (0712) 123456 Fax. (0712) 654321',
 
     title:
       'SURAT KETERANGAN BERKELAKUAN BAIK DAN TIDAK PERNAH MELANGGAR TATA TERTIB KAMPUS',
-    no_surat: 'Nomor: RT/RW/No/XX/YYYY',
+    no_surat: 'Nomor: 007/SKB-FIPH/UNR/V/2025',
 
     pengantar_1:
-      'Dekan Fakultas Keguruan dan Ilmu Pendidikan Universitas Riau Pekanbaru dengan ini menerangkan bahwa:',
+      'Dekan Fakultas Ilmu Pendidikan dan Humaniora Universitas Nusantara Raya dengan ini menerangkan bahwa:',
 
-    ul_1: 'Syamil Wahyudi',
-    ul_2: 'Bandung, 12 Januari 1995',
-    ul_3: '0123456789',
-    ul_4: 'Nama Jurusan',
-    ul_5: 'Nama Program Studi',
-    ul_6: 'Nama Program',
-    ul_7: 'Alamat',
+    ul_1: 'Rizky Dwi Saputra',
+    ul_2: 'Cendekia, 5 Mei 2000',
+    ul_3: '202012345678',
+    ul_4: 'Pendidikan Bahasa dan Sastra',
+    ul_5: 'Program Studi Pendidikan Bahasa Indonesia',
+    ul_6: 'Strata 1 (S1)',
+    ul_7: 'Jl. Melati No. 27, Kota Cendekia',
 
     penutup_1:
-      'Adalah sepengetahuan kami belum pernah melanggar tata tertib kampus dan bekelakuan baik. Surat keterangan ini diberikan untuk keperluan Persyaratan Beasiswa PPA',
+      'Yang bersangkutan berdasarkan catatan akademik kami tidak pernah melakukan pelanggaran tata tertib kampus dan dikenal berkelakuan baik. Surat ini dibuat sebagai kelengkapan persyaratan Beasiswa Mandala Cendekia.',
     penutup_2:
-      'Demikianlah Surat Keterangan ini kami buat dengan sesungguhnya untuk dapat dipergunakan sebagaimana mestinya.',
+      'Demikian surat keterangan ini dibuat untuk dapat dipergunakan sebagaimana mestinya.',
 
-    dikeluarkan: 'Dikeluarkan di: Pekanbaru',
+    dikeluarkan: 'Dikeluarkan di: Kota Cendekia',
     tanggal: `Pada Tanggal: ${dayjs().locale('id').format('DD MMMM YYYY')}`,
     dekan: 'An. Dekan',
-    jabatan: 'Pembantu Dekan III',
+    jabatan: 'Wakil Dekan III',
 
-    nama: 'Abdillah',
-    nip: '0123456789',
+    nama: 'Dr. Lestari Wijaningsih, M.Pd.',
+    nip: '197809082005122001',
   })
 
   const handleChange = (e) => {
@@ -165,28 +165,28 @@ export default function SuratKeteranganBerkelakuanBaikKampus() {
                   name="header1"
                   value={formData.header1}
                   onChange={handleChange}
-                  placeholder="SURAT KETERANGAN BERKELAKUAN BAIK DAN TIDAK PERNAH MELANGGAR TATA TERTIB KAMPUS"
+                  placeholder="DEPARTEMEN PENDIDIKAN DAN KEBUDAYAAN"
                   className="text-center text-[2.8rem] font-bold"
                 />
                 <FormInput
                   name="header2"
                   value={formData.header2}
                   onChange={handleChange}
-                  placeholder="Universitas Riau Pekanbaru"
+                  placeholder="UNIVERSITAS NUSANTARA RAYA"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header3"
                   value={formData.header3}
                   onChange={handleChange}
-                  placeholder="Fakultas Keguruan dan Ilmu Pendidikan"
+                  placeholder="FAKULTAS ILMU PENDIDIKAN DAN HUMANIORA"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header4"
                   value={formData.header4}
                   onChange={handleChange}
-                  placeholder="Alamat: Kampus Bina Widya Simpang Baru - Pekanbaru Telp. (0761) 63267 Fax. (0761) 65804"
+                  placeholder="Alamat: Jl. Wijaya Kusuma No. 88, Kota Cendekia, Telp. (0712) 123456 Fax. (0712) 654321"
                   className="text-center"
                 />
               </div>
@@ -215,7 +215,7 @@ export default function SuratKeteranganBerkelakuanBaikKampus() {
                 value={formData.pengantar_1}
                 onChange={handleChange}
                 rows={isMobile ? 2 : 1}
-                placeholder="Dekan Fakultas Keguruan dan Ilmu Pendidikan Universitas Riau Pekanbaru dengan ini menerangkan bahwa:"
+                placeholder="Dekan Fakultas Ilmu Pendidikan dan Humaniora Universitas Nusantara Raya dengan ini menerangkan bahwa:"
               />
               <table className="w-full table-auto">
                 <tbody>
@@ -227,7 +227,7 @@ export default function SuratKeteranganBerkelakuanBaikKampus() {
                         name="ul_1"
                         value={formData.ul_1}
                         onChange={handleChange}
-                        placeholder="Syamil Wahyudi"
+                        placeholder="Rizky Dwi Saputra"
                         className="w-[60%]"
                       />
                     </td>
@@ -240,13 +240,13 @@ export default function SuratKeteranganBerkelakuanBaikKampus() {
                         name="ul_2"
                         value={formData.ul_2}
                         onChange={handleChange}
-                        placeholder="Bandung, 12 Januari 1995"
+                        placeholder="Cendekia, 5 Mei 2000"
                         className="w-[60%]"
                       />
                     </td>
                   </tr>
                   <tr>
-                    <td className="pr-4 align-top">NIM</td>
+                    <td className="pr-4 align-top">202012345678</td>
                     <td>
                       :{' '}
                       <FormInput
@@ -266,7 +266,7 @@ export default function SuratKeteranganBerkelakuanBaikKampus() {
                         name="ul_4"
                         value={formData.ul_4}
                         onChange={handleChange}
-                        placeholder="Nama Jurusan"
+                        placeholder="Pendidikan Bahasa dan Sastra"
                         className="w-[60%]"
                       />
                     </td>
@@ -279,7 +279,7 @@ export default function SuratKeteranganBerkelakuanBaikKampus() {
                         name="ul_5"
                         value={formData.ul_5}
                         onChange={handleChange}
-                        placeholder="Nama Program Studi"
+                        placeholder="Program Studi Pendidikan Bahasa Indonesia"
                         className="w-[60%]"
                       />
                     </td>
@@ -292,7 +292,7 @@ export default function SuratKeteranganBerkelakuanBaikKampus() {
                         name="ul_6"
                         value={formData.ul_6}
                         onChange={handleChange}
-                        placeholder="Nama Program"
+                        placeholder="Strata 1 (S1)"
                         className="w-[60%]"
                       />
                     </td>
@@ -305,7 +305,7 @@ export default function SuratKeteranganBerkelakuanBaikKampus() {
                         name="ul_7"
                         value={formData.ul_7}
                         onChange={handleChange}
-                        placeholder="Alamat"
+                        placeholder="Jl. Melati No. 27, Kota Cendekia"
                         className="w-[60%]"
                       />
                     </td>
@@ -319,26 +319,26 @@ export default function SuratKeteranganBerkelakuanBaikKampus() {
                 name="penutup_1"
                 value={formData.penutup_1}
                 onChange={handleChange}
-                rows={isMobile ? 4 : 2}
-                placeholder="Adalah sepengetahuan kami belum pernah melanggar tata tertib kampus dan bekelakuan baik. Surat keterangan ini diberikan untuk keperluan Persyaratan Beasiswa PPA"
+                rows={isMobile ? 5 : 3}
+                placeholder="Yang bersangkutan berdasarkan catatan akademik kami tidak pernah melakukan pelanggaran tata tertib kampus dan dikenal berkelakuan baik. Surat ini dibuat sebagai kelengkapan persyaratan Beasiswa Mandala Cendekia."
               />
               <FormTextArea
                 name="penutup_2"
                 value={formData.penutup_2}
                 onChange={handleChange}
-                rows={isMobile ? 4 : 2}
-                placeholder="Demikianlah Surat Keterangan ini kami buat dengan sesungguhnya untuk dapat dipergunakan sebagaimana mestinya."
+                rows={isMobile ? 2 : 1}
+                placeholder="Demikian surat keterangan ini dibuat untuk dapat dipergunakan sebagaimana mestinya."
               />
             </div>
 
             <div className="mt-[4rem] flex flex-row items-start justify-end gap-32">
-              <div className="flex flex-col justify-center gap-80">
+              <div className="flex w-1/3 flex-col justify-center gap-80 phones:w-2/5">
                 <div className="flex flex-col gap-12">
                   <FormInput
                     name="dikeluarkan"
                     value={formData.dikeluarkan}
                     onChange={handleChange}
-                    placeholder={`Dikeluarkan di: Pekanbaru`}
+                    placeholder={`Dikeluarkan di: Kota Cendekia`}
                   />
                   <FormInput
                     name="tanggal"
@@ -356,7 +356,7 @@ export default function SuratKeteranganBerkelakuanBaikKampus() {
                     name="jabatan"
                     value={formData.jabatan}
                     onChange={handleChange}
-                    placeholder="Pembantu Dekan III"
+                    placeholder="Wakil Dekan III"
                   />
                 </div>
                 <div className="flex flex-col gap-12">
@@ -364,15 +364,13 @@ export default function SuratKeteranganBerkelakuanBaikKampus() {
                     name="nama"
                     value={formData.nama}
                     onChange={handleChange}
-                    placeholder="Abdillah"
-                    className="text-center"
+                    placeholder="Dr. Lestari Wijaningsih, M.Pd."
                   />
                   <FormInput
                     name="nip"
                     value={formData.nip}
                     onChange={handleChange}
-                    placeholder="0123456789"
-                    className="text-center"
+                    placeholder="197809082005122001"
                   />
                 </div>
               </div>

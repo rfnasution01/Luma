@@ -10,6 +10,7 @@ export default function generatePdfDefinition(data) {
             text: `${data.tempat_tanggal}`,
           },
         ],
+        margin: [0, 0, 0, 20],
       },
 
       {

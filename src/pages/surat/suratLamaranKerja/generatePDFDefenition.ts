@@ -14,13 +14,10 @@ export function generatePdfDefinition(data) {
         margin: [0, 0, 0, 20],
       },
       {
-        text: `${data.dengan_hormat_1}`,
-        margin: [0, 0, 0, 10],
+        text: `${data.dengan_hormat_1}\n${data.dengan_hormat_2}`,
+        margin: [0, 0, 0, 5],
       },
-      {
-        text: `Saya yang bertanda tangan di bawah ini:`,
-        margin: [0, 0, 0, 10],
-      },
+
       {
         table: {
           widths: ['auto', '*'],

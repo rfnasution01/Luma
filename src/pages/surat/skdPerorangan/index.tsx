@@ -19,35 +19,35 @@ export default function SuratKeteranganDomisiliPerorangan() {
 
   const [formData, setFormData] = useState({
     logo: '',
-    header1: 'Pemerintah Provinsi Jawa Barat',
-    header2: 'Ketua RT. 001 RW. 009 Desa Suka Maju',
-    header3: 'Kecamatan Sayur Bayam - Jakarta Timur',
-    header4: 'Jl. Sukamaju Raya No. 1, Bandung Kode Pos: 12345',
+    header1: 'Pemerintah Daerah Provinsi Nusantara',
+    header2: 'Ketua RT. 003 RW. 006 Kelurahan Damai Sentosa',
+    header3: 'Kecamatan Lembah Hijau – Kota Sejahtera',
+    header4: 'Jl. Damai Raya No. 10, Sejahtera, Kode Pos: 67890',
 
     title: 'SURAT KETERANGAN DOMISILI',
-    no_surat: 'Nomor: RT/RW/No/XX/YYYY',
+    no_surat: 'Nomor: 003/006/KETDOM/XX/2025',
 
     pengantar:
-      'Yang bertanda tangan di bawah ini ketua RT. 001 RW. 009 Desa Suka Maju Kecamatan Sayur Bayam Kabupaten Kota Administrasi Jakarta Timur dengan ini menerangkan bahwa:',
+      'Yang bertanda tangan di bawah ini, Ketua RT. 003 RW. 006 Kelurahan Damai Sentosa Kecamatan Lembah Hijau Kota Sejahtera, dengan ini menerangkan bahwa:',
 
-    ul_1: 'Syamil Wahyudi',
-    ul_2: 'Bekasi, 1 Januari 2000',
+    ul_1: 'Rizky Alfarizi',
+    ul_2: 'Cendekia, 15 Februari 1999',
     ul_3: 'Laki-laki',
-    ul_4: 'Karyawan',
+    ul_4: 'Pegawai Swasta',
     ul_5: 'Islam',
     ul_6: 'Belum Menikah',
-    ul_7: 'Indonesia',
+    ul_7: 'Warga Negara Indonesia',
 
     memberitahukan_1:
-      'Orang tersebut diatas, adalah benar-benar warga kami dan berdomisili di RT. 001 RW. 009 Desa Suka Maju Kecamatan Sayur Bayam Kabupaten Kota Administrasi Jakarta Timur. Surat keterangan ini dibuat sebagai kelengkapan pengurusan Surat Tanda Registrasi Bidan',
+      'Orang yang disebutkan di atas benar merupakan warga kami dan berdomisili di lingkungan RT. 003 RW. 006 Kelurahan Damai Sentosa, Kecamatan Lembah Hijau, Kota Sejahtera. Surat ini dibuat sebagai syarat administrasi untuk keperluan pengurusan dokumen resmi.',
 
     memberitahukan_2:
-      'Demikian Surat Keterangan ini kami buat, untuk dapat dipergunakan sebagaimana mestinya',
+      'Demikian Surat Keterangan ini dibuat dengan sebenar-benarnya agar dapat dipergunakan sebagaimana mestinya.',
 
-    alamat_tanggal: `Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
+    alamat_tanggal: `Sejahtera, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
 
-    jabatan_penandatangan: 'Ketua RT. 0001 RW. 009',
-    nama_penandatangan: 'Budi Santoso',
+    jabatan_penandatangan: 'Ketua RT. 003 RW. 006',
+    nama_penandatangan: 'Surya Nugraha',
   })
 
   const handleChange = (e) => {
@@ -161,28 +161,28 @@ export default function SuratKeteranganDomisiliPerorangan() {
                   name="header1"
                   value={formData.header1}
                   onChange={handleChange}
-                  placeholder="Pemerintah Provinsi Jawa Barat"
+                  placeholder="Pemerintah Daerah Provinsi Nusantara"
                   className="text-center text-[2.8rem] font-bold"
                 />
                 <FormInput
                   name="header2"
                   value={formData.header2}
                   onChange={handleChange}
-                  placeholder="Ketua RT. 001 RW. 009 Desa Suka Maju"
+                  placeholder="Ketua RT. 003 RW. 006 Kelurahan Damai Sentosa"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header3"
                   value={formData.header3}
                   onChange={handleChange}
-                  placeholder="Kecamatan Sayur Bayam - Jakarta Timur"
+                  placeholder="Kecamatan Lembah Hijau – Kota Sejahtera"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header4"
                   value={formData.header4}
                   onChange={handleChange}
-                  placeholder="Jl. Sukamaju Raya No. 1, Bandung Kode Pos: 12345"
+                  placeholder="Jl. Damai Raya No. 10, Sejahtera, Kode Pos: 67890"
                   className="text-center"
                 />
               </div>
@@ -211,7 +211,7 @@ export default function SuratKeteranganDomisiliPerorangan() {
                 value={formData.pengantar}
                 onChange={handleChange}
                 rows={isMobile ? 3 : 2}
-                placeholder="Yang bertanda tangan di bawah ini ketua RT. 001 RW. 009 Desa Suka Maju Kecamatan Sayur Bayam Kabupaten Kota Administrasi Jakarta Timur dengan ini menerangkan bahwa"
+                placeholder="Yang bertanda tangan di bawah ini, Ketua RT. 003 RW. 006 Kelurahan Damai Sentosa Kecamatan Lembah Hijau Kota Sejahtera, dengan ini menerangkan bahwa:"
               />
             </div>
 
@@ -227,7 +227,7 @@ export default function SuratKeteranganDomisiliPerorangan() {
                       name="ul_1"
                       value={formData.ul_1}
                       onChange={handleChange}
-                      placeholder="Andi Saputra"
+                      placeholder="Rizky Alfarizi"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -244,7 +244,7 @@ export default function SuratKeteranganDomisiliPerorangan() {
                       className="w-[80%] phones:w-[60%]"
                       value={formData.ul_2}
                       onChange={handleChange}
-                      placeholder="Bandung, 12 Januari 1995"
+                      placeholder="Cendekia, 15 Februari 1999"
                     />
                   </td>
                 </tr>
@@ -258,7 +258,7 @@ export default function SuratKeteranganDomisiliPerorangan() {
                       name="ul_3"
                       value={formData.ul_3}
                       onChange={handleChange}
-                      placeholder="Laki-laki / Perempuan"
+                      placeholder="Laki-laki"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -273,7 +273,7 @@ export default function SuratKeteranganDomisiliPerorangan() {
                       name="ul_4"
                       value={formData.ul_4}
                       onChange={handleChange}
-                      placeholder="Karyawan / Wiraswasta / Pelajar"
+                      placeholder="Pegawai Swasta"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -288,7 +288,7 @@ export default function SuratKeteranganDomisiliPerorangan() {
                       name="ul_5"
                       value={formData.ul_5}
                       onChange={handleChange}
-                      placeholder="Islam / Kristen / Hindu / Buddha / dll"
+                      placeholder="Islam"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -303,7 +303,7 @@ export default function SuratKeteranganDomisiliPerorangan() {
                       name="ul_6"
                       value={formData.ul_6}
                       onChange={handleChange}
-                      placeholder="Belum Menikah / Menikah / Cerai"
+                      placeholder="Belum Menikah"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -318,7 +318,7 @@ export default function SuratKeteranganDomisiliPerorangan() {
                       name="ul_7"
                       value={formData.ul_7 || ''}
                       onChange={handleChange}
-                      placeholder="Indonesia"
+                      placeholder="Warga Negara Indonesia"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -332,42 +332,43 @@ export default function SuratKeteranganDomisiliPerorangan() {
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
                 rows={isMobile ? 5 : 3}
-                placeholder="Orang tersebut diatas, adalah benar-benar warga kami dan berdomisili di RT. 001 RW. 009 Desa Suka Maju Kecamatan Sayur Bayam Kabupaten Kota Administrasi Jakarta Timur. Surat keterangan ini dibuat sebagai kelengkapan pengurusan Surat Tanda Registrasi Bidan
-"
+                placeholder="Orang yang disebutkan di atas benar merupakan warga kami dan berdomisili di lingkungan RT. 003 RW. 006 Kelurahan Damai Sentosa, Kecamatan Lembah Hijau, Kota Sejahtera. Surat ini dibuat sebagai syarat administrasi untuk keperluan pengurusan dokumen resmi."
               />
               <FormTextArea
                 name="memberitahukan_2"
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
                 rows={isMobile ? 2 : 1}
-                placeholder="Demikian Surat Keterangan ini kami buat, untuk dapat dipergunakan sebagaimana mestinya"
+                placeholder="Demikian Surat Keterangan ini dibuat dengan sebenar-benarnya agar dapat dipergunakan sebagaimana mestinya."
               />
             </div>
 
             <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
-              <div className="flex flex-col gap-12">
+              <div className="flex w-1/3 flex-col gap-80 phones:w-2/5">
+                <div className="flex flex-col gap-12">
+                  <FormInput
+                    name="alamat_tanggal"
+                    value={formData.alamat_tanggal}
+                    onChange={handleChange}
+                    placeholder={`Sejahtera, ${dayjs().locale('id').format('DD MMMM YYYY')}`}
+                    className="text-center"
+                  />
+                  <FormInput
+                    name="jabatan_penandatangan"
+                    value={formData.jabatan_penandatangan}
+                    onChange={handleChange}
+                    placeholder="Ketua RT. 003 RW. 006"
+                    className="text-center"
+                  />
+                </div>
                 <FormInput
-                  name="alamat_tanggal"
-                  value={formData.alamat_tanggal}
+                  name="nama_penandatangan"
+                  value={formData.nama_penandatangan}
                   onChange={handleChange}
-                  placeholder={`Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`}
-                  className="text-center"
-                />
-                <FormInput
-                  name="jabatan_penandatangan"
-                  value={formData.jabatan_penandatangan}
-                  onChange={handleChange}
-                  placeholder="Ketua RT. 001 RW. 009"
+                  placeholder="Surya Nugraha"
                   className="text-center"
                 />
               </div>
-              <FormInput
-                name="nama_penandatangan"
-                value={formData.nama_penandatangan}
-                onChange={handleChange}
-                placeholder="Budi Santoso"
-                className="text-center"
-              />
             </div>
           </div>
         </div>

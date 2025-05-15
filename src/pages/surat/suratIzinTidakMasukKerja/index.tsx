@@ -19,18 +19,20 @@ export default function SuratIzinTidakMasukKerjaPage() {
 
   const [formData, setFormData] = useState({
     tempat_tanggal: `Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
-    kepada_1: 'Yth. Ibu Gea Saskia',
-    kepada_2: 'Manajer SDM PT Angin Ribut',
-    kepada_3: 'Jakarta Timur 12345',
+    kepada_1: 'Yth. Ibu Rina Andari',
+    kepada_2: 'Manajer SDM PT Bumi Kencana',
+    kepada_3: 'Jakarta Selatan 12980',
     dengan_hormat_1: 'Dengan hormat,',
-    dengan_hormat_2: 'Saya yang bertanda tangan di bawah ini :',
-    ul_1: `Syamil Wahyudi`,
-    ul_2: 'Jl. Gajah Mundur, Desa Suka Maju, Bekasi',
-    ul_3: 'Manajer IT',
-    memberitahukan_1: `Melalui surat ini, saya bermaksud mengajukan izin tidak masuk kerja selama 4 (empat) hari, terhitung mulai hari Senin, 5 Mei 2025 sampai dengan Kamis, 8 Mei 2025, karena keperluan pribadi yang tidak dapat saya tinggalkan.`,
-    memberitahukan_2: `Demikian surat izin ini saya sampaikan. Atas perhatian dan izin Ibu. saya mengucapkan terima kasih`,
-    hormat_saya_1: `Hormat saya,`,
-    hormat_saya_2: `Syamil Wahyudi`,
+    dengan_hormat_2: 'Saya yang bertanda tangan di bawah ini:',
+    ul_1: 'Dian Prasetyo',
+    ul_2: 'Jl. Melati No. 25, Kelurahan Cempaka Putih, Jakarta',
+    ul_3: 'Supervisor IT',
+    memberitahukan_1:
+      'Melalui surat ini, saya bermaksud mengajukan izin tidak masuk kerja selama 4 (empat) hari, terhitung mulai hari Senin, 5 Mei 2025 sampai dengan Kamis, 8 Mei 2025, karena keperluan keluarga yang mendesak.',
+    memberitahukan_2:
+      'Demikian surat izin ini saya sampaikan. Atas perhatian dan izin Ibu, saya mengucapkan terima kasih.',
+    hormat_saya_1: 'Hormat saya,',
+    hormat_saya_2: 'Dian Prasetyo',
   })
 
   const handleChange = (e) => {
@@ -82,7 +84,7 @@ export default function SuratIzinTidakMasukKerjaPage() {
                 name="tempat_tanggal"
                 value={formData.tempat_tanggal}
                 onChange={handleChange}
-                placeholder={dayjs().locale('id').format('DD MMMM YYYY')}
+                placeholder="Jakarta, 15 Mei 2025"
                 className="w-1/2 text-end text-[2rem]"
               />
             </div>
@@ -91,19 +93,19 @@ export default function SuratIzinTidakMasukKerjaPage() {
                 name="kepada_1"
                 value={formData.kepada_1}
                 onChange={handleChange}
-                placeholder="Yth. Ibu Gea Saskia"
+                placeholder="Yth. Ibu Rina Andari"
               />
               <FormInput
                 name="kepada_2"
                 value={formData.kepada_2}
                 onChange={handleChange}
-                placeholder="Manajer SDM PT Angin Ribut"
+                placeholder="Manajer SDM PT Bumi Kencana"
               />
               <FormInput
                 name="kepada_3"
                 value={formData.kepada_3}
                 onChange={handleChange}
-                placeholder="Jakarta Timur 12345"
+                placeholder="Jakarta Selatan 12980"
               />
             </div>
 
@@ -119,6 +121,7 @@ export default function SuratIzinTidakMasukKerjaPage() {
                 value={formData.dengan_hormat_2}
                 onChange={handleChange}
                 placeholder="Saya yang bertanda tangan di bawah ini :"
+                rows={isMobile ? 2 : 1}
               />
             </div>
 
@@ -132,7 +135,7 @@ export default function SuratIzinTidakMasukKerjaPage() {
                       name="ul_1"
                       value={formData.ul_1}
                       onChange={handleChange}
-                      placeholder="Syamil Wahyudi"
+                      placeholder="Dian Prasetyo"
                       className="w-[98%] phones:w-[97%]"
                     />
                   </td>
@@ -146,7 +149,7 @@ export default function SuratIzinTidakMasukKerjaPage() {
                       value={formData.ul_2}
                       onChange={handleChange}
                       className="w-[98%] phones:w-[97%]"
-                      placeholder="Jl. Gajah Mundur, Desa Suka Maju, Bekasi"
+                      placeholder="Jl. Melati No. 25, Kelurahan Cempaka Putih, Jakarta"
                     />
                   </td>
                 </tr>
@@ -159,7 +162,7 @@ export default function SuratIzinTidakMasukKerjaPage() {
                       className="w-[98%] phones:w-[97%]"
                       value={formData.ul_3}
                       onChange={handleChange}
-                      placeholder="Manajer IT"
+                      placeholder="Supervisor IT"
                     />
                   </td>
                 </tr>
@@ -170,33 +173,35 @@ export default function SuratIzinTidakMasukKerjaPage() {
                 name="memberitahukan_1"
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
-                rows={isMobile ? 5 : 3}
-                placeholder="Melalui surat ini, saya bermaksud mengajukan izin tidak masuk kerja selama 4 (empat) hari, terhitung mulai hari Senin, 5 Mei 2025 sampai dengan Kamis, 8 Mei 2025, karena keperluan pribadi yang tidak dapat saya tinggalkan."
+                rows={isMobile ? 4 : 2}
+                placeholder="Melalui surat ini, saya bermaksud mengajukan izin tidak masuk kerja selama 4 (empat) hari, terhitung mulai hari Senin, 5 Mei 2025 sampai dengan Kamis, 8 Mei 2025, karena keperluan keluarga yang mendesak."
               />
               <FormTextArea
                 name="memberitahukan_2"
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
-                rows={isMobile ? 3 : 2}
-                placeholder="Demikian surat izin ini saya sampaikan. Atas perhatian dan izin Ibu. saya mengucapkan terima kasih"
+                rows={isMobile ? 2 : 1}
+                placeholder="Demikian surat izin ini saya sampaikan. Atas perhatian dan izin Ibu, saya mengucapkan terima kasih."
               />
             </div>
 
             <div className="mt-[4rem] flex flex-col items-end justify-center gap-12">
-              <FormInput
-                name="hormat_saya_1"
-                value={formData.hormat_saya_1}
-                onChange={handleChange}
-                placeholder="Hormat saya,"
-                className="text-center"
-              />
-              <FormInput
-                name="hormat_saya_2"
-                value={formData.hormat_saya_2}
-                onChange={handleChange}
-                placeholder="Syamil Wahyudi"
-                className="text-center"
-              />
+              <div className="flex w-1/3 flex-col gap-80 phones:w-2/5">
+                <FormInput
+                  name="hormat_saya_1"
+                  value={formData.hormat_saya_1}
+                  onChange={handleChange}
+                  placeholder="Hormat saya,"
+                  className="text-center"
+                />
+                <FormInput
+                  name="hormat_saya_2"
+                  value={formData.hormat_saya_2}
+                  onChange={handleChange}
+                  placeholder="Dian Prasetyo"
+                  className="text-center"
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -20,38 +20,38 @@ export default function SuratKeteranganDomisiliPengantarRT() {
   const [formData, setFormData] = useState({
     logo: '',
 
-    header1: 'KEMENTERIAN KEUANGAN REPUBLIK INDONESIA',
-    header2: 'DIREKTORAT JENDERAL PERBENDAHARAAN',
-    header3: 'KANTOR PELAYANAN PERBENDAHARAAN NEGARA SIBOLGA',
+    header1: 'KEMENTERIAN KEUANGAN NEGARA CONTOH',
+    header2: 'DIREKTORAT JENDERAL PENGADAAN UMUM',
+    header3: 'KANTOR PELAYANAN KEUANGAN WILAYAH TIMUR',
     header4:
-      'Jl. Dr. FL. Tobing No. 5, Sibolga, Sumatera Utara, Kode Pos 22522',
+      'Jl. Cendana No. 88, Kota Harapan, Provinsi Fiktif, Kode Pos 12345',
 
     title: 'SURAT PERNYATAAN KESANGGUPAN',
 
-    pengantar1: 'Yang bertanda tangan dibawah :',
+    pengantar1: 'Yang bertanda tangan di bawah ini:',
 
-    ul_1: 'Syamil Wahyudi',
-    ul_2: 'Bekasi, 1 Januari 2000',
-    ul_3: 'Manajer Keuangan',
+    ul_1: 'Rafi Pratama',
+    ul_2: 'Kota Harapan, 1 Februari 1990',
+    ul_3: 'Manajer Operasional',
 
     pengantar2: 'Menyatakan dengan sesungguhnya bahwa:',
-    li_1: 'Sanggup untuk menyelesaikan 100% pekerjaan sebagaimana tertuang dalam surat perjanjian kerja Nomor 012/SPK/PPK-2024 tanggal 12 Januari 2024 dengan nilai kontrak sebesar : Rp250.000.000 (Dua Ratus Lima Puluh Juta Rupiah) selambat-lambatnya pada tanggal 30 Juni 2024.',
+    li_1: 'Sanggup untuk menyelesaikan 100% pekerjaan sebagaimana tertuang dalam surat perjanjian kerja Nomor 001/SPK/PUK-2024 tanggal 15 Januari 2024 dengan nilai kontrak sebesar: Rp250.000.000 (Dua Ratus Lima Puluh Juta Rupiah) selambat-lambatnya pada tanggal 30 Juni 2024.',
 
-    li_2: 'Apabila ternyata sampai batas waktu yang telah ditentukan wanprestasi/tidak dapat menyelesaikan pekerjaan atau PPK tidak menyampaikan BAPP paling lambat 10 (sepuluh) hari kerja setelah berakhirnya masa kontrak, maka Jaminan/Garansi Bank kami yang diterbitkan oleh Bank Mandiri Nomor 123/GAR/001/2024 Tanggal 10 Januari 2024 sebesar Rp25.000.000 (Dua Puluh Lima Juta Rupiah) dapat dicairkan oleh Kepala KPPN Sibolga sebesar nilai pekerjaan yang dinyatakan wanprestasi/pekerjaan tidak dapat diselesaikan untuk disetor ke Kas Negara.',
+    li_2: 'Apabila sampai batas waktu tersebut pekerjaan belum selesai atau PPK tidak menyampaikan Berita Acara Penyelesaian Pekerjaan (BAPP) paling lambat 10 (sepuluh) hari kerja setelah berakhirnya masa kontrak, maka Jaminan Bank kami yang diterbitkan oleh Bank Nusantara Nomor 001/BNG/2024 tanggal 10 Januari 2024 sebesar Rp25.000.000 (Dua Puluh Lima Juta Rupiah) dapat dicairkan oleh Kepala Kantor Pelayanan Keuangan sebesar nilai pekerjaan yang dinyatakan wanprestasi/tidak selesai untuk disetor ke Kas Negara.',
 
-    li_3: 'Surat Pernyataan Kesanggupan ini dibuat dalam rangka pengajuan pembayaran atas pekerjaan tersebut pada angka 1 yang belum 100% selesai pada saat surat pernyataan kesanggupan ini dibuat.',
+    li_3: 'Surat Pernyataan Kesanggupan ini dibuat untuk pengajuan pembayaran atas pekerjaan yang belum selesai 100% pada saat surat ini dibuat.',
 
     memberitahukan_1:
       'Demikian pernyataan ini kami buat dengan sebenar-benarnya.',
 
     mengetahui: 'Mengetahui',
-    pejabat: 'Pejabat Pembuat Komitmen ',
-    nama_pejabat: 'Abdillah',
-    nip: '123123123123',
+    pejabat: 'Pejabat Pembuat Komitmen',
+    nama_pejabat: 'Dr. Andika Saputra',
+    nip: '999999999999',
 
-    tanggal_ttd: `Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
+    tanggal_ttd: `Kota Harapan, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
     rekanan: 'Rekanan',
-    nama_rekanan: 'Syamiliyah',
+    nama_rekanan: 'Rafi Pratama',
   })
 
   const handleChange = (e) => {
@@ -80,7 +80,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
   const handleDownload = () => {
     pdfMake
       .createPdf(generatePdfDefinition(formData))
-      .download('skd-pengantar-rt.pdf')
+      .download('sp-kesanggupan.pdf')
   }
 
   const handlePrint = () => {
@@ -109,9 +109,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
     <div className="scrollbar flex h-full w-full gap-32 overflow-auto phones:h-auto phones:flex-col phones:overflow-visible">
       {/* --- Form Untuk Mengubah Data --- */}
       <div className="scrollbar flex h-full w-1/2 flex-col gap-32 overflow-auto phones:h-auto phones:w-full phones:overflow-visible">
-        <p className="text-[2.8rem] font-bold">
-          Surat Keterangan Domisili Pengantar RT
-        </p>
+        <p className="text-[2.8rem] font-bold">Surat Pernyataan Kesanggupan</p>
         <div className="scrollbar flex h-full flex-col gap-24 overflow-auto rounded-2x border bg-[#fefefe] p-[2.4rem] shadow-md phones:h-auto phones:overflow-visible">
           <div className="scrollbar flex min-h-[120rem] w-full flex-col gap-16 overflow-auto">
             {/* --- Kop Surat --- */}
@@ -165,28 +163,28 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                   name="header1"
                   value={formData.header1}
                   onChange={handleChange}
-                  placeholder="KEMENTERIAN KEUANGAN REPUBLIK INDONESIA"
+                  placeholder="KEMENTERIAN KEUANGAN NEGARA CONTOH"
                   className="text-center text-[2.8rem] font-bold"
                 />
                 <FormInput
                   name="header2"
                   value={formData.header2}
                   onChange={handleChange}
-                  placeholder="DIREKTORAT JENDERAL PERBENDAHARAAN"
+                  placeholder="DIREKTORAT JENDERAL PENGADAAN UMUM"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header3"
                   value={formData.header3}
                   onChange={handleChange}
-                  placeholder="KANTOR PELAYANAN PERBENDAHARAAN NEGARA SIBOLGA"
+                  placeholder="KANTOR PELAYANAN KEUANGAN WILAYAH TIMUR"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header4"
                   value={formData.header4}
                   onChange={handleChange}
-                  placeholder="Jl. Dr. FL. Tobing No. 5, Sibolga, Sumatera Utara, Kode Pos 22522"
+                  placeholder="Jl. Cendana No. 88, Kota Harapan, Provinsi Fiktif, Kode Pos 12345"
                   className="text-center"
                 />
               </div>
@@ -197,7 +195,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                 name="title"
                 value={formData.title}
                 onChange={handleChange}
-                placeholder="SURAT KETERANGAN DOMISILI"
+                placeholder="SURAT PERNYATAAN KESANGGUPAN"
                 className="w-full text-center text-[2.4rem] font-bold"
               />
             </div>
@@ -208,7 +206,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                 value={formData.pengantar1}
                 onChange={handleChange}
                 rows={isMobile ? 2 : 1}
-                placeholder="Yang bertanda tangan dibawah :"
+                placeholder="Yang bertanda tangan di bawah ini:"
               />
             </div>
 
@@ -224,7 +222,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                       name="ul_1"
                       value={formData.ul_1}
                       onChange={handleChange}
-                      placeholder="Syamil Wahyudi"
+                      placeholder="Rafi Pratama"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -239,7 +237,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                       name="ul_2"
                       value={formData.ul_2}
                       onChange={handleChange}
-                      placeholder="Bekasi, 1 Januari 2000"
+                      placeholder="Kota Harapan, 1 Februari 1990"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -256,7 +254,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                       className="w-[80%] phones:w-[60%]"
                       value={formData.ul_3}
                       onChange={handleChange}
-                      placeholder="Manajer Keuangan"
+                      placeholder="Manajer Operasional"
                     />
                   </td>
                 </tr>
@@ -279,7 +277,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                     className="w-full align-top"
                     onChange={handleChange}
                     rows={isMobile ? 6 : 3}
-                    placeholder="Sanggup untuk menyelesaikan 100% pekerjaan sebagaimana tertuang dalam surat perjanjian kerja Nomor 012/SPK/PPK-2024 tanggal 12 Januari 2024 dengan nilai kontrak sebesar : Rp250.000.000 (Dua Ratus Lima Puluh Juta Rupiah) selambat-lambatnya pada tanggal 30 Juni 2024."
+                    placeholder="Sanggup untuk menyelesaikan 100% pekerjaan sebagaimana tertuang dalam surat perjanjian kerja Nomor 001/SPK/PUK-2024 tanggal 15 Januari 2024 dengan nilai kontrak sebesar: Rp250.000.000 (Dua Ratus Lima Puluh Juta Rupiah) selambat-lambatnya pada tanggal 30 Juni 2024."
                   />
                 </li>
                 <li>
@@ -289,7 +287,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                     className="w-full align-top"
                     onChange={handleChange}
                     rows={isMobile ? 12 : 6}
-                    placeholder="Apabila ternyata sampai batas waktu yang telah ditentukan wanprestasi/tidak dapat menyelesaikan pekerjaan atau PPK tidak menyampaikan BAPP paling lambat 10 (sepuluh) hari kerja setelah berakhirnya masa kontrak, maka Jaminan/Garansi Bank kami yang diterbitkan oleh Bank Mandiri Nomor 123/GAR/001/2024 Tanggal 10 Januari 2024 sebesar Rp25.000.000 (Dua Puluh Lima Juta Rupiah) dapat dicairkan oleh Kepala KPPN Sibolga sebesar nilai pekerjaan yang dinyatakan wanprestasi/pekerjaan tidak dapat diselesaikan untuk disetor ke Kas Negara."
+                    placeholder="Apabila sampai batas waktu tersebut pekerjaan belum selesai atau PPK tidak menyampaikan Berita Acara Penyelesaian Pekerjaan (BAPP) paling lambat 10 (sepuluh) hari kerja setelah berakhirnya masa kontrak, maka Jaminan Bank kami yang diterbitkan oleh Bank Nusantara Nomor 001/BNG/2024 tanggal 10 Januari 2024 sebesar Rp25.000.000 (Dua Puluh Lima Juta Rupiah) dapat dicairkan oleh Kepala Kantor Pelayanan Keuangan sebesar nilai pekerjaan yang dinyatakan wanprestasi/tidak selesai untuk disetor ke Kas Negara."
                   />
                 </li>
                 <li>
@@ -299,7 +297,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                     className="w-full align-top"
                     onChange={handleChange}
                     rows={isMobile ? 6 : 3}
-                    placeholder="Surat Pernyataan Kesanggupan ini dibuat dalam rangka pengajuan pembayaran atas pekerjaan tersebut pada angka 1 yang belum 100% selesai pada saat surat pernyataan kesanggupan ini dibuat."
+                    placeholder="Surat Pernyataan Kesanggupan ini dibuat untuk pengajuan pembayaran atas pekerjaan yang belum selesai 100% pada saat surat ini dibuat."
                   />
                 </li>
               </ul>
@@ -316,7 +314,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
             </div>
 
             <div className="mt-[4rem] flex items-start justify-between gap-32">
-              <div className="flex flex-col justify-center gap-80">
+              <div className="flex w-1/3 flex-col justify-center gap-80 phones:w-2/5">
                 <div className="flex flex-col gap-12">
                   <FormInput
                     name="mengetahui"
@@ -329,7 +327,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                     name="pejabat"
                     value={formData.pejabat}
                     onChange={handleChange}
-                    placeholder="Pejabat Pembuat Komitmen "
+                    placeholder="Pejabat Pembuat Komitmen"
                     className="text-center"
                   />
                 </div>
@@ -338,26 +336,26 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                     name="nama_pejabat"
                     value={formData.nama_pejabat}
                     onChange={handleChange}
-                    placeholder="Abdillah"
+                    placeholder="Dr. Andika Saputra"
                     className="text-center"
                   />
                   <FormInput
                     name="nip"
                     value={formData.nip}
                     onChange={handleChange}
-                    placeholder="123123123123"
+                    placeholder="999999999999"
                     className="text-center"
                   />
                 </div>
               </div>
-              <div className="flex flex-col justify-center gap-80">
+              <div className="flex w-1/3 flex-col justify-center gap-80 phones:w-2/5">
                 <div className="flex flex-col justify-center gap-80">
                   <div className="flex flex-col gap-12">
                     <FormInput
                       name="tanggal_ttd"
                       value={formData.tanggal_ttd}
                       onChange={handleChange}
-                      placeholder={`Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`}
+                      placeholder={`Kota Harapan, 14 Mei 2025`}
                       className="text-center"
                     />
                     <FormInput
@@ -372,8 +370,8 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                     name="nama_rekanan"
                     value={formData.nama_rekanan}
                     onChange={handleChange}
-                    placeholder="Abdillah"
-                    className="Syamiliyah"
+                    placeholder="Rafi Pratama"
+                    className="text-center"
                   />
                 </div>
               </div>

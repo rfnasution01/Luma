@@ -18,41 +18,41 @@ export default function SuratKeteranganDomisiliPengantarRT() {
   const [debounceTimer, setDebounceTimer] = useState(null)
 
   const [formData, setFormData] = useState({
-    header1: 'Rukun Tetangga 08 / 02 Perumahan Sumber Waras',
-    header2: 'Desa Suka Maju, Kecamatan Sayur Bayam',
-    header3: 'Kabupaten Bandung - 12345',
-    header4: 'Jl. Sukamaju Raya No. 1, Bandung Kode Pos: 12345',
+    header1: 'Rukun Tetangga 05 / 03 Perumahan Harmoni Sejahtera',
+    header2: 'Desa Maju Jaya, Kecamatan Lembah Hijau',
+    header3: 'Kabupaten Cendekia - 54321',
+    header4: 'Jl. Harmoni Raya No. 9, Cendekia, Kode Pos: 54321',
 
     title: 'SURAT KETERANGAN DOMISILI',
-    no_surat: 'Nomor: RT/RW/No/XX/YYYY',
+    no_surat: 'Nomor: 05/03/DS/XX/2025',
 
     pengantar:
-      'Yang bertanda tangan di bawah ini ketua RT. 08 RW. 02 Desa Suka Maju Kecamatan Sayur Bayam Kabupaten Bandung menerangkan bahwa:',
+      'Yang bertanda tangan di bawah ini, Ketua RT. 05 RW. 03 Desa Maju Jaya Kecamatan Lembah Hijau Kabupaten Cendekia, dengan ini menerangkan bahwa:',
 
-    ul_1: 'Syamil Wahyudi',
+    ul_1: 'Rizky Alfarizi',
     ul_2: 'Laki-laki',
-    ul_3: 'Bekasi, 1 Januari 2000',
-    ul_4: '010101010101',
-    ul_5: 'Pengusaha Mebel',
+    ul_3: 'Cendekia, 15 Februari 1999',
+    ul_4: '3210987654320001',
+    ul_5: 'Wiraswasta',
     ul_6: 'Islam',
     ul_7: 'Indonesia',
-    ul_8: 'Jl Gajah Mundur, No. 8, Suka Maju',
+    ul_8: 'Jl. Anggrek Merah No. 12, Perum. Harmoni Sejahtera',
 
     memberitahukan_1:
-      'Adalah benar warga kami di lingkungan RT. 08 RW. 02 Perumahan Sumber Waras, Desa Suka Maju, Kecamatan Sayur Bayam, Kabupaten Bandung',
+      'Adalah benar warga kami yang berdomisili di lingkungan RT. 05 RW. 03 Perumahan Harmoni Sejahtera, Desa Maju Jaya, Kecamatan Lembah Hijau, Kabupaten Cendekia.',
 
     memberitahukan_2:
-      'Demikian Surat Keterangan ini dibuat, untuk dipergunakan sebagaimana mestinya',
+      'Demikian Surat Keterangan ini dibuat untuk dapat digunakan sebagaimana mestinya.',
 
-    alamat_tanggal: `Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
+    alamat_tanggal: `Cendekia, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
 
     jabatan_penandatangan: 'Pemohon',
-    nama_penandatangan: 'Syamil Wahyudi',
-    jabatan_rt: 'Ketua RT. 08 RW. 02',
-    nama_rt: 'Abdillah',
+    nama_penandatangan: 'Rizky Alfarizi',
+    jabatan_rt: 'Ketua RT. 05 RW. 03',
+    nama_rt: 'Satria Nugraha',
     mengetahui: 'Mengetahui',
-    jabatan_rw: 'Ketua RW. 02',
-    nama_rw: 'Syamiliyah',
+    jabatan_rw: 'Ketua RW. 03',
+    nama_rw: 'Lestari Wibowo',
   })
 
   const handleChange = (e) => {
@@ -108,28 +108,28 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                   name="header1"
                   value={formData.header1}
                   onChange={handleChange}
-                  placeholder="Rukun Tetangga 08 / 02 Perumahan Sumber Waras"
+                  placeholder="Rukun Tetangga 05 / 03 Perumahan Harmoni Sejahtera"
                   className="text-center text-[2.8rem] font-bold"
                 />
                 <FormInput
                   name="header2"
                   value={formData.header2}
                   onChange={handleChange}
-                  placeholder="Desa Suka Maju, Kecamatan Sayur Bayam"
+                  placeholder="Desa Maju Jaya, Kecamatan Lembah Hijau"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header3"
                   value={formData.header3}
                   onChange={handleChange}
-                  placeholder="Kabupaten Bandung - 12345"
+                  placeholder="Kabupaten Cendekia - 54321"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header4"
                   value={formData.header4}
                   onChange={handleChange}
-                  placeholder="Jl. Sukamaju Raya No. 1, Bandung Kode Pos: 12345"
+                  placeholder="Jl. Harmoni Raya No. 9, Cendekia, Kode Pos: 54321"
                   className="text-center"
                 />
               </div>
@@ -158,7 +158,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                 value={formData.pengantar}
                 onChange={handleChange}
                 rows={isMobile ? 3 : 2}
-                placeholder="Yang bertanda tangan di bawah ini ketua RT. 08 RW. 02 Desa Suka Maju Kecamatan Sayur Bayam Kabupaten Bandung menerangkan bahwa:"
+                placeholder="Yang bertanda tangan di bawah ini, Ketua RT. 05 RW. 03 Desa Maju Jaya Kecamatan Lembah Hijau Kabupaten Cendekia, dengan ini menerangkan bahwa:"
               />
             </div>
 
@@ -174,7 +174,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                       name="ul_1"
                       value={formData.ul_1}
                       onChange={handleChange}
-                      placeholder="Syamil Wahyudi"
+                      placeholder="Rizky Alfarizi"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -206,7 +206,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                       className="w-[80%] phones:w-[60%]"
                       value={formData.ul_3}
                       onChange={handleChange}
-                      placeholder="Bekasi, 1 Januari 2000"
+                      placeholder="Cendekia, 15 Februari 1999"
                     />
                   </td>
                 </tr>
@@ -220,7 +220,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                       name="ul_4"
                       value={formData.ul_4}
                       onChange={handleChange}
-                      placeholder="010101010101"
+                      placeholder="3210987654320001"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -236,7 +236,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                       name="ul_5"
                       value={formData.ul_5}
                       onChange={handleChange}
-                      placeholder="Pengusaha Mebel"
+                      placeholder="Wiraswasta"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -281,7 +281,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                       name="ul_8"
                       value={formData.ul_8 || ''}
                       onChange={handleChange}
-                      placeholder="Jl Gajah Mundur, No. 8, Suka Maju"
+                      placeholder="Jl. Anggrek Merah No. 12, Perum. Harmoni Sejahtera"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -295,14 +295,14 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
                 rows={isMobile ? 4 : 2}
-                placeholder="Adalah benar warga kami di lingkungan RT. 08 RW. 02 Perumahan Sumber Waras, Desa Suka Maju, Kecamatan Sayur Bayam, Kabupaten Bandung."
+                placeholder="Adalah benar warga kami yang berdomisili di lingkungan RT. 05 RW. 03 Perumahan Harmoni Sejahtera, Desa Maju Jaya, Kecamatan Lembah Hijau, Kabupaten Cendekia."
               />
               <FormTextArea
                 name="memberitahukan_2"
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
                 rows={isMobile ? 2 : 1}
-                placeholder="Demikian Surat Keterangan ini dibuat, untuk dipergunakan sebagaimana mestinya"
+                placeholder="Demikian Surat Keterangan ini dibuat untuk dapat digunakan sebagaimana mestinya."
               />
             </div>
 
@@ -313,7 +313,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                     name="alamat_tanggal"
                     value={formData.alamat_tanggal}
                     onChange={handleChange}
-                    placeholder={`Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`}
+                    placeholder={`Cendekia, ${dayjs().locale('id').format('DD MMMM YYYY')}`}
                     className="text-center"
                   />
                   <FormInput
@@ -328,7 +328,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                   name="nama_penandatangan"
                   value={formData.nama_penandatangan}
                   onChange={handleChange}
-                  placeholder="Syamil Wahyudi"
+                  placeholder="Rizky Alfarizi"
                   className="text-center"
                 />
               </div>
@@ -340,7 +340,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                       name="jabatan_rt"
                       value={formData.jabatan_rt}
                       onChange={handleChange}
-                      placeholder="Ketua RT. 08 RW. 02"
+                      placeholder="Ketua RT. 05 RW. 03"
                       className="text-center"
                     />
                   </div>
@@ -348,7 +348,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                     name="nama_rt"
                     value={formData.nama_rt}
                     onChange={handleChange}
-                    placeholder="Abdillah"
+                    placeholder="Satria Nugraha"
                     className="text-center"
                   />
                 </div>
@@ -368,7 +368,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                     name="jabatan_rw"
                     value={formData.jabatan_rw}
                     onChange={handleChange}
-                    placeholder="Ketua RW. 02"
+                    placeholder="Ketua RW. 03"
                     className="text-center"
                   />
                 </div>
@@ -376,7 +376,7 @@ export default function SuratKeteranganDomisiliPengantarRT() {
                   name="nama_rw"
                   value={formData.nama_rw}
                   onChange={handleChange}
-                  placeholder="Syamiliyah"
+                  placeholder="Lestari Wibowo"
                   className="text-center"
                 />
               </div>

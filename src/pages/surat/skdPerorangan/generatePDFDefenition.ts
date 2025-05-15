@@ -71,7 +71,7 @@ export function generatePdfDefinition(data) {
       },
       {
         text: `${data.pengantar}`,
-        margin: [0, 0, 0, 20],
+        margin: [0, 0, 0, 10],
       },
 
       {

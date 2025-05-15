@@ -18,29 +18,31 @@ export default function SuratLamaranKerja() {
   const [formData, setFormData] = useState({
     title: 'SURAT LAMARAN KERJA',
 
-    kepada_1: 'Yth. HRD PT Maju Sejahtera',
-    kepada_2: 'Jl. Merdeka No. 99',
+    kepada_1: 'Yth. HRD PT Sinar Abadi',
+    kepada_2: 'Jl. Kebangsaan No. 123',
     kepada_3: 'di Tempat',
 
     dengan_hormat_1:
       'Dengan hormat,\nBersama ini saya mengajukan lamaran pekerjaan di perusahaan yang Bapak/Ibu pimpin.',
 
-    ul_1: 'Andi Saputra',
-    ul_2: 'Jl. Melati No. 45, Bandung',
-    ul_3: 'Bandung, 12 Januari 1995',
-    ul_4: 'S1 Teknik Informatika',
-    ul_5: '0812-3456-7890',
+    dengan_hormat_2: 'Saya yang bertanda tangan di bawah ini:',
+
+    ul_1: 'Budi Santosa',
+    ul_2: 'Jl. Kenanga No. 12, Surabaya',
+    ul_3: 'Surabaya, 5 Mei 1993',
+    ul_4: 'S1 Sistem Informasi',
+    ul_5: '0857-1234-5678',
 
     memberitahukan_1:
-      'Saya memiliki pengalaman bekerja sebagai web developer selama 3 tahun dan memiliki kemampuan dalam React.js dan Node.js.',
+      'Saya memiliki pengalaman bekerja sebagai software engineer selama 2 tahun dan menguasai teknologi seperti Vue.js dan Laravel.',
     memberitahukan_2:
-      'Saya siap mengikuti proses seleksi dan bekerja dengan dedikasi tinggi.',
+      'Saya siap mengikuti proses rekrutmen dan berkomitmen untuk memberikan yang terbaik.',
 
     demikian:
       'Demikian surat lamaran ini saya sampaikan. Atas perhatian Bapak/Ibu, saya ucapkan terima kasih.',
 
     hormat_saya_1: 'Hormat saya,',
-    hormat_saya_2: 'Andi Saputra',
+    hormat_saya_2: 'Budi Santosa',
   })
 
   const handleChange = (e) => {
@@ -101,13 +103,13 @@ export default function SuratLamaranKerja() {
                 name="kepada_1"
                 value={formData.kepada_1}
                 onChange={handleChange}
-                placeholder="Yth. HRD PT Maju Sejahtera"
+                placeholder="Yth. HRD PT Sinar Abadi"
               />
               <FormInput
                 name="kepada_2"
                 value={formData.kepada_2}
                 onChange={handleChange}
-                placeholder="Jl. Merdeka No. 99"
+                placeholder="Jl. Kebangsaan No. 123"
               />
               <FormInput
                 name="kepada_3"
@@ -117,7 +119,7 @@ export default function SuratLamaranKerja() {
               />
             </div>
 
-            <div className="mt-[4rem] flex flex-col gap-24">
+            <div className="mt-[4rem] flex flex-col gap-12">
               <FormTextArea
                 name="dengan_hormat_1"
                 value={formData.dengan_hormat_1}
@@ -125,6 +127,13 @@ export default function SuratLamaranKerja() {
                 rows={isMobile ? 4 : 2}
                 placeholder="Dengan hormat,
 Bersama ini saya mengajukan lamaran pekerjaan di perusahaan yang Bapak/Ibu pimpin."
+              />
+              <FormTextArea
+                name="dengan_hormat_2"
+                value={formData.dengan_hormat_2}
+                onChange={handleChange}
+                rows={isMobile ? 2 : 1}
+                placeholder="Saya yang bertanda tangan di bawah ini:"
               />
             </div>
 
@@ -138,7 +147,7 @@ Bersama ini saya mengajukan lamaran pekerjaan di perusahaan yang Bapak/Ibu pimpi
                       name="ul_1"
                       value={formData.ul_1}
                       onChange={handleChange}
-                      placeholder="Andi Saputra"
+                      placeholder="Budi Santosa"
                       className="w-[98%] phones:w-[97%]"
                     />
                   </td>
@@ -153,7 +162,7 @@ Bersama ini saya mengajukan lamaran pekerjaan di perusahaan yang Bapak/Ibu pimpi
                       name="ul_4"
                       value={formData.ul_4}
                       onChange={handleChange}
-                      placeholder="S1 Teknik Informatika"
+                      placeholder="S1 Sistem Informasi"
                       className="w-[98%] phones:w-[97%]"
                     />
                   </td>
@@ -166,7 +175,7 @@ Bersama ini saya mengajukan lamaran pekerjaan di perusahaan yang Bapak/Ibu pimpi
                       name="ul_5"
                       value={formData.ul_5}
                       onChange={handleChange}
-                      placeholder="0812-3456-7890"
+                      placeholder="0857-1234-5678"
                       className="w-[98%] phones:w-[97%]"
                     />
                   </td>
@@ -180,7 +189,7 @@ Bersama ini saya mengajukan lamaran pekerjaan di perusahaan yang Bapak/Ibu pimpi
                       value={formData.ul_2}
                       onChange={handleChange}
                       className="w-[98%] phones:w-[97%]"
-                      placeholder="Jl. Melati No. 45, Bandung"
+                      placeholder="Jl. Kenanga No. 12, Surabaya"
                     />
                   </td>
                 </tr>
@@ -193,7 +202,7 @@ Bersama ini saya mengajukan lamaran pekerjaan di perusahaan yang Bapak/Ibu pimpi
                       className="w-[98%] phones:w-[97%]"
                       value={formData.ul_3}
                       onChange={handleChange}
-                      placeholder="Bandung, 12 Januari 1995"
+                      placeholder="Surabaya, 5 Mei 1993"
                     />
                   </td>
                 </tr>
@@ -204,15 +213,15 @@ Bersama ini saya mengajukan lamaran pekerjaan di perusahaan yang Bapak/Ibu pimpi
                 name="memberitahukan_1"
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
-                rows={isMobile ? 5 : 3}
-                placeholder="Saya memiliki pengalaman bekerja sebagai web developer selama 3 tahun dan memiliki kemampuan dalam React.js dan Node.js."
+                rows={isMobile ? 4 : 2}
+                placeholder="Saya memiliki pengalaman bekerja sebagai software engineer selama 2 tahun dan menguasai teknologi seperti Vue.js dan Laravel."
               />
               <FormTextArea
                 name="memberitahukan_2"
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
-                rows={isMobile ? 3 : 2}
-                placeholder="Saya siap mengikuti proses seleksi dan bekerja dengan dedikasi tinggi."
+                rows={isMobile ? 2 : 1}
+                placeholder="Saya siap mengikuti proses rekrutmen dan berkomitmen untuk memberikan yang terbaik."
               />
             </div>
 
@@ -221,24 +230,26 @@ Bersama ini saya mengajukan lamaran pekerjaan di perusahaan yang Bapak/Ibu pimpi
               name="demikian"
               value={formData.demikian}
               onChange={handleChange}
-              rows={isMobile ? 3 : 2}
+              rows={isMobile ? 2 : 1}
             />
 
             <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
-              <FormInput
-                name="hormat_saya_1"
-                value={formData.hormat_saya_1}
-                onChange={handleChange}
-                placeholder="Ketua RT 03 / RW 05"
-                className="text-center"
-              />
-              <FormInput
-                name="hormat_saya_2"
-                value={formData.hormat_saya_2}
-                onChange={handleChange}
-                placeholder="[Nama Siswa]"
-                className="text-center"
-              />
+              <div className="flex w-1/3 flex-col gap-80 phones:w-2/5">
+                <FormInput
+                  name="hormat_saya_1"
+                  value={formData.hormat_saya_1}
+                  onChange={handleChange}
+                  placeholder="Ketua RT 03 / RW 05"
+                  className="text-center"
+                />
+                <FormInput
+                  name="hormat_saya_2"
+                  value={formData.hormat_saya_2}
+                  onChange={handleChange}
+                  placeholder="Budi Santosa"
+                  className="text-center"
+                />
+              </div>
             </div>
           </div>
         </div>

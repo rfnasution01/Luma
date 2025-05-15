@@ -161,28 +161,28 @@ export default function SuratKeteranganAktifKuliah() {
                   name="header1"
                   value={formData.header1}
                   onChange={handleChange}
-                  placeholder="Departemen Pendidikan Nasional"
+                  placeholder="Kementerian Pendidikan dan Kebudayaan"
                   className="text-center text-[2.8rem] font-bold"
                 />
                 <FormInput
                   name="header2"
                   value={formData.header2}
                   onChange={handleChange}
-                  placeholder="Universitas Riau Pekanbaru"
+                  placeholder="Universitas Contoh Nusantara"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header3"
                   value={formData.header3}
                   onChange={handleChange}
-                  placeholder="Fakultas Keguruan dan Ilmu Pendidikan"
+                  placeholder="Fakultas Ilmu dan Teknologi"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header4"
                   value={formData.header4}
                   onChange={handleChange}
-                  placeholder="Alamat: Kampus Bina Widya Simpang Baru - Pekanbaru Telp. (0761) 63267 Fax. (0761) 65804"
+                  placeholder="Alamat: Jl. Pendidikan No. 123, Kota Contoh, Telp. (0123) 456789, Fax. (0123) 987654"
                   className="text-center"
                 />
               </div>
@@ -211,7 +211,7 @@ export default function SuratKeteranganAktifKuliah() {
                 value={formData.pengantar_1}
                 onChange={handleChange}
                 rows={isMobile ? 2 : 1}
-                placeholder="Dekan Fakultas Keguruan dan Ilmu Pendidikan Universitas Riau Pekanbaru dengan ini menerangkan bahwa:"
+                placeholder="Dekan Fakultas Ilmu dan Teknologi Universitas Contoh Nusantara dengan ini menerangkan bahwa:"
               />
               <table className="w-full table-auto">
                 <tbody>
@@ -223,7 +223,7 @@ export default function SuratKeteranganAktifKuliah() {
                         name="ul_1"
                         value={formData.ul_1}
                         onChange={handleChange}
-                        placeholder="Syamil Wahyudi"
+                        placeholder="Budi Santosa"
                         className="w-[60%]"
                       />
                     </td>
@@ -236,7 +236,7 @@ export default function SuratKeteranganAktifKuliah() {
                         name="ul_2"
                         value={formData.ul_2}
                         onChange={handleChange}
-                        placeholder="Bandung, 12 Januari 1995"
+                        placeholder="Contohkota, 1 Januari 2000"
                         className="w-[60%]"
                       />
                     </td>
@@ -249,7 +249,7 @@ export default function SuratKeteranganAktifKuliah() {
                         name="ul_3"
                         value={formData.ul_3}
                         onChange={handleChange}
-                        placeholder="0123456789"
+                        placeholder="2025123456"
                         className="w-[60%]"
                       />
                     </td>
@@ -262,7 +262,7 @@ export default function SuratKeteranganAktifKuliah() {
                         name="ul_4"
                         value={formData.ul_4}
                         onChange={handleChange}
-                        placeholder="Nama Jurusan"
+                        placeholder="Teknologi Informasi"
                         className="w-[60%]"
                       />
                     </td>
@@ -275,7 +275,7 @@ export default function SuratKeteranganAktifKuliah() {
                         name="ul_5"
                         value={formData.ul_5}
                         onChange={handleChange}
-                        placeholder="Nama Program Studi"
+                        placeholder="Sistem Informasi"
                         className="w-[60%]"
                       />
                     </td>
@@ -288,7 +288,7 @@ export default function SuratKeteranganAktifKuliah() {
                         name="ul_6"
                         value={formData.ul_6}
                         onChange={handleChange}
-                        placeholder="Nama Program"
+                        placeholder="Sarjana (S1)"
                         className="w-[60%]"
                       />
                     </td>
@@ -301,7 +301,7 @@ export default function SuratKeteranganAktifKuliah() {
                         name="ul_7"
                         value={formData.ul_7}
                         onChange={handleChange}
-                        placeholder="Alamat"
+                        placeholder="Jl. Mawar No. 45, Contohkota"
                         className="w-[60%]"
                       />
                     </td>
@@ -316,25 +316,25 @@ export default function SuratKeteranganAktifKuliah() {
                 value={formData.penutup_1}
                 onChange={handleChange}
                 rows={isMobile ? 5 : 3}
-                placeholder="Nama tersebut diatas adalah Mahasiswa Fakultas Keguruan dan Ilmu Pendidikan Universitas Riau Pekanbaru terdaftar pada tahun Akademik 2024/2025 semester ganjil dan aktif dalam perkuliahan, Surat Keterangan ini keperluan Persyaratan Beasiswa PPA."
+                placeholder="Nama tersebut di atas adalah mahasiswa aktif Fakultas Ilmu dan Teknologi Universitas Contoh Nusantara, terdaftar pada Tahun Akademik 2024/2025 semester ganjil dan aktif dalam kegiatan perkuliahan. Surat ini diterbitkan sebagai syarat pengajuan beasiswa."
               />
               <FormTextArea
                 name="penutup_2"
                 value={formData.penutup_2}
                 onChange={handleChange}
                 rows={isMobile ? 2 : 1}
-                placeholder="Demikianlah Surat Keterangan ini diberikan untuk dapat dipergunakan sebagaimana mestinya."
+                placeholder="Demikian surat keterangan ini dibuat untuk digunakan sebagaimana mestinya."
               />
             </div>
 
             <div className="mt-[4rem] flex flex-row items-start justify-end gap-32">
-              <div className="flex flex-col justify-center gap-80">
+              <div className="flex w-1/3 flex-col justify-center gap-80 phones:w-2/5">
                 <div className="flex flex-col gap-12">
                   <FormInput
                     name="dikeluarkan"
                     value={formData.dikeluarkan}
                     onChange={handleChange}
-                    placeholder={`Dikeluarkan di: Pekanbaru`}
+                    placeholder={`Dikeluarkan di: Contohkota`}
                   />
                   <FormInput
                     name="tanggal"
@@ -352,7 +352,7 @@ export default function SuratKeteranganAktifKuliah() {
                     name="jabatan"
                     value={formData.jabatan}
                     onChange={handleChange}
-                    placeholder="Pembantu Dekan III"
+                    placeholder="Wakil Dekan III"
                   />
                 </div>
                 <div className="flex flex-col gap-12">
@@ -360,15 +360,13 @@ export default function SuratKeteranganAktifKuliah() {
                     name="nama"
                     value={formData.nama}
                     onChange={handleChange}
-                    placeholder="Abdillah"
-                    className="text-center"
+                    placeholder="Dr. Rina Setiawati, M.T."
                   />
                   <FormInput
                     name="nip"
                     value={formData.nip}
                     onChange={handleChange}
-                    placeholder="0123456789"
-                    className="text-center"
+                    placeholder="198012312005012001"
                   />
                 </div>
               </div>

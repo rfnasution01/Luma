@@ -20,17 +20,19 @@ export default function SuratIzinSakitSekolahPage() {
   const [formData, setFormData] = useState({
     tempat_tanggal: `Magelang, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
     kepada_1: 'Kepada Yth.',
-    kepada_2: 'Bapak/Ibu Guru Wali Kelas',
+    kepada_2: 'Bapak/Ibu Wali Kelas',
     kepada_3: 'Di Tempat',
     dengan_hormat_1: 'Dengan hormat,',
-    dengan_hormat_2: 'Dengan ini saya selaku orang tua/wali murid dari:',
-    ul_1: `Siti Khotimah`,
+    dengan_hormat_2: 'Saya selaku orang tua/wali dari siswa berikut:',
+    ul_1: 'Siti Khotimah',
     ul_2: 'Kelas XI IPS 1',
-    ul_3: ' SMA N 2 Purwokerto',
-    memberitahukan_1: `Memberitahukan bahwa saat ini anak saya tidak dapat mengikuti kegiatan belajar mengajar seperti biasa pada hari, Rabu 30 September 2019 dikarenakan sakit. Oleh karena itu, kami memohon kepada Bapak/Ibu Guru Wali Kelas XI IPS 1 agar memberikan izin.`,
-    memberitahukan_2: `Demikian yang dapat kami sampaikan. Atas perhatian Bapak/Ibu kami ucapkan terimakasih.`,
-    hormat_saya_1: `Hormat saya,`,
-    hormat_saya_2: `Orang tua/wali murid`,
+    ul_3: 'SMA Harapan Bangsa',
+    memberitahukan_1:
+      'Ingin menginformasikan bahwa putri kami tidak dapat mengikuti kegiatan belajar pada hari Rabu, 30 September 2019 dikarenakan sedang sakit. Kami memohon pengertian serta izin dari Bapak/Ibu wali kelas atas ketidakhadiran tersebut.',
+    memberitahukan_2:
+      'Demikian pemberitahuan ini kami sampaikan. Terima kasih atas perhatian dan pengertiannya.',
+    hormat_saya_1: 'Hormat kami,',
+    hormat_saya_2: 'Orang tua/Wali Murid',
   })
 
   const handleChange = (e) => {
@@ -82,7 +84,7 @@ export default function SuratIzinSakitSekolahPage() {
                 name="tempat_tanggal"
                 value={formData.tempat_tanggal}
                 onChange={handleChange}
-                placeholder={dayjs().locale('id').format('DD MMMM YYYY')}
+                placeholder="Magelang, 15 Mei 2025"
                 className="w-1/2 text-end text-[2rem]"
               />
             </div>
@@ -97,7 +99,7 @@ export default function SuratIzinSakitSekolahPage() {
                 name="kepada_2"
                 value={formData.kepada_2}
                 onChange={handleChange}
-                placeholder="Bapak/Ibu Guru Wali Kelas"
+                placeholder="Bapak/Ibu Wali Kelas"
               />
               <FormInput
                 name="kepada_3"
@@ -118,7 +120,8 @@ export default function SuratIzinSakitSekolahPage() {
                 name="dengan_hormat_2"
                 value={formData.dengan_hormat_2}
                 onChange={handleChange}
-                placeholder="Dengan ini saya selaku orang tua/wali murid dari:"
+                placeholder="Saya selaku orang tua/wali dari siswa berikut:"
+                rows={isMobile ? 2 : 1}
               />
             </div>
 
@@ -159,7 +162,7 @@ export default function SuratIzinSakitSekolahPage() {
                       className="w-[98%] phones:w-[97%]"
                       value={formData.ul_3}
                       onChange={handleChange}
-                      placeholder=" SMA N 2 Purwokerto"
+                      placeholder="SMA Harapan Bangsa"
                     />
                   </td>
                 </tr>
@@ -171,32 +174,34 @@ export default function SuratIzinSakitSekolahPage() {
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
                 rows={isMobile ? 5 : 3}
-                placeholder="Memberitahukan bahwa saat ini anak saya tidak dapat mengikuti kegiatan belajar mengajar seperti biasa pada hari, Rabu 30 September 2019 dikarenakan sakit. Oleh karena itu, kami memohon kepada Bapak/Ibu Guru Wali Kelas XI IPS 1 agar memberikan izin."
+                placeholder="Ingin menginformasikan bahwa putri kami tidak dapat mengikuti kegiatan belajar pada hari Rabu, 30 September 2019 dikarenakan sedang sakit. Kami memohon pengertian serta izin dari Bapak/Ibu wali kelas atas ketidakhadiran tersebut."
               />
               <FormTextArea
                 name="memberitahukan_2"
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
-                rows={isMobile ? 3 : 2}
-                placeholder="Demikian yang dapat kami sampaikan. Atas perhatian Bapak/Ibu kami ucapkan terimakasih."
+                rows={isMobile ? 2 : 1}
+                placeholder="Demikian pemberitahuan ini kami sampaikan. Terima kasih atas perhatian dan pengertiannya."
               />
             </div>
 
             <div className="mt-[4rem] flex flex-col items-end justify-center gap-12">
-              <FormInput
-                name="hormat_saya_1"
-                value={formData.hormat_saya_1}
-                onChange={handleChange}
-                placeholder="Hormat saya,"
-                className="text-center"
-              />
-              <FormInput
-                name="hormat_saya_2"
-                value={formData.hormat_saya_2}
-                onChange={handleChange}
-                placeholder="[Nama Siswa]"
-                className="text-center"
-              />
+              <div className="flex w-1/3 flex-col gap-80 phones:w-2/5">
+                <FormInput
+                  name="hormat_saya_1"
+                  value={formData.hormat_saya_1}
+                  onChange={handleChange}
+                  placeholder="Hormat saya,"
+                  className="text-center"
+                />
+                <FormInput
+                  name="hormat_saya_2"
+                  value={formData.hormat_saya_2}
+                  onChange={handleChange}
+                  placeholder="Orang tua/Wali Murid"
+                  className="text-center"
+                />
+              </div>
             </div>
           </div>
         </div>

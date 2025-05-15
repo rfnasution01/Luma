@@ -18,23 +18,24 @@ export default function SuratKeteranganSanggupMembayarAngsuran() {
   const [debounceTimer, setDebounceTimer] = useState(null)
 
   const [formData, setFormData] = useState({
-    tempat_tanggal: `Purwokerto, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
+    tempat_tanggal: `Kota Sejahtera, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
+
     dengan_hormat_1: 'Yang bertanda tangan di bawah ini,',
     dengan_hormat_2:
-      'Menyatakan bahwa saya benar membeli rumah di Citra Regency secara kredit yang diselenggarakan oleh PT. Planet Properti. Saya menyatakan kesediaan dan kesanggupan saya membayar angsuran setiap tanggal 11 selama periode 15 tahun, dengan angsuran Rp5 juta.',
+      'Menyatakan bahwa saya benar telah membeli rumah di Griya Harmoni secara kredit yang diselenggarakan oleh PT. Bumi Sentosa Properti. Saya menyatakan kesediaan dan kesanggupan membayar angsuran setiap tanggal 11 selama periode 15 tahun, dengan angsuran sebesar Rp5 juta per bulan.',
     dengan_hormat_3:
-      'Jika saya tidak bisa membayar angsuran bulanan tepat waktu, saya bersedia menerima konsekuensinya yaitu dituntut serta diproses sesuai aturan yang berlaku di PT. Planet Properti.',
+      'Jika saya tidak dapat membayar angsuran bulanan tepat waktu, saya bersedia menerima konsekuensinya sesuai ketentuan yang berlaku di PT. Bumi Sentosa Properti.',
     dengan_hormat_4:
-      'Demikian surat pernyataan ini saya buat tanpa adanya paksaan dari pihak mana pun untuk bisa dijadikan rujukan di kemudian hari.',
+      'Demikian surat pernyataan ini saya buat dengan sebenar-benarnya tanpa adanya paksaan dari pihak mana pun, dan dapat dijadikan rujukan di kemudian hari.',
 
-    ul_1: `Erika Finn`,
-    ul_2: '1234567890',
-    ul_3: ' Ibu rumah tangga',
-    ul_4: 'Jl. Ahmad Yani, Bekasi',
+    ul_1: 'Dewi Larasati',
+    ul_2: '9876543210',
+    ul_3: 'Wirausaha',
+    ul_4: 'Jl. Kenanga No. 12, Kota Sejahtera',
 
-    hormat_saya_1: `Bekasi, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
-    hormat_saya_2: `Saya yang menyatakan,`,
-    hormat_saya_3: 'Erika Finn',
+    hormat_saya_1: `Kota Sejahtera, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
+    hormat_saya_2: 'Yang membuat pernyataan,',
+    hormat_saya_3: 'Dewi Larasati',
   })
 
   const handleChange = (e) => {
@@ -88,7 +89,7 @@ export default function SuratKeteranganSanggupMembayarAngsuran() {
                 name="tempat_tanggal"
                 value={formData.tempat_tanggal}
                 onChange={handleChange}
-                placeholder={dayjs().locale('id').format('DD MMMM YYYY')}
+                placeholder={'Kota Sejahtera, 14 Mei 2025'}
                 className="w-1/2 text-end text-[2rem]"
               />
             </div>
@@ -110,7 +111,7 @@ export default function SuratKeteranganSanggupMembayarAngsuran() {
                         name="ul_1"
                         value={formData.ul_1}
                         onChange={handleChange}
-                        placeholder="Erika Finn"
+                        placeholder="Dewi Larasati"
                         className="w-[98%] phones:w-[97%]"
                       />
                     </td>
@@ -124,7 +125,7 @@ export default function SuratKeteranganSanggupMembayarAngsuran() {
                         value={formData.ul_2}
                         onChange={handleChange}
                         className="w-[98%] phones:w-[97%]"
-                        placeholder="1234567890"
+                        placeholder="9876543210"
                       />
                     </td>
                   </tr>
@@ -137,7 +138,7 @@ export default function SuratKeteranganSanggupMembayarAngsuran() {
                         value={formData.ul_3}
                         onChange={handleChange}
                         className="w-[98%] phones:w-[97%]"
-                        placeholder="Ibu rumah tangga"
+                        placeholder="Wirausaha"
                       />
                     </td>
                   </tr>
@@ -150,7 +151,7 @@ export default function SuratKeteranganSanggupMembayarAngsuran() {
                         className="w-[98%] phones:w-[97%]"
                         value={formData.ul_4}
                         onChange={handleChange}
-                        placeholder=" Jl. Ahmad Yani, Bekasi"
+                        placeholder="Jl. Kenanga No. 12, Kota Sejahtera"
                       />
                     </td>
                   </tr>
@@ -163,7 +164,7 @@ export default function SuratKeteranganSanggupMembayarAngsuran() {
                 name="dengan_hormat_2"
                 value={formData.dengan_hormat_2}
                 onChange={handleChange}
-                placeholder="Menyatakan bahwa saya benar membeli rumah di Citra Regency secara kredit yang diselenggarakan oleh PT. Planet Properti. Saya menyatakan kesediaan dan kesanggupan saya membayar angsuran setiap tanggal 11 selama periode 15 tahun, dengan angsuran Rp5 juta."
+                placeholder="Menyatakan bahwa saya benar telah membeli rumah di Griya Harmoni secara kredit yang diselenggarakan oleh PT. Bumi Sentosa Properti. Saya menyatakan kesediaan dan kesanggupan membayar angsuran setiap tanggal 11 selama periode 15 tahun, dengan angsuran sebesar Rp5 juta per bulan."
                 rows={isMobile ? 5 : 3}
               />
 
@@ -171,42 +172,44 @@ export default function SuratKeteranganSanggupMembayarAngsuran() {
                 name="dengan_hormat_3"
                 value={formData.dengan_hormat_3}
                 onChange={handleChange}
-                placeholder="Jika saya tidak bisa membayar angsuran bulanan tepat waktu, saya bersedia menerima konsekuensinya yaitu dituntut serta diproses sesuai aturan yang berlaku di PT. Planet Properti."
+                placeholder="Jika saya tidak dapat membayar angsuran bulanan tepat waktu, saya bersedia menerima konsekuensinya sesuai ketentuan yang berlaku di PT. Bumi Sentosa Properti."
                 rows={isMobile ? 5 : 2}
               />
               <FormTextArea
                 name="dengan_hormat_4"
                 value={formData.dengan_hormat_4}
                 onChange={handleChange}
-                placeholder="Demikian surat pernyataan ini saya buat tanpa adanya paksaan dari pihak mana pun untuk bisa dijadikan rujukan di kemudian hari."
+                placeholder="Demikian surat pernyataan ini saya buat dengan sebenar-benarnya tanpa adanya paksaan dari pihak mana pun, dan dapat dijadikan rujukan di kemudian hari."
                 rows={isMobile ? 4 : 2}
               />
             </div>
 
             <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
-              <div className="flex flex-col gap-12">
+              <div className="flex w-1/3 flex-col gap-80 phones:w-2/5">
+                <div className="flex flex-col gap-12">
+                  <FormInput
+                    name="hormat_saya_1"
+                    value={formData.hormat_saya_1}
+                    onChange={handleChange}
+                    placeholder="Kota Sejahtera, 14 Mei 2025"
+                    className="text-center"
+                  />
+                  <FormInput
+                    name="hormat_saya_2"
+                    value={formData.hormat_saya_2}
+                    onChange={handleChange}
+                    placeholder="Yang membuat pernyataan,"
+                    className="text-center"
+                  />
+                </div>
                 <FormInput
-                  name="hormat_saya_1"
-                  value={formData.hormat_saya_1}
+                  name="hormat_saya_3"
+                  value={formData.hormat_saya_3}
                   onChange={handleChange}
-                  placeholder="Bekasi, 09 Mei 2025"
-                  className="text-center"
-                />
-                <FormInput
-                  name="hormat_saya_2"
-                  value={formData.hormat_saya_2}
-                  onChange={handleChange}
-                  placeholder="Saya yang menyatakan,"
+                  placeholder="Dewi Larasati"
                   className="text-center"
                 />
               </div>
-              <FormInput
-                name="hormat_saya_3"
-                value={formData.hormat_saya_3}
-                onChange={handleChange}
-                placeholder="Erika Finn"
-                className="text-center"
-              />
             </div>
           </div>
         </div>

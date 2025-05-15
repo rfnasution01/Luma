@@ -24,14 +24,13 @@ export default function SuratIzinTidakMasukSekolahPage() {
     kepada_3: 'Di Tempat',
     dengan_hormat_1: 'Dengan hormat,',
     dengan_hormat_2: 'Dengan ini saya selaku orang tua/wali murid dari:',
-    ul_1: `Siti Khotimah`,
-    ul_2: 'Kelas XI IPS 1',
-    ul_3: ' SMA N 2 Purwokerto',
-    memberitahukan_1: `Memberitahukan bahwa saat ini anak saya tidak dapat mengikuti kegiatan belajar mengajar seperti biasa pada hari, Rabu 30 September 2019 dikarenakan suatu keperluan yang tidak dapat ditinggalkan. Oleh karena itu, kami memohon kepada Bapak/Ibu Guru Wali Kelas XI IPS 1 agar memberikan izin.`,
-
+    ul_1: 'Alya Ramadhani',
+    ul_2: 'Kelas XI IPS 3',
+    ul_3: 'SMA Terpadu Nusantara',
+    memberitahukan_1: `Memberitahukan bahwa saat ini anak saya tidak dapat mengikuti kegiatan belajar mengajar seperti biasa pada hari, Rabu 30 September 2019 dikarenakan suatu keperluan keluarga yang tidak dapat ditinggalkan. Oleh karena itu, kami memohon kepada Bapak/Ibu Guru Wali Kelas XI IPS 3 agar memberikan izin.`,
     memberitahukan_2: `Demikian yang dapat kami sampaikan. Atas perhatian Bapak/Ibu kami ucapkan terimakasih.`,
-    hormat_saya_1: `Hormat saya,`,
-    hormat_saya_2: `Orang tua/wali murid`,
+    hormat_saya_1: 'Hormat saya,',
+    hormat_saya_2: 'Orang tua/wali murid',
   })
 
   const handleChange = (e) => {
@@ -85,7 +84,7 @@ export default function SuratIzinTidakMasukSekolahPage() {
                 name="tempat_tanggal"
                 value={formData.tempat_tanggal}
                 onChange={handleChange}
-                placeholder={dayjs().locale('id').format('DD MMMM YYYY')}
+                placeholder="Magelang, 15 Mei 2025"
                 className="w-1/2 text-end text-[2rem]"
               />
             </div>
@@ -110,7 +109,7 @@ export default function SuratIzinTidakMasukSekolahPage() {
               />
             </div>
 
-            <div className="mt-[4rem] flex flex-col gap-24">
+            <div className="mt-[4rem] flex flex-col gap-12">
               <FormInput
                 name="dengan_hormat_1"
                 value={formData.dengan_hormat_1}
@@ -135,7 +134,7 @@ export default function SuratIzinTidakMasukSekolahPage() {
                       name="ul_1"
                       value={formData.ul_1}
                       onChange={handleChange}
-                      placeholder="Siti Khotimah"
+                      placeholder="Alya Ramadhani"
                       className="w-[98%] phones:w-[97%]"
                     />
                   </td>
@@ -149,7 +148,7 @@ export default function SuratIzinTidakMasukSekolahPage() {
                       value={formData.ul_2}
                       onChange={handleChange}
                       className="w-[98%] phones:w-[97%]"
-                      placeholder="Kelas XI IPS 1"
+                      placeholder="Kelas XI IPS 3"
                     />
                   </td>
                 </tr>
@@ -162,7 +161,7 @@ export default function SuratIzinTidakMasukSekolahPage() {
                       className="w-[98%] phones:w-[97%]"
                       value={formData.ul_3}
                       onChange={handleChange}
-                      placeholder=" SMA N 2 Purwokerto"
+                      placeholder="SMA Terpadu Nusantara"
                     />
                   </td>
                 </tr>
@@ -174,32 +173,34 @@ export default function SuratIzinTidakMasukSekolahPage() {
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
                 rows={isMobile ? 5 : 3}
-                placeholder="Memberitahukan bahwa saat ini anak saya tidak dapat mengikuti kegiatan belajar mengajar seperti biasa pada hari, Rabu 30 September 2019 dikarenakan suatu keperluan yang tidak dapat ditinggalkan. Oleh karena itu, kami memohon kepada Bapak/Ibu Guru Wali Kelas XI IPS 1 agar memberikan izin."
+                placeholder="Memberitahukan bahwa saat ini anak saya tidak dapat mengikuti kegiatan belajar mengajar seperti biasa pada hari, Rabu 30 September 2019 dikarenakan suatu keperluan keluarga yang tidak dapat ditinggalkan. Oleh karena itu, kami memohon kepada Bapak/Ibu Guru Wali Kelas XI IPS 3 agar memberikan izin."
               />
               <FormTextArea
                 name="memberitahukan_2"
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
-                rows={isMobile ? 3 : 2}
+                rows={isMobile ? 2 : 1}
                 placeholder="Demikian yang dapat kami sampaikan. Atas perhatian Bapak/Ibu kami ucapkan terimakasih."
               />
             </div>
 
             <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
-              <FormInput
-                name="hormat_saya_1"
-                value={formData.hormat_saya_1}
-                onChange={handleChange}
-                placeholder="Hormat saya,"
-                className="text-center"
-              />
-              <FormInput
-                name="hormat_saya_2"
-                value={formData.hormat_saya_2}
-                onChange={handleChange}
-                placeholder="[Nama Siswa]"
-                className="text-center"
-              />
+              <div className="flex w-1/3 flex-col gap-80 phones:w-2/5">
+                <FormInput
+                  name="hormat_saya_1"
+                  value={formData.hormat_saya_1}
+                  onChange={handleChange}
+                  placeholder="Hormat saya,"
+                  className="text-center"
+                />
+                <FormInput
+                  name="hormat_saya_2"
+                  value={formData.hormat_saya_2}
+                  onChange={handleChange}
+                  placeholder="Orang tua/wali murid"
+                  className="text-center"
+                />
+              </div>
             </div>
           </div>
         </div>

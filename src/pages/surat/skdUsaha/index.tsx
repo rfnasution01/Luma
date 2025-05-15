@@ -19,34 +19,34 @@ export default function SuratKeteranganDomisiliUsaha() {
 
   const [formData, setFormData] = useState({
     logo: '',
-    header1: 'Pemerintah Kota Medan',
-    header2: 'Kecamatan Sayur Bayam',
-    header3: 'Kelurahan Suka Maju',
-    header4: 'Jl. Sukamaju Raya No. 1, Bandung Kode Pos: 12345',
+    header1: 'Pemerintah Kota Sembarang',
+    header2: 'Kecamatan Daun Hijau',
+    header3: 'Kelurahan Harapan Jaya',
+    header4: 'Jl. Sejahtera Raya No. 99, Kota Sembarang, Kode Pos: 54321',
 
     title: 'SURAT KETERANGAN DOMISILI USAHA',
-    no_surat: 'Nomor: RT/RW/No/XX/YYYY',
+    no_surat: 'Nomor: 001/DOM/XX/YYYY',
 
     pengantar:
-      'Yang bertanda tangan di bawah ini Lurah Suka Maju Kecamatan Sayur Bayam Kota Medan, menerangkan dengan sebenarnya bahwa:',
-    nama_usaha: 'CV. ANGIN RIBUT',
+      'Yang bertanda tangan di bawah ini Lurah Harapan Jaya Kecamatan Daun Hijau Kota Sembarang, menerangkan dengan sebenarnya bahwa:',
+    nama_usaha: 'CV. MAJU JAYA SENTOSA',
 
-    ul_1: 'Syamil Wahyudi',
-    ul_2: 'Jl. Tumis Kangkung, No. 9 Jakarta Utara',
-    ul_3: 'Financial Technology',
-    ul_4: 'Suka Maju, Medan',
+    ul_1: 'Rama Adinata',
+    ul_2: 'Jl. Cendana Biru No. 10, Kota Sejahtera',
+    ul_3: 'Perdagangan Elektronik',
+    ul_4: 'Kelurahan Harapan Jaya, Kota Sembarang',
 
     memberitahukan_1:
-      'Adalah benar berdomisili di Suka Maju Medan dan berada di Wilayah Kerja Kelurahan Suka Maju Kecamatan Sayur Bayam Kota Medan. Surat Keterangan ini berlaku 6 ( Enam ) Bulan sejak Surat Keterangan Domisili ini dikeluarkan',
+      'Adalah benar berdomisili di Kelurahan Harapan Jaya, Kota Sembarang, dan berada di wilayah kerja Kelurahan Harapan Jaya Kecamatan Daun Hijau. Surat keterangan ini berlaku selama 6 (enam) bulan sejak tanggal diterbitkan.',
 
     memberitahukan_2:
-      'Demikian Surat Keterangan ini kami buat, untuk dipergunakan sebagaimana mestinya',
+      'Demikian surat keterangan ini kami buat untuk dapat digunakan sebagaimana mestinya.',
 
-    alamat_tanggal: `Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
+    alamat_tanggal: `Kota Sembarang, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
 
     jabatan_penandatangan: 'Lurah',
-    nama_penandatangan: 'Budi Santoso',
-    nip: '1234567890',
+    nama_penandatangan: 'Andi Permana',
+    nip: '9876543210',
   })
 
   const handleChange = (e) => {
@@ -158,28 +158,28 @@ export default function SuratKeteranganDomisiliUsaha() {
                   name="header1"
                   value={formData.header1}
                   onChange={handleChange}
-                  placeholder="Pemerintah Kota Medan"
+                  placeholder="Pemerintah Kota Sembarang"
                   className="text-center text-[2.8rem] font-bold"
                 />
                 <FormInput
                   name="header2"
                   value={formData.header2}
                   onChange={handleChange}
-                  placeholder="Kecamatan Sayur Bayam"
+                  placeholder="Kecamatan Daun Hijau"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header3"
                   value={formData.header3}
                   onChange={handleChange}
-                  placeholder="Kelurahan Suka Maju"
+                  placeholder="Kelurahan Harapan Jaya"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header4"
                   value={formData.header4}
                   onChange={handleChange}
-                  placeholder="Jl. Sukamaju Raya No. 1, Bandung Kode Pos: 12345"
+                  placeholder="Jl. Sejahtera Raya No. 99, Kota Sembarang, Kode Pos: 54321"
                   className="text-center"
                 />
               </div>
@@ -208,7 +208,7 @@ export default function SuratKeteranganDomisiliUsaha() {
                 value={formData.pengantar}
                 onChange={handleChange}
                 rows={isMobile ? 3 : 2}
-                placeholder="Yang bertanda tangan di bawah ini Lurah Suka Maju Kecamatan Sayur Bayam Kota Medan, menerangkan dengan sebenarnya bahwa"
+                placeholder="Yang bertanda tangan di bawah ini Lurah Harapan Jaya Kecamatan Daun Hijau Kota Sembarang, menerangkan dengan sebenarnya bahwa:"
               />
             </div>
 
@@ -217,7 +217,7 @@ export default function SuratKeteranganDomisiliUsaha() {
                 name="nama_usaha"
                 value={formData.nama_usaha}
                 onChange={handleChange}
-                placeholder="CV. ANGIN RIBUT"
+                placeholder="CV. MAJU JAYA SENTOSA"
                 className="text-center text-[2.2rem] font-bold"
               />
             </div>
@@ -234,7 +234,7 @@ export default function SuratKeteranganDomisiliUsaha() {
                       name="ul_1"
                       value={formData.ul_1}
                       onChange={handleChange}
-                      placeholder="Syamil Wahyudi"
+                      placeholder="Rama Adinata"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -251,7 +251,7 @@ export default function SuratKeteranganDomisiliUsaha() {
                       className="w-[80%] phones:w-[60%]"
                       value={formData.ul_2}
                       onChange={handleChange}
-                      placeholder="Jl. Tumis Kangkung, No. 9 Jakarta Utara"
+                      placeholder="Jl. Cendana Biru No. 10, Kota Sejahtera"
                     />
                   </td>
                 </tr>
@@ -265,7 +265,7 @@ export default function SuratKeteranganDomisiliUsaha() {
                       name="ul_3"
                       value={formData.ul_3}
                       onChange={handleChange}
-                      placeholder="Financial Technology"
+                      placeholder="Perdagangan Elektronik"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -280,7 +280,7 @@ export default function SuratKeteranganDomisiliUsaha() {
                       name="ul_4"
                       value={formData.ul_4}
                       onChange={handleChange}
-                      placeholder="Suka Maju, Medan"
+                      placeholder="Kelurahan Harapan Jaya, Kota Sembarang"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -294,49 +294,51 @@ export default function SuratKeteranganDomisiliUsaha() {
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
                 rows={isMobile ? 5 : 3}
-                placeholder="Adalah benar berdomisili di Suka Maju Medan dan berada di Wilayah Kerja Kelurahan Suka Maju Kecamatan Sayur Bayam Kota Medan. Surat Keterangan ini berlaku 6 ( Enam ) Bulan sejak Surat Keterangan Domisili ini dikeluarkan."
+                placeholder="Adalah benar berdomisili di Kelurahan Harapan Jaya, Kota Sembarang, dan berada di wilayah kerja Kelurahan Harapan Jaya Kecamatan Daun Hijau. Surat keterangan ini berlaku selama 6 (enam) bulan sejak tanggal diterbitkan."
               />
               <FormTextArea
                 name="memberitahukan_2"
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
                 rows={isMobile ? 2 : 1}
-                placeholder="Demikian Surat Keterangan ini kami buat, untuk dipergunakan sebagaimana mestinya"
+                placeholder="Demikian surat keterangan ini kami buat untuk dapat digunakan sebagaimana mestinya."
               />
             </div>
 
             <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
-              <div className="flex flex-col gap-12">
-                <FormInput
-                  name="alamat_tanggal"
-                  value={formData.alamat_tanggal}
-                  onChange={handleChange}
-                  placeholder={`Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`}
-                  className="text-center"
-                />
-                <FormInput
-                  name="jabatan_penandatangan"
-                  value={formData.jabatan_penandatangan}
-                  onChange={handleChange}
-                  placeholder="Lurah"
-                  className="text-center"
-                />
-              </div>
-              <div className="flex flex-col gap-12">
-                <FormInput
-                  name="nama_penandatangan"
-                  value={formData.nama_penandatangan}
-                  onChange={handleChange}
-                  placeholder="Budi Santoso"
-                  className="text-center"
-                />
-                <FormInput
-                  name="nip"
-                  value={formData.nip}
-                  onChange={handleChange}
-                  placeholder="1234567890"
-                  className="text-center"
-                />
+              <div className="flex w-1/3 flex-col gap-80 phones:w-2/5">
+                <div className="flex flex-col gap-12">
+                  <FormInput
+                    name="alamat_tanggal"
+                    value={formData.alamat_tanggal}
+                    onChange={handleChange}
+                    placeholder={`Kota Sembarang, ${dayjs().locale('id').format('DD MMMM YYYY')}`}
+                    className="text-center"
+                  />
+                  <FormInput
+                    name="jabatan_penandatangan"
+                    value={formData.jabatan_penandatangan}
+                    onChange={handleChange}
+                    placeholder="Lurah"
+                    className="text-center"
+                  />
+                </div>
+                <div className="flex flex-col gap-12">
+                  <FormInput
+                    name="nama_penandatangan"
+                    value={formData.nama_penandatangan}
+                    onChange={handleChange}
+                    placeholder="Andi Permana"
+                    className="text-center"
+                  />
+                  <FormInput
+                    name="nip"
+                    value={formData.nip}
+                    onChange={handleChange}
+                    placeholder="9876543210"
+                    className="text-center"
+                  />
+                </div>
               </div>
             </div>
           </div>

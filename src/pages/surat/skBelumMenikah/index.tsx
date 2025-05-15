@@ -20,49 +20,48 @@ export default function SuratKeteranganBelumMenikah() {
   const [formData, setFormData] = useState({
     logo: '',
 
-    header1: 'PEMERINTAHAN KABUPATEN PURBALINGGA',
-    header2: 'KECAMATAN  KERTANEGARA',
-    header3: 'DESA  LANGKAP',
-    header4: 'Alamat : Jalan Raya Langkap – Kertanegara, 53358',
+    header1: 'PEMERINTAH KABUPATEN SINDARMA',
+    header2: 'KECAMATAN TIRTAJAYA',
+    header3: 'DESA MEKARWANGI',
+    header4: 'Alamat: Jl. Cendana No. 123, Mekarwangi, Tirtajaya 54321',
 
     title: 'SURAT KETERANGAN BELUM MENIKAH',
-    no_surat: 'Nomor: RT/RW/No/XX/YYYY',
+    no_surat: 'Nomor: 470/123/DS-MKW/2025',
 
     pengantar1: 'Yang bertanda tangan di bawah ini :',
 
-    ul_1: 'Nama Kepala Desa',
-    ul_2: 'Kepala Desa Langkap',
+    ul_1: 'H. Rahmat Suryana',
+    ul_2: 'Kepala Desa Mekarwangi',
 
-    pengantar2: 'Menerangkan dengan sebenarnya bahwa :',
+    pengantar2: 'Dengan ini menerangkan bahwa :',
 
-    ul_3: 'Syamil Wahyudi',
+    ul_3: 'Dimas Aryaputra',
     ul_4: 'Laki-laki',
-    ul_5: 'Bekasi, 1 Januari 2000',
+    ul_5: 'Mekarwangi, 10 Februari 1998',
     ul_6: 'Islam',
-    ul_7: 'Pengusaha Mebel',
-    ul_8: '010101010101',
-    ul_9: 'Jl Gajah Mundur, No. 8, Suka Maju',
+    ul_7: 'Wiraswasta',
+    ul_8: '3210123456780001',
+    ul_9: 'Jl. Kenanga No. 45, RT 02/RW 04, Desa Mekarwangi',
 
     pengantar3:
-      'Menurut pendataan kami, hingga saat dikeluarkan Surat Keterangan ini serta diperjelas berdasarkan Pernyataan saudara :',
+      'Menurut pendataan kami di desa dan berdasarkan pernyataan yang bersangkutan, bahwa :',
 
-    ul_10: 'Abdillah',
+    ul_10: 'Bapak Wira Atmaja',
     ul_11: 'Laki-laki',
-    ul_12: 'Bekasi, 1 Januari 1970',
-    ul_13: 'Ayah',
+    ul_12: 'Tirtajaya, 15 Maret 1972',
+    ul_13: 'Orang Tua',
 
     memberitahukan_1:
-      'yang bersangkutan “Belum pernah menikah, dan tercatat masih berstatus Perjaka/ Perawan)*”',
-
+      'yang bersangkutan belum pernah menikah dan masih berstatus lajang.',
     memberitahukan_2:
-      'Surat keterangan ini diberikan untuk melengkapi persyaratan ......................................................',
+      'Surat keterangan ini diberikan sebagai kelengkapan persyaratan administrasi sesuai permintaan yang bersangkutan.',
     memberitahukan_3:
-      'Demikain keterangan ini kami berikan untuk dapat dipergunakan seperlunya.',
+      'Demikian surat keterangan ini dibuat agar dapat dipergunakan sebagaimana mestinya.',
 
-    alamat_tanggal: `Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
+    alamat_tanggal: `Tirtajaya, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
 
-    jabatan_penandatangan: 'Kepala Desa Setempat',
-    nama_penandatangan: 'Syamiliyah',
+    jabatan_penandatangan: 'Kepala Desa Mekarwangi',
+    nama_penandatangan: 'H. Rahmat Suryana',
   })
 
   const handleChange = (e) => {
@@ -174,28 +173,28 @@ export default function SuratKeteranganBelumMenikah() {
                   name="header1"
                   value={formData.header1}
                   onChange={handleChange}
-                  placeholder="PEMERINTAHAN KABUPATEN PURBALINGGA"
+                  placeholder="PEMERINTAH KABUPATEN SINDARMA"
                   className="text-center text-[2.8rem] font-bold"
                 />
                 <FormInput
                   name="header2"
                   value={formData.header2}
                   onChange={handleChange}
-                  placeholder="KECAMATAN  KERTANEGARA"
+                  placeholder="KECAMATAN TIRTAJAYA"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header3"
                   value={formData.header3}
                   onChange={handleChange}
-                  placeholder="DESA  LANGKAP"
+                  placeholder="DESA MEKARWANGI"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header4"
                   value={formData.header4}
                   onChange={handleChange}
-                  placeholder="Alamat : Jalan Raya Langkap – Kertanegara, 53358"
+                  placeholder="Alamat: Jl. Cendana No. 123, Mekarwangi, Tirtajaya 54321"
                   className="text-center"
                 />
               </div>
@@ -223,7 +222,7 @@ export default function SuratKeteranganBelumMenikah() {
                 name="pengantar1"
                 value={formData.pengantar1}
                 onChange={handleChange}
-                rows={isMobile ? 3 : 2}
+                rows={isMobile ? 2 : 1}
                 placeholder="Yang bertanda tangan di bawah ini :"
               />
               <table className="w-full table-auto">
@@ -238,7 +237,7 @@ export default function SuratKeteranganBelumMenikah() {
                         name="ul_1"
                         value={formData.ul_1}
                         onChange={handleChange}
-                        placeholder="Nama Kepala Desa"
+                        placeholder="H. Rahmat Suryana"
                         className="w-[80%] phones:w-[60%]"
                       />
                     </td>
@@ -253,7 +252,7 @@ export default function SuratKeteranganBelumMenikah() {
                         name="ul_2"
                         value={formData.ul_2}
                         onChange={handleChange}
-                        placeholder="Kepala Desa Langkap"
+                        placeholder="Kepala Desa Mekarwangi"
                         className="w-[80%] phones:w-[60%]"
                       />
                     </td>
@@ -267,7 +266,7 @@ export default function SuratKeteranganBelumMenikah() {
                 name="pengantar2"
                 value={formData.pengantar2}
                 onChange={handleChange}
-                rows={isMobile ? 3 : 2}
+                rows={isMobile ? 2 : 1}
                 placeholder="Menerangkan dengan sebenarnya bahwa :"
               />
               <table className="w-full table-auto">
@@ -282,7 +281,7 @@ export default function SuratKeteranganBelumMenikah() {
                         name="ul_3"
                         value={formData.ul_3}
                         onChange={handleChange}
-                        placeholder="Syamil Wahyudi"
+                        placeholder="Dimas Aryaputra"
                         className="w-[80%] phones:w-[60%]"
                       />
                     </td>
@@ -314,7 +313,7 @@ export default function SuratKeteranganBelumMenikah() {
                         className="w-[80%] phones:w-[60%]"
                         value={formData.ul_5}
                         onChange={handleChange}
-                        placeholder="Bekasi, 1 Januari 2000"
+                        placeholder="Mekarwangi, 10 Februari 1998"
                       />
                     </td>
                   </tr>
@@ -344,7 +343,7 @@ export default function SuratKeteranganBelumMenikah() {
                         name="ul_7"
                         value={formData.ul_7}
                         onChange={handleChange}
-                        placeholder="Pengusaha Mebel"
+                        placeholder="Wiraswasta"
                         className="w-[80%] phones:w-[60%]"
                       />
                     </td>
@@ -359,7 +358,7 @@ export default function SuratKeteranganBelumMenikah() {
                         name="ul_8"
                         value={formData.ul_8}
                         onChange={handleChange}
-                        placeholder="010101010101"
+                        placeholder="3210123456780001"
                         className="w-[80%] phones:w-[60%]"
                       />
                     </td>
@@ -374,7 +373,7 @@ export default function SuratKeteranganBelumMenikah() {
                         name="ul_9"
                         value={formData.ul_9 || ''}
                         onChange={handleChange}
-                        placeholder="Jl Gajah Mundur, No. 8, Suka Maju"
+                        placeholder="Jl. Kenanga No. 45, RT 02/RW 04, Desa Mekarwangi"
                         className="w-[80%] phones:w-[60%]"
                       />
                     </td>
@@ -388,7 +387,7 @@ export default function SuratKeteranganBelumMenikah() {
                 name="pengantar3"
                 value={formData.pengantar3}
                 onChange={handleChange}
-                rows={isMobile ? 3 : 2}
+                rows={isMobile ? 2 : 1}
                 placeholder="Menurut pendataan kami, hingga saat dikeluarkan Surat Keterangan ini serta diperjelas berdasarkan Pernyataan saudara :"
               />
               <table className="w-full table-auto">
@@ -403,7 +402,7 @@ export default function SuratKeteranganBelumMenikah() {
                         name="ul_10"
                         value={formData.ul_10}
                         onChange={handleChange}
-                        placeholder="Abdillah"
+                        placeholder="Bapak Wira Atmaja"
                         className="w-[80%] phones:w-[60%]"
                       />
                     </td>
@@ -433,7 +432,7 @@ export default function SuratKeteranganBelumMenikah() {
                         name="ul_12"
                         value={formData.ul_12}
                         onChange={handleChange}
-                        placeholder="Bekasi, 1 Januari 1970"
+                        placeholder="Tirtajaya, 15 Maret 1972"
                         className="w-[80%] phones:w-[60%]"
                       />
                     </td>
@@ -448,7 +447,7 @@ export default function SuratKeteranganBelumMenikah() {
                         name="ul_13"
                         value={formData.ul_13}
                         onChange={handleChange}
-                        placeholder="Ayah"
+                        placeholder="Orang Tua"
                         className="w-[80%] phones:w-[60%]"
                       />
                     </td>
@@ -463,47 +462,50 @@ export default function SuratKeteranganBelumMenikah() {
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
                 rows={isMobile ? 2 : 1}
-                placeholder="yang bersangkutan “Belum pernah menikah, dan tercatat masih berstatus Perjaka/ Perawan)*”"
+                placeholder="yang bersangkutan belum pernah menikah dan masih berstatus lajang."
               />
               <FormTextArea
                 name="memberitahukan_2"
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
                 rows={isMobile ? 3 : 2}
-                placeholder="Surat keterangan ini diberikan untuk melengkapi persyaratan ......................................................"
+                placeholder="Surat keterangan ini diberikan sebagai kelengkapan persyaratan administrasi sesuai permintaan yang bersangkutan."
               />
               <FormTextArea
                 name="memberitahukan_3"
                 value={formData.memberitahukan_3}
                 onChange={handleChange}
-                placeholder="Demikain keterangan ini kami berikan untuk dapat dipergunakan seperlunya."
+                placeholder="Demikian surat keterangan ini dibuat agar dapat dipergunakan sebagaimana mestinya."
+                rows={isMobile ? 2 : 1}
               />
             </div>
 
             <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
-              <div className="flex flex-col gap-12">
+              <div className="flex w-1/3 flex-col gap-80 phones:w-2/5">
+                <div className="flex flex-col gap-12">
+                  <FormInput
+                    name="alamat_tanggal"
+                    value={formData.alamat_tanggal}
+                    onChange={handleChange}
+                    placeholder={`Tirtajaya, ${dayjs().locale('id').format('DD MMMM YYYY')}`}
+                    className="text-center"
+                  />
+                  <FormInput
+                    name="jabatan_penandatangan"
+                    value={formData.jabatan_penandatangan}
+                    onChange={handleChange}
+                    placeholder="Kepala Desa Mekarwangi"
+                    className="text-center"
+                  />
+                </div>
                 <FormInput
-                  name="alamat_tanggal"
-                  value={formData.alamat_tanggal}
+                  name="nama_penandatangan"
+                  value={formData.nama_penandatangan}
                   onChange={handleChange}
-                  placeholder={`Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`}
-                  className="text-center"
-                />
-                <FormInput
-                  name="jabatan_penandatangan"
-                  value={formData.jabatan_penandatangan}
-                  onChange={handleChange}
-                  placeholder="Kepala Desa Setempat"
+                  placeholder="H. Rahmat Suryana"
                   className="text-center"
                 />
               </div>
-              <FormInput
-                name="nama_penandatangan"
-                value={formData.nama_penandatangan}
-                onChange={handleChange}
-                placeholder="Syamiliyah"
-                className="text-center"
-              />
             </div>
           </div>
         </div>

@@ -19,41 +19,41 @@ export default function SuratKeteranganAktifSekolah() {
 
   const [formData, setFormData] = useState({
     logo: '',
-    header1: 'Pemerintah Kabupaten Amarta',
-    header2: 'UPTD Pendidikan Kecamatan Amarta',
-    header3: 'Sekolah Dasar Negeri 4 MADUKARA',
+    header1: 'Pemerintah Kabupaten Nirwana',
+    header2: 'UPTD Pendidikan Kecamatan Suryalaya',
+    header3: 'Sekolah Dasar Negeri 1 Cempaka',
     header4:
-      'Dusun Madukara, Desa Jodipati, Kecamatan Amarta, Kabupaten Amarta 58152',
+      'Jl. Merdeka No. 10, Desa Cempaka, Kec. Suryalaya, Kab. Nirwana 12345',
 
     title: 'SURAT KETERANGAN',
-    no_surat: 'Nomor: RT/RW/No/XX/YYYY',
+    no_surat: 'Nomor: 001/SDC/I/2025',
 
-    pengantar_1: 'Yang bertanda tangan dibawah ini:',
+    pengantar_1: 'Yang bertanda tangan di bawah ini:',
 
-    ul_1: 'Abdillah',
-    ul_2: '0123456789',
+    ul_1: 'Drs. Suryana',
+    ul_2: '198706152005011003',
     ul_3: 'Pembina / IVa',
     ul_4: 'Kepala Sekolah',
-    ul_5: 'SD Negeri 10 Madukara, UPTD Pendidikan Kec. Amarta',
+    ul_5: 'SD Negeri 1 Cempaka, UPTD Kec. Suryalaya',
 
-    pengantar_2: 'menerangkan bahwa:',
+    pengantar_2: 'Dengan ini menerangkan bahwa:',
 
-    ul_6: 'Syamil Wahyudi',
-    ul_7: 'Bandung, 12 Januari 1995',
-    ul_8: 'Kelas 2',
-    ul_9: '00112233',
-    ul_10: 'Srikandi',
-    ul_11: 'Raden Arjuna',
+    ul_6: 'Dimas Pradipta',
+    ul_7: 'Suryalaya, 5 Mei 2015',
+    ul_8: 'Kelas 3',
+    ul_9: '23014567',
+    ul_10: 'Dewi Melati',
+    ul_11: 'Raka Prasetya',
 
     penutup_1:
-      'Benar-benar masih aktif belajar di Sekolah Dasar Negeri 4 Madukara.',
-    penutup_2: 'Surat Keterangan ini dibuat agar digunakan seperlunya.',
+      'Benar-benar masih aktif belajar di Sekolah Dasar Negeri 1 Cempaka.',
+    penutup_2: 'Surat ini dibuat untuk digunakan sebagaimana mestinya.',
 
     tanggal: `${dayjs().locale('id').format('DD MMMM YYYY')}`,
     jabatan: 'Kepala Sekolah,',
 
-    nama: 'Abdillah',
-    nip: '0123456789',
+    nama: 'Drs. Suryana',
+    nip: '198706152005011003',
   })
 
   const handleChange = (e) => {
@@ -166,28 +166,28 @@ export default function SuratKeteranganAktifSekolah() {
                   name="header1"
                   value={formData.header1}
                   onChange={handleChange}
-                  placeholder="Pemerintah Kabupaten Amarta"
+                  placeholder="Pemerintah Kabupaten Nirwana"
                   className="text-center text-[2.8rem] font-bold"
                 />
                 <FormInput
                   name="header2"
                   value={formData.header2}
                   onChange={handleChange}
-                  placeholder="UPTD Pendidikan Kecamatan Amarta"
+                  placeholder="UPTD Pendidikan Kecamatan Suryalaya"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header3"
                   value={formData.header3}
                   onChange={handleChange}
-                  placeholder="Sekolah Dasar Negeri 4 MADUKARA"
+                  placeholder="Sekolah Dasar Negeri 1 Cempaka"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header4"
                   value={formData.header4}
                   onChange={handleChange}
-                  placeholder="Dusun Madukara, Desa Jodipati, Kecamatan Amarta, Kabupaten Amarta 58152"
+                  placeholder="Jl. Merdeka No. 10, Desa Cempaka, Kec. Suryalaya, Kab. Nirwana 12345"
                   className="text-center"
                 />
               </div>
@@ -228,7 +228,7 @@ export default function SuratKeteranganAktifSekolah() {
                         name="ul_1"
                         value={formData.ul_1}
                         onChange={handleChange}
-                        placeholder="Abdillah"
+                        placeholder="Drs. Suryana"
                         className="w-[60%]"
                       />
                     </td>
@@ -241,7 +241,7 @@ export default function SuratKeteranganAktifSekolah() {
                         name="ul_2"
                         value={formData.ul_2}
                         onChange={handleChange}
-                        placeholder="0123456789"
+                        placeholder="198706152005011003"
                         className="w-[60%]"
                       />
                     </td>
@@ -280,7 +280,7 @@ export default function SuratKeteranganAktifSekolah() {
                         name="ul_5"
                         value={formData.ul_5}
                         onChange={handleChange}
-                        placeholder="SD Negeri 10 Madukara, UPTD Pendidikan Kec. Amarta"
+                        placeholder="SD Negeri 1 Cempaka, UPTD Kec. Suryalaya"
                         className="w-[60%]"
                       />
                     </td>
@@ -307,7 +307,7 @@ export default function SuratKeteranganAktifSekolah() {
                         name="ul_6"
                         value={formData.ul_6}
                         onChange={handleChange}
-                        placeholder="Syamil Wahyudi"
+                        placeholder="Dimas Pradipta"
                         className="w-[60%]"
                       />
                     </td>
@@ -322,7 +322,7 @@ export default function SuratKeteranganAktifSekolah() {
                         name="ul_7"
                         value={formData.ul_7}
                         onChange={handleChange}
-                        placeholder="Bandung, 12 Januari 1995"
+                        placeholder="Suryalaya, 5 Mei 2015"
                         className="w-[60%]"
                       />
                     </td>
@@ -335,7 +335,7 @@ export default function SuratKeteranganAktifSekolah() {
                         name="ul_8"
                         value={formData.ul_8}
                         onChange={handleChange}
-                        placeholder="Kelas 2"
+                        placeholder="Kelas 3"
                         className="w-[60%]"
                       />
                     </td>
@@ -348,7 +348,7 @@ export default function SuratKeteranganAktifSekolah() {
                         name="ul_9"
                         value={formData.ul_9}
                         onChange={handleChange}
-                        placeholder="00112233"
+                        placeholder="23014567"
                         className="w-[60%]"
                       />
                     </td>
@@ -361,7 +361,7 @@ export default function SuratKeteranganAktifSekolah() {
                         name="ul_10"
                         value={formData.ul_10}
                         onChange={handleChange}
-                        placeholder="Srikandi"
+                        placeholder="Dewi Melati"
                         className="w-[60%]"
                       />
                     </td>
@@ -374,7 +374,7 @@ export default function SuratKeteranganAktifSekolah() {
                         name="ul_11"
                         value={formData.ul_11}
                         onChange={handleChange}
-                        placeholder="Raden Arjuna"
+                        placeholder="Raka Prasetya"
                         className="w-[60%]"
                       />
                     </td>
@@ -389,7 +389,7 @@ export default function SuratKeteranganAktifSekolah() {
                 value={formData.penutup_1}
                 onChange={handleChange}
                 rows={isMobile ? 2 : 1}
-                placeholder="Benar-benar masih aktif belajar di Sekolah Dasar Negeri 4 Madukara."
+                placeholder="Benar-benar masih aktif belajar di Sekolah Dasar Negeri 1 Cempaka."
               />
               <FormTextArea
                 name="penutup_2"
@@ -423,14 +423,14 @@ export default function SuratKeteranganAktifSekolah() {
                     name="nama"
                     value={formData.nama}
                     onChange={handleChange}
-                    placeholder="Abdillah"
+                    placeholder="Drs. Suryana"
                     className="text-center"
                   />
                   <FormInput
                     name="nip"
                     value={formData.nip}
                     onChange={handleChange}
-                    placeholder="0123456789"
+                    placeholder="198706152005011003"
                     className="text-center"
                   />
                 </div>

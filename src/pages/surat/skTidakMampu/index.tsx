@@ -20,36 +20,38 @@ export default function SuratKeteranganTidakMampu() {
   const [formData, setFormData] = useState({
     logo: '',
 
-    header1: 'Pemerintah Kabupaten Sidoarjo',
-    header2: 'Kecamatan Setempat',
-    header3: 'Desa Setempat',
-    header4: 'Jl. Sukamaju Raya No. 1, Bandung Kode Pos: 12345',
+    header1: 'Pemerintah Kabupaten Contoh',
+    header2: 'Kecamatan Harapan Jaya',
+    header3: 'Desa Suka Damai',
+    header4: 'Jl. Cendrawasih No. 1, Kota Fiktif, Kode Pos: 54321',
 
     title: 'SURAT KETERANGAN TIDAK MAMPU',
-    no_surat: 'Nomor: RT/RW/No/XX/YYYY',
+    no_surat: 'Nomor: 01/SKD/SD/IV/2025',
 
     pengantar:
-      'Yang bertanda tangan di bawah ini Kepala Desa Setempat Kecamatan Setempat Kabupaten Sidoarjo. Menerangkan dengan sebenar-benarnya bahwa orang tersebut di bawah ini:',
+      'Yang bertanda tangan di bawah ini Kepala Desa Suka Damai Kecamatan Harapan Jaya Kabupaten Contoh. Menerangkan dengan sebenar-benarnya bahwa orang tersebut di bawah ini:',
 
-    ul_1: 'Syamil Wahyudi',
-    ul_2: 'Pengusaha Mebel',
-    ul_3: 'Bekasi, 1 Januari 2000',
+    ul_1: 'Rafi Pratama',
+    ul_2: 'Buruh Harian Lepas',
+    ul_3: 'Kota Fiktif, 5 Mei 1995',
     ul_4: 'Laki-laki',
-    ul_5: '010101010101',
-    ul_6: '081234567',
-    ul_7: 'Jl Gajah Mundur, No. 8, Suka Maju',
+    ul_5: '9876543210123456',
+    ul_6: '082112345678',
+    ul_7: 'Jl. Melati Indah No. 10, RT 04 RW 02, Desa Suka Damai',
 
     memberitahukan_1:
-      'Orang tersebut benar-benar penduduk kelurahan/desa setempat kecamatan setempat dan tinggal di alamat seperti tersebut diatas. Menurut pengamatan kami orang tersebut benar-benar dari keluarga tidak mampu. Adapun surat keterangan tidak mampu ini diberikan kepada yang bersangkutan sebagai lampiran untuk mendapatkan keringanan biaya pengobatan di PUSKESMAS/RUMAH SAKIT KABUPATEN SIDOARJO.',
+      'Orang tersebut benar-benar penduduk Desa Suka Damai Kecamatan Harapan Jaya dan tinggal di alamat seperti tersebut di atas. Menurut pengamatan kami, orang tersebut benar-benar berasal dari keluarga tidak mampu. Adapun surat keterangan tidak mampu ini diberikan kepada yang bersangkutan sebagai lampiran untuk mendapatkan keringanan biaya pengobatan di fasilitas kesehatan setempat.',
 
     memberitahukan_2:
-      'Demikian surat keterangan tidak mampu ini dibuat dengan sebenar benarnya dan untuk dipergunakan sebagaimana mestinya',
+      'Demikian surat keterangan tidak mampu ini dibuat dengan sebenar-benarnya untuk dapat dipergunakan sebagaimana mestinya.',
 
     pemohon: 'Pemohon',
     mengetahui: 'Mengetahui',
-    alamat_tanggal: `Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
+    alamat_tanggal: `Kota Fiktif, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
 
-    jabatan_kades: 'Kepala Desa Setempat',
+    jabatan_kades: 'Kepala Desa Suka Damai',
+    nama_kades: 'Syamil Wahyudi',
+    NIP: '9999999999999',
   })
 
   const handleChange = (e) => {
@@ -159,28 +161,28 @@ export default function SuratKeteranganTidakMampu() {
                   name="header1"
                   value={formData.header1}
                   onChange={handleChange}
-                  placeholder="Pemerintah Kabupaten Sidoarjo"
+                  placeholder="Pemerintah Kabupaten Contoh"
                   className="text-center text-[2.8rem] font-bold"
                 />
                 <FormInput
                   name="header2"
                   value={formData.header2}
                   onChange={handleChange}
-                  placeholder="Kecamatan Setempat"
+                  placeholder="Kecamatan Harapan Jaya"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header3"
                   value={formData.header3}
                   onChange={handleChange}
-                  placeholder="Desa Setempat"
+                  placeholder="Desa Suka Damai"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header4"
                   value={formData.header4}
                   onChange={handleChange}
-                  placeholder="Jl. Sukamaju Raya No. 1, Bandung Kode Pos: 12345"
+                  placeholder="Jl. Cendrawasih No. 1, Kota Fiktif, Kode Pos: 54321"
                   className="text-center"
                 />
               </div>
@@ -209,7 +211,7 @@ export default function SuratKeteranganTidakMampu() {
                 value={formData.pengantar}
                 onChange={handleChange}
                 rows={isMobile ? 3 : 2}
-                placeholder="Yang bertanda tangan di bawah ini Kepala Desa Setempat Kecamatan Setempat Kabupaten Sidoarjo. Menerangkan dengan sebenar-benarnya bahwa orang tersebut di bawah ini:"
+                placeholder="Yang bertanda tangan di bawah ini Kepala Desa Suka Damai Kecamatan Harapan Jaya Kabupaten Contoh. Menerangkan dengan sebenar-benarnya bahwa orang tersebut di bawah ini:"
               />
             </div>
 
@@ -225,7 +227,7 @@ export default function SuratKeteranganTidakMampu() {
                       name="ul_1"
                       value={formData.ul_1}
                       onChange={handleChange}
-                      placeholder="Syamil Wahyudi"
+                      placeholder="Rafi Pratama"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -240,7 +242,7 @@ export default function SuratKeteranganTidakMampu() {
                       name="ul_2"
                       value={formData.ul_2}
                       onChange={handleChange}
-                      placeholder="Laki-laki"
+                      placeholder="Buruh Harian Lepas"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -257,7 +259,7 @@ export default function SuratKeteranganTidakMampu() {
                       className="w-[80%] phones:w-[60%]"
                       value={formData.ul_3}
                       onChange={handleChange}
-                      placeholder="Bekasi, 1 Januari 2000"
+                      placeholder="Kota Fiktif, 5 Mei 1995"
                     />
                   </td>
                 </tr>
@@ -271,7 +273,7 @@ export default function SuratKeteranganTidakMampu() {
                       name="ul_4"
                       value={formData.ul_4}
                       onChange={handleChange}
-                      placeholder="010101010101"
+                      placeholder="Laki-laki"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -287,7 +289,7 @@ export default function SuratKeteranganTidakMampu() {
                       name="ul_5"
                       value={formData.ul_5}
                       onChange={handleChange}
-                      placeholder="Pengusaha Mebel"
+                      placeholder="9876543210123456"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -302,7 +304,7 @@ export default function SuratKeteranganTidakMampu() {
                       name="ul_6"
                       value={formData.ul_6}
                       onChange={handleChange}
-                      placeholder="Islam"
+                      placeholder="082112345678"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -317,7 +319,7 @@ export default function SuratKeteranganTidakMampu() {
                       name="ul_7"
                       value={formData.ul_7 || ''}
                       onChange={handleChange}
-                      placeholder="Jl Gajah Mundur, No. 8, Suka Maju"
+                      placeholder="Jl. Melati Indah No. 10, RT 04 RW 02, Desa Suka Damai"
                       className="w-[80%] phones:w-[60%]"
                     />
                   </td>
@@ -331,19 +333,19 @@ export default function SuratKeteranganTidakMampu() {
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
                 rows={isMobile ? 8 : 4}
-                placeholder="Orang tersebut benar-benar penduduk kelurahan/desa setempat kecamatan setempat dan tinggal di alamat seperti tersebut diatas. Menurut pengamatan kami orang tersebut benar-benar dari keluarga tidak mampu. Adapun surat keterangan tidak mampu ini diberikan kepada yang bersangkutan sebagai lampiran untuk mendapatkan keringanan biaya pengobatan di PUSKESMAS/RUMAH SAKIT KABUPATEN SIDOARJO."
+                placeholder="Orang tersebut benar-benar penduduk Desa Suka Damai Kecamatan Harapan Jaya dan tinggal di alamat seperti tersebut di atas. Menurut pengamatan kami, orang tersebut benar-benar berasal dari keluarga tidak mampu. Adapun surat keterangan tidak mampu ini diberikan kepada yang bersangkutan sebagai lampiran untuk mendapatkan keringanan biaya pengobatan di fasilitas kesehatan setempat."
               />
               <FormTextArea
                 name="memberitahukan_2"
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
                 rows={isMobile ? 3 : 2}
-                placeholder="Demikian surat keterangan tidak mampu ini dibuat dengan sebenar benarnya dan untuk dipergunakan sebagaimana mestinya"
+                placeholder="Demikian surat keterangan tidak mampu ini dibuat dengan sebenar-benarnya untuk dapat dipergunakan sebagaimana mestinya."
               />
             </div>
 
             <div className="mt-[4rem] flex items-start justify-between gap-32">
-              <div className="flex flex-col justify-center gap-80">
+              <div className="flex w-1/3 flex-col justify-center gap-80 phones:w-2/5">
                 <div className="flex flex-col gap-12">
                   <p className="text-white">hidden</p>
                   <p className="text-white">hidden</p>
@@ -356,7 +358,7 @@ export default function SuratKeteranganTidakMampu() {
                   />
                 </div>
               </div>
-              <div className="flex flex-col justify-center gap-80">
+              <div className="flex w-1/3 flex-col justify-center gap-80 phones:w-2/5">
                 <div className="flex flex-col justify-center gap-80">
                   <div className="flex flex-col gap-12">
                     <FormInput
@@ -369,13 +371,27 @@ export default function SuratKeteranganTidakMampu() {
                       name="alamat_tanggal"
                       value={formData.alamat_tanggal}
                       onChange={handleChange}
-                      placeholder="Jakarta, 08 Mei 2025"
+                      placeholder="Kota Fiktif, 14 Mei 2025"
                     />
                     <FormInput
                       name="jabatan_kades"
                       value={formData.jabatan_kades}
                       onChange={handleChange}
-                      placeholder="Kepala Desa Setempat"
+                      placeholder="Kepala Desa Suka Damai"
+                    />
+                  </div>
+                  <div className="flex flex-col gap-12">
+                    <FormInput
+                      name="nama_kades"
+                      value={formData.nama_kades}
+                      onChange={handleChange}
+                      placeholder="Syamil Wahyudi"
+                    />
+                    <FormInput
+                      name="NIP"
+                      value={formData.NIP}
+                      onChange={handleChange}
+                      placeholder="9999999999999"
                     />
                   </div>
                 </div>

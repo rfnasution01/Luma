@@ -19,47 +19,47 @@ export default function SuratKeteranganDomisiliPerusahaan() {
 
   const [formData, setFormData] = useState({
     logo: '',
-    header1: 'Pemerintah Kabupaten Bandung',
-    header2: 'Kecamatan Sayur Bayam',
-    header3: 'Kepala Desa Suka Maju',
-    header4: 'Jl. Sukamaju Raya No. 1, Bandung Kode Pos 12345',
+    header1: 'Pemerintah Kabupaten Sejahtera',
+    header2: 'Kecamatan Daun Hijau',
+    header3: 'Kepala Desa Harapan Baru',
+    header4: 'Jl. Harapan Raya No. 88, Kota Sejahtera, Kode Pos 67890',
 
     title: 'SURAT KETERANGAN DOMISILI PERUSAHAAN',
-    no_surat: 'Nomor: RT/RW/No/XX/YYYY',
+    no_surat: 'Nomor: 003/DPU/XX/YYYY',
 
     pengantar_1:
-      'Kepala Desa Suka Maju Kecamatan Sayur Bayam Kabupaten Bandung menerangkan bahwa:',
+      'Kepala Desa Harapan Baru Kecamatan Daun Hijau Kabupaten Sejahtera dengan ini menerangkan bahwa:',
 
-    ul_1: 'Syamil Wahyudi',
-    ul_2: 'Bandung, 12 Januari 1995',
+    ul_1: 'Raka Prasetyo',
+    ul_2: 'Kota Sejahtera, 14 Februari 1990',
     ul_3: 'Laki-laki',
-    ul_4: 'Islam / Japan',
+    ul_4: 'Islam / Indonesia',
     ul_5: '2C11',
-    ul_6: 'Jl. Melati No. 45, RT 03 RW 05, Kel. Sukamaju, Kec. Sukasari, Kota Bandung',
+    ul_6: 'Jl. Teratai No. 99, RT 03 RW 05, Kel. Harapan Baru, Kec. Sejahtera, Kota Sejahtera',
 
     pengantar_2:
-      'Benar pada saat ini membuka / mempunyai usaha sebagai mana tersebut dibawah ini:',
+      'Bahwa benar yang bersangkutan membuka atau memiliki usaha sebagaimana keterangan berikut:',
 
-    ul_7: 'PT Angin Ribut',
-    ul_8: 'Coffe Shop',
-    ul_9: 'Jl Mawar Hitam, No 2A, Jakarta Timur',
-    ul_10: 'Milik Sendiri',
-    ul_11: 'Industri',
+    ul_7: 'PT Angin Segar Nusantara',
+    ul_8: 'Usaha Kedai Kopi',
+    ul_9: 'Jl. Melodi Pagi No. 7, Kota Lestari',
+    ul_10: 'Milik Pribadi',
+    ul_11: 'Jasa Kuliner',
     ul_12: `${dayjs().locale('id').format('DD MMMM YYYY')}`,
-    ul_13: 'Abdilllah SH. M.Kn',
-    ul_14: '01. Tanggal 2 Maret 2030',
-    ul_15: '117 Orang',
-    ul_16: 'Syamil',
+    ul_13: 'Ardiansyah, S.H., M.Kn.',
+    ul_14: '01. Tanggal 5 Maret 2030',
+    ul_15: '42 Orang',
+    ul_16: 'Raka',
 
     penutup:
-      'Demikian Surat Keterangan Domisili Perusahaan ini dibuat untuk dipergunakan sebagaimana mestinya dan berlaku sampai tanggal "29 Februari 2045"',
+      'Demikian surat keterangan domisili perusahaan ini dibuat untuk dipergunakan sebagaimana mestinya dan berlaku sampai tanggal "29 Februari 2045".',
 
-    ttd_ybs: 'Tanda tangan Ybs',
+    ttd_ybs: 'Tanda tangan Pemohon',
 
-    alamat_tanggal: `Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
+    alamat_tanggal: `Kota Sejahtera, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
 
-    jabatan_penandatangan: 'Ketua RT. 0001 RW. 009',
-    nama_penandatangan: 'Budi Santoso',
+    jabatan_penandatangan: 'Kepala Desa Harapan Baru',
+    nama_penandatangan: 'Hendra Wijaya',
   })
 
   const handleChange = (e) => {
@@ -172,28 +172,28 @@ export default function SuratKeteranganDomisiliPerusahaan() {
                   name="header1"
                   value={formData.header1}
                   onChange={handleChange}
-                  placeholder="Pemerintah Kabupaten Bandung"
+                  placeholder="Pemerintah Kabupaten Sejahtera"
                   className="text-center text-[2.8rem] font-bold"
                 />
                 <FormInput
                   name="header2"
                   value={formData.header2}
                   onChange={handleChange}
-                  placeholder="Kecamatan Sayur Bayam"
+                  placeholder="Kecamatan Daun Hijau"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header3"
                   value={formData.header3}
                   onChange={handleChange}
-                  placeholder="Kepala Desa Suka Maju"
+                  placeholder="Kepala Desa Harapan Baru"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header4"
                   value={formData.header4}
                   onChange={handleChange}
-                  placeholder="Jl. Sukamaju Raya No. 1, Bandung Kode Pos 12345"
+                  placeholder="Jl. Harapan Raya No. 88, Kota Sejahtera, Kode Pos 67890"
                   className="text-center"
                 />
               </div>
@@ -222,7 +222,7 @@ export default function SuratKeteranganDomisiliPerusahaan() {
                 value={formData.pengantar_1}
                 onChange={handleChange}
                 rows={isMobile ? 2 : 1}
-                placeholder="Kepala Desa Suka Maju Kecamatan Sayur Bayam Kabupaten Bandung menerangkan bahwa:"
+                placeholder="Kepala Desa Harapan Baru Kecamatan Daun Hijau Kabupaten Sejahtera dengan ini menerangkan bahwa:"
               />
               <table className="w-full table-auto">
                 <tbody>
@@ -234,7 +234,7 @@ export default function SuratKeteranganDomisiliPerusahaan() {
                         name="ul_1"
                         value={formData.ul_1}
                         onChange={handleChange}
-                        placeholder="Syamil Wahyudi"
+                        placeholder="Raka Prasetyo"
                         className="w-[60%]"
                       />
                     </td>
@@ -247,7 +247,7 @@ export default function SuratKeteranganDomisiliPerusahaan() {
                         name="ul_2"
                         value={formData.ul_2}
                         onChange={handleChange}
-                        placeholder="Bandung, 12 Januari 1995"
+                        placeholder="Kota Sejahtera, 14 Februari 1990"
                         className="w-[60%]"
                       />
                     </td>
@@ -273,13 +273,13 @@ export default function SuratKeteranganDomisiliPerusahaan() {
                         name="ul_4"
                         value={formData.ul_4}
                         onChange={handleChange}
-                        placeholder="Islam / Japan"
+                        placeholder="Islam / Indonesia"
                         className="w-[60%]"
                       />
                     </td>
                   </tr>
                   <tr>
-                    <td className="pr-4 align-top">Agama</td>
+                    <td className="pr-4 align-top">KTP</td>
                     <td>
                       :{' '}
                       <FormInput
@@ -299,7 +299,7 @@ export default function SuratKeteranganDomisiliPerusahaan() {
                         name="ul_6"
                         value={formData.ul_6}
                         onChange={handleChange}
-                        placeholder="Jl. Melati No. 45, RT 03 RW 05, Kel. Sukamaju, Kec. Sukasari, Kota Bandung"
+                        placeholder="Jl. Teratai No. 99, RT 03 RW 05, Kel. Harapan Baru, Kec. Sejahtera, Kota Sejahtera"
                         className="w-[60%]"
                       />
                     </td>
@@ -314,7 +314,7 @@ export default function SuratKeteranganDomisiliPerusahaan() {
                 value={formData.pengantar_2}
                 onChange={handleChange}
                 rows={isMobile ? 2 : 1}
-                placeholder="Benar pada saat ini membuka / mempunyai usaha sebagai mana tersebut dibawah ini:"
+                placeholder="Bahwa benar yang bersangkutan membuka atau memiliki usaha sebagaimana keterangan berikut:"
               />
               <table className="w-full table-auto">
                 <tbody>
@@ -326,7 +326,7 @@ export default function SuratKeteranganDomisiliPerusahaan() {
                         name="ul_7"
                         value={formData.ul_7}
                         onChange={handleChange}
-                        placeholder="PT Angin Ribut"
+                        placeholder="PT Angin Segar Nusantara"
                         className="w-[60%]"
                       />
                     </td>
@@ -341,7 +341,7 @@ export default function SuratKeteranganDomisiliPerusahaan() {
                         name="ul_8"
                         value={formData.ul_8}
                         onChange={handleChange}
-                        placeholder="Coffe Shop"
+                        placeholder="Usaha Kedai Kopi"
                         className="w-[60%]"
                       />
                     </td>
@@ -354,7 +354,7 @@ export default function SuratKeteranganDomisiliPerusahaan() {
                         name="ul_9"
                         value={formData.ul_9}
                         onChange={handleChange}
-                        placeholder="Jl Mawar Hitam, No 2A, Jakarta Timur"
+                        placeholder="Jl. Melodi Pagi No. 7, Kota Lestari"
                         className="w-[60%]"
                       />
                     </td>
@@ -367,7 +367,7 @@ export default function SuratKeteranganDomisiliPerusahaan() {
                         name="ul_10"
                         value={formData.ul_10}
                         onChange={handleChange}
-                        placeholder="Milik Sendiri"
+                        placeholder="Milik Pribadi"
                         className="w-[60%]"
                       />
                     </td>
@@ -380,7 +380,7 @@ export default function SuratKeteranganDomisiliPerusahaan() {
                         name="ul_11"
                         value={formData.ul_11}
                         onChange={handleChange}
-                        placeholder="Industri"
+                        placeholder="Jasa Kuliner"
                         className="w-[60%]"
                       />
                     </td>
@@ -393,7 +393,7 @@ export default function SuratKeteranganDomisiliPerusahaan() {
                         name="ul_12"
                         value={formData.ul_12}
                         onChange={handleChange}
-                        placeholder="Contoh: 123/IPB/2025 - 08 Mei 2025"
+                        placeholder="123/IPB/2025 - 14 Mei 2025"
                         className="w-[60%]"
                       />
                     </td>
@@ -408,7 +408,7 @@ export default function SuratKeteranganDomisiliPerusahaan() {
                         name="ul_13"
                         value={formData.ul_13}
                         onChange={handleChange}
-                        placeholder="Abdilllah SH. M.Kn"
+                        placeholder="Ardiansyah, S.H., M.Kn."
                         className="w-[60%]"
                       />
                     </td>
@@ -423,7 +423,7 @@ export default function SuratKeteranganDomisiliPerusahaan() {
                         name="ul_14"
                         value={formData.ul_14}
                         onChange={handleChange}
-                        placeholder="01. Tanggal 2 Maret 2030"
+                        placeholder="01. Tanggal 5 Maret 2030"
                         className="w-[60%]"
                       />
                     </td>
@@ -436,7 +436,7 @@ export default function SuratKeteranganDomisiliPerusahaan() {
                         name="ul_15"
                         value={formData.ul_15}
                         onChange={handleChange}
-                        placeholder="117 Orang"
+                        placeholder="42 Orang"
                         className="w-[60%]"
                       />
                     </td>
@@ -451,7 +451,7 @@ export default function SuratKeteranganDomisiliPerusahaan() {
                         name="ul_16"
                         value={formData.ul_16}
                         onChange={handleChange}
-                        placeholder="Syamil"
+                        placeholder="Raka"
                         className="w-[60%]"
                       />
                     </td>
@@ -466,36 +466,36 @@ export default function SuratKeteranganDomisiliPerusahaan() {
                 value={formData.penutup}
                 onChange={handleChange}
                 rows={isMobile ? 3 : 2}
-                placeholder='Demikian Surat Keterangan Domisili Perusahaan ini dibuat untuk dipergunakan sebagaimana mestinya dan berlaku sampai tanggal "29 Februari 2045'
+                placeholder='Demikian surat keterangan domisili perusahaan ini dibuat untuk dipergunakan sebagaimana mestinya dan berlaku sampai tanggal "29 Februari 2045".'
               />
             </div>
 
-            <div className="mt-[4rem] flex flex-row items-start justify-between gap-32">
-              <div className="flex flex-col justify-center gap-80">
+            <div className="mt-[4rem] flex w-full flex-row items-start justify-between gap-32">
+              <div className="flex w-1/3 flex-col justify-center gap-80 phones:w-2/5">
                 <div className="flex flex-col gap-12">
                   <FormInput
                     name="ttd_ybs"
                     value={formData.ttd_ybs}
                     onChange={handleChange}
-                    placeholder="Tanda tangan Ybs"
+                    placeholder="Tanda tangan Pemohon"
                     className="text-center"
                   />
                 </div>
               </div>
-              <div className="flex flex-col justify-center gap-80">
+              <div className="flex w-1/3 flex-col justify-center gap-80 phones:w-2/5">
                 <div className="flex flex-col gap-12">
                   <FormInput
                     name="alamat_tanggal"
                     value={formData.alamat_tanggal}
                     onChange={handleChange}
-                    placeholder={`Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`}
+                    placeholder={`Kota Sejahtera, ${dayjs().locale('id').format('DD MMMM YYYY')}`}
                     className="text-center"
                   />
                   <FormInput
                     name="jabatan_penandatangan"
                     value={formData.jabatan_penandatangan}
                     onChange={handleChange}
-                    placeholder="Ketua RT. 001 RW. 009"
+                    placeholder="Kepala Desa Harapan Baru"
                     className="text-center"
                   />
                 </div>
@@ -503,7 +503,7 @@ export default function SuratKeteranganDomisiliPerusahaan() {
                   name="nama_penandatangan"
                   value={formData.nama_penandatangan}
                   onChange={handleChange}
-                  placeholder="Budi Santoso"
+                  placeholder="Hendra Wijaya"
                   className="text-center"
                 />
               </div>

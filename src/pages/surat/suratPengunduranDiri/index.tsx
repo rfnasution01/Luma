@@ -18,26 +18,28 @@ export default function SuratLamaranKerja() {
   const [formData, setFormData] = useState({
     title: 'SURAT PENGUNDURAN DIRI',
 
-    kepada_1: 'Yth. HRD PT Maju Sejahtera',
-    kepada_2: 'Jl. Merdeka No. 99',
+    kepada_1: 'Yth. HRD PT Cahaya Nusantara',
+    kepada_2: 'Jl. Persatuan No. 88',
     kepada_3: 'di Tempat',
 
     dengan_hormat_1:
       'Dengan hormat,\nBersama surat ini saya bermaksud untuk mengajukan pengunduran diri dari jabatan saya di perusahaan yang Bapak/Ibu pimpin.',
 
-    nama: 'Andi Saputra',
-    jabatan: 'Staff IT',
-    departemen: 'Divisi Teknologi Informasi',
-    alamat: 'Jl. Melati No. 45, Bandung',
+    dengan_hormat_2: 'Yang bertanda tangan di bawah ini:',
+
+    nama: 'Rizky Pratama',
+    jabatan: 'Staff Administrasi',
+    departemen: 'Divisi Operasional',
+    alamat: 'Jl. Anggrek No. 22, Yogyakarta',
 
     isi_pengunduran:
-      'Adapun alasan pengunduran diri ini adalah karena saya ingin melanjutkan studi dan mengembangkan diri lebih lanjut. Saya berharap perusahaan dapat memahami keputusan ini.',
+      'Adapun alasan pengunduran diri ini adalah karena saya berencana untuk fokus pada usaha pribadi dan pengembangan karier di bidang lain. Saya berharap perusahaan dapat memahami keputusan ini.',
 
     penutup:
-      'Saya mengucapkan terima kasih atas kesempatan, pengalaman, dan kerja sama yang telah diberikan selama ini. Semoga perusahaan semakin maju dan sukses di masa yang akan datang.',
+      'Saya mengucapkan terima kasih atas kesempatan, pengalaman, dan kerja sama yang telah diberikan selama ini. Semoga perusahaan semakin berkembang dan sukses di masa yang akan datang.',
 
     hormat_saya_1: 'Hormat saya,',
-    hormat_saya_2: 'Andi Saputra',
+    hormat_saya_2: 'Rizky Pratama',
   })
 
   const handleChange = (e) => {
@@ -98,13 +100,13 @@ export default function SuratLamaranKerja() {
                 name="kepada_1"
                 value={formData.kepada_1}
                 onChange={handleChange}
-                placeholder="Yth. HRD PT Maju Sejahtera"
+                placeholder="Yth. HRD PT Cahaya Nusantara"
               />
               <FormInput
                 name="kepada_2"
                 value={formData.kepada_2}
                 onChange={handleChange}
-                placeholder="Jl. Merdeka No. 99"
+                placeholder="Jl. Persatuan No. 88"
               />
               <FormInput
                 name="kepada_3"
@@ -114,14 +116,21 @@ export default function SuratLamaranKerja() {
               />
             </div>
 
-            <div className="mt-[4rem] flex flex-col gap-24">
+            <div className="mt-[4rem] flex flex-col gap-12">
               <FormTextArea
                 name="dengan_hormat_1"
                 value={formData.dengan_hormat_1}
                 onChange={handleChange}
                 rows={isMobile ? 5 : 3}
-                placeholder="Dengan hormat,
-Bersama surat ini saya bermaksud untuk mengajukan pengunduran diri dari jabatan saya di perusahaan yang Bapak/Ibu pimpin."
+                placeholder={`Dengan hormat,
+Bersama surat ini saya bermaksud untuk mengajukan pengunduran diri dari jabatan saya di perusahaan yang Bapak/Ibu pimpin.`}
+              />
+              <FormTextArea
+                name="dengan_hormat_2"
+                value={formData.dengan_hormat_2}
+                onChange={handleChange}
+                rows={isMobile ? 2 : 1}
+                placeholder={`Yang bertanda tangan di bawah ini:`}
               />
             </div>
 
@@ -135,7 +144,7 @@ Bersama surat ini saya bermaksud untuk mengajukan pengunduran diri dari jabatan 
                       name="nama"
                       value={formData.nama}
                       onChange={handleChange}
-                      placeholder="Andi Saputra"
+                      placeholder="Rizky Pratama"
                       className="w-[98%] phones:w-[97%]"
                     />
                   </td>
@@ -148,7 +157,7 @@ Bersama surat ini saya bermaksud untuk mengajukan pengunduran diri dari jabatan 
                       name="jabatan"
                       value={formData.jabatan}
                       onChange={handleChange}
-                      placeholder="Staff IT"
+                      placeholder="Staff Administrasi"
                       className="w-[98%] phones:w-[97%]"
                     />
                   </td>
@@ -161,7 +170,7 @@ Bersama surat ini saya bermaksud untuk mengajukan pengunduran diri dari jabatan 
                       name="departemen"
                       value={formData.departemen}
                       onChange={handleChange}
-                      placeholder="Divisi Teknologi Informasi"
+                      placeholder="Divisi Operasional"
                       className="w-[98%] phones:w-[97%]"
                     />
                   </td>
@@ -176,7 +185,7 @@ Bersama surat ini saya bermaksud untuk mengajukan pengunduran diri dari jabatan 
                       value={formData.alamat}
                       onChange={handleChange}
                       className="w-[98%] phones:w-[97%]"
-                      placeholder="Jl. Melati No. 45, Bandung"
+                      placeholder="Jl. Anggrek No. 22, Yogyakarta"
                     />
                   </td>
                 </tr>
@@ -188,32 +197,34 @@ Bersama surat ini saya bermaksud untuk mengajukan pengunduran diri dari jabatan 
                 value={formData.isi_pengunduran}
                 onChange={handleChange}
                 rows={isMobile ? 4 : 2}
-                placeholder="Adapun alasan pengunduran diri ini adalah karena saya ingin melanjutkan studi dan mengembangkan diri lebih lanjut. Saya berharap perusahaan dapat memahami keputusan ini."
+                placeholder="Adapun alasan pengunduran diri ini adalah karena saya berencana untuk fokus pada usaha pribadi dan pengembangan karier di bidang lain. Saya berharap perusahaan dapat memahami keputusan ini."
               />
               <FormTextArea
                 name="penutup"
                 value={formData.penutup}
                 onChange={handleChange}
                 rows={isMobile ? 4 : 2}
-                placeholder="Saya mengucapkan terima kasih atas kesempatan, pengalaman, dan kerja sama yang telah diberikan selama ini. Semoga perusahaan semakin maju dan sukses di masa yang akan datang."
+                placeholder="Saya mengucapkan terima kasih atas kesempatan, pengalaman, dan kerja sama yang telah diberikan selama ini. Semoga perusahaan semakin berkembang dan sukses di masa yang akan datang."
               />
             </div>
 
             <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
-              <FormInput
-                name="hormat_saya_1"
-                value={formData.hormat_saya_1}
-                onChange={handleChange}
-                placeholder="Hormat saya,"
-                className="text-center"
-              />
-              <FormInput
-                name="hormat_saya_2"
-                value={formData.hormat_saya_2}
-                onChange={handleChange}
-                placeholder="Andi Saputra"
-                className="text-center"
-              />
+              <div className="flex w-1/3 flex-col gap-80 phones:w-2/5">
+                <FormInput
+                  name="hormat_saya_1"
+                  value={formData.hormat_saya_1}
+                  onChange={handleChange}
+                  placeholder="Hormat saya,"
+                  className="text-center"
+                />
+                <FormInput
+                  name="hormat_saya_2"
+                  value={formData.hormat_saya_2}
+                  onChange={handleChange}
+                  placeholder="Rizky Pratama"
+                  className="text-center"
+                />
+              </div>
             </div>
           </div>
         </div>

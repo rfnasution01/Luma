@@ -20,38 +20,38 @@ export default function SuratKeteranganTidakBeasiswaGanda() {
   const [formData, setFormData] = useState({
     logo: '',
     header1: 'Departemen Pendidikan Nasional',
-    header2: 'Universitas Riau Pekanbaru',
-    header3: 'Fakultas Keguruan dan Ilmu Pendidikan',
+    header2: 'Universitas Contoh Nusantara',
+    header3: 'Fakultas Ilmu Pendidikan dan Pengembangan',
     header4:
-      'Alamat: Kampus Bina Widya Simpang Baru - Pekanbaru Telp. (0761) 63267 Fax. (0761) 65804',
+      'Alamat: Jl. Cendekia No. 45, Kota Edukasi, Telp. (021) 12345678 Fax. (021) 87654321',
 
     title:
       'SURAT KETERANGAN TIDAK SEDANG MENERIMA BEASISWA DALAM WAKTU BERSAMAAN (BEASISWA GANDA)',
-    no_surat: 'Nomor: RT/RW/No/XX/YYYY',
+    no_surat: 'Nomor: 001/SKTB-FIP/IV/2025',
 
     pengantar_1: 'Saya yang bertanda tangan di bawah ini:',
 
-    ul_1: 'Syamil Wahyudi',
-    ul_2: 'Bandung, 12 Januari 1995',
-    ul_3: '0123456789',
-    ul_4: 'Nama Jurusan',
-    ul_5: 'Nama Program Studi',
-    ul_6: 'Nama Program',
-    ul_7: 'Alamat',
+    ul_1: 'Rafi Pratama',
+    ul_2: 'Kota Fiktif, 12 Januari 1996',
+    ul_3: '1234567890', // NIM/NIK
+    ul_4: 'Pendidikan Bahasa',
+    ul_5: 'Program Studi Pendidikan Bahasa Indonesia',
+    ul_6: 'Beasiswa Prestasi Akademik',
+    ul_7: 'Jl. Mawar No. 10, Kota Fiktif',
 
     penutup_1:
-      'Dengan ini saya menyatakan, bahwa saya sebagai Calon penerima Beasiswa tidak sedang menerima Beasiswa lain, dalam waktu bersamaan (Beasiswa Ganda). Jika ternyata dikemudian hari kedepatan saya menerima 2 (Dua) Beasiswa seperti apa yang dinyatakaan tersebut diatas, maka saya bersedia dikarenakan sanksi (Hukuman) Akademis dari Pimpinan Fakultas Keguruan dan Ilmu Pendidikan Universitas Riau.',
+      'Dengan ini saya menyatakan bahwa saya sebagai calon penerima Beasiswa tidak sedang menerima beasiswa lain dalam waktu bersamaan (Beasiswa Ganda). Jika di kemudian hari terbukti saya menerima dua (2) beasiswa sebagaimana dinyatakan di atas, maka saya bersedia menerima sanksi akademik dari Pimpinan Fakultas Ilmu Pendidikan dan Pengembangan Universitas Contoh Nusantara.',
     penutup_2:
-      'Demikianlah Surat Pernyataan ini dibuat dengan sesungguhnya untuk dapat dipergunakan sebagaimana mestinya.',
+      'Demikianlah surat pernyataan ini saya buat dengan sebenar-benarnya untuk dapat dipergunakan sebagaimana mestinya.',
 
     mengetahui_1: 'Mengetahui:',
-    jabatan_1: 'Pembantu Dekan III',
-    nama_1: 'Abdillah',
-    nip_1: 'NIP. 0123456789',
-    mengetahui_2: `Pekanbaru, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
-    jabatan_2: 'Saya yang Menyatakan,',
-    nama_2: 'Syamil',
-    nip_2: 'NIM. 091823123',
+    jabatan_1: 'Wakil Dekan III',
+    nama_1: 'Dr. Ahmad Santoso',
+    nip_1: 'NIP. 19876543210',
+    mengetahui_2: `Kota Edukasi, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
+    jabatan_2: 'Yang Menyatakan,',
+    nama_2: 'Rafi Pratama',
+    nip_2: 'NIM. 2022123456',
   })
 
   const handleChange = (e) => {
@@ -172,21 +172,21 @@ export default function SuratKeteranganTidakBeasiswaGanda() {
                   name="header2"
                   value={formData.header2}
                   onChange={handleChange}
-                  placeholder="Universitas Riau Pekanbaru"
+                  placeholder="Universitas Contoh Nusantara"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header3"
                   value={formData.header3}
                   onChange={handleChange}
-                  placeholder="Fakultas Keguruan dan Ilmu Pendidikan"
+                  placeholder="Fakultas Ilmu Pendidikan dan Pengembangan"
                   className="text-center text-[2.4rem]"
                 />
                 <FormInput
                   name="header4"
                   value={formData.header4}
                   onChange={handleChange}
-                  placeholder="Alamat: Kampus Bina Widya Simpang Baru - Pekanbaru Telp. (0761) 63267 Fax. (0761) 65804"
+                  placeholder="Alamat: Jl. Cendekia No. 45, Kota Edukasi, Telp. (021) 12345678 Fax. (021) 87654321"
                   className="text-center"
                 />
               </div>
@@ -228,7 +228,7 @@ DALAM WAKTU BERSAMAAN (BEASISWA GANDA)"
                         name="ul_1"
                         value={formData.ul_1}
                         onChange={handleChange}
-                        placeholder="Syamil Wahyudi"
+                        placeholder="Rafi Pratama"
                         className="w-[80%]"
                       />
                     </td>
@@ -241,7 +241,7 @@ DALAM WAKTU BERSAMAAN (BEASISWA GANDA)"
                         name="ul_2"
                         value={formData.ul_2}
                         onChange={handleChange}
-                        placeholder="Bandung, 12 Januari 1995"
+                        placeholder="Kota Fiktif, 12 Januari 1996"
                         className="w-[80%]"
                       />
                     </td>
@@ -254,7 +254,7 @@ DALAM WAKTU BERSAMAAN (BEASISWA GANDA)"
                         name="ul_3"
                         value={formData.ul_3}
                         onChange={handleChange}
-                        placeholder="0123456789"
+                        placeholder="1234567890"
                         className="w-[80%]"
                       />
                     </td>
@@ -267,7 +267,7 @@ DALAM WAKTU BERSAMAAN (BEASISWA GANDA)"
                         name="ul_4"
                         value={formData.ul_4}
                         onChange={handleChange}
-                        placeholder="Nama Jurusan"
+                        placeholder="Pendidikan Bahasa"
                         className="w-[80%]"
                       />
                     </td>
@@ -280,7 +280,7 @@ DALAM WAKTU BERSAMAAN (BEASISWA GANDA)"
                         name="ul_5"
                         value={formData.ul_5}
                         onChange={handleChange}
-                        placeholder="Nama Program Studi"
+                        placeholder="Program Studi Pendidikan Bahasa Indonesia"
                         className="w-[80%]"
                       />
                     </td>
@@ -293,7 +293,7 @@ DALAM WAKTU BERSAMAAN (BEASISWA GANDA)"
                         name="ul_6"
                         value={formData.ul_6}
                         onChange={handleChange}
-                        placeholder="Nama Program"
+                        placeholder="Beasiswa Prestasi Akademik"
                         className="w-[80%]"
                       />
                     </td>
@@ -306,7 +306,7 @@ DALAM WAKTU BERSAMAAN (BEASISWA GANDA)"
                         name="ul_7"
                         value={formData.ul_7}
                         onChange={handleChange}
-                        placeholder="Alamat"
+                        placeholder="Jl. Mawar No. 10, Kota Fiktif"
                         className="w-[80%]"
                       />
                     </td>
@@ -321,19 +321,19 @@ DALAM WAKTU BERSAMAAN (BEASISWA GANDA)"
                 value={formData.penutup_1}
                 onChange={handleChange}
                 rows={isMobile ? 8 : 4}
-                placeholder="Dengan ini saya menyatakan, bahwa saya sebagai Calon penerima Beasiswa tidak sedang menerima Beasiswa lain, dalam waktu bersamaan (Beasiswa Ganda). Jika ternyata dikemudian hari kedepatan saya menerima 2 (Dua) Beasiswa seperti apa yang dinyatakaan tersebut diatas, maka saya bersedia dikarenakan sanksi (Hukuman) Akademis dari Pimpinan Fakultas Keguruan dan Ilmu Pendidikan Universitas Riau."
+                placeholder="Dengan ini saya menyatakan bahwa saya sebagai calon penerima Beasiswa tidak sedang menerima beasiswa lain dalam waktu bersamaan (Beasiswa Ganda). Jika di kemudian hari terbukti saya menerima dua (2) beasiswa sebagaimana dinyatakan di atas, maka saya bersedia menerima sanksi akademik dari Pimpinan Fakultas Ilmu Pendidikan dan Pengembangan Universitas Contoh Nusantara."
               />
               <FormTextArea
                 name="penutup_2"
                 value={formData.penutup_2}
                 onChange={handleChange}
                 rows={isMobile ? 2 : 1}
-                placeholder="Demikianlah Surat Pernyataan ini dibuat dengan sesungguhnya untuk dapat dipergunakan sebagaimana mestinya."
+                placeholder="Demikianlah surat pernyataan ini saya buat dengan sebenar-benarnya untuk dapat dipergunakan sebagaimana mestinya."
               />
             </div>
 
             <div className="mt-[4rem] flex flex-row items-start justify-between gap-32">
-              <div className="flex flex-col justify-center gap-80">
+              <div className="flex w-1/3 flex-col justify-center gap-80 phones:w-2/5">
                 <div className="flex flex-col gap-12">
                   <FormInput
                     name="mengetahui_1"
@@ -345,7 +345,7 @@ DALAM WAKTU BERSAMAAN (BEASISWA GANDA)"
                     name="jabatan_1"
                     value={formData.jabatan_1}
                     onChange={handleChange}
-                    placeholder={`Pembantu Dekan III`}
+                    placeholder={`Wakil Dekan III`}
                   />
                 </div>
                 <div className="flex flex-col gap-12">
@@ -353,29 +353,29 @@ DALAM WAKTU BERSAMAAN (BEASISWA GANDA)"
                     name="nama_1"
                     value={formData.nama_1}
                     onChange={handleChange}
-                    placeholder="Abdillah"
+                    placeholder="Dr. Ahmad Santoso"
                   />
                   <FormInput
                     name="nip_1"
                     value={formData.nip_1}
                     onChange={handleChange}
-                    placeholder="NIP. 0123456789"
+                    placeholder="NIP. 19876543210"
                   />
                 </div>
               </div>
-              <div className="flex flex-col justify-center gap-80">
+              <div className="flex w-1/3 flex-col justify-center gap-80 phones:w-2/5">
                 <div className="flex flex-col gap-12">
                   <FormInput
                     name="mengetahui_2"
                     value={formData.mengetahui_2}
                     onChange={handleChange}
-                    placeholder={`Pekanbaru, ${dayjs().locale('id').format('DD MMMM YYYY')}`}
+                    placeholder={`Kota Edukasi, 14 Mei 2025`}
                   />
                   <FormInput
                     name="jabatan_2"
                     value={formData.jabatan_2}
                     onChange={handleChange}
-                    placeholder="Saya yang Menyatakan,"
+                    placeholder="Yang Menyatakan,"
                   />
                 </div>
                 <div className="flex flex-col gap-12">
@@ -383,13 +383,13 @@ DALAM WAKTU BERSAMAAN (BEASISWA GANDA)"
                     name="nama_2"
                     value={formData.nama_2}
                     onChange={handleChange}
-                    placeholder="Syamil"
+                    placeholder="Rafi Pratama"
                   />
                   <FormInput
                     name="nip_2"
                     value={formData.nip_2}
                     onChange={handleChange}
-                    placeholder="NIM. 091823123"
+                    placeholder="NIM. 2022123456"
                   />
                 </div>
               </div>

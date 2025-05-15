@@ -10,6 +10,7 @@ export default function generatePdfDefinition(data) {
             text: `${data.tempat_tanggal}`,
           },
         ],
+        margin: [0, 0, 0, 20],
       },
 
       {
@@ -17,8 +18,8 @@ export default function generatePdfDefinition(data) {
         margin: [0, 0, 0, 20],
       },
       {
-        text: `${data.dengan_hormat_1}\n\n${data.dengan_hormat_2}`,
-        margin: [0, 0, 0, 10],
+        text: `${data.dengan_hormat_1}\n${data.dengan_hormat_2}`,
+        margin: [0, 0, 0, 5],
       },
       {
         table: {
@@ -42,7 +43,7 @@ export default function generatePdfDefinition(data) {
           {
             width: 'auto',
             alignment: 'center',
-            text: `${data.hormat_saya_1}\n${data.hormat_saya_2}`,
+            text: `${data.hormat_saya_1}\n\n\n\n\n${data.hormat_saya_2}`,
           },
         ],
       },

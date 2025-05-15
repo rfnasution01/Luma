@@ -19,18 +19,20 @@ export default function SuratIzinSakitKerjaPage() {
 
   const [formData, setFormData] = useState({
     tempat_tanggal: `Jakarta, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
-    kepada_1: 'Yth. Ibu Gea Saskia',
-    kepada_2: 'Manajer SDM PT Angin Ribut',
-    kepada_3: 'Jakarta Timur 12345',
+    kepada_1: 'Yth. Manajer SDM',
+    kepada_2: 'Bagian Sumber Daya Manusia',
+    kepada_3: 'Di Tempat',
     dengan_hormat_1: 'Dengan hormat,',
-    dengan_hormat_2: 'Saya yang bertanda tangan di bawah ini :',
-    ul_1: `Syamil Wahyudi`,
-    ul_2: 'Jl. Gajah Mundur, Desa Suka Maju, Bekasi',
-    ul_3: 'Manajer IT',
-    memberitahukan_1: `Dengan surat ini, saya memohon izin tidak dapat masuk kerja selama 4 (empat) hari terhitung mulai hari Senin, 5 Mei 2025 sampai dengan Kamis, 8 Mei 2025 karena kondisi kesehatan yang kurang baik. Bersama dengan ini saya lampirkan surat keterangan sakit dari dokter sebagai bukti.`,
-    memberitahukan_2: `Demikian surat izin ini saya sampaikan. Atas perhatian dan izin Ibu. saya mengucapkan terima kasih`,
-    hormat_saya_1: `Hormat saya,`,
-    hormat_saya_2: `Syamil Wahyudi`,
+    dengan_hormat_2: 'Saya yang bertanda tangan di bawah ini:',
+    ul_1: 'Nama Lengkap',
+    ul_2: 'Alamat Tempat Tinggal',
+    ul_3: 'Jabatan/Posisi',
+    memberitahukan_1:
+      'Melalui surat ini, saya mengajukan permohonan izin tidak dapat masuk kerja selama 4 (empat) hari, mulai dari hari Senin, 5 Mei 2025 hingga Kamis, 8 Mei 2025, dikarenakan kondisi kesehatan yang tidak memungkinkan untuk bekerja. Sebagai bukti, saya melampirkan surat keterangan sakit dari dokter.',
+    memberitahukan_2:
+      'Demikian surat izin ini saya buat dengan sebenar-benarnya. Atas perhatian dan pengertian Bapak/Ibu, saya ucapkan terima kasih.',
+    hormat_saya_1: 'Hormat saya,',
+    hormat_saya_2: 'Nama Lengkap',
   })
 
   const handleChange = (e) => {
@@ -74,9 +76,7 @@ export default function SuratIzinSakitKerjaPage() {
     <div className="scrollbar flex h-full w-full gap-32 overflow-auto phones:h-auto phones:flex-col phones:overflow-visible">
       {/* --- Form Untuk Mengubah Data --- */}
       <div className="scrollbar flex h-full w-1/2 flex-col gap-32 overflow-auto phones:h-auto phones:w-full phones:overflow-visible">
-        <p className="text-[2.8rem] font-bold">
-          Surat Izin Sakit Sekolah Kerja
-        </p>
+        <p className="text-[2.8rem] font-bold">Surat Izin Sakit Kerja</p>
         <div className="scrollbar flex h-full flex-col gap-24 overflow-auto rounded-2x border bg-[#fefefe] p-[2.4rem] shadow-md phones:h-auto phones:overflow-visible">
           <div className="scrollbar-new flex min-h-[120rem] w-full flex-col gap-16 overflow-auto">
             <div className="mt-[4rem] flex items-center justify-end">
@@ -84,7 +84,7 @@ export default function SuratIzinSakitKerjaPage() {
                 name="tempat_tanggal"
                 value={formData.tempat_tanggal}
                 onChange={handleChange}
-                placeholder={dayjs().locale('id').format('DD MMMM YYYY')}
+                placeholder="Jakarta, 15 Mei 2025"
                 className="w-1/2 text-end text-[2rem]"
               />
             </div>
@@ -93,19 +93,19 @@ export default function SuratIzinSakitKerjaPage() {
                 name="kepada_1"
                 value={formData.kepada_1}
                 onChange={handleChange}
-                placeholder="Yth. Ibu Gea Saskia"
+                placeholder="Yth. Manajer SDM"
               />
               <FormInput
                 name="kepada_2"
                 value={formData.kepada_2}
                 onChange={handleChange}
-                placeholder="Manajer SDM PT Angin Ribut"
+                placeholder="Bagian Sumber Daya Manusia"
               />
               <FormInput
                 name="kepada_3"
                 value={formData.kepada_3}
                 onChange={handleChange}
-                placeholder="Jakarta Timur 12345"
+                placeholder="Di Tempat"
               />
             </div>
 
@@ -120,7 +120,8 @@ export default function SuratIzinSakitKerjaPage() {
                 name="dengan_hormat_2"
                 value={formData.dengan_hormat_2}
                 onChange={handleChange}
-                placeholder="Saya yang bertanda tangan di bawah ini :"
+                placeholder="Saya yang bertanda tangan di bawah ini:"
+                rows={isMobile ? 2 : 1}
               />
             </div>
 
@@ -134,7 +135,7 @@ export default function SuratIzinSakitKerjaPage() {
                       name="ul_1"
                       value={formData.ul_1}
                       onChange={handleChange}
-                      placeholder="Syamil Wahyudi"
+                      placeholder="Nama Lengkap"
                       className="w-[98%] phones:w-[97%]"
                     />
                   </td>
@@ -148,7 +149,7 @@ export default function SuratIzinSakitKerjaPage() {
                       value={formData.ul_2}
                       onChange={handleChange}
                       className="w-[98%] phones:w-[97%]"
-                      placeholder="Jl. Gajah Mundur, Desa Suka Maju, Bekasi"
+                      placeholder="Alamat Tempat Tinggal"
                     />
                   </td>
                 </tr>
@@ -161,7 +162,7 @@ export default function SuratIzinSakitKerjaPage() {
                       className="w-[98%] phones:w-[97%]"
                       value={formData.ul_3}
                       onChange={handleChange}
-                      placeholder="Manajer IT"
+                      placeholder="Jabatan/Posisi"
                     />
                   </td>
                 </tr>
@@ -173,32 +174,34 @@ export default function SuratIzinSakitKerjaPage() {
                 value={formData.memberitahukan_1}
                 onChange={handleChange}
                 rows={isMobile ? 5 : 3}
-                placeholder="Dengan surat ini, saya memohon izin tidak dapat masuk kerja selama 4 (empat) hari terhitung mulai hari Senin, 5 Mei 2025 sampai dengan Kamis, 8 Mei 2025 karena kondisi kesehatan yang kurang baik. Bersama dengan ini saya lampirkan surat keterangan sakit dari dokter sebagai bukti."
+                placeholder="Melalui surat ini, saya mengajukan permohonan izin tidak dapat masuk kerja selama 4 (empat) hari, mulai dari hari Senin, 5 Mei 2025 hingga Kamis, 8 Mei 2025, dikarenakan kondisi kesehatan yang tidak memungkinkan untuk bekerja. Sebagai bukti, saya melampirkan surat keterangan sakit dari dokter."
               />
               <FormTextArea
                 name="memberitahukan_2"
                 value={formData.memberitahukan_2}
                 onChange={handleChange}
                 rows={isMobile ? 3 : 2}
-                placeholder="Demikian surat izin ini saya sampaikan. Atas perhatian dan izin Ibu. saya mengucapkan terima kasih"
+                placeholder="Demikian surat izin ini saya buat dengan sebenar-benarnya. Atas perhatian dan pengertian Bapak/Ibu, saya ucapkan terima kasih."
               />
             </div>
 
             <div className="mt-[4rem] flex flex-col items-end justify-center gap-12">
-              <FormInput
-                name="hormat_saya_1"
-                value={formData.hormat_saya_1}
-                onChange={handleChange}
-                placeholder="Hormat saya,"
-                className="text-center"
-              />
-              <FormInput
-                name="hormat_saya_2"
-                value={formData.hormat_saya_2}
-                onChange={handleChange}
-                placeholder="Syamil Wahyudi"
-                className="text-center"
-              />
+              <div className="flex w-1/3 flex-col gap-80 phones:w-2/5">
+                <FormInput
+                  name="hormat_saya_1"
+                  value={formData.hormat_saya_1}
+                  onChange={handleChange}
+                  placeholder="Hormat saya,"
+                  className="text-center"
+                />
+                <FormInput
+                  name="hormat_saya_2"
+                  value={formData.hormat_saya_2}
+                  onChange={handleChange}
+                  placeholder="Nama Lengkap"
+                  className="text-center"
+                />
+              </div>
             </div>
           </div>
         </div>

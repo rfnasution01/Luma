@@ -2,24 +2,44 @@ export function generatePdfDefinition(data) {
   return {
     content: [
       {
-        columns: [
-          {
-            width: '*',
-            alignment: 'center',
-            stack: [
-              { text: (data.header1 || '').toUpperCase(), style: 'header' },
+        columns: data.logo
+          ? [
               {
-                text: (data.header2 || '').toUpperCase(),
-                style: 'subheader',
+                image: data.logo,
+                width: 80,
+                height: 80,
               },
+              [
+                { text: (data.header1 || '').toUpperCase(), style: 'header' },
+                {
+                  text: (data.header2 || '').toUpperCase(),
+                  style: 'subheader',
+                },
+                {
+                  text: (data.header3 || '').toUpperCase(),
+                  style: 'subheader',
+                },
+                { text: (data.header4 || '').toUpperCase(), style: 'small' },
+              ],
+            ]
+          : [
               {
-                text: (data.header3 || '').toUpperCase(),
-                style: 'subheader',
+                width: '*',
+                alignment: 'center',
+                stack: [
+                  { text: (data.header1 || '').toUpperCase(), style: 'header' },
+                  {
+                    text: (data.header2 || '').toUpperCase(),
+                    style: 'subheader',
+                  },
+                  {
+                    text: (data.header3 || '').toUpperCase(),
+                    style: 'subheader',
+                  },
+                  { text: (data.header4 || '').toUpperCase(), style: 'small' },
+                ],
               },
-              { text: (data.header4 || '').toUpperCase(), style: 'small' },
             ],
-          },
-        ],
         columnGap: 10,
         margin: [0, 0, 0, 5],
       },
@@ -50,7 +70,7 @@ export function generatePdfDefinition(data) {
         margin: [0, 0, 0, 20],
       },
       {
-        text: `${data.pengantar2}`,
+        text: `${data.pengantar1}`,
         margin: [0, 0, 0, 5],
       },
 

@@ -19,23 +19,23 @@ export default function SuratKeteranganSanggupMembayarHutangDenganJaminan() {
 
   const [formData, setFormData] = useState({
     tempat_tanggal: `Purwokerto, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
-    dengan_hormat_1: 'Saya yang bertanda tangan di bawah ini,',
+    dengan_hormat_1: 'Saya yang bertanda tangan di bawah ini:',
     dengan_hormat_2:
-      'Menyatakan bahwa pada tanggal 1 Juni 2022, saya meminjam uang sebesar Rp10 juta dari saudara Dodi Firmanto, dan akan mengembalikannya dalam jangka waktu 1 bulan.',
+      'Dengan ini menyatakan bahwa pada tanggal 1 Juni 2022, saya telah meminjam uang sebesar Rp10.000.000,- (sepuluh juta rupiah) dari Saudara [Nama Pemberi Pinjaman], dan berkomitmen untuk mengembalikan pinjaman tersebut dalam jangka waktu 30 (tiga puluh) hari.',
     dengan_hormat_3:
-      'Sehubungan dengan hal tersebut, saya akan memberikan jaminan kepada Saudara Dodi Firmanto berupa satu buah sepeda motor, atas nama saya sendiri, Erika Finn. Jika saya tidak dapat melunasi pinjaman sampai batas waktu yang telah disepakati, maka saya, dengan kerendahan hati, memohon keringanan kepada Saudara Dodi Firmanto, agar bisa memberikan kelonggaran waktu hingga 30 hari.',
+      'Sebagai bentuk tanggung jawab dan jaminan atas pinjaman tersebut, saya menyerahkan satu unit sepeda motor atas nama saya pribadi sebagai jaminan hingga pelunasan selesai. Apabila saya tidak dapat melunasi pinjaman dalam waktu yang telah disepakati, saya mohon pertimbangan untuk diberikan perpanjangan waktu maksimal 30 (tiga puluh) hari.',
     dengan_hormat_4:
-      'Namun, jika saya masih belum bisa juga melunasi utang sampai pada batas waktu tambahan tersebut, Saudara Dodi berhak menyita motor saya, memilikinya, atau menjualnya untuk melunasi utang saya.',
+      'Apabila dalam waktu tambahan tersebut saya tetap belum dapat memenuhi kewajiban pelunasan, maka pihak pemberi pinjaman berhak untuk mengambil alih jaminan tersebut dan menggunakannya untuk melunasi utang sesuai dengan nilai pasar yang wajar.',
     dengan_hormat_5:
-      'Demikian surat pernyataan ini saya buat secara sadar dan tanpa paksaan dari pihak mana pun.',
-    ul_1: `Erika Finn`,
-    ul_2: '1234567890',
-    ul_3: ' Ibu rumah tangga',
-    ul_4: 'Jl. Ahmad Yani, Bekasi',
+      'Demikian surat pernyataan ini saya buat secara sadar, tanpa paksaan atau tekanan dari pihak mana pun, untuk digunakan sebagaimana mestinya.',
+    ul_1: 'Nama Lengkap Peminjam',
+    ul_2: 'Nomor Identitas (KTP/SIM)',
+    ul_3: 'Pekerjaan',
+    ul_4: 'Alamat Tempat Tinggal',
 
     hormat_saya_1: `Bekasi, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
-    hormat_saya_2: `Saya yang menyatakan,`,
-    hormat_saya_3: 'Erika Finn',
+    hormat_saya_2: 'Yang membuat pernyataan,',
+    hormat_saya_3: 'Nama Lengkap Peminjam',
   })
 
   const handleChange = (e) => {
@@ -89,7 +89,7 @@ export default function SuratKeteranganSanggupMembayarHutangDenganJaminan() {
                 name="tempat_tanggal"
                 value={formData.tempat_tanggal}
                 onChange={handleChange}
-                placeholder={dayjs().locale('id').format('DD MMMM YYYY')}
+                placeholder="Purwokerto, 15 Mei 2025"
                 className="w-1/2 text-end text-[2rem]"
               />
             </div>
@@ -111,7 +111,7 @@ export default function SuratKeteranganSanggupMembayarHutangDenganJaminan() {
                         name="ul_1"
                         value={formData.ul_1}
                         onChange={handleChange}
-                        placeholder="Erika Finn"
+                        placeholder="Nama Lengkap Peminjam"
                         className="w-[98%] phones:w-[97%]"
                       />
                     </td>
@@ -125,7 +125,7 @@ export default function SuratKeteranganSanggupMembayarHutangDenganJaminan() {
                         value={formData.ul_2}
                         onChange={handleChange}
                         className="w-[98%] phones:w-[97%]"
-                        placeholder="1234567890"
+                        placeholder="Nomor Identitas (KTP/SIM)"
                       />
                     </td>
                   </tr>
@@ -138,7 +138,7 @@ export default function SuratKeteranganSanggupMembayarHutangDenganJaminan() {
                         value={formData.ul_3}
                         onChange={handleChange}
                         className="w-[98%] phones:w-[97%]"
-                        placeholder="Ibu rumah tangga"
+                        placeholder="Pekerjaan"
                       />
                     </td>
                   </tr>
@@ -151,7 +151,7 @@ export default function SuratKeteranganSanggupMembayarHutangDenganJaminan() {
                         className="w-[98%] phones:w-[97%]"
                         value={formData.ul_4}
                         onChange={handleChange}
-                        placeholder=" Jl. Ahmad Yani, Bekasi"
+                        placeholder="Alamat Tempat Tinggal"
                       />
                     </td>
                   </tr>
@@ -164,57 +164,59 @@ export default function SuratKeteranganSanggupMembayarHutangDenganJaminan() {
                 name="dengan_hormat_2"
                 value={formData.dengan_hormat_2}
                 onChange={handleChange}
-                placeholder="Menyatakan bahwa pada tanggal 1 Juni 2022, saya meminjam uang sebesar Rp10 juta dari saudara Dodi Firmanto, dan akan mengembalikannya dalam jangka waktu 1 bulan."
-                rows={isMobile ? 4 : 2}
+                placeholder="Dengan ini menyatakan bahwa pada tanggal 1 Juni 2022, saya telah meminjam uang sebesar Rp10.000.000,- (sepuluh juta rupiah) dari Saudara [Nama Pemberi Pinjaman], dan berkomitmen untuk mengembalikan pinjaman tersebut dalam jangka waktu 30 (tiga puluh) hari."
+                rows={isMobile ? 6 : 3}
               />
 
               <FormTextArea
                 name="dengan_hormat_3"
                 value={formData.dengan_hormat_3}
                 onChange={handleChange}
-                placeholder="Sehubungan dengan hal tersebut, saya akan memberikan jaminan kepada Saudara Dodi Firmanto berupa satu buah sepeda motor, atas nama saya sendiri, Erika Finn. Jika saya tidak dapat melunasi pinjaman sampai batas waktu yang telah disepakati, maka saya, dengan kerendahan hati, memohon keringanan kepada Saudara Dodi Firmanto, agar bisa memberikan kelonggaran waktu hingga 30 hari."
+                placeholder="Sebagai bentuk tanggung jawab dan jaminan atas pinjaman tersebut, saya menyerahkan satu unit sepeda motor atas nama saya pribadi sebagai jaminan hingga pelunasan selesai. Apabila saya tidak dapat melunasi pinjaman dalam waktu yang telah disepakati, saya mohon pertimbangan untuk diberikan perpanjangan waktu maksimal 30 (tiga puluh) hari."
                 rows={isMobile ? 8 : 4}
               />
               <FormTextArea
                 name="dengan_hormat_4"
                 value={formData.dengan_hormat_4}
                 onChange={handleChange}
-                placeholder="Namun, jika saya masih belum bisa juga melunasi utang sampai pada batas waktu tambahan tersebut, Saudara Dodi berhak menyita motor saya, memilikinya, atau menjualnya untuk melunasi utang saya."
-                rows={isMobile ? 4 : 2}
+                placeholder="Apabila dalam waktu tambahan tersebut saya tetap belum dapat memenuhi kewajiban pelunasan, maka pihak pemberi pinjaman berhak untuk mengambil alih jaminan tersebut dan menggunakannya untuk melunasi utang sesuai dengan nilai pasar yang wajar."
+                rows={isMobile ? 6 : 3}
               />
               <FormTextArea
                 name="dengan_hormat_5"
                 value={formData.dengan_hormat_5}
                 onChange={handleChange}
-                placeholder="Demikian surat pernyataan ini saya buat secara sadar dan tanpa paksaan dari pihak mana pun."
-                rows={isMobile ? 2 : 1}
+                placeholder="Demikian surat pernyataan ini saya buat secara sadar, tanpa paksaan atau tekanan dari pihak mana pun, untuk digunakan sebagaimana mestinya."
+                rows={isMobile ? 4 : 2}
               />
             </div>
 
             <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
-              <div className="flex flex-col gap-12">
+              <div className="flex w-1/3 flex-col gap-80 phones:w-2/5">
+                <div className="flex flex-col gap-12">
+                  <FormInput
+                    name="hormat_saya_1"
+                    value={formData.hormat_saya_1}
+                    onChange={handleChange}
+                    placeholder="Bekasi, 15 Mei 2025"
+                    className="text-center"
+                  />
+                  <FormInput
+                    name="hormat_saya_2"
+                    value={formData.hormat_saya_2}
+                    onChange={handleChange}
+                    placeholder="Yang membuat pernyataan,"
+                    className="text-center"
+                  />
+                </div>
                 <FormInput
-                  name="hormat_saya_1"
-                  value={formData.hormat_saya_1}
+                  name="hormat_saya_3"
+                  value={formData.hormat_saya_3}
                   onChange={handleChange}
-                  placeholder="Bekasi, 09 Mei 2025"
-                  className="text-center"
-                />
-                <FormInput
-                  name="hormat_saya_2"
-                  value={formData.hormat_saya_2}
-                  onChange={handleChange}
-                  placeholder="Saya yang menyatakan,"
+                  placeholder="Nama Lengkap Peminjam"
                   className="text-center"
                 />
               </div>
-              <FormInput
-                name="hormat_saya_3"
-                value={formData.hormat_saya_3}
-                onChange={handleChange}
-                placeholder="Erika Finn"
-                className="text-center"
-              />
             </div>
           </div>
         </div>

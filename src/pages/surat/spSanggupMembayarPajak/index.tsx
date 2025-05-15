@@ -19,19 +19,19 @@ export default function SuratKeteranganSanggupMembayarPajak() {
 
   const [formData, setFormData] = useState({
     tempat_tanggal: `Purwokerto, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
-    dengan_hormat_1: 'Yang bertanda tangan di bawah ini,',
+    dengan_hormat_1: 'Saya yang bertanda tangan di bawah ini,',
     dengan_hormat_2:
-      'Dengan ini menyatakan bahwa berkenaan dengan permohonan izin kedai kopi saya yang terletak di Jl. Tunjungan Plaza, saya sanggup membayar pajak sebesar 10% dari pendapatan. Jika pajak tidak dibayarkan, saya bersedia menghentikan kegiatan usaha tersebut.',
+      'Dengan ini menyatakan bahwa sehubungan dengan permohonan izin operasional kedai kopi yang berlokasi di Jl. Tunjungan Plaza, saya menyanggupi untuk membayar pajak sebesar 10% dari total pendapatan usaha. Apabila kewajiban tersebut tidak saya penuhi, maka saya siap menghentikan seluruh aktivitas usaha tersebut.',
     dengan_hormat_3:
-      'Pernyataan ini saya buat dengan sungguh-sungguh tanpa ada paksaan dari orang lain.',
+      'Surat pernyataan ini saya buat secara sukarela, dengan penuh tanggung jawab, dan tanpa tekanan dari pihak mana pun.',
 
-    ul_1: `Erika Finn`,
+    ul_1: 'Erika Finn',
     ul_2: '1234567890',
-    ul_3: ' Ibu rumah tangga',
+    ul_3: 'Ibu rumah tangga',
     ul_4: 'Jl. Ahmad Yani, Bekasi',
 
     hormat_saya_1: `Bekasi, ${dayjs().locale('id').format('DD MMMM YYYY')}`,
-    hormat_saya_2: `Saya yang menyatakan,`,
+    hormat_saya_2: 'Yang menyatakan,',
     hormat_saya_3: 'Erika Finn',
   })
 
@@ -86,7 +86,7 @@ export default function SuratKeteranganSanggupMembayarPajak() {
                 name="tempat_tanggal"
                 value={formData.tempat_tanggal}
                 onChange={handleChange}
-                placeholder={dayjs().locale('id').format('DD MMMM YYYY')}
+                placeholder="Purwokerto, 15 Mei 2025"
                 className="w-1/2 text-end text-[2rem]"
               />
             </div>
@@ -96,7 +96,7 @@ export default function SuratKeteranganSanggupMembayarPajak() {
                 name="dengan_hormat_1"
                 value={formData.dengan_hormat_1}
                 onChange={handleChange}
-                placeholder="Yang bertanda tangan di bawah ini,"
+                placeholder="Saya yang bertanda tangan di bawah ini,"
               />
               <table className="w-full table-auto">
                 <tbody>
@@ -161,7 +161,7 @@ export default function SuratKeteranganSanggupMembayarPajak() {
                 name="dengan_hormat_2"
                 value={formData.dengan_hormat_2}
                 onChange={handleChange}
-                placeholder="Dengan ini menyatakan bahwa berkenaan dengan permohonan izin kedai kopi saya yang terletak di Jl. Tunjungan Plaza, saya sanggup membayar pajak sebesar 10% dari pendapatan. Jika pajak tidak dibayarkan, saya bersedia menghentikan kegiatan usaha tersebut."
+                placeholder="Dengan ini menyatakan bahwa sehubungan dengan permohonan izin operasional kedai kopi yang berlokasi di Jl. Tunjungan Plaza, saya menyanggupi untuk membayar pajak sebesar 10% dari total pendapatan usaha. Apabila kewajiban tersebut tidak saya penuhi, maka saya siap menghentikan seluruh aktivitas usaha tersebut."
                 rows={isMobile ? 5 : 3}
               />
 
@@ -169,35 +169,37 @@ export default function SuratKeteranganSanggupMembayarPajak() {
                 name="dengan_hormat_3"
                 value={formData.dengan_hormat_3}
                 onChange={handleChange}
-                placeholder="Pernyataan ini saya buat dengan sungguh-sungguh tanpa ada paksaan dari orang lain."
-                rows={isMobile ? 2 : 1}
+                placeholder="Surat pernyataan ini saya buat secara sukarela, dengan penuh tanggung jawab, dan tanpa tekanan dari pihak mana pun."
+                rows={isMobile ? 4 : 2}
               />
             </div>
 
             <div className="mt-[4rem] flex flex-col items-end justify-center gap-80">
-              <div className="flex flex-col gap-12">
+              <div className="flex w-1/3 flex-col gap-80 phones:w-2/5">
+                <div className="flex flex-col gap-12">
+                  <FormInput
+                    name="hormat_saya_1"
+                    value={formData.hormat_saya_1}
+                    onChange={handleChange}
+                    placeholder="Bekasi, 15 Mei 2025"
+                    className="text-center"
+                  />
+                  <FormInput
+                    name="hormat_saya_2"
+                    value={formData.hormat_saya_2}
+                    onChange={handleChange}
+                    placeholder="Yang menyatakan,"
+                    className="text-center"
+                  />
+                </div>
                 <FormInput
-                  name="hormat_saya_1"
-                  value={formData.hormat_saya_1}
+                  name="hormat_saya_3"
+                  value={formData.hormat_saya_3}
                   onChange={handleChange}
-                  placeholder="Bekasi, 09 Mei 2025"
-                  className="text-center"
-                />
-                <FormInput
-                  name="hormat_saya_2"
-                  value={formData.hormat_saya_2}
-                  onChange={handleChange}
-                  placeholder="Saya yang menyatakan,"
+                  placeholder="Erika Finn"
                   className="text-center"
                 />
               </div>
-              <FormInput
-                name="hormat_saya_3"
-                value={formData.hormat_saya_3}
-                onChange={handleChange}
-                placeholder="Erika Finn"
-                className="text-center"
-              />
             </div>
           </div>
         </div>
